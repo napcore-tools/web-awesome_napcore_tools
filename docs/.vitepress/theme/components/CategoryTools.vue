@@ -1,5 +1,18 @@
 <template>
   <div>
+    <!-- Debug info (enable by adding ?debug=true to URL) -->
+    <div v-if="showDebug" style="background: #f0f0f0; padding: 1rem; margin-bottom: 1rem; font-size: 12px; border-left: 4px solid #0066cc;">
+      <strong>🐛 Debug Info:</strong><br>
+      Route path: {{ route.path }}<br>
+      Current category: {{ currentCategory }}<br>
+      Total tools loaded: {{ tools.length }}<br>
+      Tools in this category: {{ categoryTools.length }}<br>
+      All tools: {{ tools.map(t => t.slug).join(', ') }}<br>
+      <small style="color: #666; margin-top: 0.5rem; display: block;">
+        To disable: remove <code>?debug=true</code> from URL
+      </small>
+    </div>
+
     <p v-if="categoryTools.length === 0" class="no-tools-message">
       No tools available in this category yet. <a href="/contribute">Contribute a tool →</a>
     </p>
@@ -15,11 +28,29 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useRoute } from 'vitepress'
 import { data as tools } from '../../tools.data'
 import type { Tool } from '../../tools.data'
 import ToolCard from './ToolCard.vue'
+
+// Debug mode (enable by adding ?debug=true to URL)
+const showDebug = computed(() => {
+  if (typeof window === 'undefined') return false
+  const params = new URLSearchParams(window.location.search)
+  return params.get('debug') === 'true'
+})
+
+// Debug logging
+onMounted(() => {
+  if (showDebug.value) {
+    console.log('CategoryTools mounted')
+    console.log('Tools loaded:', tools)
+    console.log('Route path:', route.path)
+    console.log('Current category:', currentCategory.value)
+    console.log('Filtered tools:', categoryTools.value)
+  }
+})
 
 interface Props {
   category?: string
@@ -36,7 +67,8 @@ const currentCategory = computed(() => {
 
   // Extract category from route path
   // e.g., /categories/development -> development
-  const match = route.path.match(/\/categories\/([^/]+)/)
+  // Handle both with and without .html extension, with or without trailing slash
+  const match = route.path.match(/\/categories\/([^/.]+)/)
   if (match) {
     return match[1]
   }
