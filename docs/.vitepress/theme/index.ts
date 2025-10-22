@@ -7,6 +7,7 @@ import StatsBar from './components/StatsBar.vue'
 import ToolStats from './components/ToolStats.vue'
 import ToolCard from './components/ToolCard.vue'
 import CategoryTools from './components/CategoryTools.vue'
+import CategoryGrid from './components/CategoryGrid.vue'
 
 export default {
   extends: DefaultTheme,
@@ -21,5 +22,6 @@ export default {
     app.component('ToolStats', ToolStats)
     app.component('ToolCard', ToolCard)
     app.component('CategoryTools', CategoryTools)
+    app.component('CategoryGrid', CategoryGrid)
   }
 } satisfies Theme
