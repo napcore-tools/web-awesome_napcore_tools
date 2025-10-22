@@ -1,0 +1,26 @@
+{
+  "name": "napcore-web-store",
+  "version": "0.1.0",
+  "description": "NAPCORE Tools Catalog - Curated tools for European mobility data professionals",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "napcore",
+    "mobility",
+    "datex2",
+    "netex",
+    "tools",
+    "catalog"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.12"
+  }
+}
