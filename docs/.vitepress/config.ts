@@ -44,7 +44,8 @@ export default defineConfig({
           items: [
             { text: 'DATEX II Browser', link: '/tools/datex-browser' },
             { text: 'DATEX II Schema Tool', link: '/tools/datex-schema-tool' },
-            { text: 'mobilityDCAT-AP Generator', link: '/tools/mobilitydcat-generator' }
+            { text: 'mobilityDCAT-AP Generator', link: '/tools/mobilitydcat-generator' },
+            { text: 'ALERT-C Locations Tester', link: '/tools/alert-c-tester' }
           ]
         }
       ],
