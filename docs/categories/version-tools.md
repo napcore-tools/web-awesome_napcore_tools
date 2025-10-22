@@ -4,9 +4,7 @@ Migration and compatibility utilities for upgrading between standard versions.
 
 ## Available Tools
 
-::: info Coming Soon
-This category is being populated. Know a version upgrade tool? [Submit it!](/contribute)
-:::
+<CategoryTools />
 
 ## What are Version Upgrade Tools?
 

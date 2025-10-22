@@ -2,83 +2,9 @@
 
 Tools that support the day-to-day development workflow for mobility data systems.
 
-## Available Tools (3)
+## Available Tools
 
-<div class="feature-grid">
-
-<div class="tool-card">
-  <div class="tool-card-header">
-    <div class="tool-status active">🟢 Active</div>
-    <h3 class="tool-card-title">
-      <a href="/tools/datex-browser">DATEX II Browser</a>
-    </h3>
-    <p class="tool-card-subtitle">Reference Documentation Tool</p>
-  </div>
-  <div class="tool-card-body">
-    <p class="tool-card-description">
-      Wikipedia-style browser for exploring the DATEX II data model with 6,187 elements. Essential daily reference for DATEX II implementers.
-    </p>
-    <div class="tool-tags">
-      <span class="tool-tag">DATEX II</span>
-      <span class="tool-tag">Browser</span>
-      <span class="tool-tag">Reference</span>
-    </div>
-  </div>
-  <div class="tool-links">
-    <a href="https://browser.datex2.eu" target="_blank" class="tool-link">Live Demo</a>
-    <a href="/tools/datex-browser" class="tool-link">Details</a>
-  </div>
-</div>
-
-<div class="tool-card">
-  <div class="tool-card-header">
-    <div class="tool-status active">🟢 Active</div>
-    <h3 class="tool-card-title">
-      <a href="/tools/mobilitydcat-generator">mobilityDCAT-AP Generator</a>
-    </h3>
-    <p class="tool-card-subtitle">Metadata Generation Tool</p>
-  </div>
-  <div class="tool-card-body">
-    <p class="tool-card-description">
-      Form-based interface for generating RDF metadata compliant with mobilityDCAT-AP. Perfect for NAP operators and data publishers.
-    </p>
-    <div class="tool-tags">
-      <span class="tool-tag">mobilityDCAT-AP</span>
-      <span class="tool-tag">RDF</span>
-      <span class="tool-tag">Metadata</span>
-    </div>
-  </div>
-  <div class="tool-links">
-    <a href="https://mobilitydcat-ap.github.io/mobilitydcatap-ui/" target="_blank" class="tool-link">Live Demo</a>
-    <a href="/tools/mobilitydcat-generator" class="tool-link">Details</a>
-  </div>
-</div>
-
-<div class="tool-card">
-  <div class="tool-card-header">
-    <div class="tool-status active">🟢 Active</div>
-    <h3 class="tool-card-title">
-      <a href="/tools/alert-c-tester">ALERT-C Locations Tester</a>
-    </h3>
-    <p class="tool-card-subtitle">Location Reference Validator</p>
-  </div>
-  <div class="tool-card-body">
-    <p class="tool-card-description">
-      Command-line validation tool for ALERT-C location references. Generates indices from TMC tables and validates traffic information content.
-    </p>
-    <div class="tool-tags">
-      <span class="tool-tag">ALERT-C</span>
-      <span class="tool-tag">Python</span>
-      <span class="tool-tag">CLI</span>
-    </div>
-  </div>
-  <div class="tool-links">
-    <a href="https://github.com/tamtamresearch/alert-c-locations-tester" target="_blank" class="tool-link">Source Code</a>
-    <a href="/tools/alert-c-tester" class="tool-link">Details</a>
-  </div>
-</div>
-
-</div>
+<CategoryTools />
 
 ## What are Development Tools?
 

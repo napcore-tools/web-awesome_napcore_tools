@@ -2,35 +2,9 @@
 
 Validation, enrichment, and cleaning utilities for ensuring high-quality mobility data.
 
-## Available Tools (1)
+## Available Tools
 
-<div class="feature-grid">
-
-<div class="tool-card">
-  <div class="tool-card-header">
-    <div class="tool-status active">🟢 Active</div>
-    <h3 class="tool-card-title">
-      <a href="/tools/alert-c-tester">ALERT-C Locations Tester</a>
-    </h3>
-    <p class="tool-card-subtitle">Location Reference Validator</p>
-  </div>
-  <div class="tool-card-body">
-    <p class="tool-card-description">
-      Ensures quality of ALERT-C location references in traffic information. Detects invalid location codes, extent values, and combinations that could mislead drivers.
-    </p>
-    <div class="tool-tags">
-      <span class="tool-tag">ALERT-C</span>
-      <span class="tool-tag">Quality Assurance</span>
-      <span class="tool-tag">Python</span>
-    </div>
-  </div>
-  <div class="tool-links">
-    <a href="https://github.com/tamtamresearch/alert-c-locations-tester" target="_blank" class="tool-link">Source Code</a>
-    <a href="/tools/alert-c-tester" class="tool-link">Details</a>
-  </div>
-</div>
-
-</div>
+<CategoryTools />
 
 ## What are Data Quality Tools?
 

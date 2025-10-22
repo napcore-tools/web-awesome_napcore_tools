@@ -2,59 +2,9 @@
 
 Tools for converting, transforming, and profiling mobility data across different formats and versions.
 
-## Available Tools (2)
+## Available Tools
 
-<div class="feature-grid">
-
-<div class="tool-card">
-  <div class="tool-card-header">
-    <div class="tool-status active">🟢 Active</div>
-    <h3 class="tool-card-title">
-      <a href="/tools/datex-schema-tool">DATEX II Schema Tool</a>
-    </h3>
-    <p class="tool-card-subtitle">Profile Generation Wizard</p>
-  </div>
-  <div class="tool-card-body">
-    <p class="tool-card-description">
-      Create custom DATEX II profiles by selecting only needed elements. Export to XML Schema, JSON Schema, or ASN.1 formats.
-    </p>
-    <div class="tool-tags">
-      <span class="tool-tag">DATEX II</span>
-      <span class="tool-tag">Schema</span>
-      <span class="tool-tag">Wizard</span>
-    </div>
-  </div>
-  <div class="tool-links">
-    <a href="https://webtool.datex2.eu" target="_blank" class="tool-link">Live Demo</a>
-    <a href="/tools/datex-schema-tool" class="tool-link">Details</a>
-  </div>
-</div>
-
-<div class="tool-card">
-  <div class="tool-card-header">
-    <div class="tool-status active">🟢 Active</div>
-    <h3 class="tool-card-title">
-      <a href="/tools/datex-browser">DATEX II Browser</a>
-    </h3>
-    <p class="tool-card-subtitle">Model Browser & Converter Foundation</p>
-  </div>
-  <div class="tool-card-body">
-    <p class="tool-card-description">
-      Includes datex2json converter that transforms DATEX II models from Enterprise Architect to JSON format for web applications.
-    </p>
-    <div class="tool-tags">
-      <span class="tool-tag">DATEX II</span>
-      <span class="tool-tag">Converter</span>
-      <span class="tool-tag">JSON</span>
-    </div>
-  </div>
-  <div class="tool-links">
-    <a href="https://gitlab.com/tamtamresearch-public/datex2/browser/datex2json" target="_blank" class="tool-link">Source Code</a>
-    <a href="/tools/datex-browser" class="tool-link">Details</a>
-  </div>
-</div>
-
-</div>
+<CategoryTools />
 
 ## What are Converters & Transformers?
 

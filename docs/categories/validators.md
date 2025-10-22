@@ -2,36 +2,9 @@
 
 Schema validation and business rule checking tools for ensuring data quality and compliance.
 
-## Available Tools (1)
+## Available Tools
 
-<div class="feature-grid">
-
-<div class="tool-card">
-  <div class="tool-card-header">
-    <div class="tool-status active">🟢 Active</div>
-    <h3 class="tool-card-title">
-      <a href="/tools/alert-c-tester">ALERT-C Locations Tester</a>
-    </h3>
-    <p class="tool-card-subtitle">Location Reference Validator</p>
-  </div>
-  <div class="tool-card-body">
-    <p class="tool-card-description">
-      Validation tool for ALERT-C location references used in RDS-TMC services and DATEX II traffic information. Detects invalid location codes and extent values.
-    </p>
-    <div class="tool-tags">
-      <span class="tool-tag">ALERT-C</span>
-      <span class="tool-tag">RDS-TMC</span>
-      <span class="tool-tag">DATEX II</span>
-      <span class="tool-tag">Python</span>
-    </div>
-  </div>
-  <div class="tool-links">
-    <a href="https://github.com/tamtamresearch/alert-c-locations-tester" target="_blank" class="tool-link">Source Code</a>
-    <a href="/tools/alert-c-tester" class="tool-link">Details</a>
-  </div>
-</div>
-
-</div>
+<CategoryTools />
 
 ## What are Validators?
 

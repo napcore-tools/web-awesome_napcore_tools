@@ -5,6 +5,8 @@ import DefaultTheme from 'vitepress/theme'
 import './custom.css'
 import StatsBar from './components/StatsBar.vue'
 import ToolStats from './components/ToolStats.vue'
+import ToolCard from './components/ToolCard.vue'
+import CategoryTools from './components/CategoryTools.vue'
 
 export default {
   extends: DefaultTheme,
@@ -17,5 +19,7 @@ export default {
     // Register global components
     app.component('StatsBar', StatsBar)
     app.component('ToolStats', ToolStats)
+    app.component('ToolCard', ToolCard)
+    app.component('CategoryTools', CategoryTools)
   }
 } satisfies Theme

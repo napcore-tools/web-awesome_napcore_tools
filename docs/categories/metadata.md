@@ -2,35 +2,9 @@
 
 Tools for creating, managing, and publishing metadata that makes mobility data discoverable and reusable.
 
-## Available Tools (1)
+## Available Tools
 
-<div class="feature-grid">
-
-<div class="tool-card">
-  <div class="tool-card-header">
-    <div class="tool-status active">🟢 Active</div>
-    <h3 class="tool-card-title">
-      <a href="/tools/mobilitydcat-generator">mobilityDCAT-AP Generator</a>
-    </h3>
-    <p class="tool-card-subtitle">Metadata Generation Tool</p>
-  </div>
-  <div class="tool-card-body">
-    <p class="tool-card-description">
-      Form-based interface for generating RDF metadata compliant with mobilityDCAT-AP. Perfect for NAP operators and data publishers.
-    </p>
-    <div class="tool-tags">
-      <span class="tool-tag">mobilityDCAT-AP</span>
-      <span class="tool-tag">RDF</span>
-      <span class="tool-tag">Metadata</span>
-    </div>
-  </div>
-  <div class="tool-links">
-    <a href="https://mobilitydcat-ap.github.io/mobilitydcatap-ui/" target="_blank" class="tool-link">Live Demo</a>
-    <a href="/tools/mobilitydcat-generator" class="tool-link">Details</a>
-  </div>
-</div>
-
-</div>
+<CategoryTools />
 
 ## What are Metadata Tools?
 
