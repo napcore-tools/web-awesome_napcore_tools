@@ -101,6 +101,9 @@ function getSubtitle(tool: Tool): string {
   if (tool.tags.includes('Converter')) {
     return 'Model Browser & Converter Foundation'
   }
+  if (["Journey Planner", "Router", "Intermodal"].some(r => tool.tags.includes(r))) {
+    return 'Journey Planner'
+  }
 
   // Default: use first tag or category
   if (tool.tags.length > 0) {

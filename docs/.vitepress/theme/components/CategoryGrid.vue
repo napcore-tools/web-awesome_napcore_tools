@@ -73,6 +73,12 @@ const categoryDefinitions = [
     title: 'Metadata Tools',
     icon: '🏷',
     description: 'Catalog generation and discovery'
+  },
+  {
+    slug: 'route-planners',
+    title: 'Route Planners',
+    icon: '🗺️',
+    description: 'Intermodal travel information system'
   }
 ]
 

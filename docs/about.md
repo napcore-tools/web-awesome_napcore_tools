@@ -1,6 +1,12 @@
-# About the NAPCORE Tools Catalog
+# About the NAPCORE Store
 
-The NAPCORE Tools Catalog is a community-driven initiative to collect, curate, and showcase open-source tools that support European mobility data standards.
+::: warning
+This site is work in progress and in a proof-of-concept stage.
+:::
+
+
+
+The NAPCORE Store is a community-driven initiative to collect, curate, and showcase open-source tools that support European mobility data standards.
 
 ## Mission
 
@@ -14,7 +20,7 @@ The European mobility data ecosystem is rich with standards and tools, but they'
 
 ### The Solution
 
-The NAPCORE Tools Catalog brings these tools together in one place, with:
+The NAPCORE Store brings these tools together in one place, with:
 
 - **Standardized descriptions** so you can quickly understand what each tool does
 - **Clear categorization** to help you find tools for specific needs
@@ -90,7 +96,7 @@ Learn more at [napcore.eu](https://napcore.eu)
 
 ### Origins
 
-The NAPCORE Tools Catalog was created as part of NAPCORE Task 5.2 to support the European mobility data community by providing a centralized resource for discovering tools.
+The NAPCORE Store was created as part of NAPCORE Task 5.2 to support the European mobility data community by providing a centralized resource for discovering tools.
 
 ### Development
 

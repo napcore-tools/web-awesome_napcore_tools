@@ -2,7 +2,7 @@
 
 ## ✅ What We've Built
 
-The NAPCORE Tools Catalog is now fully structured and ready to use!
+The NAPCORE Store is now fully structured and ready to use!
 
 ### Project Structure
 
@@ -206,7 +206,7 @@ The site is ready for:
 
 ## 🎊 Success!
 
-Your NAPCORE Tools Catalog is complete and ready to serve the European mobility data community!
+Your NAPCORE Store is complete and ready to serve the European mobility data community!
 
 The foundation is solid, the design is professional, and the structure is scalable.
 

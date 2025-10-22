@@ -1,14 +1,14 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'NAPCORE Tools',
-  description: 'Curated tools for European mobility data professionals',
+  title: 'NAPCORE Store',
+  description: 'Curated catalog of European mobility data-related tools',
   
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'theme-color', content: '#0066cc' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'NAPCORE Tools Catalog' }],
+    ['meta', { property: 'og:title', content: 'NAPCORE Store' }],
     ['meta', { property: 'og:description', content: 'Curated tools for European mobility data professionals' }]
   ],
 
@@ -20,7 +20,7 @@ export default defineConfig({
       { text: 'Browse Tools', link: '/tools/' },
       { text: 'Categories', link: '/categories/' },
       { text: 'Contribute', link: '/contribute' },
-      { text: 'About', link: '/about' }
+      { text: 'Status (WIP)', link: '/about' },
     ],
 
     sidebar: {
@@ -36,7 +36,8 @@ export default defineConfig({
             { text: 'Development Tools', link: '/categories/development' },
             { text: 'Data Quality Tools', link: '/categories/data-quality' },
             { text: 'Testing Utilities', link: '/categories/testing' },
-            { text: 'Metadata Tools', link: '/categories/metadata' }
+            { text: 'Metadata Tools', link: '/categories/metadata' },
+            { text: 'Route planners', link: '/categories/route-planners' }
           ]
         },
         {
@@ -62,7 +63,8 @@ export default defineConfig({
             { text: 'Development Tools', link: '/categories/development' },
             { text: 'Data Quality Tools', link: '/categories/data-quality' },
             { text: 'Testing Utilities', link: '/categories/testing' },
-            { text: 'Metadata Tools', link: '/categories/metadata' }
+            { text: 'Metadata Tools', link: '/categories/metadata' },
+            { text: 'Route planners', link: '/categories/route-planners' }
           ]
         }
       ]

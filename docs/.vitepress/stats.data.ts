@@ -36,7 +36,8 @@ export default {
       'development',
       'dataQuality',
       'testing',
-      'metadata'
+      'metadata',
+      `route-planner`
     ]
 
     // Map of category slugs used in tool files to yaml property names
@@ -49,7 +50,8 @@ export default {
       'development': 'development',
       'data-quality': 'dataQuality',
       'testing': 'testing',
-      'metadata': 'metadata'
+      'metadata': 'metadata',
+      'route-planners': 'route-planner'
     }
 
     // Calculate category statistics dynamically

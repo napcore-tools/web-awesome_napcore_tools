@@ -1,4 +1,4 @@
-# NAPCORE Tools Catalog
+# NAPCORE Store
 
 > Curated tools for European mobility data professionals
 

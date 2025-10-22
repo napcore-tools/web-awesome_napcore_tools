@@ -2,7 +2,7 @@
 
 ## What We've Built
 
-The statistics throughout the NAPCORE Tools Catalog are now **fully dynamic** and loaded from a single YAML file!
+The statistics throughout the NAPCORE Store are now **fully dynamic** and loaded from a single YAML file!
 
 ---
 
@@ -351,7 +351,7 @@ napcore-web-store/
 
 ## 🎉 Success!
 
-Your NAPCORE Tools Catalog now has **fully dynamic statistics** powered by a simple YAML file!
+Your NAPCORE Store now has **fully dynamic statistics** powered by a simple YAML file!
 
 Just edit `stats.yaml` and all pages update automatically. No more hunting through multiple files to update numbers! 🚀
 

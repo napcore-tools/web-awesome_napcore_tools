@@ -1,6 +1,6 @@
 # Statistics Data
 
-This directory contains the `stats.yaml` file that powers the dynamic statistics throughout the NAPCORE Tools Catalog.
+This directory contains the `stats.yaml` file that powers the dynamic statistics throughout the NAPCORE Store.
 
 ## File: stats.yaml
 

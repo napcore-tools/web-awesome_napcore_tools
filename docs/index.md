@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: NAPCORE Tools
-  text: European Mobility Tools Catalog
-  tagline: Curated tools for mobility data professionals
+  name: NAPCORE Store
+  text: "Status: Proof-of-concept"
+  tagline: Curated catalog of European mobility data-related tools
   image:
     src: https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png
     alt: NAPCORE Logo
@@ -61,9 +61,23 @@ features:
     title: Metadata Tools
     details: Catalog generation and discovery tools for better data findability
     link: /categories/metadata
+
+  - icon: 🗺️
+    title: Route planners
+    details: Route planners are digital tools that help you find the best way to get from one location to another
+    link: /categories/route-planners
+---
+
+---
+
+::: warning
+This site is work in progress and in a proof-of-concept stage.
+:::
+
 ---
 
 <StatsBar />
+
 
 ## Featured Tools
 
@@ -145,7 +159,7 @@ features:
 
 ## About the Catalog
 
-The NAPCORE Tools Catalog is a community-driven initiative to collect, curate, and showcase open-source tools that support European mobility data standards. Our mission is to make it easier for developers, data publishers, and mobility professionals to find and use the right tools for their needs.
+The NAPCORE Store is a community-driven initiative to collect, curate, and showcase open-source tools that support European mobility data standards. Our mission is to make it easier for developers, data publishers, and mobility professionals to find and use the right tools for their needs.
 
 ::: info Community-Driven
 This catalog is built and maintained by the European mobility data community. We welcome contributions from tool developers, users, and anyone passionate about improving mobility data infrastructure.

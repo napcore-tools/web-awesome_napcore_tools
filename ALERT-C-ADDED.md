@@ -1,6 +1,6 @@
 # ✅ ALERT-C Locations Tester - Added!
 
-The ALERT-C Locations Tester tool has been successfully added to the NAPCORE Tools Catalog!
+The ALERT-C Locations Tester tool has been successfully added to the NAPCORE Store!
 
 ---
 
@@ -196,7 +196,7 @@ The dynamic stats components will automatically show:
 
 ## 🎉 Complete!
 
-The ALERT-C Locations Tester is now fully integrated into the NAPCORE Tools Catalog with:
+The ALERT-C Locations Tester is now fully integrated into the NAPCORE Store with:
 - ✅ Complete documentation
 - ✅ Updated statistics
 - ✅ Listed in 3 relevant categories

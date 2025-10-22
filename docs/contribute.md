@@ -10,7 +10,7 @@ We welcome tool submissions from developers, organizations, and mobility data pr
 
 1. **Check if tool fits**: Review our [criteria](#tool-criteria) below
 2. **Gather information**: Collect the details listed in [required information](#required-information)
-3. **Start a discussion**: Create a new discussion in our [GitHub Discussions](https://github.com/napcore/napcore-web-store/discussions) with the "Tool Submission" category
+3. **Start a discussion**: Create a new discussion in our [GitHub Discussions](https://github.com/napcore-tools/web-napcore_store/discussions) with the "Tool Submission" category
 4. **Community review**: The managing team and community will review your submission
 5. **Documentation**: Once approved, we'll help create the tool page
 6. **Publication**: Your tool will be added to the catalog!
@@ -129,7 +129,7 @@ Found a broken link or incorrect information?
 
 Have ideas for improving the catalog?
 
-- Share them in [GitHub Discussions](https://github.com/napcore/napcore-web-store/discussions)
+- Share them in [GitHub Discussions](https://github.com/napcore-tools/web-napcore_store/discussions)
 - Propose new categories
 - Suggest better organization
 - Request new features
@@ -176,7 +176,7 @@ We recognize and appreciate all contributors:
 
 Need help or have questions about contributing?
 
-- **GitHub Discussions**: [Start a discussion](https://github.com/napcore/napcore-web-store/discussions)
+- **GitHub Discussions**: [Start a discussion](https://github.com/napcore-tools/web-napcore_store/discussions)
 - **Email**: [Contact NAPCORE](https://napcore.eu/contact)
 
 ## Code of Conduct

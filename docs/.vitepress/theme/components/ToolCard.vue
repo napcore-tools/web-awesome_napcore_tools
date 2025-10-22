@@ -21,7 +21,7 @@
     </div>
     <div class="tool-links">
       <a v-if="tool.liveDemo" :href="tool.liveDemo" target="_blank" class="tool-link">
-        Live Demo
+        Link
       </a>
       <a v-if="tool.sourceCode" :href="tool.sourceCode" target="_blank" class="tool-link">
         Source Code

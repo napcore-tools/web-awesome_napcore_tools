@@ -1,5 +1,5 @@
 /**
- * NAPCORE Tools Catalog - Custom Theme
+ * NAPCORE Store - Custom Theme
  * Colors inspired by NAPCORE branding
  */
 
@@ -86,8 +86,8 @@
   transform: translateY(-4px);
 }
 
-.tool-card-header {
-  margin-bottom: 1rem;
+.tool-card-header .tool-card-title {
+  margin-top: 0.5rem;
 }
 
 .tool-card-title {
@@ -100,6 +100,10 @@
 .tool-card-subtitle {
   font-size: 0.9rem;
   color: var(--vp-c-text-2);
+}
+
+.tool-card-header .tool-card-subtitle {
+  margin-bottom: 0.3rem;
 }
 
 .tool-card-body {
