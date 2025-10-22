@@ -1,3 +1,29 @@
+---
+title: ALERT-C Locations Tester
+description: Validation tool for ALERT-C location references in RDS-TMC and DATEX II traffic information
+categories:
+  - validators
+  - data-quality
+  - testing
+status: active
+license: MIT
+sourceCode: https://github.com/tamtamresearch/alert-c-locations-tester
+developer: TamTam Research s.r.o.
+technology: Python, SQLite, CLI
+standards:
+  - DATEX II
+  - ISO/DIS 14819 Part 3
+  - RDS-TMC
+tags:
+  - ALERT-C
+  - Validator
+  - Python
+  - CLI
+  - RDS-TMC
+  - Location References
+lastUpdated: 2025-10-22
+---
+
 # ALERT-C Locations Tester
 
 <div class="tool-status active" style="display: inline-block; margin-bottom: 1rem;">🟢 Active</div>

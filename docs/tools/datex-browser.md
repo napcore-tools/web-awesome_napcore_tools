@@ -1,3 +1,25 @@
+---
+title: DATEX II Browser
+description: Wikipedia-style browser for exploring the DATEX II data model
+categories:
+  - development
+  - converters
+status: active
+license: MIT
+liveDemo: https://browser.datex2.eu
+sourceCode: https://gitlab.com/tamtamresearch-public/datex2/browser
+developer: TamTam Research s.r.o.
+standards:
+  - DATEX II
+tags:
+  - DATEX II
+  - Browser
+  - Reference
+  - Search
+firstRelease: 2014
+lastUpdated: 2025-10-22
+---
+
 # DATEX II Browser
 
 <div class="tool-status active" style="display: inline-block; margin-bottom: 1rem;">🟢 Active</div>
@@ -127,7 +149,7 @@ No installation or registration required!
 <div style="background: var(--vp-c-bg-soft); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
   <p style="margin: 0;"><strong>Tool Metadata</strong></p>
   <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
-    <li><strong>Category</strong>: Development Tools, Reference Documentation</li>
+    <li><strong>Category</strong>: Development Tools, Converters</li>
     <li><strong>Standards</strong>: DATEX II (v2.3, v3.4, v3.6)</li>
     <li><strong>License</strong>: MIT</li>
     <li><strong>Maintenance</strong>: Actively maintained</li>

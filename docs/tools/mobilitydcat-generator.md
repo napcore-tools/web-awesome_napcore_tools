@@ -1,3 +1,28 @@
+---
+title: mobilityDCAT-AP Generator Tool
+description: Form-based web interface for generating RDF metadata according to mobilityDCAT-AP
+categories:
+  - metadata
+  - development
+status: active
+license: Apache-2.0
+liveDemo: https://mobilitydcat-ap.github.io/mobilitydcatap-ui/
+sourceCode: https://github.com/mobilityDCAT-AP/mobilitydcatap-ui
+developer: Cefriel
+maintainedBy: NAPCORE Metadata Working Group
+standards:
+  - mobilityDCAT-AP
+  - DCAT-AP
+  - RDF
+tags:
+  - mobilityDCAT-AP
+  - RDF
+  - Metadata
+  - Generator
+  - Form
+lastUpdated: 2025-10-22
+---
+
 # mobilityDCAT-AP Generator Tool
 
 <div class="tool-status active" style="display: inline-block; margin-bottom: 1rem;">🟢 Active</div>

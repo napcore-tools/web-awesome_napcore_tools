@@ -1,3 +1,26 @@
+---
+title: DATEX II Schema Generation Tool
+description: Web-based wizard for creating custom DATEX II profiles and generating schemas
+categories:
+  - converters
+  - development
+status: active
+liveDemo: https://webtool.datex2.eu
+developer: DATEX II community (datex2.eu)
+mainContributor: Jonas Jäderberg
+standards:
+  - DATEX II
+tags:
+  - DATEX II
+  - Schema
+  - Wizard
+  - Profile
+  - XML Schema
+  - JSON Schema
+  - ASN.1
+lastUpdated: 2025-10-22
+---
+
 # DATEX II Schema Generation Tool (Webtool)
 
 <div class="tool-status active" style="display: inline-block; margin-bottom: 1rem;">🟢 Active</div>
