@@ -3,6 +3,8 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './custom.css'
+import StatsBar from './components/StatsBar.vue'
+import ToolStats from './components/ToolStats.vue'
 
 export default {
   extends: DefaultTheme,
@@ -12,6 +14,8 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    // App-level enhancements can go here
+    // Register global components
+    app.component('StatsBar', StatsBar)
+    app.component('ToolStats', ToolStats)
   }
 } satisfies Theme

@@ -1,0 +1,37 @@
+# NAPCORE Tools Catalog Statistics
+# Update these numbers as tools are added to the catalog
+
+tools:
+  total: 3
+  active: 3
+  maintenance: 0
+  deprecated: 0
+
+categories:
+  total: 9
+  withTools: 3
+  validators: 0
+  converters: 2
+  versionTools: 0
+  sdks: 0
+  reference: 0
+  development: 2
+  dataQuality: 0
+  testing: 0
+  metadata: 1
+
+standards:
+  total: 5
+  list:
+    - DATEX II
+    - mobilityDCAT-AP
+    - DCAT-AP
+    - RDF
+    - NeTEx (coming soon)
+
+community:
+  openSourcePercentage: 100
+  contributors: 0
+  submissions: 0
+
+lastUpdated: "2025-10-22"

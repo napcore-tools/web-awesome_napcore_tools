@@ -91,10 +91,7 @@ Have a tool that should be listed here? We welcome contributions from the commun
 
 ## Tool Statistics
 
-- **Total Tools**: 3
-- **Active Tools**: 3
-- **Categories Covered**: 3 of 9
-- **Standards Supported**: DATEX II, mobilityDCAT-AP, DCAT-AP, RDF
+<ToolStats />
 
 ## Recently Added
 

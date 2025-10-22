@@ -63,24 +63,7 @@ features:
     link: /categories/metadata
 ---
 
-<div class="stats-grid">
-  <div class="stat-item">
-    <div class="stat-number">3</div>
-    <div class="stat-label">Available Tools</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">9</div>
-    <div class="stat-label">Categories</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">5+</div>
-    <div class="stat-label">Standards Supported</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">100%</div>
-    <div class="stat-label">Open Source</div>
-  </div>
-</div>
+<StatsBar />
 
 ## Featured Tools
 
