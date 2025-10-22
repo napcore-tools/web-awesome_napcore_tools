@@ -63,36 +63,38 @@ or
 
 ## 📊 What's in stats.yaml
 
-```yaml
-tools:
-  total: 3
-  active: 3
-  maintenance: 0
-  deprecated: 0
+**🎉 Now Simplified! Tool and category counts are auto-calculated!**
 
-categories:
-  total: 9
-  withTools: 3
-  validators: 0
-  converters: 2
-  development: 2
-  metadata: 1
-  # ... etc
+```yaml
+# Only manual data remains in stats.yaml:
 
 standards:
-  total: 5
+  total: 7
   list:
     - DATEX II
     - mobilityDCAT-AP
     - DCAT-AP
     - RDF
+    - ISO/DIS 14819 Part 3
+    - RDS-TMC
     - NeTEx (coming soon)
 
 community:
   openSourcePercentage: 100
+  contributors: 0
+  submissions: 0
 
 lastUpdated: "2025-10-22"
 ```
+
+**Auto-calculated from tool front matter:**
+- `tools.total` - Counts all tool .md files
+- `tools.active` - Counts tools with `status: active`
+- `tools.maintenance` - Counts tools with `status: maintenance`
+- `tools.deprecated` - Counts tools with `status: deprecated`
+- `categories.total` - Total number of categories (9)
+- `categories.withTools` - Categories with at least one tool
+- `categories.validators`, `categories.converters`, etc. - Tool count per category
 
 ---
 
@@ -100,61 +102,75 @@ lastUpdated: "2025-10-22"
 
 ### When Adding a Tool
 
-1. Open `docs/data/stats.yaml`
-2. Update the relevant counters:
+**🎉 It's now automatic! Just create the tool file with proper front matter:**
+
+1. Create tool markdown file in `docs/tools/`
+2. Add complete front matter with:
    ```yaml
-   tools:
-     total: 4  # increment
-     active: 4  # increment if active
-   
+   ---
+   title: Your Tool Name
+   description: Tool description
    categories:
-     validators: 1  # increment category
-     withTools: 4  # increment if new category
+     - validators  # or converters, development, etc.
+   status: active  # or maintenance, deprecated
+   standards:
+     - DATEX II
+     - mobilityDCAT-AP
+   # ... other metadata
+   ---
    ```
-3. Update `lastUpdated` date
-4. Save file
-5. Statistics update automatically!
+3. Save the file
+4. **Statistics update automatically!** ✨
 
-### Example: Adding a Validator
+**No need to manually update `stats.yaml` for tool/category counts!**
 
-```yaml
-# Before
-tools:
-  total: 3
-  active: 3
+### When to Update stats.yaml
 
-categories:
-  validators: 0
-  withTools: 3
+**Only update `stats.yaml` when:**
 
-# After
-tools:
-  total: 4
-  active: 4
+1. **Adding a new standard** (that tools now support):
+   ```yaml
+   standards:
+     total: 8  # increment
+     list:
+       - DATEX II
+       - mobilityDCAT-AP
+       - New Standard Name  # add here
+   ```
 
-categories:
-  validators: 1
-  withTools: 4
+2. **Updating community metrics**:
+   ```yaml
+   community:
+     openSourcePercentage: 95  # if changed
+     contributors: 5  # if changed
+     submissions: 10  # if changed
+   ```
 
-lastUpdated: "2025-10-23"  # today's date
-```
+3. **Updating lastUpdated** (optional - can be automated):
+   ```yaml
+   lastUpdated: "2025-10-23"
+   ```
 
 ---
 
 ## 🔄 Auto-Reload During Development
 
-The data loader watches `stats.yaml` for changes:
+The data loader watches both tool files and `stats.yaml` for changes:
 
 ```typescript
 export default {
-  watch: ['../data/stats.yaml'],  // ← Auto-reload!
+  watch: ['../data/stats.yaml', '../tools/*.md'],  // ← Auto-reload!
   load() {
-    // Load and parse YAML
+    // Load manual data from stats.yaml
+    // Dynamically calculate tool/category stats from tools
   }
 }
 ```
 
-**When developing**: Edit `stats.yaml` and the page auto-refreshes! No rebuild needed.
+**When developing**:
+- Edit any tool file → stats auto-update! ✨
+- Edit `stats.yaml` → manual data updates!
+- No rebuild needed - page auto-refreshes!
 
 ---
 
@@ -242,19 +258,21 @@ npm run docs:dev
 
 ## ✅ Benefits
 
-### Before (Static)
+### Before (Manual Counting)
 - ❌ Stats hardcoded in multiple files
 - ❌ Easy to forget updating all locations
 - ❌ Inconsistencies between pages
-- ❌ Manual HTML/markdown editing
+- ❌ Manual counting of tools and categories
+- ❌ Two places to update when adding tools (tool file + stats.yaml)
 
-### After (Dynamic)
-- ✅ Single source of truth
-- ✅ Update once, changes everywhere
-- ✅ Always consistent
-- ✅ Easy YAML editing
-- ✅ Auto-reload in development
-- ✅ Type-safe with TypeScript
+### After (Automatic Calculation)
+- ✅ **Single source of truth**: Tool front matter drives everything
+- ✅ **Zero maintenance**: Tool/category counts auto-calculated
+- ✅ **Always accurate**: Impossible for stats to be out of sync
+- ✅ **Add tool = done**: No need to touch stats.yaml for counts
+- ✅ **Easy YAML editing**: Only update standards & community
+- ✅ **Auto-reload in development**: Instant feedback
+- ✅ **Type-safe with TypeScript**: Compile-time safety
 
 ---
 

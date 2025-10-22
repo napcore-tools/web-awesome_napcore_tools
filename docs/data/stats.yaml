@@ -1,25 +1,12 @@
 # NAPCORE Tools Catalog Statistics
-# Update these numbers as tools are added to the catalog
+#
+# NOTE: Tool counts and category counts are now calculated AUTOMATICALLY
+# from tool front matter metadata. You do NOT need to update those sections.
+#
+# Only update the sections below:
 
-tools:
-  total: 4
-  active: 4
-  maintenance: 0
-  deprecated: 0
-
-categories:
-  total: 9
-  withTools: 6
-  validators: 1
-  converters: 2
-  versionTools: 0
-  sdks: 0
-  reference: 0
-  development: 3
-  dataQuality: 1
-  testing: 0
-  metadata: 1
-
+# Standards supported across all tools
+# Update this list when tools support new standards
 standards:
   total: 7
   list:
