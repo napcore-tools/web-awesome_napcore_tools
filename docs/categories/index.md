@@ -5,7 +5,7 @@ Browse tools by category to find exactly what you need for your mobility data pr
 <div class="category-grid">
 
 <a href="/categories/validators" class="category-card">
-  <span class="category-badge">0</span>
+  <span class="category-badge">1</span>
   <span class="category-icon">✓</span>
   <h3 class="category-title">Validators</h3>
   <p class="category-description">Schema validation and business rule checking tools</p>
@@ -40,14 +40,14 @@ Browse tools by category to find exactly what you need for your mobility data pr
 </a>
 
 <a href="/categories/development" class="category-card">
-  <span class="category-badge">2</span>
+  <span class="category-badge">3</span>
   <span class="category-icon">🛠</span>
   <h3 class="category-title">Development Tools</h3>
   <p class="category-description">Browsers, editors, and generators</p>
 </a>
 
 <a href="/categories/data-quality" class="category-card">
-  <span class="category-badge">0</span>
+  <span class="category-badge">1</span>
   <span class="category-icon">📊</span>
   <h3 class="category-title">Data Quality Tools</h3>
   <p class="category-description">Validation, enrichment, and cleaning</p>
@@ -74,14 +74,16 @@ Browse tools by category to find exactly what you need for your mobility data pr
 Categories help you quickly find the right type of tool for your specific need. Each category contains tools that serve similar purposes, though some tools may span multiple categories.
 
 ::: info Multi-Category Tools
-Some tools appear in multiple categories because they serve different purposes. For example, the DATEX II Browser is both a Development Tool and a Reference Implementation.
+Some tools appear in multiple categories because they serve different purposes. For example, the ALERT-C Locations Tester is both a Validator and a Data Quality Tool.
 :::
 
 ## Most Popular Categories
 
-1. **Development Tools** - Essential utilities for day-to-day work
-2. **Converters & Transformers** - Format conversion and profiling
-3. **Metadata Tools** - Cataloging and discovery
+1. **Development Tools** - Essential utilities for day-to-day work (3 tools)
+2. **Converters & Transformers** - Format conversion and profiling (2 tools)
+3. **Validators** - Data and schema validation (1 tool)
+4. **Metadata Tools** - Cataloging and discovery (1 tool)
+5. **Data Quality Tools** - Quality assurance (1 tool)
 
 ## Need Help Choosing?
 
@@ -92,6 +94,8 @@ Not sure which category to explore? Here are some common scenarios:
 - **"I'm looking for code libraries"** → [SDKs & Libraries](/categories/sdks)
 - **"I need example implementations"** → [Reference Implementations](/categories/reference)
 - **"I want to create metadata"** → [Metadata Tools](/categories/metadata)
+- **"I need to check data quality"** → [Data Quality Tools](/categories/data-quality)
+- **"I'm developing and need tools"** → [Development Tools](/categories/development)
 
 ## Submit a Tool
 

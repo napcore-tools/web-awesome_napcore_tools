@@ -81,6 +81,31 @@ Browse all available tools in the NAPCORE catalog. Use the sidebar to filter by 
   </div>
 </div>
 
+<div class="tool-card">
+  <div class="tool-card-header">
+    <div class="tool-status active">🟢 Active</div>
+    <h3 class="tool-card-title">
+      <a href="/tools/alert-c-tester">ALERT-C Locations Tester</a>
+    </h3>
+    <p class="tool-card-subtitle">Validator • Data Quality</p>
+  </div>
+  <div class="tool-card-body">
+    <p class="tool-card-description">
+      Validation tool for ALERT-C location references used in RDS-TMC and DATEX II traffic information. Ensures location code quality.
+    </p>
+    <div class="tool-tags">
+      <span class="tool-tag">ALERT-C</span>
+      <span class="tool-tag">RDS-TMC</span>
+      <span class="tool-tag">DATEX II</span>
+      <span class="tool-tag">Python</span>
+    </div>
+  </div>
+  <div class="tool-links">
+    <a href="https://github.com/tamtamresearch/alert-c-locations-tester" target="_blank" class="tool-link">Source Code</a>
+    <a href="/tools/alert-c-tester" class="tool-link">Details</a>
+  </div>
+</div>
+
 </div>
 
 ## Submit Your Tool
@@ -96,6 +121,6 @@ Have a tool that should be listed here? We welcome contributions from the commun
 ## Recently Added
 
 ::: tip Latest Addition
-**mobilityDCAT-AP Generator** - Added October 2025  
-Form-based metadata generation tool for mobilityDCAT-AP compliance
+**ALERT-C Locations Tester** - Added October 2025  
+Validation tool for ALERT-C location references in traffic information
 :::

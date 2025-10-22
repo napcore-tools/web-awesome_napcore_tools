@@ -2,31 +2,33 @@
 # Update these numbers as tools are added to the catalog
 
 tools:
-  total: 3
-  active: 3
+  total: 4
+  active: 4
   maintenance: 0
   deprecated: 0
 
 categories:
   total: 9
-  withTools: 3
-  validators: 0
+  withTools: 6
+  validators: 1
   converters: 2
   versionTools: 0
   sdks: 0
   reference: 0
-  development: 2
-  dataQuality: 0
+  development: 3
+  dataQuality: 1
   testing: 0
   metadata: 1
 
 standards:
-  total: 5
+  total: 7
   list:
     - DATEX II
     - mobilityDCAT-AP
     - DCAT-AP
     - RDF
+    - ISO/DIS 14819 Part 3
+    - RDS-TMC
     - NeTEx (coming soon)
 
 community:
