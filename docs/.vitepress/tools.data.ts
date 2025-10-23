@@ -2,6 +2,7 @@
 import fs from 'fs'
 import path from 'path'
 import { parse as parseYaml } from 'yaml'
+import { validateToolWithCache } from './toolValidation'
 
 export interface Tool {
   slug: string
@@ -53,13 +54,16 @@ export default {
     const files = fs.readdirSync(toolsDir)
       .filter(file => file.endsWith('.md') && file !== 'index.md')
 
-    for (const file of files) {
+     for (const file of files) {
       const filePath = path.join(toolsDir, file)
       const content = fs.readFileSync(filePath, 'utf-8')
       const { data } = parseFrontMatter(content)
 
-      // Only include files with proper front matter
-      if (data.title && data.categories) {
+      // Validate tool front matter (with mtime-based caching to prevent duplicate messages)
+      const validationResult = validateToolWithCache(data, file, filePath)
+
+      // Only include files with valid front matter (title and categories required)
+      if (validationResult.valid && data.title && data.categories) {
         const slug = file.replace('.md', '')
         tools.push({
           slug,
@@ -79,6 +83,9 @@ export default {
           firstRelease: data.firstRelease,
           lastUpdated: data.lastUpdated
         })
+      } else if (!validationResult.valid) {
+        // Tool failed validation - skip it (error already logged)
+        console.error(`   → Skipping tool "${file}" due to validation errors`)
       }
     }
 
