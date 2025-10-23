@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { getToolsSidebar, getCategoriesSidebar } from './sidebar'
 
 export default defineConfig({
   title: 'NAPCORE Store',
@@ -24,50 +25,8 @@ export default defineConfig({
     ],
 
     sidebar: {
-      '/tools/': [
-        {
-          text: 'By Category',
-          items: [
-            { text: 'Validators', link: '/categories/validators' },
-            { text: 'Converters & Transformers', link: '/categories/converters' },
-            { text: 'Version Upgrade Tools', link: '/categories/version-tools' },
-            { text: 'SDKs & Libraries', link: '/categories/sdks' },
-            { text: 'Reference Implementations', link: '/categories/reference' },
-            { text: 'Development Tools', link: '/categories/development' },
-            { text: 'Data Quality Tools', link: '/categories/data-quality' },
-            { text: 'Testing Utilities', link: '/categories/testing' },
-            { text: 'Metadata Tools', link: '/categories/metadata' },
-            { text: 'Route planners', link: '/categories/route-planners' }
-          ]
-        },
-        {
-          text: 'Featured Tools',
-          items: [
-            { text: 'DATEX II Browser', link: '/tools/datex-browser' },
-            { text: 'DATEX II Schema Tool', link: '/tools/datex-schema-tool' },
-            { text: 'mobilityDCAT-AP Generator', link: '/tools/mobilitydcat-generator' },
-            { text: 'ALERT-C Locations Tester', link: '/tools/alert-c-tester' }
-          ]
-        }
-      ],
-      '/categories/': [
-        {
-          text: 'Tool Categories',
-          items: [
-            { text: 'Overview', link: '/categories/' },
-            { text: 'Validators', link: '/categories/validators' },
-            { text: 'Converters & Transformers', link: '/categories/converters' },
-            { text: 'Version Upgrade Tools', link: '/categories/version-tools' },
-            { text: 'SDKs & Libraries', link: '/categories/sdks' },
-            { text: 'Reference Implementations', link: '/categories/reference' },
-            { text: 'Development Tools', link: '/categories/development' },
-            { text: 'Data Quality Tools', link: '/categories/data-quality' },
-            { text: 'Testing Utilities', link: '/categories/testing' },
-            { text: 'Metadata Tools', link: '/categories/metadata' },
-            { text: 'Route planners', link: '/categories/route-planners' }
-          ]
-        }
-      ]
+      '/tools/': getToolsSidebar(),
+      '/categories/': getCategoriesSidebar()
     },
 
     socialLinks: [

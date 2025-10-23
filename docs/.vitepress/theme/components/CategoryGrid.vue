@@ -17,70 +17,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { data as tools } from '../../tools.data'
-
-// Category definitions
-const categoryDefinitions = [
-  {
-    slug: 'validators',
-    title: 'Validators',
-    icon: '✓',
-    description: 'Schema validation and business rule checking tools'
-  },
-  {
-    slug: 'converters',
-    title: 'Converters & Transformers',
-    icon: '⇄',
-    description: 'Format conversion and data transformation utilities'
-  },
-  {
-    slug: 'version-tools',
-    title: 'Version Upgrade Tools',
-    icon: '⬆',
-    description: 'Migration and compatibility utilities'
-  },
-  {
-    slug: 'sdks',
-    title: 'SDKs & Libraries',
-    icon: '📦',
-    description: 'Programming language bindings and libraries'
-  },
-  {
-    slug: 'reference',
-    title: 'Reference Implementations',
-    icon: '🎯',
-    description: 'Working examples and demo applications'
-  },
-  {
-    slug: 'development',
-    title: 'Development Tools',
-    icon: '🛠',
-    description: 'Browsers, editors, and generators'
-  },
-  {
-    slug: 'data-quality',
-    title: 'Data Quality Tools',
-    icon: '📊',
-    description: 'Validation, enrichment, and cleaning'
-  },
-  {
-    slug: 'testing',
-    title: 'Testing Utilities',
-    icon: '🧪',
-    description: 'Test data generation and validation'
-  },
-  {
-    slug: 'metadata',
-    title: 'Metadata Tools',
-    icon: '🏷',
-    description: 'Catalog generation and discovery'
-  },
-  {
-    slug: 'route-planners',
-    title: 'Route Planners',
-    icon: '🗺️',
-    description: 'Intermodal travel information system'
-  }
-]
+import { CATEGORIES } from '../../categories'
 
 interface Props {
   sortByCount?: boolean
@@ -92,7 +29,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 // Calculate tool counts per category
 const categories = computed(() => {
-  const categoriesWithCounts = categoryDefinitions.map(cat => {
+  const categoriesWithCounts = CATEGORIES.map(cat => {
     const count = tools.filter(tool =>
       tool.categories.includes(cat.slug)
     ).length

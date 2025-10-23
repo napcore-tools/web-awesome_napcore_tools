@@ -5,6 +5,8 @@ import { parse } from 'yaml'
 
 // Import tools data loader to get tool metadata
 import toolsDataLoader from './tools.data'
+// Import centralized category definitions and utilities
+import { getCategorySlugs } from './categories'
 
 export default {
   // Watch both stats.yaml (for manual data) and tool files (for dynamic calculations)
@@ -26,57 +28,32 @@ export default {
       deprecated: tools.filter(t => t.status === 'deprecated').length
     }
 
-    // Define all possible categories (these are our fixed category slugs)
-    const categoryDefinitions = [
-      'validators',
-      'converters',
-      'versionTools',
-      'sdks',
-      'reference',
-      'development',
-      'dataQuality',
-      'testing',
-      'metadata',
-      `route-planner`
-    ]
-
-    // Map of category slugs used in tool files to yaml property names
-    const categorySlugMapping = {
-      'validators': 'validators',
-      'converters': 'converters',
-      'version-tools': 'versionTools',
-      'sdks': 'sdks',
-      'reference': 'reference',
-      'development': 'development',
-      'data-quality': 'dataQuality',
-      'testing': 'testing',
-      'metadata': 'metadata',
-      'route-planners': 'route-planner'
-    }
+    // Get category slugs from centralized source
+    const categorySlugs = getCategorySlugs()
 
     // Calculate category statistics dynamically
+    // Using slug as the key (e.g., 'data-quality', 'validators')
     const categoryStats: any = {
-      total: categoryDefinitions.length,
+      total: categorySlugs.length,
       withTools: 0
     }
 
     // Initialize all category counts to 0
-    categoryDefinitions.forEach(cat => {
-      categoryStats[cat] = 0
+    categorySlugs.forEach(slug => {
+      categoryStats[slug] = 0
     })
 
     // Count tools per category
     tools.forEach(tool => {
       tool.categories.forEach((catSlug: string) => {
-        const yamlProperty = categorySlugMapping[catSlug]
-        if (yamlProperty && categoryStats.hasOwnProperty(yamlProperty)) {
-          categoryStats[yamlProperty]++
+        if (categoryStats.hasOwnProperty(catSlug)) {
+          categoryStats[catSlug]++
         }
       })
     })
 
     // Count how many categories have at least one tool
-    categoryStats.withTools = categoryDefinitions.filter(cat => categoryStats[cat] > 0).length
+    categoryStats.withTools = categorySlugs.filter(slug => categoryStats[slug] > 0).length
 
     // Combine manual and dynamic data
     return {
