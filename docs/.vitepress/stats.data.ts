@@ -33,7 +33,7 @@ export default {
 
     // Calculate category statistics dynamically
     // Using slug as the key (e.g., 'data-quality', 'validators')
-    const categoryStats: any = {
+    const categoryStats: Record<string, number> = {
       total: categorySlugs.length,
       withTools: 0
     }
@@ -46,7 +46,7 @@ export default {
     // Count tools per category
     tools.forEach(tool => {
       tool.categories.forEach((catSlug: string) => {
-        if (categoryStats.hasOwnProperty(catSlug)) {
+        if (Object.hasOwn(categoryStats, catSlug)) {
           categoryStats[catSlug]++
         }
       })

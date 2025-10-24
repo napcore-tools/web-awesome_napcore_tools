@@ -15,7 +15,7 @@ function getCategoryCounts(): Record<string, number> {
   // Count tools in each category
   tools.forEach(tool => {
     tool.categories.forEach((categorySlug: string) => {
-      if (counts.hasOwnProperty(categorySlug)) {
+      if (Object.hasOwn(counts, categorySlug)) {
         counts[categorySlug]++
       }
     })

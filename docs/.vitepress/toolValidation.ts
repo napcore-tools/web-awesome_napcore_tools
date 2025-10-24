@@ -7,15 +7,19 @@
 
 import fs from 'fs'
 import { CATEGORIES } from './categories'
+import type { Tool } from './tools.data'
 
 // Validation cache - maps filename to last modification time (mtime)
 // Stored in Node.js global object to ensure single cache across all module instances
 // (VitePress may load this module multiple times in separate contexts)
-const globalAny = global as any
-if (!globalAny.__toolValidationCache) {
-  globalAny.__toolValidationCache = new Map<string, number>()
+interface GlobalWithCache {
+  __toolValidationCache?: Map<string, number>
 }
-const validationCache: Map<string, number> = globalAny.__toolValidationCache
+const globalWithCache = global as unknown as GlobalWithCache
+if (!globalWithCache.__toolValidationCache) {
+  globalWithCache.__toolValidationCache = new Map<string, number>()
+}
+const validationCache: Map<string, number> = globalWithCache.__toolValidationCache
 
 export interface ValidationError {
   field: string
@@ -35,7 +39,7 @@ const VALID_STATUSES = ['active', 'maintenance', 'deprecated'] as const
 /**
  * Validate tool categories against defined CATEGORIES
  */
-function validateCategories(tool: any, filename: string): ValidationError[] {
+function validateCategories(tool: Partial<Tool>, _filename: string): ValidationError[] {
   const errors: ValidationError[] = []
   const validCategorySlugs = new Set(CATEGORIES.map(c => c.slug))
 
@@ -102,7 +106,7 @@ function validateCategories(tool: any, filename: string): ValidationError[] {
 /**
  * Validate required fields are present and non-empty
  */
-function validateRequiredFields(tool: any, filename: string): ValidationError[] {
+function validateRequiredFields(tool: Partial<Tool>, _filename: string): ValidationError[] {
   const errors: ValidationError[] = []
 
   // Check title
@@ -129,7 +133,7 @@ function validateRequiredFields(tool: any, filename: string): ValidationError[] 
 /**
  * Validate status field
  */
-function validateStatus(tool: any, filename: string): ValidationError[] {
+function validateStatus(tool: Partial<Tool>, _filename: string): ValidationError[] {
   const errors: ValidationError[] = []
 
   // Status is optional, but if present should be valid
@@ -155,7 +159,7 @@ function validateStatus(tool: any, filename: string): ValidationError[] {
 /**
  * Main validation function - aggregates all validations
  */
-export function validateTool(tool: any, filename: string): ValidationResult {
+export function validateTool(tool: Partial<Tool>, filename: string): ValidationResult {
   const allErrors: ValidationError[] = []
 
   // Run all validations
@@ -239,7 +243,7 @@ export function handleValidationResult(
  * @returns ValidationResult
  */
 export function validateToolWithCache(
-  tool: any,
+  tool: Partial<Tool>,
   filename: string,
   filepath: string
 ): ValidationResult {

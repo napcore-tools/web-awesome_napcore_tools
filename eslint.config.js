@@ -69,7 +69,11 @@ export default [
             // Apply recommended TypeScript rules
             ...tseslint.configs.recommended.rules,
             // Use TypeScript version of no-unused-vars (more accurate for TS)
-            '@typescript-eslint/no-unused-vars': 'warn',
+            // Allow variables/args starting with underscore to be unused
+            '@typescript-eslint/no-unused-vars': ['warn', {
+                argsIgnorePattern: '^_',
+                varsIgnorePattern: '^_'
+            }],
             // Disable base rule to avoid conflicts with TypeScript version
             'no-unused-vars': 'off',
         },

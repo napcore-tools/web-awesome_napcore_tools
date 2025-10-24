@@ -24,7 +24,7 @@ export interface Tool {
 }
 
 // Simple front matter parser
-function parseFrontMatter(content: string): { data: any; content: string } {
+function parseFrontMatter(content: string): { data: Partial<Tool>; content: string } {
   const frontMatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/
   const match = content.match(frontMatterRegex)
 

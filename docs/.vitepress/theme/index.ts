@@ -16,7 +16,7 @@ export default {
       // Additional custom layout slots can go here
     })
   },
-  enhanceApp({ app, router, siteData }) {
+  enhanceApp({ app, _router, _siteData }) {
     // Register global components
     app.component('StatsBar', StatsBar)
     app.component('ToolStats', ToolStats)
