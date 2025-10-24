@@ -1,5 +1,5 @@
 ---
-title: DATEX II (page v1)
+title: DATEX II (example 1)
 description: Platform Independent data model for the exchange of traffic and travel information (TTI) for Intelligent Transport Systems (ITS).
 categories:
   - references
@@ -12,12 +12,13 @@ standards:
   - DATEX II
   - CEN 16157
 tags:
-  - Traffic Management
   - Data Model
+  - Documentation
   - ITS
   - Road Traffic Data
   - Data Exchange
   - Mobility
+lastUpdated: 2025-10-22
 ---
 
 # DATEX II

@@ -1,5 +1,5 @@
 ---
-title: DATEX II Documentation Portal (page v2)
+title: DATEX II Documentation Portal (example 2)
 description: Official documentation for the European standard for traffic and travel information exchange
 categories:
   - references
@@ -12,12 +12,12 @@ standards:
   - DATEX II
   - CEN 16157
 tags:
-  - Traffic Data
+  - Data Model
+  - Documentation
   - ITS
+  - Road Traffic Data
   - Data Exchange
-  - Road Transport
-  - Traffic Management
-  - XML
+  - Mobility
 lastUpdated: 2025-10-22
 ---
 

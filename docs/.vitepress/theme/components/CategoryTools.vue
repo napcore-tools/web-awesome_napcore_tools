@@ -88,6 +88,7 @@ const categoryTools = computed(() => {
 
 // Generate a subtitle based on tool characteristics
 function getSubtitle(tool: Tool): string {
+
   // Check for specific patterns to determine subtitle
   if (tool.tags.includes('Browser') || tool.tags.includes('Reference')) {
     return 'Reference Documentation Tool'
@@ -103,6 +104,9 @@ function getSubtitle(tool: Tool): string {
   }
   if (["Journey Planner", "Router", "Intermodal"].some(r => tool.tags.includes(r))) {
     return 'Journey Planner'
+  }
+  if (["Data Model", "Documentation"].some(r => tool.tags.includes(r))) {
+    return 'Documentation'
   }
 
   // Default: use first tag or category

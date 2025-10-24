@@ -66,6 +66,11 @@ features:
     title: Route planners
     details: Route planners are digital tools that help you find the best way to get from one location to another
     link: /categories/route-planners
+
+  - icon: 📚
+    title: References
+    details: Technical documentation, specifications, and implementation guides
+    link: /categories/references
 ---
 
 ---
