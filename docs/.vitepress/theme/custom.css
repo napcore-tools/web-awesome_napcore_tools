@@ -394,3 +394,21 @@
   background: var(--vp-c-green-soft);
   color: var(--napcore-green);
 }
+
+/* Sidebar badges for category counts */
+.sidebar-badge {
+  display: inline-block;
+  padding: 0 0.25rem;
+  margin-left: 0.25rem;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  vertical-align: middle;
+}
+
+.dark .sidebar-badge {
+  background: rgba(77, 159, 255, 0.2);
+  color: var(--vp-c-brand-1);
+}

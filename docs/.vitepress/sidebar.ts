@@ -29,7 +29,7 @@ function getCategoryItemsWithCounts() {
   const counts = getCategoryCounts()
 
   return CATEGORIES.map(cat => ({
-    text: `${cat.title} (${counts[cat.slug]})`,
+    text: `${cat.title} <span class="sidebar-badge">${counts[cat.slug]}</span>`,
     link: `/categories/${cat.slug}`
   }))
 }
