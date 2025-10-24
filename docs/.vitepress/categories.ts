@@ -53,7 +53,7 @@ export const CATEGORIES: Category[] = [
     description: 'Programming language bindings and libraries'
   },
   {
-    slug: 'reference',
+    slug: 'reference-implementations',
     title: 'Reference Implementations',
     icon: '🎯',
     description: 'Working examples and demo applications'

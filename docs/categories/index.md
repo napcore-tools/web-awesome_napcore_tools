@@ -23,7 +23,7 @@ Not sure which category to explore? Here are some common scenarios:
 - **"I need to validate my data"** → [Validators](/categories/validators)
 - **"I want to convert between formats"** → [Converters & Transformers](/categories/converters)
 - **"I'm looking for code libraries"** → [SDKs & Libraries](/categories/sdks)
-- **"I need example implementations"** → [Reference Implementations](/categories/reference)
+- **"I need example implementations"** → [Reference Implementations](/categories/reference-implementations)
 - **"I want to create metadata"** → [Metadata Tools](/categories/metadata)
 - **"I need to check data quality"** → [Data Quality Tools](/categories/data-quality)
 - **"I'm developing and need tools"** → [Development Tools](/categories/development)

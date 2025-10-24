@@ -38,7 +38,7 @@ Some tools can generate boilerplate code or schemas based on your selections, sa
 ## Related Categories
 
 - [Converters & Transformers](/categories/converters) - Often overlap with development tools
-- [Reference Implementations](/categories/reference) - Show how to use development tools in practice
+- [Reference Implementations](/categories/reference-implementations) - Show how to use development tools in practice
 - [SDKs & Libraries](/categories/sdks) - Programming interfaces that complement development tools
 - [Validators](/categories/validators) - Essential for development workflows
 - [Data Quality Tools](/categories/data-quality) - Quality assurance during development

@@ -77,7 +77,7 @@ We're looking for testing utilities that provide:
 
 - [Validators](/categories/validators) - Used in testing workflows
 - [Data Quality Tools](/categories/data-quality) - Quality testing
-- [Reference Implementations](/categories/reference) - Test against references
+- [Reference Implementations](/categories/reference-implementations) - Test against references
 
 ---
 

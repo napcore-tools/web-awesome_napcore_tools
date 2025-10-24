@@ -62,7 +62,7 @@ We're looking for libraries in:
 
 ## Related Categories
 
-- [Reference Implementations](/categories/reference) - Example applications using SDKs
+- [Reference Implementations](/categories/reference-implementations) - Example applications using SDKs
 - [Development Tools](/categories/development) - Tools that complement SDKs
 - [Converters](/categories/converters) - Often use libraries internally
 

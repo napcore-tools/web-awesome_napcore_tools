@@ -40,7 +40,7 @@ features:
   - icon: 🎯
     title: Reference Implementations
     details: Working examples and demo applications showing best practices
-    link: /categories/reference
+    link: /categories/reference-implementations
   
   - icon: 🛠
     title: Development Tools
