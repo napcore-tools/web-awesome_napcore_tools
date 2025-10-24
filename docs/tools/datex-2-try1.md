@@ -29,13 +29,7 @@ lastUpdated: 2025-10-22
 
 ## Quick Info
 
-| | |
-|---|---|
-| **Status** | 🟢 Actively maintained |
-| **Type** | Data Exchange Standard & Model |
-| **Documentation** | [DATEX II Docs](https://docs.datex2.eu/) |
-| **Latest Version** | 3.6 (as of documentation) |
-| **Developer** | DATEX II Project |
+<QuickInfo />
 
 ## Overview
 

@@ -32,13 +32,7 @@ lastUpdated: 2025-10-22
 
 ## Quick Info
 
-| | |
-|---|---|
-| **Status** | 🟢 Actively maintained |
-| **License** | MIT License |
-| **Live Demo** | [transitous.org](https://transitous.org/) |
-| **Source Code** | [GitHub Repository](https://github.com/motis-project/motis) |
-| **Developer** | MOTIS Project |
+<QuickInfo />
 
 ## Overview
 

@@ -32,13 +32,7 @@ lastUpdated: 2025-10-22
 
 ## Quick Info
 
-| | |
-|---|---|
-| **Status** | 🟢 Active (last updated October 2025) |
-| **License** | MIT |
-| **Source Code** | [GitHub Repository](https://github.com/tamtamresearch/alert-c-locations-tester) |
-| **Technology** | Python, SQLite, CLI |
-| **Developer** | TamTam Research s.r.o. |
+<QuickInfo />
 
 ## Overview
 

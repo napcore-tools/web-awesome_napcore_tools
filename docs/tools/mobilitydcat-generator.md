@@ -31,14 +31,7 @@ lastUpdated: 2025-10-22
 
 ## Quick Info
 
-| | |
-|---|---|
-| **Status** | 🟢 Active |
-| **License** | Apache-2.0 |
-| **Live Demo** | [mobilitydcat-ap.github.io/mobilitydcatap-ui](https://mobilitydcat-ap.github.io/mobilitydcatap-ui/) |
-| **Source Code** | [GitHub Repository](https://github.com/mobilityDCAT-AP/mobilitydcatap-ui) |
-| **Developer** | Cefriel (using rapid-triples framework) |
-| **Maintained by** | NAPCORE Metadata Working Group |
+<QuickInfo />
 
 ## Overview
 

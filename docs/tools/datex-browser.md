@@ -28,13 +28,7 @@ lastUpdated: 2025-10-22
 
 ## Quick Info
 
-| | |
-|---|---|
-| **Status** | 🟢 Active |
-| **License** | MIT License |
-| **Live Demo** | [browser.datex2.eu](https://browser.datex2.eu) |
-| **Source Code** | [GitLab Repository](https://gitlab.com/tamtamresearch-public/datex2/browser) |
-| **Developer** | TamTam Research s.r.o. |
+<QuickInfo />
 
 ## Overview
 

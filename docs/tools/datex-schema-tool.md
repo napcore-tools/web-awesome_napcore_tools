@@ -29,13 +29,7 @@ lastUpdated: 2025-10-22
 
 ## Quick Info
 
-| | |
-|---|---|
-| **Status** | 🟢 Active |
-| **Live Demo** | [webtool.datex2.eu](https://webtool.datex2.eu) |
-| **Developer** | DATEX II community (datex2.eu) |
-| **Main Contributor** | Jonas Jäderberg ([@jonas-jaderberg](https://github.com/jonas-jaderberg)) |
-| **Source Code** | Not publicly available (possible future open source release) |
+<QuickInfo />
 
 ## Overview
 

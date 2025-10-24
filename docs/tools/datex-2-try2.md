@@ -29,14 +29,7 @@ lastUpdated: 2025-10-22
 
 ## Quick Info
 
-| | |
-|---|---|
-| **Status** | 🟢 Actively maintained |
-| **License** | CEN Standard (European Standardization) |
-| **Documentation** | [docs.datex2.eu](https://docs.datex2.eu/) |
-| **Main Website** | [datex2.eu](https://datex2.eu/) |
-| **Standard Body** | CEN Technical Committee 278 |
-| **Current Version** | 3.6 (released 2025) |
+<QuickInfo />
 
 ## Overview
 
