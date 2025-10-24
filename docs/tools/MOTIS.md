@@ -26,8 +26,6 @@ lastUpdated: 2025-10-22
 
 # MOTIS
 
-<div class="tool-status active" style="display: inline-block; margin-bottom: 1rem;">🟢 Active</div>
-
 > Scalable high-performance intermodal travel information system / journey planner with "batteries included" - geocoding, map tiles, departure boards, and more.
 
 ## Quick Info

@@ -23,8 +23,6 @@ lastUpdated: 2025-10-22
 
 # DATEX II
 
-<div class="tool-status active" style="display: inline-block; margin-bottom: 1rem;">🟢 Active</div>
-
 > DATEX II is a robust, platform-independent data model and exchange standard used primarily in Europe for the real-time sharing of traffic and travel information (TTI) between traffic management centers, service providers, and end-users.
 
 ## Quick Info

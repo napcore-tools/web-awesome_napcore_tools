@@ -23,8 +23,6 @@ lastUpdated: 2025-10-22
 
 # DATEX II Documentation Portal
 
-<div class="tool-status active" style="display: inline-block; margin-bottom: 1rem;">🟢 Active</div>
-
 > Official documentation portal for DATEX II - the European CEN standard for the exchange of traffic information and traffic data across road transport networks.
 
 ## Quick Info

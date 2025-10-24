@@ -22,8 +22,6 @@ lastUpdated: 2025-10-22
 
 # DATEX II Browser
 
-<div class="tool-status active" style="display: inline-block; margin-bottom: 1rem;">🟢 Active</div>
-
 > Wikipedia-style browser for exploring the DATEX II data model. Essential daily reference for DATEX II implementers.
 
 ## Quick Info

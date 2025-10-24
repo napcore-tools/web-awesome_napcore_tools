@@ -26,8 +26,6 @@ lastUpdated: 2025-10-22
 
 # ALERT-C Locations Tester
 
-<div class="tool-status active" style="display: inline-block; margin-bottom: 1rem;">🟢 Active</div>
-
 > A validation tool for ALERT-C location references used in RDS-TMC services and DATEX II traffic information.
 
 ## Quick Info

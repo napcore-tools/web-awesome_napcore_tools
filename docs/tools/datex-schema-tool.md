@@ -23,8 +23,6 @@ lastUpdated: 2025-10-22
 
 # DATEX II Schema Generation Tool (Webtool)
 
-<div class="tool-status active" style="display: inline-block; margin-bottom: 1rem;">🟢 Active</div>
-
 > Web-based wizard for creating custom DATEX II profiles. Generate XML Schema, JSON Schema, or ASN.1 schemas by selecting only the elements you need.
 
 ## Quick Info
