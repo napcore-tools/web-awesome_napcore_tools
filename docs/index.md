@@ -10,8 +10,8 @@ hero:
     alt: NAPCORE Logo
   actions:
     - theme: brand
-      text: Browse All Tools
-      link: /tools/
+      text: Browse Tools
+      link: /categories/
     - theme: alt
       text: Submit a Tool
       link: /contribute

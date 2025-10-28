@@ -18,17 +18,17 @@ export default defineConfig({
     
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Browse Tools', link: '/tools/' },
-      { text: 'Categories', link: '/categories/' },
+//      { text: 'Browse Tools', link: '/tools/' },
+      { text: 'Tool Categories', link: '/categories/' },
       { text: 'Contribute', link: '/contribute' },
       { text: 'Status (WIP)', link: '/about' },
     ],
 
     sidebar: {
-      '/tools/': getToolsSidebar(),
-      '/categories/': getCategoriesSidebar()
+      // '/tools/': getToolsSidebar(),
+      '/categories/': {base: '/', items: getCategoriesSidebar()},
+      '/tools/': {base: '/', items: getCategoriesSidebar()},
     },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/napcore' }
     ],

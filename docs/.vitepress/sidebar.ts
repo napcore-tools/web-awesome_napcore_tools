@@ -57,11 +57,19 @@ export function getToolsSidebar() {
 export function getCategoriesSidebar() {
   return [
     {
-      text: 'Tool Categories',
+      text: 'Overview',
+      collapsed: false,
       items: [
-        { text: 'Overview', link: '/categories/' },
-        ...getCategoryItemsWithCounts()
+        { text: 'Tool Categories', link: 'categories/' },
+        { text: 'Featured Tools', link: 'categories/featured' },
       ]
-    }
+    },
+    {
+      text: 'By Category',
+      collapsed: false,
+      items: [
+          ...getCategoryItemsWithCounts()
+      ]
+    },
   ]
 }
