@@ -16,6 +16,10 @@ Some tools appear in multiple categories because they serve different purposes. 
 
 The categories above are automatically sorted by tool count (most popular first) and show live counts. As new tools are added, the order and counts update automatically.
 
+## Tool Statistics
+
+<ToolStats />
+
 ## Need Help Choosing?
 
 Not sure which category to explore? Here are some common scenarios:
@@ -30,6 +34,6 @@ Not sure which category to explore? Here are some common scenarios:
 
 ## Submit a Tool
 
-Have a tool that should be listed in one of these categories?
+Have a tool that should be listed here? We welcome contributions from the community!
 
 [Learn How to Contribute →](/contribute)
