@@ -237,8 +237,7 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--napcore-green);
-  color: white;
+  background: var(--vp-c-brand-soft);
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
   font-size: 0.8rem;
