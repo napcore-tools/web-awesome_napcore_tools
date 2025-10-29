@@ -8,19 +8,19 @@
       Active standards: {{ activeStandards.length > 0 ? activeStandards.join(', ') : 'none' }}<br>
       Selected tools (prop): {{ $props.selectedTools && $props.selectedTools.length > 0 ? $props.selectedTools.join(', ') : 'none' }}<br>
       Total tools loaded: {{ tools.length }}<br>
-      Filtered tools: {{ categoryTools.length }}<br>
+      Filtered tools: {{ filteredTools.length }}<br>
       All tools: {{ tools.map(t => t.slug).join(', ') }}<br>
       <small style="color: #666; margin-top: 0.5rem; display: block;">
         To disable: remove <code>?debug=true</code> from URL
       </small>
     </div>
 
-    <p v-if="categoryTools.length === 0" class="no-tools-message">
+    <p v-if="filteredTools.length === 0" class="no-tools-message">
       No tools available in this category yet. <a href="/contribute">Contribute a tool →</a>
     </p>
     <div v-else class="feature-grid">
       <ToolCard
-        v-for="tool in categoryTools"
+        v-for="tool in filteredTools"
         :key="tool.slug"
         :tool="tool"
         :subtitle="getSubtitle(tool)"
@@ -53,7 +53,7 @@ onMounted(() => {
     console.log('Current category:', currentCategory.value)
     console.log('Active standards:', activeStandards.value)
     console.log('Selected tools:', props.selectedTools)
-    console.log('Filtered tools:', categoryTools.value)
+    console.log('Filtered tools:', filteredTools.value)
   }
 })
 
@@ -137,40 +137,49 @@ const activeStandards = computed(() => {
   return [...new Set(standardsList)]
 })
 
-const categoryTools = computed(() => {
-  // If selectedTools is provided, show only those tools (ignores all other filters)
+/**
+ * Filtered tools based on active filters
+ *
+ * Filter priority (first match wins):
+ * 1. selectedTools prop - Shows only specified tools by slug, preserves order, ignores all other filters
+ * 2. Category + Standards - Combines category and standards filters (both must match if both are active)
+ *
+ * @returns Array of Tool objects matching the active filters
+ */
+const filteredTools = computed(() => {
+  // Priority 1: If selectedTools is provided, show only those tools (ignores all other filters)
   if (props.selectedTools && props.selectedTools.length > 0) {
-    // Create a map of tools by slug for quick lookup
+    // Create a map of tools by slug for O(1) lookup performance
     const toolsBySlug = new Map<string, Tool>()
     tools.forEach(tool => {
       toolsBySlug.set(tool.slug, tool)
     })
 
-    // Filter and preserve order from selectedTools array
+    // Filter tools matching the selectedTools slugs and preserve the order
     const selectedToolsList: Tool[] = []
     props.selectedTools.forEach(slug => {
       const tool = toolsBySlug.get(slug)
       if (tool) {
         selectedToolsList.push(tool)
       }
-      // Silently skip non-existent slugs
+      // Silently skip non-existent slugs (no error thrown)
     })
 
     return selectedToolsList
   }
 
-  // Otherwise, use existing filter logic
+  // Priority 2: Apply category and/or standards filters
   return tools.filter((tool: Tool) => {
     let matches = true
 
-    // Filter by category if detected
+    // Filter by category if detected from route or prop
     if (currentCategory.value) {
       matches = matches && tool.categories.includes(currentCategory.value)
     }
 
-    // Filter by standards if detected
+    // Filter by standards if detected from route, prop, or query params
     if (activeStandards.value.length > 0) {
-      // Tool must have at least one of the specified standards (OR logic)
+      // Tool must have at least one of the specified standards (OR logic within standards)
       const hasStandards = tool.standards && tool.standards.length > 0
       const matchesStandards = hasStandards &&
         tool.standards.some(standard => activeStandards.value.includes(standard))
