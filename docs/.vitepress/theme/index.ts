@@ -8,6 +8,7 @@ import ToolStats from './components/ToolStats.vue'
 import ToolCard from './components/ToolCard.vue'
 import ToolsGrid from './components/ToolsGrid.vue'
 import CategoryGrid from './components/CategoryGrid.vue'
+import StandardsGrid from './components/StandardsGrid.vue'
 import QuickInfo from './components/QuickInfo.vue'
 
 export default {
@@ -24,6 +25,7 @@ export default {
     app.component('ToolCard', ToolCard)
     app.component('ToolsGrid', ToolsGrid)
     app.component('CategoryGrid', CategoryGrid)
+    app.component('StandardsGrid', StandardsGrid)
     app.component('QuickInfo', QuickInfo)
   }
 } satisfies Theme
