@@ -4,7 +4,7 @@ Programming language bindings and libraries for easier implementation of mobilit
 
 ## Available Tools
 
-<CategoryTools />
+<ToolsGrid />
 
 ## What are SDKs & Libraries?
 

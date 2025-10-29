@@ -4,7 +4,7 @@ Test data generation and validation tools for robust testing of mobility data sy
 
 ## Available Tools
 
-<CategoryTools />
+<ToolsGrid />
 
 ## What are Testing Utilities?
 

@@ -4,7 +4,7 @@ Migration and compatibility utilities for upgrading between standard versions.
 
 ## Available Tools
 
-<CategoryTools />
+<ToolsGrid />
 
 ## What are Version Upgrade Tools?
 

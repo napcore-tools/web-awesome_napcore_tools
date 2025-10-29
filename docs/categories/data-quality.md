@@ -4,7 +4,7 @@ Validation, enrichment, and cleaning utilities for ensuring high-quality mobilit
 
 ## Available Tools
 
-<CategoryTools />
+<ToolsGrid />
 
 ## What are Data Quality Tools?
 

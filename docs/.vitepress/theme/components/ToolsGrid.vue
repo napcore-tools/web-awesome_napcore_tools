@@ -46,7 +46,7 @@ const showDebug = computed(() => {
 // Debug logging
 onMounted(() => {
   if (showDebug.value) {
-    console.log('CategoryTools mounted')
+    console.log('ToolsGrid mounted')
     console.log('Tools loaded:', tools)
     console.log('Route path:', route.path)
     console.log('Current category:', currentCategory.value)

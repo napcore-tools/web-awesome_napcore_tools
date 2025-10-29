@@ -12,4 +12,4 @@ const { params } = useData()
 
 Browse all tools that support the **{{ $params.standardName }}** standard.
 
-<CategoryTools :standard="$params.standardName" />
+<ToolsGrid :standard="$params.standardName" />

@@ -4,7 +4,7 @@ Route planners are digital tools that help you find the best way to get from one
 
 ## Available Tools
 
-<CategoryTools />
+<ToolsGrid />
 
 
 ## How they work

@@ -4,7 +4,7 @@ Schema validation and business rule checking tools for ensuring data quality and
 
 ## Available Tools
 
-<CategoryTools />
+<ToolsGrid />
 
 ## What are Validators?
 

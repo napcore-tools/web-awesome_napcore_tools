@@ -6,7 +6,7 @@ import './custom.css'
 import StatsBar from './components/StatsBar.vue'
 import ToolStats from './components/ToolStats.vue'
 import ToolCard from './components/ToolCard.vue'
-import CategoryTools from './components/CategoryTools.vue'
+import ToolsGrid from './components/ToolsGrid.vue'
 import CategoryGrid from './components/CategoryGrid.vue'
 import QuickInfo from './components/QuickInfo.vue'
 
@@ -22,7 +22,7 @@ export default {
     app.component('StatsBar', StatsBar)
     app.component('ToolStats', ToolStats)
     app.component('ToolCard', ToolCard)
-    app.component('CategoryTools', CategoryTools)
+    app.component('ToolsGrid', ToolsGrid)
     app.component('CategoryGrid', CategoryGrid)
     app.component('QuickInfo', QuickInfo)
   }

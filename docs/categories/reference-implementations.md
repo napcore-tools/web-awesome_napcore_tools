@@ -4,7 +4,7 @@ Working examples and demo applications showing best practices for implementing m
 
 ## Available Tools
 
-<CategoryTools />
+<ToolsGrid />
 
 ## What are Reference Implementations?
 

@@ -4,7 +4,7 @@ Tools for converting, transforming, and profiling mobility data across different
 
 ## Available Tools
 
-<CategoryTools />
+<ToolsGrid />
 
 ## What are Converters & Transformers?
 

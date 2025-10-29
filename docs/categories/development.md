@@ -4,7 +4,7 @@ Tools that support the day-to-day development workflow for mobility data systems
 
 ## Available Tools
 
-<CategoryTools />
+<ToolsGrid />
 
 ## What are Development Tools?
 

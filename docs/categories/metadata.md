@@ -4,7 +4,7 @@ Tools for creating, managing, and publishing metadata that makes mobility data d
 
 ## Available Tools
 
-<CategoryTools />
+<ToolsGrid />
 
 ## What are Metadata Tools?
 

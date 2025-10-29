@@ -4,7 +4,7 @@ Technical documentation, specifications, and implementation guides for mobility 
 
 ## Available Tools
 
-<CategoryTools />
+<ToolsGrid />
 
 ## What is Reference Documentation?
 
