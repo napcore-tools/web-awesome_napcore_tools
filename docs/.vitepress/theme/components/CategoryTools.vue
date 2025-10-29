@@ -5,8 +5,9 @@
       <strong>🐛 Debug Info:</strong><br>
       Route path: {{ route.path }}<br>
       Current category: {{ currentCategory }}<br>
+      Active standards: {{ activeStandards.length > 0 ? activeStandards.join(', ') : 'none' }}<br>
       Total tools loaded: {{ tools.length }}<br>
-      Tools in this category: {{ categoryTools.length }}<br>
+      Filtered tools: {{ categoryTools.length }}<br>
       All tools: {{ tools.map(t => t.slug).join(', ') }}<br>
       <small style="color: #666; margin-top: 0.5rem; display: block;">
         To disable: remove <code>?debug=true</code> from URL
@@ -32,6 +33,7 @@ import { computed, onMounted } from 'vue'
 import { useRoute } from 'vitepress'
 import { data as tools } from '../../tools.data'
 import type { Tool } from '../../tools.data'
+import { createSlug } from '../../utils'
 import ToolCard from './ToolCard.vue'
 
 // Debug mode (enable by adding ?debug=true to URL)
@@ -48,12 +50,15 @@ onMounted(() => {
     console.log('Tools loaded:', tools)
     console.log('Route path:', route.path)
     console.log('Current category:', currentCategory.value)
+    console.log('Active standards:', activeStandards.value)
     console.log('Filtered tools:', categoryTools.value)
   }
 })
 
 interface Props {
   category?: string
+  standard?: string
+  standards?: string[]
 }
 
 const props = defineProps<Props>()
@@ -76,14 +81,80 @@ const currentCategory = computed(() => {
   return null
 })
 
-const categoryTools = computed(() => {
-  if (!currentCategory.value) {
-    return []
+// Auto-detect standard from current route if not provided
+const currentStandard = computed(() => {
+  // Check if standard is provided via prop (single or array)
+  if (props.standard) {
+    return [props.standard]
+  }
+  if (props.standards && props.standards.length > 0) {
+    return props.standards
   }
 
-  return tools.filter((tool: Tool) =>
-    tool.categories.includes(currentCategory.value!)
-  )
+  // Extract standard slug from route path
+  // e.g., /standards/datex-ii -> datex-ii
+  const match = route.path.match(/\/standards\/([^/.]+)/)
+  if (match) {
+    const slug = match[1]
+
+    // Find the actual standard name from tools by matching the slug
+    for (const tool of tools) {
+      if (tool.standards && tool.standards.length > 0) {
+        for (const standard of tool.standards) {
+          if (createSlug(standard) === slug) {
+            return [standard]
+          }
+        }
+      }
+    }
+  }
+
+  return []
+})
+
+// Detect standards from route, props, or URL query parameters
+const activeStandards = computed(() => {
+  const standardsList: string[] = []
+
+  // 1. Check for standard detected from route path or props
+  if (currentStandard.value.length > 0) {
+    standardsList.push(...currentStandard.value)
+  }
+
+  // 2. Check URL query parameters (supports repeated ?standard=X&standard=Y)
+  if (typeof window !== 'undefined') {
+    const params = new URLSearchParams(window.location.search)
+    const queryStandards = params.getAll('standard')
+    if (queryStandards.length > 0) {
+      standardsList.push(...queryStandards)
+    }
+  }
+
+  // Return unique standards
+  return [...new Set(standardsList)]
+})
+
+const categoryTools = computed(() => {
+  return tools.filter((tool: Tool) => {
+    let matches = true
+
+    // Filter by category if detected
+    if (currentCategory.value) {
+      matches = matches && tool.categories.includes(currentCategory.value)
+    }
+
+    // Filter by standards if detected
+    if (activeStandards.value.length > 0) {
+      // Tool must have at least one of the specified standards (OR logic)
+      const hasStandards = tool.standards && tool.standards.length > 0
+      const matchesStandards = hasStandards &&
+        tool.standards.some(standard => activeStandards.value.includes(standard))
+
+      matches = matches && matchesStandards
+    }
+
+    return matches
+  })
 })
 
 // Generate a subtitle based on tool characteristics

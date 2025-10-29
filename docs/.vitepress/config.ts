@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { getToolsSidebar, getCategoriesSidebar } from './sidebar'
+import { _getToolsSidebar, getCategoriesSidebar } from './sidebar'
 
 export default defineConfig({
   title: 'NAPCORE Store',
@@ -19,7 +19,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
 //      { text: 'Browse Tools', link: '/tools/' },
-      { text: 'Tool Categories', link: '/categories/' },
+      { text: 'Tools', link: '/categories/' },
       { text: 'Contribute', link: '/contribute' },
       { text: 'Status (WIP)', link: '/about' },
     ],
@@ -28,6 +28,7 @@ export default defineConfig({
       // '/tools/': getToolsSidebar(),
       '/categories/': {base: '/', items: getCategoriesSidebar()},
       '/tools/': {base: '/', items: getCategoriesSidebar()},
+      '/standards/': {base: '/', items: getCategoriesSidebar()},
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/napcore' }

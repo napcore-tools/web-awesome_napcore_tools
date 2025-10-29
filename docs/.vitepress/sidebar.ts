@@ -1,6 +1,7 @@
 // Dynamic sidebar configuration with tool counts
 import toolsDataLoader from './tools.data'
 import { CATEGORIES } from './categories'
+import { createSlug } from './utils'
 
 // Load tools and calculate counts per category
 function getCategoryCounts(): Record<string, number> {
@@ -31,6 +32,39 @@ function getCategoryItemsWithCounts() {
   return CATEGORIES.map(cat => ({
     text: `${cat.title} <span class="sidebar-badge">${counts[cat.slug]}</span>`,
     link: `/categories/${cat.slug}`
+  }))
+}
+
+// Load tools and calculate counts per standard
+function getStandardCounts(): Record<string, number> {
+  const tools = toolsDataLoader.load()
+  const counts: Record<string, number> = {}
+
+  // Count tools per standard
+  tools.forEach(tool => {
+    if (tool.standards && tool.standards.length > 0) {
+      tool.standards.forEach((standard: string) => {
+        if (!Object.hasOwn(counts, standard)) {
+          counts[standard] = 0
+        }
+        counts[standard]++
+      })
+    }
+  })
+
+  return counts
+}
+
+// Generate standard sidebar items with counts
+function getStandardItemsWithCounts() {
+  const counts = getStandardCounts()
+
+  // Sort standards alphabetically
+  const sortedStandards = Object.keys(counts).sort((a, b) => a.localeCompare(b))
+
+  return sortedStandards.map(standard => ({
+    text: `${standard} <span class="sidebar-badge">${counts[standard]}</span>`,
+    link: `/standards/${createSlug(standard)}`
   }))
 }
 
@@ -69,6 +103,13 @@ export function getCategoriesSidebar() {
       collapsed: false,
       items: [
           ...getCategoryItemsWithCounts()
+      ]
+    },
+    {
+      text: 'By Standard',
+      collapsed: false,
+      items: [
+          ...getStandardItemsWithCounts()
       ]
     },
   ]
