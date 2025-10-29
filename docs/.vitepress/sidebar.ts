@@ -91,11 +91,12 @@ export function getToolsSidebar() {
 export function getCategoriesSidebar() {
   return [
     {
-      text: 'Overview',
+      text: 'Tools',
       collapsed: false,
       items: [
-        { text: 'Tool Categories', link: 'categories/' },
-        { text: 'Featured Tools', link: 'categories/featured' },
+        { text: 'By Categories', link: 'categories/' },
+        { text: 'By Standards', link: 'standards/' },
+        { text: 'Featured', link: 'categories/featured' },
       ]
     },
     {
