@@ -6,6 +6,7 @@
       Route path: {{ route.path }}<br>
       Current category: {{ currentCategory }}<br>
       Active standards: {{ activeStandards.length > 0 ? activeStandards.join(', ') : 'none' }}<br>
+      Selected tools (prop): {{ $props.selectedTools && $props.selectedTools.length > 0 ? $props.selectedTools.join(', ') : 'none' }}<br>
       Total tools loaded: {{ tools.length }}<br>
       Filtered tools: {{ categoryTools.length }}<br>
       All tools: {{ tools.map(t => t.slug).join(', ') }}<br>
@@ -51,6 +52,7 @@ onMounted(() => {
     console.log('Route path:', route.path)
     console.log('Current category:', currentCategory.value)
     console.log('Active standards:', activeStandards.value)
+    console.log('Selected tools:', props.selectedTools)
     console.log('Filtered tools:', categoryTools.value)
   }
 })
@@ -59,6 +61,7 @@ interface Props {
   category?: string
   standard?: string
   standards?: string[]
+  selectedTools?: string[]
 }
 
 const props = defineProps<Props>()
@@ -135,6 +138,28 @@ const activeStandards = computed(() => {
 })
 
 const categoryTools = computed(() => {
+  // If selectedTools is provided, show only those tools (ignores all other filters)
+  if (props.selectedTools && props.selectedTools.length > 0) {
+    // Create a map of tools by slug for quick lookup
+    const toolsBySlug = new Map<string, Tool>()
+    tools.forEach(tool => {
+      toolsBySlug.set(tool.slug, tool)
+    })
+
+    // Filter and preserve order from selectedTools array
+    const selectedToolsList: Tool[] = []
+    props.selectedTools.forEach(slug => {
+      const tool = toolsBySlug.get(slug)
+      if (tool) {
+        selectedToolsList.push(tool)
+      }
+      // Silently skip non-existent slugs
+    })
+
+    return selectedToolsList
+  }
+
+  // Otherwise, use existing filter logic
   return tools.filter((tool: Tool) => {
     let matches = true
 
