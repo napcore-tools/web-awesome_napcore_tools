@@ -60,9 +60,9 @@ export default defineConfig({
       }
     },
 
-    editLink: {
-      pattern: 'https://github.com/napcore/napcore-web-store/edit/main/docs/:path',
-      text: 'Suggest changes to this page'
-    }
+    // editLink: {
+    //   pattern: 'https://github.com/napcore/napcore-web-store/edit/main/docs/:path',
+    //   text: 'Suggest changes to this page'
+    // }
   }
 })
