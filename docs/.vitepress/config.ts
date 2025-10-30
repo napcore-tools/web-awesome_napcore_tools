@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { _getToolsSidebar, getCategoriesSidebar } from './sidebar'
+import { napCoreMarkdownPlugin } from './plugins/napCoreMarkdownPlugin'
 
 export default defineConfig({
   title: 'NAPCORE Store',
@@ -12,6 +13,11 @@ export default defineConfig({
     ['meta', { property: 'og:title', content: 'NAPCORE Store' }],
     ['meta', { property: 'og:description', content: 'Curated tools for European mobility data professionals' }]
   ],
+  markdown: {
+    config: (md) => {
+      md.use(napCoreMarkdownPlugin)
+    }
+  },
 
   themeConfig: {
     logo: 'https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png',
