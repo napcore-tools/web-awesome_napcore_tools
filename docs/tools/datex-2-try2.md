@@ -11,8 +11,8 @@ liveDemo: https://docs.datex2.eu/
 sourceCode: https://datex2.eu/downloads/
 developer: CEN TC 278 / NAPCORE
 standards:
-  - DATEX II
-  - CEN 16157
+  - datex-ii
+  - cen-16157
 tags:
   - Data Model
   - Documentation

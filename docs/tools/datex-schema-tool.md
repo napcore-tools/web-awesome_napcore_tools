@@ -11,7 +11,7 @@ liveDemo: https://webtool.datex2.eu
 developer: DATEX II community (datex2.eu)
 mainContributor: Jonas Jäderberg
 standards:
-  - DATEX II
+  - datex-ii
 tags:
   - DATEX II
   - Schema

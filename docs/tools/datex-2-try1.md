@@ -11,8 +11,8 @@ liveDemo: https://docs.datex2.eu/
 sourceCode: https://docs.datex2.eu/downloads/
 developer: DATEX II Project
 standards:
-  - DATEX II
-  - CEN 16157
+  - datex-ii
+  - cen-16157
 tags:
   - Data Model
   - Documentation

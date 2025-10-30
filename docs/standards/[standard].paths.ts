@@ -1,28 +1,31 @@
 // Dynamic path generator for standard pages
 import toolsDataLoader from '../.vitepress/tools.data'
-import { createSlug } from '../.vitepress/utils'
+import { getStandardMetadata } from '../.vitepress/standards'
 
 export default {
   paths() {
-    // Collect all unique standards
-    const standardsSet = new Set<string>()
+    // Collect all unique standards (already slugified in tool frontmatter)
+    const standardSlugsSet = new Set<string>()
     const tools = toolsDataLoader.load()
 
     for (const tool of tools) {
       if (tool.standards && tool.standards.length > 0) {
-        for (const standard of tool.standards) {
-          standardsSet.add(standard)
+        for (const standardSlug of tool.standards) {
+          standardSlugsSet.add(standardSlug)
         }
       }
     }
 
     // Create paths for each standard with title param
-    return Array.from(standardsSet).map(standard => ({
-      params: {
-        standard: createSlug(standard),
-        standardName: standard,
-        title: `Tools supporting ${standard}` // For transformPageData hook
+    return Array.from(standardSlugsSet).map(slug => {
+      const metadata = getStandardMetadata(slug)
+      return {
+        params: {
+          standard: slug,
+          standardName: metadata.title,
+          title: `Tools supporting ${metadata.title}` // For transformPageData hook
+        }
       }
-    }))
+    })
   }
 }

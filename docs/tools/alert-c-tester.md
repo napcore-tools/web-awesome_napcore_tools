@@ -13,9 +13,9 @@ sourceCode: https://github.com/tamtamresearch/alert-c-locations-tester
 developer: TamTam Research s.r.o.
 technology: Python, SQLite, CLI
 standards:
-  - DATEX II
-  - ISO/DIS 14819
-  - RDS-TMC
+  - datex-ii
+  - isodis-14819
+  - rds-tmc
 tags:
   - ALERT-C
   - Validator

@@ -11,11 +11,11 @@ liveDemo: https://transitous.org/
 sourceCode: https://github.com/motis-project/motis
 developer: MOTIS Project
 standards:
-  - NeTEx
-  - SIRI
-  - GTFS
-  - GBFS
-  - OSM
+  - netex
+  - siri
+  - gtfs
+  - gbfs
+  - osm
 tags:
   - Journey Planner
   - Router

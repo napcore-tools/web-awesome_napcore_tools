@@ -17,7 +17,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { data as tools } from '../../tools.data'
-import { createSlug } from '../../utils'
 import { getStandardMetadata } from '../../standards'
 
 interface Props {
@@ -32,29 +31,29 @@ const props = withDefaults(defineProps<Props>(), {
 const standards = computed(() => {
   const standardsMap = new Map<string, number>()
 
-  // Count tools per standard
+  // Count tools per standard (standards are already slugified in tool frontmatter)
   for (const tool of tools) {
     if (tool.standards && tool.standards.length > 0) {
-      for (const standard of tool.standards) {
-        const count = standardsMap.get(standard) || 0
-        standardsMap.set(standard, count + 1)
+      for (const standardSlug of tool.standards) {
+        const count = standardsMap.get(standardSlug) || 0
+        standardsMap.set(standardSlug, count + 1)
       }
     }
   }
 
-  // Convert to array with slugs and metadata
-  const standardsList = Array.from(standardsMap.entries()).map(([name, count]) => {
-    const metadata = getStandardMetadata(name)
+  // Convert to array with metadata
+  const standardsList = Array.from(standardsMap.entries()).map(([slug, count]) => {
+    const metadata = getStandardMetadata(slug)
     return {
-      name,
-      slug: createSlug(name),
+      name: metadata.title,
+      slug,
       count,
       icon: metadata.icon,
       description: metadata.description
     }
   })
 
-  // Sort by count if requested (descending order), otherwise alphabetically
+  // Sort by count if requested (descending order), otherwise alphabetically by title
   if (props.sortByCount) {
     return standardsList.sort((a, b) => b.count - a.count)
   }

@@ -2,4 +2,4 @@
 
 Browse all tools that support the **{{ $params.standardName }}** standard.
 
-<ToolsGrid :standard="$params.standardName" />
+<ToolsGrid :standard="$params.standard" />

@@ -12,7 +12,7 @@ liveDemo: https://browser.datex2.eu
 sourceCode: https://gitlab.com/tamtamresearch-public/datex2/browser
 developer: TamTam Research s.r.o.
 standards:
-  - DATEX II
+  - datex-ii
 tags:
   - DATEX II
   - Browser

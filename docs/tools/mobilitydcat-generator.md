@@ -13,9 +13,9 @@ sourceCode: https://github.com/mobilityDCAT-AP/mobilitydcatap-ui
 developer: Cefriel
 maintainedBy: NAPCORE Metadata Working Group
 standards:
-  - mobilityDCAT-AP
-  - DCAT-AP
-  - RDF
+  - mobilitydcat-ap
+  - dcat-ap
+  - rdf
 tags:
   - mobilityDCAT-AP
   - RDF
