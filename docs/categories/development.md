@@ -52,7 +52,7 @@ Tools in this category support various European mobility data standards:
   <span class="standard-badge supported">mobilityDCAT-AP</span>
   <span class="standard-badge supported">DCAT-AP</span>
   <span class="standard-badge supported">RDF</span>
-  <span class="standard-badge supported">ISO/DIS 14819 Part 3</span>
+  <span class="standard-badge supported">ISO/DIS 14819</span>
   <span class="standard-badge supported">RDS-TMC</span>
 </div>
 

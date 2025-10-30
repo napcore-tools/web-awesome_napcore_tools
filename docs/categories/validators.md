@@ -31,7 +31,7 @@ Regular validation to maintain data quality standards over time.
 Identify and diagnose specific data issues with detailed error messages.
 
 ### Location Reference Validation
-Ensure ALERT-C location codes and references are valid and comply with ISO/DIS 14819 Part 3.
+Ensure ALERT-C location codes and references are valid and comply with ISO/DIS 14819.
 
 ## Needed Validators
 
@@ -49,7 +49,7 @@ We're looking for validator tools for:
 
 <div class="standards-list">
   <span class="standard-badge supported">DATEX II</span>
-  <span class="standard-badge supported">ISO/DIS 14819 Part 3</span>
+  <span class="standard-badge supported">ISO/DIS 14819</span>
   <span class="standard-badge supported">RDS-TMC</span>
   <span class="standard-badge">NeTEx</span>
   <span class="standard-badge">SIRI</span>

@@ -81,7 +81,7 @@ We're looking for tools that provide:
 
 <div class="standards-list">
   <span class="standard-badge supported">DATEX II</span>
-  <span class="standard-badge supported">ISO/DIS 14819 Part 3</span>
+  <span class="standard-badge supported">ISO/DIS 14819</span>
   <span class="standard-badge supported">RDS-TMC</span>
   <span class="standard-badge">NeTEx</span>
   <span class="standard-badge">SIRI</span>

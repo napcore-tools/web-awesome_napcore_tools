@@ -14,7 +14,7 @@ developer: TamTam Research s.r.o.
 technology: Python, SQLite, CLI
 standards:
   - DATEX II
-  - ISO/DIS 14819 Part 3
+  - ISO/DIS 14819
   - RDS-TMC
 tags:
   - ALERT-C
@@ -30,7 +30,7 @@ lastUpdated: 2025-10-22
 
 ALERT-C Locations Tester is a validation tool for ALERT-C location references, which were primarily used in RDS-TMC services but have become popular also in other services such as provisioning road traffic information using DATEX II data formats.
 
-The tool generates a location index file from standard TMC format files (ISO/DIS 14819 Part 3), providing complete enumeration of all possible location references for a given version of location tables. Users can then validate their traffic information content against this index to detect invalid location references that should not be used.
+The tool generates a location index file from standard TMC format files (ISO/DIS 14819), providing complete enumeration of all possible location references for a given version of location tables. Users can then validate their traffic information content against this index to detect invalid location references that should not be used.
 
 ## Key Features
 
@@ -45,7 +45,7 @@ The tool generates a location index file from standard TMC format files (ISO/DIS
 ## Use Cases
 
 1. **Data quality assurance**: Systematically validate location references before broadcasting or publishing
-2. **Compliance verification**: Ensure conformance with ISO/DIS 14819 Part 3 standard
+2. **Compliance verification**: Ensure conformance with ISO/DIS 14819 standard
 3. **Pre-publication testing**: Validate traffic information before publishing on National Access Points
 4. **Continuous monitoring**: Regular validation to maintain data quality standards
 5. **Format migration**: Verify location references when converting between formats
@@ -84,7 +84,7 @@ The tool identifies various types of invalid location references:
 
 <div class="standards-list">
   <span class="standard-badge supported">DATEX II (with ALERT-C)</span>
-  <span class="standard-badge supported">ISO/DIS 14819 Part 3</span>
+  <span class="standard-badge supported">ISO/DIS 14819</span>
   <span class="standard-badge supported">RDS-TMC</span>
 </div>
 
@@ -103,11 +103,11 @@ The tool identifies various types of invalid location references:
 - **Language**: Python
 - **Database**: SQLite for efficient index storage
 - **CLI Framework**: Invoke package for command-line interface
-- **Input Format**: TMC location tables (.DAT files) conforming to ISO/DIS 14819 Part 3
+- **Input Format**: TMC location tables (.DAT files) conforming to ISO/DIS 14819
 - **Output Formats**: SQLite database, CSV files
 
 ### Location Table Format
-The tool processes TMC location tables in standard .DAT format according to ISO/DIS 14819 Part 3. These tables contain:
+The tool processes TMC location tables in standard .DAT format according to ISO/DIS 14819. These tables contain:
 - Primary location codes
 - Direction information
 - Extent specifications
@@ -161,7 +161,7 @@ The two-stage approach (generate index → validate references) makes it adaptab
 Automates validation that would otherwise require manual checking of thousands of location references.
 
 ### Compliance
-Ensures conformance with ISO/DIS 14819 Part 3 standard for ALERT-C location tables.
+Ensures conformance with ISO/DIS 14819 standard for ALERT-C location tables.
 
 ### Reusability
 While developed for Czech use case, the tool can work with any country's ALERT-C location tables in standard TMC format.
@@ -227,7 +227,7 @@ This tool complements other DATEX II and traffic information tools:
   <p style="margin: 0;"><strong>Tool Metadata</strong></p>
   <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
     <li><strong>Category</strong>: Validators, Development Tools, Data Quality Tools</li>
-    <li><strong>Standards</strong>: DATEX II (with ALERT-C), ISO/DIS 14819 Part 3, RDS-TMC</li>
+    <li><strong>Standards</strong>: DATEX II (with ALERT-C), ISO/DIS 14819, RDS-TMC</li>
     <li><strong>License</strong>: MIT</li>
     <li><strong>Maintenance</strong>: Actively maintained (October 2025)</li>
     <li><strong>Type</strong>: CLI Tool, Validator, Data Quality Assurance</li>

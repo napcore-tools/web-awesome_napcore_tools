@@ -39,7 +39,7 @@ export const STANDARD_METADATA: Record<string, StandardMetadata> = {
     icon: '📋',
     description: 'Data Catalog Application Profile - EU open data metadata'
   },
-  'ISO/DIS 14819 Part 3': {
+  'ISO/DIS 14819': {
     icon: '📍',
     description: 'ALERT-C location referencing standard'
   },
