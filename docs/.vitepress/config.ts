@@ -19,6 +19,14 @@ export default defineConfig({
     }
   },
 
+  // Transform page data to set dynamic titles from params
+  async transformPageData(pageData) {
+    // For dynamic routes with title param, set the page title
+    if (pageData.params?.title) {
+      pageData.title = pageData.params.title
+    }
+  },
+
   themeConfig: {
     logo: 'https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png',
     

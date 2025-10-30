@@ -16,11 +16,12 @@ export default {
       }
     }
 
-    // Create paths for each standard
+    // Create paths for each standard with title param
     return Array.from(standardsSet).map(standard => ({
       params: {
         standard: createSlug(standard),
-        standardName: standard
+        standardName: standard,
+        title: `Tools supporting ${standard}` // For transformPageData hook
       }
     }))
   }
