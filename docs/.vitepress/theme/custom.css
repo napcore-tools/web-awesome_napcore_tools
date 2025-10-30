@@ -411,3 +411,7 @@ a.tool-link:hover {
   background: rgba(77, 159, 255, 0.2);
   color: var(--vp-c-brand-1);
 }
+
+.pager .sidebar-badge {
+  display: none;
+}
