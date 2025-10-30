@@ -97,6 +97,7 @@ export function getCategoriesSidebar() {
         { text: 'By Categories', link: 'categories/' },
         { text: 'By Standards', link: 'standards/' },
         { text: 'Featured', link: 'categories/featured' },
+        { text: 'All', link: 'categories/all' },
       ]
     },
     {

@@ -4,6 +4,7 @@
     <div v-if="showDebug" style="background: #f0f0f0; padding: 1rem; margin-bottom: 1rem; font-size: 12px; border-left: 4px solid #0066cc;">
       <strong>🐛 Debug Info:</strong><br>
       Route path: {{ route.path }}<br>
+      Show all: {{ $props.showAll === true ? 'YES' : 'no' }}<br>
       Current category: {{ currentCategory }}<br>
       Active standards: {{ activeStandards.length > 0 ? activeStandards.join(', ') : 'none' }}<br>
       Selected tools (prop): {{ $props.selectedTools && $props.selectedTools.length > 0 ? $props.selectedTools.join(', ') : 'none' }}<br>
@@ -62,6 +63,7 @@ interface Props {
   standard?: string
   standards?: string[]
   selectedTools?: string[]
+  showAll?: boolean
 }
 
 const props = defineProps<Props>()
@@ -141,13 +143,19 @@ const activeStandards = computed(() => {
  * Filtered tools based on active filters
  *
  * Filter priority (first match wins):
- * 1. selectedTools prop - Shows only specified tools by slug, preserves order, ignores all other filters
- * 2. Category + Standards - Combines category and standards filters (both must match if both are active)
+ * 1. showAll prop - Shows all tools, ignores all filters
+ * 2. selectedTools prop - Shows only specified tools by slug, preserves order, ignores all other filters
+ * 3. Category + Standards - Combines category and standards filters (both must match if both are active)
  *
  * @returns Array of Tool objects matching the active filters
  */
 const filteredTools = computed(() => {
-  // Priority 1: If selectedTools is provided, show only those tools (ignores all other filters)
+  // Priority 1: If showAll is true, return all tools (ignores all filters)
+  if (props.showAll === true) {
+    return tools
+  }
+
+  // Priority 2: If selectedTools is provided, show only those tools (ignores all other filters)
   if (props.selectedTools && props.selectedTools.length > 0) {
     // Create a map of tools by slug for O(1) lookup performance
     const toolsBySlug = new Map<string, Tool>()
