@@ -1,6 +1,8 @@
 ---
+document: tool
 title: DATEX II Browser
 description: Wikipedia-style browser for exploring the DATEX II data model
+fullDescription: Wikipedia-style browser for exploring the DATEX II data model. Essential daily reference for DATEX II implementers.
 categories:
   - development
   - converters
@@ -19,14 +21,6 @@ tags:
 firstRelease: 2014
 lastUpdated: 2025-10-22
 ---
-
-# DATEX II Browser
-
-> Wikipedia-style browser for exploring the DATEX II data model. Essential daily reference for DATEX II implementers.
-
-## Quick Info
-
-<QuickInfo />
 
 ## Overview
 

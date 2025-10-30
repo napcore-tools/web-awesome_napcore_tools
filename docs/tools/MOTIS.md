@@ -1,6 +1,8 @@
 ---
+document: tool
 title: MOTIS
 description: Scalable high-performance intermodal travel information system with batteries included
+fullDescription: Scalable high-performance intermodal travel information system / journey planner with "batteries included" - geocoding, map tiles, departure boards, and more.
 categories:
   - route-planners
 status: active
@@ -23,14 +25,6 @@ tags:
   - GTFS-RT
 lastUpdated: 2025-10-22
 ---
-
-# MOTIS
-
-> Scalable high-performance intermodal travel information system / journey planner with "batteries included" - geocoding, map tiles, departure boards, and more.
-
-## Quick Info
-
-<QuickInfo />
 
 ## Overview
 

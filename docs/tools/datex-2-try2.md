@@ -1,6 +1,8 @@
 ---
+document: tool
 title: DATEX II Documentation Portal (example 2)
 description: Official documentation for the European standard for traffic and travel information exchange
+fullDescription: Official documentation portal for DATEX II - the European CEN standard for the exchange of traffic information and traffic data across road transport networks.
 categories:
   - references
 status: active
@@ -20,14 +22,6 @@ tags:
   - Mobility
 lastUpdated: 2025-10-22
 ---
-
-# DATEX II Documentation Portal
-
-> Official documentation portal for DATEX II - the European CEN standard for the exchange of traffic information and traffic data across road transport networks.
-
-## Quick Info
-
-<QuickInfo />
 
 ## Overview
 

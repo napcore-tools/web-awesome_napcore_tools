@@ -1,6 +1,8 @@
 ---
+document: tool
 title: DATEX II Schema Generation Tool
 description: Web-based wizard for creating custom DATEX II profiles and generating schemas
+fullDescription: Web-based wizard for creating custom DATEX II profiles. Generate XML Schema, JSON Schema, or ASN.1 schemas by selecting only the elements you need.
 categories:
   - converters
   - development
@@ -20,14 +22,6 @@ tags:
   - ASN.1
 lastUpdated: 2025-10-22
 ---
-
-# DATEX II Schema Generation Tool (Webtool)
-
-> Web-based wizard for creating custom DATEX II profiles. Generate XML Schema, JSON Schema, or ASN.1 schemas by selecting only the elements you need.
-
-## Quick Info
-
-<QuickInfo />
 
 ## Overview
 

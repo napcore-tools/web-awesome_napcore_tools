@@ -1,6 +1,8 @@
 ---
+document: tool
 title: ALERT-C Locations Tester
 description: Validation tool for ALERT-C location references in RDS-TMC and DATEX II traffic information
+fullDescription:
 categories:
   - validators
   - data-quality
@@ -23,14 +25,6 @@ tags:
   - Location References
 lastUpdated: 2025-10-22
 ---
-
-# ALERT-C Locations Tester
-
-> A validation tool for ALERT-C location references used in RDS-TMC services and DATEX II traffic information.
-
-## Quick Info
-
-<QuickInfo />
 
 ## Overview
 

@@ -1,6 +1,8 @@
 ---
+document: tool
 title: mobilityDCAT-AP Generator Tool
 description: Form-based web interface for generating RDF metadata according to mobilityDCAT-AP
+fullDescription: Form-based web interface that generates RDF metadata according to the mobilityDCAT-AP specification. Perfect for NAP operators and data publishers.
 categories:
   - metadata
   - development
@@ -22,14 +24,6 @@ tags:
   - Form
 lastUpdated: 2025-10-22
 ---
-
-# mobilityDCAT-AP Generator Tool
-
-> Form-based web interface that generates RDF metadata according to the mobilityDCAT-AP specification. Perfect for NAP operators and data publishers.
-
-## Quick Info
-
-<QuickInfo />
 
 ## Overview
 

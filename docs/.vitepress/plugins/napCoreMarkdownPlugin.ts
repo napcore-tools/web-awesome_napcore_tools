@@ -12,15 +12,18 @@ interface FrontmatterData {
 function processToolDocument(data: FrontmatterData): string {
   let header = ''
 
+  // Add main title
   if (data.title) {
     header += `# ${data.title}\n\n`
   }
 
+  // Add description as blockquote (prefer fullDescription over description)
   const description = data.fullDescription || data.description
   if (description) {
     header += `> ${description}\n\n`
   }
 
+  // Add Quick Info section with component
   header += `## Quick Info\n\n<QuickInfo />\n\n`
 
   return header
