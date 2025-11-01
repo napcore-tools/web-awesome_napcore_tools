@@ -60,6 +60,7 @@ export default {
       const { data } = parseFrontMatter(content)
 
       // Validate tool front matter (with mtime-based caching to prevent duplicate messages)
+      // This now includes standards validation
       const validationResult = validateToolWithCache(data, file, filePath)
 
       // Only include files with valid front matter (title and categories required)

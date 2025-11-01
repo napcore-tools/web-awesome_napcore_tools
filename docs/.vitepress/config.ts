@@ -1,6 +1,12 @@
 import { defineConfig } from 'vitepress'
 import { _getToolsSidebar, getCategoriesSidebar } from './sidebar'
 import { napCoreMarkdownPlugin } from './plugins/napCoreMarkdownPlugin'
+import { validateAllStandards } from './standardValidation'
+import { handleValidationResult } from './validationUtils'
+
+// Validate STANDARD_METADATA at config load time
+const standardsValidationResult = validateAllStandards()
+handleValidationResult('STANDARD_METADATA', standardsValidationResult)
 
 export default defineConfig({
   title: 'NAPCORE Store',

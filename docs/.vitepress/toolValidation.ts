@@ -8,6 +8,12 @@
 import fs from 'fs'
 import { CATEGORIES } from './categories'
 import type { Tool } from './tools.data'
+import { validateStandards } from './standardValidation'
+import {
+  type ValidationError,
+  type ValidationResult,
+  handleValidationResult
+} from './validationUtils'
 
 // Validation cache - maps filename to last modification time (mtime)
 // Stored in Node.js global object to ensure single cache across all module instances
@@ -20,18 +26,6 @@ if (!globalWithCache.__toolValidationCache) {
   globalWithCache.__toolValidationCache = new Map<string, number>()
 }
 const validationCache: Map<string, number> = globalWithCache.__toolValidationCache
-
-export interface ValidationError {
-  field: string
-  message: string
-  severity: 'error' | 'warning'
-}
-
-export interface ValidationResult {
-  valid: boolean
-  errors: ValidationError[]
-  warnings: ValidationError[]
-}
 
 // Valid status values
 const VALID_STATUSES = ['active', 'maintenance', 'deprecated'] as const
@@ -166,6 +160,7 @@ export function validateTool(tool: Partial<Tool>, filename: string): ValidationR
   allErrors.push(...validateRequiredFields(tool, filename))
   allErrors.push(...validateCategories(tool, filename))
   allErrors.push(...validateStatus(tool, filename))
+  allErrors.push(...validateStandards(tool, filename))
 
   // Separate errors and warnings
   const errors = allErrors.filter(e => e.severity === 'error')
@@ -175,58 +170,6 @@ export function validateTool(tool: Partial<Tool>, filename: string): ValidationR
     valid: errors.length === 0,
     errors,
     warnings
-  }
-}
-
-/**
- * Format validation results for console output
- */
-export function formatValidationResult(
-  filename: string,
-  result: ValidationResult
-): string {
-  const lines: string[] = []
-
-  if (result.errors.length > 0) {
-    lines.push(`\n❌ Tool "${filename}" validation FAILED:`)
-    result.errors.forEach(err => {
-      lines.push(`   - [${err.field}] ${err.message}`)
-    })
-  }
-
-  if (result.warnings.length > 0) {
-    if (result.errors.length === 0) {
-      lines.push(`\n⚠️  Tool "${filename}" validation warnings:`)
-    }
-    result.warnings.forEach(warn => {
-      lines.push(`   - [${warn.field}] ${warn.message}`)
-    })
-  }
-
-  return lines.join('\n')
-}
-
-/**
- * Handle validation result based on environment
- * - Production: throw error if validation fails
- * - Development: log error but don't throw
- */
-export function handleValidationResult(
-  filename: string,
-  result: ValidationResult
-): void {
-  const isProduction = process.env.NODE_ENV === 'production'
-
-  if (!result.valid || result.warnings.length > 0) {
-    const message = formatValidationResult(filename, result)
-
-    if (!result.valid && isProduction) {
-      // Fail build in production
-      throw new Error(`Tool validation failed: ${filename}\n${message}`)
-    } else {
-      // Log to console in dev (or warnings in prod)
-      console.error(message)
-    }
   }
 }
 
