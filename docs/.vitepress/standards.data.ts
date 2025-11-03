@@ -15,6 +15,7 @@ import { parse as parseYaml } from 'yaml'
  */
 export interface Standard {
   title: string                  // Display name of the standard
+  longTitle?: string             // Optional long/full title
   icon: string                   // Emoji icon for visual identification
   description?: string           // Optional short description for UI
   domain: string                 // Domain/category (e.g., "Public transport")

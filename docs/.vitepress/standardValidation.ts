@@ -61,7 +61,7 @@ function validateStandardSlug(slug: string): ValidationError[] {
 /**
  * Validate standard metadata completeness
  */
-function validateStandardMetadata(slug: string, standard: Standard): ValidationError[] {
+function validateStandardMetadata(slug: string, standard: Standard, allStandards: Record<string, Standard>): ValidationError[] {
   const errors: ValidationError[] = []
 
   // Check required fields
@@ -87,7 +87,58 @@ function validateStandardMetadata(slug: string, standard: Standard): ValidationE
   }
 
   // description is optional, no validation needed
-  // related_standards is optional, no validation needed
+
+  // Validate related_standards if present
+  if (standard.related_standards) {
+    const validStandardSlugs = new Set(Object.keys(allStandards))
+
+    // Check if it's an array
+    if (!Array.isArray(standard.related_standards)) {
+      errors.push({
+        field: 'related_standards',
+        message: `Standard '${slug}' has invalid 'related_standards' field - must be an array`,
+        severity: 'error'
+      })
+    } else {
+      // Check for invalid standard slugs
+      const invalidStandards = standard.related_standards.filter(
+        (relatedSlug: string) => !validStandardSlugs.has(relatedSlug)
+      )
+
+      if (invalidStandards.length > 0) {
+        const validList = Array.from(validStandardSlugs).sort().join(', ')
+        errors.push({
+          field: 'related_standards',
+          message: `Standard '${slug}' has invalid related_standards: ${invalidStandards.join(', ')}\n   Valid standards are: ${validList}`,
+          severity: 'error'
+        })
+      }
+
+      // Check for duplicates
+      const uniqueRelated = new Set(standard.related_standards)
+      if (uniqueRelated.size < standard.related_standards.length) {
+        const duplicates = standard.related_standards.filter(
+          (std: string, index: number) => standard.related_standards!.indexOf(std) !== index
+        )
+        errors.push({
+          field: 'related_standards',
+          message: `Standard '${slug}' has duplicate related_standards: ${[...new Set(duplicates)].join(', ')}`,
+          severity: 'error'
+        })
+      }
+
+      // Validate slug format for each related standard
+      standard.related_standards.forEach((relatedSlug: string) => {
+        const slugErrors = validateStandardSlug(relatedSlug)
+        slugErrors.forEach(err => {
+          errors.push({
+            ...err,
+            message: `Standard '${slug}' related_standards: ${err.message}`
+          })
+        })
+      })
+    }
+  }
 
   return errors
 }
@@ -172,8 +223,8 @@ export function validateAllStandards(): ValidationResult {
     // Validate slug format
     allErrors.push(...validateStandardSlug(slug))
 
-    // Validate standard completeness
-    allErrors.push(...validateStandardMetadata(slug, standard))
+    // Validate standard completeness and related_standards
+    allErrors.push(...validateStandardMetadata(slug, standard, standards))
   }
 
   // Separate errors and warnings
