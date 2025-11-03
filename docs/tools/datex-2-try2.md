@@ -12,7 +12,6 @@ sourceCode: https://datex2.eu/downloads/
 developer: CEN TC 278 / NAPCORE
 standards:
   - datex-ii
-  - cen-16157
 tags:
   - Data Model
   - Documentation
