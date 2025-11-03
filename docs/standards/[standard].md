@@ -11,6 +11,8 @@ import { data as _standardsData } from '../.vitepress/standards.data'
 
 <div v-if="$params.details">
 
+> {{ $params.details.longTitle }}
+
 ## Overview
 
 **Domain:** {{ $params.details.domain }}
