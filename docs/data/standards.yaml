@@ -12,6 +12,7 @@ datex-ii:
     - mobilitydcat-ap
     - rdf
   status: EU standard (CEN)
+  link: https://docs.datex2.eu/
 
 netex:
   title: NeTEx
@@ -27,6 +28,7 @@ netex:
     - siri
     - mobilitydcat-ap
   status: EU standard (CEN)
+  link: https://transmodel-cen.eu/
 
 siri:
   title: SIRI
@@ -41,6 +43,7 @@ siri:
     - transmodel
     - netex
   status: EU standard (CEN)
+  link: https://transmodel-cen.eu/
 
 mobilitydcat-ap:
   title: mobilityDCAT-AP
@@ -57,6 +60,7 @@ mobilitydcat-ap:
     - netex
     - gtfs
   status: EU specification (ITS Directive)
+  link: https://w3id.org/mobilitydcat-ap/
 
 dcat-ap:
   title: DCAT-AP
@@ -71,20 +75,21 @@ dcat-ap:
     - mobilitydcat-ap
     - rdf
   status: EU profile of W3C standard
+  link: https://op.europa.eu/en/web/eu-vocabularies/dcat-ap
 
 isodis-14819:
   title: ISO/DIS 14819
-  longTitle: Traffic and Traveller Information
+  longTitle: Intelligent transport systems — Traffic and travel information messages via traffic message coding
   icon: 📍
   description: ALERT-C location referencing standard
   domain: Road traffic and navigation systems
-  purpose: Defines the TPEG and RDS-TMC message sets for broadcasting traffic and travel information to in-vehicle systems.
+  purpose: Defines the RDS-TMC message sets for broadcasting traffic and travel information to in-vehicle systems.
   format_technology: Binary (RDS-TMC), XML/JSON (TPEG extensions)
   maintainer_origin: ISO/TC 204
   related_standards:
     - rds-tmc
-    - datex-ii
   status: ISO standard (global)
+  link: https://www.iso.org/standard/76781.html
 
 rds-tmc:
   title: RDS-TMC
@@ -98,6 +103,7 @@ rds-tmc:
   related_standards:
     - isodis-14819
   status: Mature ISO/CEN standard
+  link: https://www.iso.org/standard/76781.html
 
 gtfs:
   title: GTFS
@@ -112,6 +118,7 @@ gtfs:
     - gtfs-realtime
     - mobilitydcat-ap
   status: Widely adopted global community standard
+  link: https://gtfs.org/
 
 gtfs-realtime:
   title: GTFS Realtime
@@ -125,6 +132,7 @@ gtfs-realtime:
   related_standards:
     - gtfs
   status: Community specification (MobilityData)
+  link: https://gtfs.org/documentation/realtime/reference/
 
 gbfs:
   title: GBFS
@@ -139,6 +147,7 @@ gbfs:
     - mobilitydcat-ap
     - gtfs
   status: Community specification (MobilityData)
+  link: https://gbfs.org/
 
 transmodel:
   title: TransModel
@@ -153,6 +162,7 @@ transmodel:
     - netex
     - siri
   status: EU standard (CEN)
+  link: https://transmodel-cen.eu/
 
 rdf:
   title: RDF
@@ -167,6 +177,7 @@ rdf:
     - dcat-ap
     - mobilitydcat-ap
   status: W3C core standard
+  link: https://www.w3.org/RDF/
 
 osm:
   title: OSM
@@ -181,3 +192,4 @@ osm:
     - gtfs
     - datex-ii
   status: Global open dataset / de facto reference
+  link: https://www.openstreetmap.org/

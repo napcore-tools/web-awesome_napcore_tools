@@ -24,6 +24,7 @@ export interface Standard {
   maintainer_origin: string      // Maintainer organization
   related_standards?: string[]   // Array of related standard slugs
   status: string                 // Status (e.g., "EU standard", "W3C")
+  link?: string                  // Link to standard's home page (e.g., "https://docs.datex2.eu/")
 }
 
 declare const data: Record<string, Standard>
