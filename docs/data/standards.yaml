@@ -1,0 +1,155 @@
+datex-ii:
+  title: DATEX II
+  domain: Road traffic and travel information
+  purpose: Standard for exchanging road and traffic data such as incidents, roadworks, and traffic status between road authorities and service providers.
+  format_technology: XML, UML, RDF (via DATEX II RDF profile)
+  maintainer_origin: CEN (EN 16157)
+  related_standards:
+    - isodis-14819
+    - cen-16157
+    - mobilitydcat-ap
+  status: EU standard (CEN)
+
+netex:
+  title: NeTEx (Network Timetable Exchange)
+  domain: Public transport (scheduled data)
+  purpose: Data exchange standard for sharing public transport schedules, routes, stops, and fare information, based on the TransModel conceptual model.
+  format_technology: XML (CEN schema)
+  maintainer_origin: CEN (EN 16614)
+  related_standards:
+    - transmodel
+    - siri
+    - mobilitydcat-ap
+  status: EU standard (CEN)
+
+siri:
+  title: SIRI (Service Interface for Real-time Information)
+  domain: Public transport (real-time information)
+  purpose: Defines interfaces for exchanging live operational data like vehicle positions, departures, and service alerts between systems.
+  format_technology: XML (SOAP-based web services)
+  maintainer_origin: CEN (EN 15531)
+  related_standards:
+    - transmodel
+    - netex
+  status: EU standard (CEN)
+
+mobilitydcat-ap:
+  title: mobilityDCAT-AP
+  domain: Transport and mobility data catalogues
+  purpose: Profile of DCAT-AP tailored for describing datasets and APIs in National Access Points (NAPs) for mobility data.
+  format_technology: RDF, DCAT vocabulary
+  maintainer_origin: European Commission / EU ITS Directive framework
+  related_standards:
+    - dcat-ap
+    - datex-ii
+    - netex
+    - gtfs
+  status: EU specification (ITS Directive)
+
+dcat-ap:
+  title: DCAT-AP (Data Catalog Vocabulary Application Profile for Europe)
+  domain: Open data and metadata cataloguing
+  purpose: Common model for describing datasets, APIs, and catalogues to enable interoperability among European open data portals.
+  format_technology: RDF, W3C DCAT vocabulary
+  maintainer_origin: European Commission / W3C
+  related_standards:
+    - mobilitydcat-ap
+    - rdf
+  status: EU profile of W3C standard
+
+isodis-14819:
+  title: ISO/DIS 14819 (Traffic and Traveller Information)
+  domain: Road traffic and navigation systems
+  purpose: Defines the TPEG and RDS-TMC message sets for broadcasting traffic and travel information to in-vehicle systems.
+  format_technology: Binary (RDS-TMC), XML/JSON (TPEG extensions)
+  maintainer_origin: ISO/TC 204
+  related_standards:
+    - rds-tmc
+    - datex-ii
+  status: ISO standard (global)
+
+cen-16157:
+  title: CEN 16157 (DATEX II)
+  domain: Road traffic and travel information
+  purpose: European standard for exchanging road and traffic data; provides the basis for DATEX II implementations.
+  format_technology: XML
+  maintainer_origin: CEN/TC 278
+  related_standards:
+    - isodis-14819
+    - rdf
+  status: EU standard (CEN)
+
+rds-tmc:
+  title: RDS-TMC (Radio Data System – Traffic Message Channel)
+  domain: Road traffic information broadcasting
+  purpose: Encodes traffic messages into FM radio broadcasts to deliver real-time traffic updates to navigation systems.
+  format_technology: Binary over FM RDS
+  maintainer_origin: ISO / CEN / broadcasters
+  related_standards:
+    - isodis-14819
+  status: Mature ISO/CEN standard
+
+gtfs:
+  title: GTFS (General Transit Feed Specification)
+  domain: Public transport (static data)
+  purpose: Open format for publishing scheduled public transport data including routes, stops, and timetables.
+  format_technology: CSV (zipped feed)
+  maintainer_origin: Originally Google; now MobilityData community
+  related_standards:
+    - gtfs-realtime
+    - mobilitydcat-ap
+  status: Widely adopted global community standard
+
+gtfs-realtime:
+  title: GTFS Realtime
+  domain: Public transport (real-time data)
+  purpose: Real-time extension of GTFS providing live updates on vehicle positions, trip progress, and service alerts.
+  format_technology: Protocol Buffers (protobuf)
+  maintainer_origin: MobilityData community
+  related_standards:
+    - gtfs
+  status: Community specification (MobilityData)
+
+gbfs:
+  title: GBFS (General Bikeshare Feed Specification)
+  domain: Micromobility and shared mobility
+  purpose: Defines a standard format for sharing real-time data about shared vehicles (bikes, scooters, etc.).
+  format_technology: JSON (REST API)
+  maintainer_origin: MobilityData community
+  related_standards:
+    - mobilitydcat-ap
+    - gtfs
+  status: Community specification (MobilityData)
+
+transmodel:
+  title: TransModel (EN 12896)
+  domain: Public transport conceptual modelling
+  purpose: Conceptual data model describing the structure and relationships of public transport information (network, timetables, operations).
+  format_technology: UML conceptual model
+  maintainer_origin: CEN (EN 12896)
+  related_standards:
+    - netex
+    - siri
+  status: EU standard (CEN)
+
+rdf:
+  title: RDF (Resource Description Framework)
+  domain: Semantic web and linked data
+  purpose: Framework for representing and linking structured data across the web, foundational to DCAT and mobilityDCAT-AP.
+  format_technology: RDF/XML, Turtle, JSON-LD
+  maintainer_origin: W3C
+  related_standards:
+    - dcat-ap
+    - mobilitydcat-ap
+  status: W3C core standard
+
+osm:
+  title: OSM (OpenStreetMap)
+  domain: Geospatial and transport mapping
+  purpose: Collaborative open geodata project providing maps, networks, and location references widely used in transport applications.
+  format_technology: XML, PBF (binary), APIs
+  maintainer_origin: OpenStreetMap Foundation / global community
+  related_standards:
+    - gtfs
+    - datex-ii
+  status: Global open dataset / de facto reference
