@@ -1,105 +1,54 @@
 /**
- * STANDARD METADATA DEFINITIONS
+ * STANDARDS MODULE - Client-safe standard metadata access
  *
- * Visual metadata (icons, descriptions) for mobility data standards.
- * Used by StandardsGrid.vue to display standards with icons.
- *
- * Note: This is for display purposes only. The canonical list of standards
- * comes from tool frontmatter - if a new standard appears in a tool,
- * add its metadata here for a better visual presentation.
+ * This module is safe to import in both Node.js (build time) and browser (client) code.
+ * The actual data is loaded from standards.yaml via the VitePress data loader (standards.data.ts).
  */
 
-export interface StandardMetadata {
-  title: string        // Display name of the standard
-  icon: string         // Emoji icon for visual identification
-  description?: string // Optional short description
-}
+import { data as STANDARDS } from './standards.data'
+import type { Standard } from './standards.data'
+
+// Re-export the Standard interface for convenience
+export type { Standard }
 
 /**
- * Standard metadata map (keyed by slugified standard name)
- * The keys are URL-friendly slugs matching how standards are written in tool YAML frontmatter
+ * For backward compatibility - subset of Standard interface
+ * Used by components that only need title, icon, description
  */
-export const STANDARD_METADATA: Record<string, StandardMetadata> = {
-  'datex-ii': {
-    title: 'DATEX II',
-    icon: '🚦',
-    description: 'European standard for traffic and travel information exchange'
-  },
-  'netex': {
-    title: 'NeTEx',
-    icon: '🚇',
-    description: 'Network Timetable Exchange - public transport network data'
-  },
-  'siri': {
-    title: 'SIRI',
-    icon: '📡',
-    description: 'Service Interface for Real-time Information - live transit data'
-  },
-  'mobilitydcat-ap': {
-    title: 'mobilityDCAT-AP',
-    icon: '🏷️',
-    description: 'Mobility Data Catalog Application Profile - metadata standard'
-  },
-  'dcat-ap': {
-    title: 'DCAT-AP',
-    icon: '📋',
-    description: 'Data Catalog Application Profile - EU open data metadata'
-  },
-  'isodis-14819': {
-    title: 'ISO/DIS 14819',
-    icon: '📍',
-    description: 'ALERT-C location referencing standard'
-  },
-  'cen-16157': {
-    title: 'CEN 16157',
-    icon: '📜',
-    description: 'European standard for intelligent transport systems'
-  },
-  'rds-tmc': {
-    title: 'RDS-TMC',
-    icon: '📻',
-    description: 'Radio Data System - Traffic Message Channel'
-  },
-  'gtfs': {
-    title: 'GTFS',
-    icon: '🚌',
-    description: 'General Transit Feed Specification'
-  },
-  'gbfs': {
-    title: 'GBFS',
-    icon: '🚲',
-    description: 'General Bikeshare Feed Specification - standard for shared mobility systems'
-  },
-  'transmodel': {
-    title: 'TransModel',
-    icon: '🗺️',
-    description: 'European reference data model for public transport'
-  },
-  'gtfs-realtime': {
-    title: 'GTFS Realtime',
-    icon: '⚡',
-    description: 'Real-time transit updates extension for GTFS'
-  },
-  'rdf': {
-    title: 'RDF',
-    icon: '🔗',
-    description: 'Resource Description Framework - W3C standard for linked data and semantic web'
-  },
-  'osm': {
-    title: 'OSM',
-    icon: '🌍',
-    description: 'OpenStreetMap - collaborative open-source mapping data'
-  }
+export interface StandardMetadata {
+  title: string
+  icon: string
+  description?: string
 }
 
 /**
  * Get metadata for a standard, with fallback to default values
  * @param standardSlug - The slugified standard name (e.g., 'datex-ii')
+ * @returns StandardMetadata object with title, icon, description
+ *
+ * Note: This function maintains backward compatibility by returning
+ * only the UI-relevant fields (title, icon, description)
  */
 export function getStandardMetadata(standardSlug: string): StandardMetadata {
-  return STANDARD_METADATA[standardSlug] || {
-    title: standardSlug, // Use slug as title if metadata not found
-    icon: '📄', // Default icon for unknown standards
+  const standard = STANDARDS[standardSlug]
+
+  if (standard) {
+    return {
+      title: standard.title,
+      icon: standard.icon,
+      description: standard.description
+    }
+  }
+
+  // Fallback for unknown standards
+  return {
+    title: standardSlug,     // Use slug as title if metadata not found
+    icon: '📄',              // Default icon for unknown standards
     description: undefined
   }
 }
+
+/**
+ * Export the complete standards data for modules that need full details
+ */
+export { STANDARDS }

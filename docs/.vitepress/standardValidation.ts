@@ -2,10 +2,11 @@
  * Standard Metadata Validation
  *
  * Validates standard metadata and tool standard references to catch typos and invalid data early.
- * Ensures all standards referenced in tools exist in STANDARD_METADATA with complete information.
+ * Ensures all standards referenced in tools exist in STANDARDS with complete information.
  */
 
-import { STANDARD_METADATA, type StandardMetadata } from './standards'
+import standardsDataLoader from './standards.data'
+import type { Standard } from './standards.data'
 import type { Tool } from './tools.data'
 import {
   type ValidationError,
@@ -60,38 +61,44 @@ function validateStandardSlug(slug: string): ValidationError[] {
 /**
  * Validate standard metadata completeness
  */
-function validateStandardMetadata(slug: string, metadata: StandardMetadata): ValidationError[] {
+function validateStandardMetadata(slug: string, standard: Standard): ValidationError[] {
   const errors: ValidationError[] = []
 
-  // Check title field
-  if (!metadata.title || typeof metadata.title !== 'string' || metadata.title.trim() === '') {
-    errors.push({
-      field: 'title',
-      message: `Standard '${slug}' missing required 'title' field in STANDARD_METADATA`,
-      severity: 'error'
-    })
+  // Check required fields
+  const requiredFields: (keyof Standard)[] = [
+    'title',
+    'icon',
+    'domain',
+    'purpose',
+    'format_technology',
+    'maintainer_origin',
+    'status'
+  ]
+
+  for (const field of requiredFields) {
+    const value = standard[field]
+    if (!value || typeof value !== 'string' || value.trim() === '') {
+      errors.push({
+        field,
+        message: `Standard '${slug}' missing required '${field}' field in standards.yaml`,
+        severity: 'error'
+      })
+    }
   }
 
-  // Check icon field
-  if (!metadata.icon || typeof metadata.icon !== 'string' || metadata.icon.trim() === '') {
-    errors.push({
-      field: 'icon',
-      message: `Standard '${slug}' missing required 'icon' field in STANDARD_METADATA`,
-      severity: 'error'
-    })
-  }
-
-  // Description is optional, no validation needed
+  // description is optional, no validation needed
+  // related_standards is optional, no validation needed
 
   return errors
 }
 
 /**
- * Validate tool standards array against STANDARD_METADATA
+ * Validate tool standards array against STANDARDS
  */
 export function validateStandards(tool: Partial<Tool>, _filename: string): ValidationError[] {
   const errors: ValidationError[] = []
-  const validStandardSlugs = new Set(Object.keys(STANDARD_METADATA))
+  const standards = standardsDataLoader.load()
+  const validStandardSlugs = new Set(Object.keys(standards))
 
   // Standards field is optional
   if (!tool.standards) {
@@ -127,7 +134,7 @@ export function validateStandards(tool: Partial<Tool>, _filename: string): Valid
     const validList = Array.from(validStandardSlugs).sort().join(', ')
     errors.push({
       field: 'standards',
-      message: `Unknown standards: ${invalidStandards.join(', ')}\n   Valid standards are: ${validList}\n   Add missing standards to STANDARD_METADATA in standards.ts`,
+      message: `Unknown standards: ${invalidStandards.join(', ')}\n   Valid standards are: ${validList}\n   Add missing standards to standards.yaml`,
       severity: 'error'
     })
   }
@@ -154,18 +161,19 @@ export function validateStandards(tool: Partial<Tool>, _filename: string): Valid
 }
 
 /**
- * Validate all standards in STANDARD_METADATA
+ * Validate all standards in STANDARDS (loaded from standards.yaml)
  */
 export function validateAllStandards(): ValidationResult {
   const allErrors: ValidationError[] = []
+  const standards = standardsDataLoader.load()
 
   // Validate each standard entry
-  for (const [slug, metadata] of Object.entries(STANDARD_METADATA)) {
+  for (const [slug, standard] of Object.entries(standards)) {
     // Validate slug format
     allErrors.push(...validateStandardSlug(slug))
 
-    // Validate metadata completeness
-    allErrors.push(...validateStandardMetadata(slug, metadata))
+    // Validate standard completeness
+    allErrors.push(...validateStandardMetadata(slug, standard))
   }
 
   // Separate errors and warnings

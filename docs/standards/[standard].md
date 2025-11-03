@@ -1,10 +1,10 @@
 ---
-# Import data loader to create dependency - VitePress will watch standards.yaml
+# Import standards module to create dependency - VitePress will watch standards.yaml
 ---
 
 <script setup>
 // This import ensures VitePress watches standards.yaml for changes
-import { data as standardDetails } from '../.vitepress/standardDetails.data'
+import { data as _standardsData } from '../.vitepress/standards.data'
 </script>
 
 # {{ $params.standardName }}

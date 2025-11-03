@@ -1,17 +1,23 @@
 datex-ii:
   title: DATEX II
+  longTitle: European Standard for Traffic and Travel Information Exchange - CEN/TS 16157
+  icon: 🚦
+  description: European standard for traffic and travel information exchange
   domain: Road traffic and travel information
   purpose: Standard for exchanging road and traffic data such as incidents, roadworks, and traffic status between road authorities and service providers.
   format_technology: XML, UML, RDF (via DATEX II RDF profile)
   maintainer_origin: CEN (EN 16157)
   related_standards:
     - isodis-14819
-    - cen-16157
     - mobilitydcat-ap
+    - rdf
   status: EU standard (CEN)
 
 netex:
-  title: NeTEx (Network Timetable Exchange)
+  title: NeTEx
+  longTitle: Network Timetable Exchange
+  icon: 🚇
+  description: Network Timetable Exchange - public transport network data
   domain: Public transport (scheduled data)
   purpose: Data exchange standard for sharing public transport schedules, routes, stops, and fare information, based on the TransModel conceptual model.
   format_technology: XML (CEN schema)
@@ -23,7 +29,10 @@ netex:
   status: EU standard (CEN)
 
 siri:
-  title: SIRI (Service Interface for Real-time Information)
+  title: SIRI
+  longTitle: Service Interface for Real-time Information
+  icon: 📡
+  description: Service Interface for Real-time Information - live transit data
   domain: Public transport (real-time information)
   purpose: Defines interfaces for exchanging live operational data like vehicle positions, departures, and service alerts between systems.
   format_technology: XML (SOAP-based web services)
@@ -35,6 +44,9 @@ siri:
 
 mobilitydcat-ap:
   title: mobilityDCAT-AP
+  longTitle: Mobility Data Catalog Application Profile
+  icon: 🏷️
+  description: Mobility Data Catalog Application Profile - metadata standard
   domain: Transport and mobility data catalogues
   purpose: Profile of DCAT-AP tailored for describing datasets and APIs in National Access Points (NAPs) for mobility data.
   format_technology: RDF, DCAT vocabulary
@@ -47,7 +59,10 @@ mobilitydcat-ap:
   status: EU specification (ITS Directive)
 
 dcat-ap:
-  title: DCAT-AP (Data Catalog Vocabulary Application Profile for Europe)
+  title: DCAT-AP
+  longTitle: Data Catalog Vocabulary Application Profile for Europe
+  icon: 📋
+  description: Data Catalog Application Profile - EU open data metadata
   domain: Open data and metadata cataloguing
   purpose: Common model for describing datasets, APIs, and catalogues to enable interoperability among European open data portals.
   format_technology: RDF, W3C DCAT vocabulary
@@ -58,7 +73,10 @@ dcat-ap:
   status: EU profile of W3C standard
 
 isodis-14819:
-  title: ISO/DIS 14819 (Traffic and Traveller Information)
+  title: ISO/DIS 14819
+  longTitle: Traffic and Traveller Information
+  icon: 📍
+  description: ALERT-C location referencing standard
   domain: Road traffic and navigation systems
   purpose: Defines the TPEG and RDS-TMC message sets for broadcasting traffic and travel information to in-vehicle systems.
   format_technology: Binary (RDS-TMC), XML/JSON (TPEG extensions)
@@ -68,19 +86,11 @@ isodis-14819:
     - datex-ii
   status: ISO standard (global)
 
-cen-16157:
-  title: CEN 16157 (DATEX II)
-  domain: Road traffic and travel information
-  purpose: European standard for exchanging road and traffic data; provides the basis for DATEX II implementations.
-  format_technology: XML
-  maintainer_origin: CEN/TC 278
-  related_standards:
-    - isodis-14819
-    - rdf
-  status: EU standard (CEN)
-
 rds-tmc:
-  title: RDS-TMC (Radio Data System – Traffic Message Channel)
+  title: RDS-TMC
+  longTitle: Radio Data System – Traffic Message Channel
+  icon: 📻
+  description: Radio Data System - Traffic Message Channel
   domain: Road traffic information broadcasting
   purpose: Encodes traffic messages into FM radio broadcasts to deliver real-time traffic updates to navigation systems.
   format_technology: Binary over FM RDS
@@ -90,7 +100,10 @@ rds-tmc:
   status: Mature ISO/CEN standard
 
 gtfs:
-  title: GTFS (General Transit Feed Specification)
+  title: GTFS
+  longTitle: General Transit Feed Specification
+  icon: 🚌
+  description: General Transit Feed Specification
   domain: Public transport (static data)
   purpose: Open format for publishing scheduled public transport data including routes, stops, and timetables.
   format_technology: CSV (zipped feed)
@@ -102,6 +115,9 @@ gtfs:
 
 gtfs-realtime:
   title: GTFS Realtime
+  longTitle: Real-time transit updates extension for GTFS
+  icon: ⚡
+  description: Real-time transit updates extension for GTFS
   domain: Public transport (real-time data)
   purpose: Real-time extension of GTFS providing live updates on vehicle positions, trip progress, and service alerts.
   format_technology: Protocol Buffers (protobuf)
@@ -111,7 +127,10 @@ gtfs-realtime:
   status: Community specification (MobilityData)
 
 gbfs:
-  title: GBFS (General Bikeshare Feed Specification)
+  title: GBFS
+  longTitle: General Bikeshare Feed Specification
+  icon: 🚲
+  description: General Bikeshare Feed Specification - standard for shared mobility systems
   domain: Micromobility and shared mobility
   purpose: Defines a standard format for sharing real-time data about shared vehicles (bikes, scooters, etc.).
   format_technology: JSON (REST API)
@@ -122,7 +141,10 @@ gbfs:
   status: Community specification (MobilityData)
 
 transmodel:
-  title: TransModel (EN 12896)
+  title: TransModel
+  longTitle: European Reference Data Model for Public Transport
+  icon: 🗺️
+  description: European reference data model for public transport
   domain: Public transport conceptual modelling
   purpose: Conceptual data model describing the structure and relationships of public transport information (network, timetables, operations).
   format_technology: UML conceptual model
@@ -133,7 +155,10 @@ transmodel:
   status: EU standard (CEN)
 
 rdf:
-  title: RDF (Resource Description Framework)
+  title: RDF
+  longTitle: Resource Description Framework
+  icon: 🔗
+  description: Resource Description Framework - W3C standard for linked data and semantic web
   domain: Semantic web and linked data
   purpose: Framework for representing and linking structured data across the web, foundational to DCAT and mobilityDCAT-AP.
   format_technology: RDF/XML, Turtle, JSON-LD
@@ -144,7 +169,10 @@ rdf:
   status: W3C core standard
 
 osm:
-  title: OSM (OpenStreetMap)
+  title: OSM
+  longTitle: OpenStreetMap
+  icon: 🌍
+  description: OpenStreetMap - collaborative open-source mapping data
   domain: Geospatial and transport mapping
   purpose: Collaborative open geodata project providing maps, networks, and location references widely used in transport applications.
   format_technology: XML, PBF (binary), APIs

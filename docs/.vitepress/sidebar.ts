@@ -1,7 +1,7 @@
 // Dynamic sidebar configuration with tool counts
 import toolsDataLoader from './tools.data'
+import standardsDataLoader from './standards.data'
 import { CATEGORIES } from './categories'
-import { getStandardMetadata } from './standards'
 
 // Load tools and calculate counts per category
 function getCategoryCounts(): Record<string, number> {
@@ -58,13 +58,17 @@ function getStandardCounts(): Record<string, number> {
 // Generate standard sidebar items with counts
 function getStandardItemsWithCounts() {
   const counts = getStandardCounts()
+  const standards = standardsDataLoader.load()
 
   // Convert to array with metadata for sorting by title
-  const standardsWithMetadata = Object.keys(counts).map(slug => ({
-    slug,
-    title: getStandardMetadata(slug).title,
-    count: counts[slug]
-  }))
+  const standardsWithMetadata = Object.keys(standards).map(slug => {
+    const standard = standards[slug]
+    return {
+      slug,
+      title: standard?.title || slug, // Fallback to slug if not found
+      count: counts[slug] || 0,
+    }
+  })
 
   // Sort standards alphabetically by title
   standardsWithMetadata.sort((a, b) => a.title.localeCompare(b.title))
