@@ -19,6 +19,8 @@ import { data as _standardsData } from '../.vitepress/standards.data'
 
 **Status:** {{ $params.details.status }}
 
+**More info:** <a :href="$params.details.link" target="_blank">{{ $params.details.link }}</a>
+
 {{ $params.details.purpose }}
 
 ## Technical Details
