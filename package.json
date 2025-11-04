@@ -10,7 +10,18 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --check .",
-    "format:fix": "prettier --write ."
+    "format:fix": "prettier --write .",
+    "prepare": "npx simple-git-hooks",
+    "precommit": "npx lint-staged"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run precommit"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue,md,json,yml,yaml}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "keywords": [
     "napcore",
