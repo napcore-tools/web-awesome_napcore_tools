@@ -33,7 +33,9 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.5.1",
     "gray-matter": "^4.0.3",
+    "lint-staged": "^16.2.6",
     "prettier": "^3.6.2",
+    "simple-git-hooks": "^2.13.1",
     "typescript": "^5.9.3",
     "vitepress": "2.0.0-alpha.12"
   }
