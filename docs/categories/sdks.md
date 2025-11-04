@@ -1,79 +1,69 @@
 # SDKs & Libraries
 
-Programming language bindings and libraries for easier implementation of mobility data standards.
+Programming language bindings and reusable libraries that simplify the implementation of mobility and transport data standards.
 
 ## Available Tools
 
 <ToolsGrid />
 
-## What are SDKs & Libraries?
+## What Are SDKs & Libraries?
 
-SDKs (Software Development Kits) and libraries provide programming interfaces that make it easier to work with mobility data standards:
+SDKs and libraries provide **ready-to-use code components** for developers working with transport data.
+They help parse, validate, generate, and exchange standard-compliant datasets without needing to implement low-level logic from scratch.
 
-- **Language bindings**: Native implementations in Python, Java, JavaScript, C#, etc.
-- **Data models**: Pre-built classes and types representing standard structures
-- **Serialization/Deserialization**: Easy conversion between objects and XML/JSON
-- **Validation helpers**: Built-in validation functions
-- **API wrappers**: Simplify interaction with mobility data APIs
+They’re ideal for:
+
+- **Developers** building transport apps or APIs
+- **Data engineers** processing or transforming datasets
+- **Integrators** creating standardized data interfaces
+
+## Types of SDKs & Libraries
+
+| Type                     | Description                                | Example                |
+| ------------------------ | ------------------------------------------ | ---------------------- |
+| **Parsing Libraries**    | Read and write standard data formats       | DATEX II XML Parser    |
+| **Validation Libraries** | Embed schema or business rule validation   | NeTEx Rule Validator   |
+| **Conversion Libraries** | Transform data between supported formats   | SIRI ↔ JSON Converter |
+| **API Client SDKs**      | Simplify communication with transport APIs | SIRI REST Client       |
+| **Metadata Libraries**   | Handle DCAT-AP / mobilityDCAT-AP metadata  | DCAT-AP Toolkit        |
 
 ## Common Use Cases
 
 ### Application Development
 
-Build applications that consume or produce mobility data using familiar programming languages.
+Quickly build standard-compliant APIs or data integrations.
 
-### API Integration
+### Data Transformation
 
-Integrate with NAP APIs or other mobility data services.
+Convert and harmonize datasets in pipelines or ETL jobs.
 
-### Data Processing
+### Testing and Validation
 
-Process large volumes of mobility data programmatically.
+Integrate schema validation within your application logic.
 
-### Custom Tools
+### Metadata Automation
 
-Build custom tools and utilities on top of standard libraries.
+Generate or update DCAT-AP or mobilityDCAT-AP metadata programmatically.
 
-## Needed SDKs & Libraries
+## Example Tool
 
-We're looking for libraries in:
+**DATEX II Python SDK**
 
-### Programming Languages
-
-- Python
-- Java / Kotlin
-- JavaScript / TypeScript
-- C# / .NET
-- Go
-- Rust
-- PHP
-
-### Standards
-
-- DATEX II
-- NeTEx
-- SIRI
-- mobilityDCAT-AP
-- GTFS
-
-## Standards
-
-<div class="standards-list">
-  <span class="standard-badge">DATEX II</span>
-  <span class="standard-badge">NeTEx</span>
-  <span class="standard-badge">SIRI</span>
-  <span class="standard-badge">GTFS</span>
-  <span class="standard-badge">mobilityDCAT-AP</span>
-</div>
+- Parses and generates DATEX II XML files
+- Supports validation and serialization
+- Compatible with Python 3 and modern frameworks
+- Open source, community-maintained
 
 ## Related Categories
 
-- [Reference Implementations](/categories/reference-implementations) - Example applications using SDKs
-- [Development Tools](/categories/development) - Tools that complement SDKs
-- [Converters](/categories/converters) - Often use libraries internally
+- [Development Tools](./development)
+- [Converters](./converters)
+- [Validators](./validators)
+- [Reference Implementations](./reference-implementations)
 
 ---
 
-::: tip Have an SDK or Library?
-SDKs and libraries are highly valuable to developers! [Submit a tool →](/contribute)
+::: tip Want to Contribute?
+Developed or used an SDK or library for mobility standards?
+[Submit your library →](/contribute)
 :::

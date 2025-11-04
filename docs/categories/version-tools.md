@@ -1,53 +1,69 @@
 # Version Upgrade Tools
 
-Migration and compatibility utilities for upgrading between standard versions.
+Utilities and scripts that help migrate or convert datasets and systems between different versions of mobility and transport data standards.
 
 ## Available Tools
 
 <ToolsGrid />
 
-## What are Version Upgrade Tools?
+## What Are Version Upgrade Tools?
 
-Version upgrade tools help you migrate data and implementations between different versions of mobility data standards:
+Version upgrade tools automate the process of **updating data or interfaces** from older to newer standard versions — ensuring compatibility, data integrity, and compliance.
+They’re essential when standards evolve (e.g., DATEX II v2 → v3, NeTEx profile updates) and systems need to stay interoperable.
 
-- **Data migration**: Convert data from older to newer standard versions
-- **Compatibility checking**: Identify compatibility issues between versions
-- **Automated conversion**: Transform data structures to match new schema requirements
-- **Deprecation handling**: Handle deprecated elements gracefully
+They’re typically used by:
+
+- **Data providers** upgrading published datasets
+- **System integrators** maintaining interoperability across versions
+- **Developers** adapting applications to new schema versions
+
+## Types of Version Upgrade Tools
+
+| Type                        | Description                                | Example                         |
+| --------------------------- | ------------------------------------------ | ------------------------------- |
+| **Schema Migrators**        | Convert files between standard versions    | DATEX II v2 → v3 Converter      |
+| **Transformation Scripts**  | Apply XSLT or mapping rules                | NeTEx Profile Transformer       |
+| **Compatibility Checkers**  | Verify cross-version compliance            | mobilityDCAT-AP Version Checker |
+| **Migration Assistants**    | Interactive tools for data migration       | XML Schema Migration Assistant  |
+| **Multi-Profile Upgraders** | Handle regional or custom profile mappings | DATEX II Profile Upgrader       |
 
 ## Common Use Cases
 
-### Standard Updates
+### Standard Migration
 
-When a new version of DATEX II, NeTEx, or SIRI is released, migrate existing data and implementations.
+Convert existing datasets to newer standard versions to maintain compliance.
 
-### System Modernization
+### Compatibility Testing
 
-Upgrade legacy systems using old standard versions to current versions.
+Ensure backward compatibility when consuming mixed-version data feeds.
 
-### Multi-Version Support
+### Automated Conversion
 
-Maintain compatibility with systems using different standard versions.
+Integrate upgrade utilities in pipelines to process datasets dynamically.
 
-## Needed Tools
+### Metadata Synchronization
 
-We're looking for tools that handle version upgrades for:
+Update catalog metadata to align with new schema profiles.
 
-- **DATEX II** version migrations (v2.x to v3.x, v3.4 to v3.6, etc.)
-- **NeTEx** version migrations
-- **SIRI** version migrations
-- **Multi-standard upgrade utilities**
+## Example Tool
 
-## Standards
+**DATEX II Version Migration Tool**
 
-<div class="standards-list">
-  <span class="standard-badge">DATEX II</span>
-  <span class="standard-badge">NeTEx</span>
-  <span class="standard-badge">SIRI</span>
-</div>
+- Converts legacy DATEX II v2 datasets to v3 format
+- Preserves key elements and mappings
+- Command-line utility with configurable profiles
+- Used by several European NAPs
+
+## Related Categories
+
+- [Converters](./converters)
+- [Validators](./validators)
+- [Development Tools](./development)
+- [Data Quality Tools](./data-quality)
 
 ---
 
-::: tip Have an Upgrade Tool?
-Version migration tools are valuable for the community! [Submit a tool →](/contribute)
+::: tip Want to Contribute?
+Created or used a migration or upgrade tool for mobility standards?
+[Submit your tool →](/contribute)
 :::

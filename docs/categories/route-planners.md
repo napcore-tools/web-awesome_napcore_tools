@@ -1,41 +1,67 @@
-# Route planners
+# Route Planners
 
-Route planners are digital tools that help you find the best way to get from one location to another. They're the technology behind apps like Google Maps, Waze, and Apple Maps, as well as specialized navigation systems in vehicles and logistics software.
+Applications and APIs that calculate, visualize, and share routes for transport networks — integrating mobility data from multiple standards and sources.
 
 ## Available Tools
 
 <ToolsGrid />
 
-## How they work
+## What Are Route Planners?
 
-Route planners use algorithms to analyze road networks, distances, and various other factors to calculate optimal paths. They typically consider:
+Route planners compute **optimal travel routes** for vehicles, cyclists, or passengers, using transport datasets and standards such as NeTEx, SIRI, and DATEX II.
+They enable multimodal transport planning, traffic management, and navigation services.
 
-- Distance between points
-- Current traffic conditions
-- Speed limits and road types
-- Turn restrictions and one-way streets
-- Real-time incidents (accidents, construction, road closures)
-- Time of day
-- Transportation mode (driving, walking, cycling, public transit)
+They are used by:
 
-## Common features
+- **Public transport operators** for journey planning
+- **Traffic authorities** for information services
+- **Developers** creating mobility apps and digital twins
 
-- **Multiple route options** - showing fastest, shortest, or alternative paths
-- **Turn-by-turn navigation** - voice-guided directions
-- **ETA calculations** - estimated arrival times that update based on conditions
-- **Multi-stop routing** - optimizing trips with several destinations
-- **Avoid preferences** - highways, tolls, ferries, etc.
-- **Live traffic updates** - rerouting around congestion
+## Types of Route Planners
 
-## Use cases
+| Type                           | Description                                    | Example                            |
+| ------------------------------ | ---------------------------------------------- | ---------------------------------- |
+| **Public Transport Planners**  | Calculate journeys using timetables and stops  | NeTEx / GTFS-based Journey Planner |
+| **Road Traffic Planners**      | Compute road routes and traffic-aware guidance | DATEX II Traffic Routing Service   |
+| **Multimodal Planners**        | Combine modes (car, train, bike, walk)         | OpenTripPlanner                    |
+| **Geospatial Routing Engines** | Compute optimized paths using map data         | OSRM, GraphHopper                  |
 
-- Personal navigation for daily commutes and travel
-- Delivery and logistics optimization
-- Emergency services routing
-- Trip planning for road trips
-- Fleet management for businesses
-- Public transportation journey planning
+## Common Use Cases
 
-The more advanced route planners use machine learning to predict traffic patterns and can even consider factors like fuel efficiency, vehicle restrictions, or scenic preferences when suggesting routes.
+### Journey Planning
 
-Is there a specific aspect of route planning you're interested in learning more about?
+Calculate routes and travel times for multimodal transport networks.
+
+### Traffic Management
+
+Integrate road events and congestion data from DATEX II feeds.
+
+### Real-Time Updates
+
+Combine static NeTEx data with live SIRI feeds for dynamic route planning.
+
+### Mobility-as-a-Service (MaaS)
+
+Power integrated travel apps and regional journey planners.
+
+## Example Tool
+
+**OpenTripPlanner**
+
+- Supports NeTEx, GTFS, and SIRI data
+- Provides multimodal routing and real-time updates
+- Extensible open-source platform widely used across Europe
+
+## Related Categories
+
+- [Development Tools](./development)
+- [SDKs & Libraries](./sdks-libraries)
+- [Converters](./converters)
+- [Testing Utilities](./testing)
+
+---
+
+::: tip Want to Contribute?
+Know a route planning engine or API using mobility standards?
+[Submit your tool →](/contribute)
+:::

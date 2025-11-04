@@ -1,100 +1,69 @@
-# Reference Documentation
+# Reference Documentations
 
-Technical documentation, specifications, and implementation guides for mobility data standards and systems.
+Authoritative documentation and specifications that define the structure, semantics, and usage of mobility and transport data standards.
 
 ## Available Tools
 
 <ToolsGrid />
 
-## What is Reference Documentation?
+## What Is Reference Documentation?
 
-Reference documentation provides the authoritative technical information needed to implement and work with mobility data standards:
+Reference documentation provides **official definitions and guidance** for implementing European mobility data standards.
+It includes schemas, UML models, reference guides, and technical specifications that ensure consistent interpretation across implementations.
 
-- **Standard specifications**: Official documentation for DATEX II, NeTEx, SIRI, and other standards
-- **Implementation guides**: Step-by-step guidance for implementing standards
-- **API documentation**: Technical references for NAP and other APIs
-- **Best practices**: Recommended approaches and patterns
-- **Code examples**: Sample implementations and use cases
+Used by:
 
-## Common Use Cases
-
-### Implementation Planning
-
-Understand requirements and scope before building mobility data systems.
-
-### Development Reference
-
-Access detailed technical specifications during implementation.
-
-### Standards Compliance
-
-Ensure implementations align with official specifications and profiles.
-
-### Learning and Training
-
-Educate teams on mobility data standards and best practices.
+- **Developers** to implement data exchange formats correctly
+- **System architects** to design interoperable platforms
+- **Public authorities** to ensure conformance in data publication
 
 ## Types of Reference Documentation
 
-### Standard Specifications
+| Type                        | Description                              | Example                       |
+| --------------------------- | ---------------------------------------- | ----------------------------- |
+| **Standard Specifications** | Core CEN/ISO or EC documents             | CEN/EN 16157 (DATEX II)       |
+| **Technical Guidelines**    | Best practices and interpretation notes  | NeTEx Implementation Guide    |
+| **API Specifications**      | REST/GraphQL or SOAP API definitions     | SIRI API Reference            |
+| **Data Model Definitions**  | UML or XSD reference files               | DATEX II UML Model            |
+| **Metadata Profiles**       | DCAT-AP extensions and mobility profiles | mobilityDCAT-AP Specification |
 
-- Official DATEX II, NeTEx, and SIRI documentation
-- XML schemas and data models
-- Profile definitions (e.g., NAP profiles)
-- Version history and change logs
+## Common Use Cases
 
-### Implementation Guides
+### Implementation Support
 
-- Getting started tutorials
-- Integration patterns
-- Deployment guidelines
-- Migration guides
+Use as the authoritative source when developing or validating systems.
 
-### API Documentation
+### Schema and Model Understanding
 
-- Endpoint references
-- Request/response examples
-- Authentication and authorization
-- Rate limits and usage policies
+Consult data element definitions, UML diagrams, and constraints.
 
-### Technical Guides
+### Policy and Compliance
 
-- Data modeling guidance
-- Mapping between standards
-- Performance optimization
-- Security best practices
+Align local or national initiatives with European standard specifications.
 
-## Needed Documentation
+### Documentation Reuse
 
-We're looking for reference materials including:
+Integrate excerpts into training materials or technical guides.
 
-- **NAP implementation guides** by country
-- **DATEX II profile documentation**
-- **NeTEx stop place modeling guides**
-- **SIRI real-time messaging specifications**
-- **mobilityDCAT-AP metadata guides**
-- **Integration architecture patterns**
-- **API design specifications**
-- **Code sample repositories**
+## Example Tool
 
-## Standards
+**DATEX II Specification Repository**
 
-<div class="standards-list">
-  <span class="standard-badge">DATEX II</span>
-  <span class="standard-badge">NeTEx</span>
-  <span class="standard-badge">SIRI</span>
-  <span class="standard-badge">mobilityDCAT-AP</span>
-  <span class="standard-badge">NAPCORE</span>
-</div>
+- Contains all CEN/EN 16157 parts
+- Includes UML models, schemas, and examples
+- Maintained by the DATEX II community
+- Freely accessible via GitHub and the official portal
 
 ## Related Categories
 
-- [Reference Implementations](/categories/reference-implementations) - Working code examples
-- [Validators](/categories/validators) - Verify compliance with specifications
-- [Converters](/categories/converters) - Transform between documented formats
+- [Validators](./validators)
+- [Reference Implementations](./reference-implementations)
+- [SDKs & Libraries](./sdks-libraries)
+- [Development Tools](./development)
 
 ---
 
-::: tip Have Reference Documentation?
-Good documentation makes standards accessible to everyone! [Submit a resource →](/contribute)
+::: tip Want to Contribute?
+Know a public repository or authoritative documentation set?
+[Submit a link →](/contribute)
 :::

@@ -1,84 +1,69 @@
 # Validators
 
-Schema validation and business rule checking tools for ensuring data quality and compliance.
+Tools and services that **check the structure and quality of mobility and transport data**, ensuring it complies with European standards such as DATEX II, NeTEx, SIRI, and mobilityDCAT-AP.
 
 ## Available Tools
 
 <ToolsGrid />
 
-## What are Validators?
+## What Are Validators?
 
-Validators are essential tools that help ensure your mobility data meets specification requirements by:
+Validators automatically verify whether datasets conform to technical and business specifications.
+They are essential for maintaining **data quality, interoperability, and regulatory compliance** in digital mobility ecosystems.
 
-- **Schema validation**: Checking data structure against XSD, JSON Schema, or other formats
-- **Business rule validation**: Verifying domain-specific rules and constraints
-- **Data quality checks**: Identifying issues with data completeness, consistency, and accuracy
-- **Compliance verification**: Ensuring data meets regulatory requirements
-- **Reference validation**: Verifying location codes, identifiers, and other reference data
+Validators typically perform:
+
+- **Schema validation** – Checks if files match required XML, JSON, or RDF schemas (e.g., XSD, JSON Schema)
+- **Business rule validation** – Tests domain-specific logic, cardinality, or value constraints
+- **Data quality checks** – Detects missing, inconsistent, or implausible values
+- **Compliance checks** – Confirms datasets meet European standards for publication or exchange
+
+## Types of Validators
+
+| Type                          | Description                                               |
+| ----------------------------- | --------------------------------------------------------- |
+| **Schema Validators**         | Validate structure and syntax against XSD/JSON schemas    |
+| **Business Rule Validators**  | Apply rules beyond the schema (e.g., logical consistency) |
+| **Multi-standard Validators** | Handle several transport formats together                 |
+| **Geographic Validators**     | Verify geospatial and reference integrity                 |
 
 ## Common Use Cases
 
 ### Pre-Publication Validation
 
-Validate data before publishing on a National Access Point to ensure quality and compliance.
+Ensure datasets comply with DATEX II, NeTEx, or mobilityDCAT-AP before submission to a **National Access Point (NAP)**.
 
-### Development Testing
+### Development & Testing
 
-Continuously validate data during development to catch issues early.
+Integrate validators in your CI/CD workflow to catch schema or logical errors early.
 
-### Quality Assurance
+### Quality Monitoring
 
-Regular validation to maintain data quality standards over time.
-
-### Debugging
-
-Identify and diagnose specific data issues with detailed error messages.
+Run scheduled validations to monitor dataset quality and detect degradation over time.
 
 ### Location Reference Validation
 
-Ensure ALERT-C location codes and references are valid and comply with ISO/DIS 14819.
+Validate ALERT-C or RDS-TMC location codes for correctness and alignment with reference tables.
 
-## Needed Validators
+## Example Tool: ALERT-C Locations Tester
 
-We're looking for validator tools for:
+The **ALERT-C Locations Tester** validates the consistency and correctness of location codes used in traffic messages.
 
-- **DATEX II validators** (XML, JSON)
-- **NeTEx validators**
-- **SIRI validators**
-- **mobilityDCAT-AP metadata validators**
-- **Multi-standard validators**
-- **Business rule validators**
-- **Geographic data validators**
-
-## Standards
-
-<div class="standards-list">
-  <span class="standard-badge supported">DATEX II</span>
-  <span class="standard-badge supported">ISO/DIS 14819</span>
-  <span class="standard-badge supported">RDS-TMC</span>
-  <span class="standard-badge">NeTEx</span>
-  <span class="standard-badge">SIRI</span>
-  <span class="standard-badge">mobilityDCAT-AP</span>
-</div>
+- **Operational use**: Czech Road and Motorway Directorate
+- **Multi-format support**: DATEX II, RDS-TMC, custom XML
+- **European coverage**: ALERT-C widely used across Europe
+- **License**: Open source (MIT)
 
 ## Related Categories
 
-- [Data Quality Tools](/categories/data-quality) - Broader quality checking
-- [Testing Utilities](/categories/testing) - Testing frameworks
-- [Converters](/categories/converters) - Conversion validation
-- [Development Tools](/categories/development) - Tools using validators
-
-## Tool Spotlight: ALERT-C Locations Tester
-
-The ALERT-C Locations Tester is particularly valuable because:
-
-- **Production proven**: In operational use by Czech Road and Motorway Directorate
-- **Format independent**: Works with DATEX II, RDS-TMC, and custom formats
-- **European relevance**: ALERT-C is widely used across European traffic systems
-- **Open source**: MIT licensed, adaptable to any country's location tables
+- [Data Quality Tools](./data-quality)
+- [Testing Utilities](./testing)
+- [Converters](./converters)
+- [Development Tools](./development)
 
 ---
 
-::: tip Have a Validator?
-Help the community by submitting validator tools you've built or know about! [Submit a tool →](/contribute)
+::: tip Want to Contribute?
+Know a validator for DATEX II, NeTEx, SIRI, or mobilityDCAT-AP?
+Help the community improve data quality by submitting your tool! [Submit a tool →](/contribute)
 :::

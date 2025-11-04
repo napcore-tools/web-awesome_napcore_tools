@@ -1,94 +1,70 @@
 # Testing Utilities
 
-Test data generation and validation tools for robust testing of mobility data systems.
+Tools and frameworks that support testing of mobility and transport data, services, and systems — ensuring reliability, interoperability, and compliance with data exchange standards.
 
 ## Available Tools
 
 <ToolsGrid />
 
-## What are Testing Utilities?
+## What Are Testing Utilities?
 
-Testing utilities help you test mobility data systems thoroughly and efficiently:
+Testing utilities help developers and data providers **verify the correctness and robustness** of their mobility data solutions.
+They automate testing of data transformations, API endpoints, and validation workflows to catch issues early in the development or publication process.
 
-- **Test data generators**: Create realistic test data
-- **Testing frameworks**: Structures for organizing tests
-- **Mock services**: Simulate external systems
-- **Load testing**: Test system performance
-- **Integration testing**: Test system interactions
+They are commonly used by:
+
+- **Developers** building or maintaining data exchange APIs
+- **Data providers** verifying output against standard schemas
+- **Quality assurance teams** running automated test suites
+
+## Types of Testing Utilities
+
+| Type                              | Description                                                   | Example                     |
+| --------------------------------- | ------------------------------------------------------------- | --------------------------- |
+| **Schema Testers**                | Validate files against XSD or JSON Schema definitions         | DATEX II Schema Tester      |
+| **Integration Testers**           | Test interoperability between systems or services             | SIRI API Integration Tester |
+| **Rule-based Testers**            | Check business rules and constraints beyond schema validation | NeTEx Logical Rule Tester   |
+| **Mock & Simulation Tools**       | Generate mock data or simulate service responses              | Traffic Data Simulator      |
+| **Continuous Testing Frameworks** | Automate validation in CI/CD pipelines                        | Mobility Data CI Runner     |
 
 ## Common Use Cases
 
-### Development Testing
+### Schema and Rule Testing
 
-Test implementations during development with generated data.
+Validate datasets or API responses to ensure structural and logical compliance.
 
 ### Integration Testing
 
-Verify your system works correctly with other mobility data systems.
+Verify compatibility between different data providers or transport systems.
 
-### Performance Testing
+### Automated Quality Assurance
 
-Ensure systems can handle expected data volumes and loads.
+Run validation tests automatically in CI/CD environments to prevent regressions.
 
-### Regression Testing
+### Mocking and Simulation
 
-Verify changes don't break existing functionality.
+Simulate transport data or API calls to test system behavior under controlled conditions.
 
-## Types of Testing Tools
+## Example Tool
 
-### Test Data Generators
+**SIRI Service Tester**
 
-- Generate valid DATEX II, NeTEx, or SIRI data
-- Create edge cases and error scenarios
-- Produce large datasets for load testing
-
-### Validators
-
-- Automated validation of test results
-- Schema compliance checking
-- Business rule verification
-
-### Mock Services
-
-- Simulate NAP endpoints
-- Mock external data providers
-- Test error scenarios
-
-### Testing Frameworks
-
-- Organize and run test suites
-- Integration with CI/CD pipelines
-- Test reporting and metrics
-
-## Needed Tools
-
-We're looking for testing utilities that provide:
-
-- **DATEX II test data generators**
-- **NeTEx test data generators**
-- **SIRI test data generators**
-- **NAP mock services**
-- **Load testing tools** for mobility data APIs
-- **Integration testing frameworks**
-- **Test case libraries**
-
-## Standards
-
-<div class="standards-list">
-  <span class="standard-badge">DATEX II</span>
-  <span class="standard-badge">NeTEx</span>
-  <span class="standard-badge">SIRI</span>
-  <span class="standard-badge">mobilityDCAT-AP</span>
-</div>
+- Simulates SIRI StopMonitoring and VehicleMonitoring requests
+- Validates XML responses against the SIRI schema
+- Supports configurable scenarios for automated testing
+- Used in transport system integration projects across Europe
 
 ## Related Categories
 
-- [Validators](/categories/validators) - Used in testing workflows
-- [Data Quality Tools](/categories/data-quality) - Quality testing
-- [Reference Implementations](/categories/reference-implementations) - Test against references
+- [Validators](./validators)
+- [Data Quality Tools](./data-quality)
+- [Converters](./converters)
+- [Development Tools](./development)
+- [Reference Documentation](./references)
 
 ---
 
-::: tip Have a Testing Utility?
-Testing tools help build more reliable mobility data systems! [Submit a tool →](/contribute)
+::: tip Want to Contribute?
+Know a testing framework or simulator for mobility data systems?
+[Submit your tool →](/contribute)
 :::

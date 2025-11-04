@@ -1,123 +1,69 @@
 # Data Quality Tools
 
-Validation, enrichment, and cleaning utilities for ensuring high-quality mobility data.
+Tools that measure, monitor, and improve the quality of mobility and transport data — ensuring accuracy, consistency, and reliability across datasets and systems.
 
 ## Available Tools
 
 <ToolsGrid />
 
-## What are Data Quality Tools?
+## What Are Data Quality Tools?
 
-Data quality tools help ensure mobility data is accurate, complete, consistent, and fit for purpose:
+Data quality tools help organizations ensure their data is **fit for purpose** before it is published, exchanged, or used in analytics.
+They detect issues such as missing values, schema violations, or inconsistent references, supporting better decision-making and regulatory compliance.
 
-- **Quality validation**: Check data against quality criteria
-- **Data enrichment**: Add missing information or enhance existing data
-- **Data cleaning**: Fix errors and inconsistencies
-- **Quality metrics**: Measure and report data quality
-- **Anomaly detection**: Identify unusual patterns or errors
-- **Reference data validation**: Verify codes, identifiers, and location references
+These tools are often used by:
+
+- **Data providers** – to validate and improve datasets before publication
+- **System integrators** – to ensure data compatibility
+- **Authorities** – to monitor data quality in National Access Points (NAPs)
+
+## Types of Data Quality Tools
+
+| Type                    | Description                                       | Example                     |
+| ----------------------- | ------------------------------------------------- | --------------------------- |
+| **Validation Tools**    | Check schema and rule compliance                  | DATEX II Validator          |
+| **Profiling Tools**     | Analyze datasets to detect patterns and anomalies | Mobility data profiler      |
+| **Monitoring Tools**    | Continuously track quality over time              | NAP Data Monitor            |
+| **Reference Checkers**  | Verify identifiers, codes, and locations          | ALERT-C Reference Validator |
+| **Visualization Tools** | Provide dashboards for data quality KPIs          | Quality Metrics Dashboard   |
 
 ## Common Use Cases
 
-### Pre-Publication Quality Checks
+### Pre-Publication Checks
 
-Ensure data quality before publishing on National Access Points.
+Ensure datasets meet standard and structural requirements before being published on a NAP.
 
-### Continuous Monitoring
+### Quality Monitoring
 
-Monitor data quality over time to maintain standards.
+Automate recurring checks to monitor dataset quality trends over time.
 
-### Data Enrichment
+### Benchmarking
 
-Enhance data with additional information (geocoding, standardization, etc.).
+Compare datasets or data sources using defined quality metrics (completeness, consistency, timeliness).
 
-### Error Detection
+### Debugging and Diagnostics
 
-Automatically identify and flag data quality issues.
+Identify missing, inconsistent, or invalid data fields that affect downstream use.
 
-### Location Reference Quality
+## Example Tool
 
-Validate that ALERT-C and other location references are correct and won't mislead drivers.
+**NAP Data Quality Dashboard**
 
-### Safety-Critical Validation
-
-Ensure traffic information accuracy to prevent incorrect routing or driver confusion.
-
-## Data Quality Dimensions
-
-### Completeness
-
-- Missing required fields
-- Incomplete records
-- Coverage gaps
-
-### Accuracy
-
-- Coordinate validation
-- Temporal consistency
-- Reference data matching
-- Location code validity
-
-### Consistency
-
-- Internal consistency
-- Cross-dataset consistency
-- Standard compliance
-
-### Timeliness
-
-- Update frequency
-- Data freshness
-- Temporal validity
-
-### Safety
-
-- Location reference correctness
-- Critical information accuracy
-- Impact on driver behavior
-
-## Needed Tools
-
-We're looking for tools that provide:
-
-- **Quality dashboards**: Visualize data quality metrics
-- **Automated validators**: Continuous quality checking
-- **Enrichment tools**: Geocoding, standardization, linking
-- **Cleansing utilities**: Fix common issues automatically
-- **Quality reporting**: Generate quality reports
-- **Geographic validators**: Coordinate and boundary checking
-- **Temporal validators**: Time and date consistency checking
-
-## Standards
-
-<div class="standards-list">
-  <span class="standard-badge supported">DATEX II</span>
-  <span class="standard-badge supported">ISO/DIS 14819</span>
-  <span class="standard-badge supported">RDS-TMC</span>
-  <span class="standard-badge">NeTEx</span>
-  <span class="standard-badge">SIRI</span>
-  <span class="standard-badge">GTFS</span>
-</div>
-
-## Tool Spotlight: ALERT-C Locations Tester
-
-Data quality in traffic information is critical for road safety. The ALERT-C Locations Tester specifically addresses this by:
-
-- **Preventing driver confusion**: Invalid location codes could mislead navigation systems
-- **Ensuring safety**: Validates that traffic information references real, correct locations
-- **Operational use**: Proven in production by Czech Road and Motorway Directorate
-- **Format independent**: Works with DATEX II, RDS-TMC, and other formats
-- **Automated checking**: Validates thousands of references efficiently
+- Provides quality metrics for DATEX II and NeTEx feeds
+- Supports customizable validation rules
+- Used by multiple European National Access Points
+- Open source and modular
 
 ## Related Categories
 
-- [Validators](/categories/validators) - Schema and rule validation
-- [Testing Utilities](/categories/testing) - Quality testing
-- [Metadata Tools](/categories/metadata) - Metadata quality
-- [Development Tools](/categories/development) - Quality during development
+- [Validators](./validators)
+- [Converters](./converters)
+- [Testing Utilities](./testing)
+- [Development Tools](./development)
 
 ---
 
-::: tip Have a Data Quality Tool?
-Data quality tools are essential for reliable mobility services! [Submit a tool →](/contribute)
+::: tip Want to Contribute?
+Know a data quality tool used in transport data management?
+[Submit your tool →](/contribute)
 :::

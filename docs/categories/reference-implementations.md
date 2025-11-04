@@ -1,67 +1,68 @@
 # Reference Implementations
 
-Working examples and demo applications showing best practices for implementing mobility data standards.
+Working examples and demo applications that showcase best practices for implementing mobility and transport data standards in real-world scenarios.
 
 ## Available Tools
 
 <ToolsGrid />
 
-## What are Reference Implementations?
+## What Are Reference Implementations?
 
-Reference implementations are working examples that demonstrate how to properly implement mobility data standards:
+Reference implementations demonstrate how to correctly use or integrate a specific mobility data standard.
+They provide **proven, reusable examples** that help developers, data providers, and public authorities understand how to build interoperable solutions.
 
-- **Complete applications**: Full applications showing end-to-end implementation
-- **Code examples**: Reusable code snippets and patterns
-- **Best practices**: Demonstrate recommended approaches
-- **Learning resources**: Help understand standards through practical examples
-- **Starting points**: Serve as templates for new implementations
+They are useful for:
+
+- **Developers** learning how to use a standard in practice
+- **System integrators** implementing compliant interfaces
+- **Public authorities** evaluating best practices and conformance
+
+## Types of Reference Implementations
+
+| Type                     | Description                                           | Example                         |
+| ------------------------ | ----------------------------------------------------- | ------------------------------- |
+| **Data Exchange APIs**   | Implementations of DATEX II, SIRI, or NeTEx services  | DATEX II REST API Reference     |
+| **Publishing Workflows** | Sample pipelines for data publication on NAPs         | NeTEx → NAP Publisher Demo      |
+| **Metadata Catalogs**    | Example DCAT-AP / mobilityDCAT-AP portals             | Open Mobility Metadata Portal   |
+| **End-to-End Solutions** | Complete integration demos showing multiple standards | Cross-Standard Integration Demo |
 
 ## Common Use Cases
 
-### Learning
+### Learning and Experimentation
 
-Understand how to implement a standard by studying working examples.
+Explore working codebases to understand how standards are applied.
 
-### Starting Point
+### Rapid Prototyping
 
-Use reference implementations as a template for your own projects.
+Use example implementations as starting points for new projects.
 
-### Verification
+### Conformance Testing
 
-Compare your implementation against a reference to ensure correctness.
+Compare your implementation against reference systems to ensure compliance.
 
-### Teaching
+### Demonstrations and Training
 
-Use in training materials and workshops.
+Support workshops or technical documentation with live examples.
 
-## Needed Reference Implementations
+## Example Tool
 
-We're looking for examples that demonstrate:
+**DATEX II REST API Reference**
 
-- **NAP implementations**: Example National Access Point setups
-- **Data producers**: Publishing mobility data
-- **Data consumers**: Consuming mobility data from NAPs
-- **Converters**: Converting between formats
-- **Validators**: Implementing validation logic
-- **APIs**: REST or GraphQL APIs for mobility data
-
-## Standards
-
-<div class="standards-list">
-  <span class="standard-badge">DATEX II</span>
-  <span class="standard-badge">NeTEx</span>
-  <span class="standard-badge">SIRI</span>
-  <span class="standard-badge">mobilityDCAT-AP</span>
-</div>
+- Open-source implementation of the DATEX II REST interface
+- Demonstrates schema validation and payload exchange
+- Ideal for learning and integration testing
+- Developed under the CEN/EN 16157 framework
 
 ## Related Categories
 
-- [SDKs & Libraries](/categories/sdks) - Tools used in implementations
-- [Development Tools](/categories/development) - Support development
-- [Testing Utilities](/categories/testing) - Test implementations
+- [Development Tools](./development)
+- [SDKs & Libraries](./sdks-libraries)
+- [Testing Utilities](./testing)
+- [Validators](./validators)
 
 ---
 
-::: tip Have a Reference Implementation?
-Reference implementations help the community learn! [Submit a tool →](/contribute)
+::: tip Want to Contribute?
+Have a working demo or reference implementation of a mobility data standard?
+[Submit your project →](/contribute)
 :::
