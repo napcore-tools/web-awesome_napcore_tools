@@ -5,7 +5,7 @@ import { data as stats } from '../../stats.data'
 <template>
   <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-number">{{ stats.tools.total }}+</div>
+      <div class="stat-number">{{ stats.tools.total }}</div>
       <div class="stat-label">Available Tools</div>
     </div>
     <div class="stat-item">
@@ -13,13 +13,9 @@ import { data as stats } from '../../stats.data'
       <div class="stat-label">Categories</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">{{ stats.standards.total }}+</div>
+      <div class="stat-number">{{ stats.standards.total }}</div>
       <div class="stat-label">Standards Supported</div>
     </div>
-<!--    <div class="stat-item">-->
-<!--      <div class="stat-number">{{ stats.community.openSourcePercentage }}%</div>-->
-<!--      <div class="stat-label">Open Source</div>-->
-<!--    </div>-->
   </div>
 </template>
 

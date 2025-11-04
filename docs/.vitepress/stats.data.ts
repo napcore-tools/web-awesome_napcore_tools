@@ -1,22 +1,11 @@
-// Data loader for stats - combines manual data from stats.yaml with dynamic calculations from tools
-import fs from 'fs'
-import path from 'path'
-import { parse } from 'yaml'
-
-// Import tools data loader to get tool metadata
+// Data loader for stats - all calculations are now fully dynamic from tools data
 import toolsDataLoader from './tools.data'
-// Import centralized category definitions and utilities
 import { getCategorySlugs } from './categories'
 
 export default {
-  // Watch both stats.yaml (for manual data) and tool files (for dynamic calculations)
-  watch: ['../data/stats.yaml', '../tools/*.md'],
+  // Watch tool files for dynamic calculations
+  watch: ['../tools/*.md', '../data/standards.yaml'],
   load() {
-    // Load manual data from stats.yaml (standards, community)
-    const statsPath = path.resolve(__dirname, '../data/stats.yaml')
-    const content = fs.readFileSync(statsPath, 'utf-8')
-    const manualStats = parse(content)
-
     // Load tools data dynamically
     const tools = toolsDataLoader.load()
 
@@ -32,7 +21,6 @@ export default {
     const categorySlugs = getCategorySlugs()
 
     // Calculate category statistics dynamically
-    // Using slug as the key (e.g., 'data-quality', 'validators')
     const categoryStats: Record<string, number> = {
       total: categorySlugs.length,
       withTools: 0
@@ -55,13 +43,23 @@ export default {
     // Count how many categories have at least one tool
     categoryStats.withTools = categorySlugs.filter(slug => categoryStats[slug] > 0).length
 
-    // Combine manual and dynamic data
+    // Calculate standards statistics - count unique standards used by tools
+    const uniqueStandards = new Set<string>()
+    tools.forEach(tool => {
+      if (tool.standards && tool.standards.length > 0) {
+        tool.standards.forEach((std: string) => uniqueStandards.add(std))
+      }
+    })
+
+    const standardsStats = {
+      total: uniqueStandards.size
+    }
+
+    // Return combined statistics (all calculated dynamically)
     return {
       tools: toolStats,
       categories: categoryStats,
-      standards: manualStats.standards,
-      community: manualStats.community,
-      lastUpdated: manualStats.lastUpdated
+      standards: standardsStats
     }
   }
 }

@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { data as stats } from '../../stats.data'
-
-const standardsList = stats.standards.list.join(', ')
 </script>
 
 <template>
@@ -10,7 +8,7 @@ const standardsList = stats.standards.list.join(', ')
       <li><strong>Total Tools</strong>: {{ stats.tools.total }}</li>
       <li><strong>Active Tools</strong>: {{ stats.tools.active }}</li>
       <li><strong>Categories Covered</strong>: {{ stats.categories.withTools }} of {{ stats.categories.total }}</li>
-      <li><strong>Standards Supported</strong>: {{ standardsList }}</li>
+      <li><strong>Standards Supported</strong>: {{ stats.standards.total }}</li>
     </ul>
   </div>
 </template>
