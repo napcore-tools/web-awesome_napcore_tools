@@ -56,6 +56,7 @@ The tool generates a location index file from standard TMC format files (ISO/DIS
 ### Two-Stage Approach
 
 #### Stage 1: Generate Location Index
+
 ```bash
 # Process TMC location tables to create validation index
 inv generate-index --location-table=path/to/table.DAT
@@ -64,6 +65,7 @@ inv generate-index --location-table=path/to/table.DAT
 Output: SQLite database and CSV file containing all valid location references
 
 #### Stage 2: Validate References
+
 ```bash
 # Extract location references from your traffic data
 # Compare against the generated index
@@ -100,6 +102,7 @@ The tool identifies various types of invalid location references:
 ## Technical Details
 
 ### Technology Stack
+
 - **Language**: Python
 - **Database**: SQLite for efficient index storage
 - **CLI Framework**: Invoke package for command-line interface
@@ -107,14 +110,18 @@ The tool identifies various types of invalid location references:
 - **Output Formats**: SQLite database, CSV files
 
 ### Location Table Format
+
 The tool processes TMC location tables in standard .DAT format according to ISO/DIS 14819. These tables contain:
+
 - Primary location codes
 - Direction information
 - Extent specifications
 - Location metadata
 
 ### Validation Components
+
 The tool validates three key components:
+
 1. **Primary location codes**: Must exist in the location table
 2. **Directionality**: Positive (+) or negative (-) direction
 3. **Extent values**: Must be between 0 and 31
@@ -122,6 +129,7 @@ The tool validates three key components:
 ## Example Implementation
 
 The repository includes a reference implementation for DDR.xml (legacy Czech format), which can serve as a template for:
+
 - Extracting location references from DATEX II XML
 - Processing other traffic information formats
 - Integrating validation into existing workflows
@@ -149,21 +157,27 @@ Contact your national traffic information center for location tables in other co
 ALERT-C Locations Tester addresses a critical data quality challenge in European road traffic information systems:
 
 ### Data Quality Assurance
+
 Systematic validation prevents broadcasting incorrect location information that could mislead drivers and compromise road safety.
 
 ### European Relevance
+
 ALERT-C is widely used for road traffic location referencing across Europe, both in traditional RDS-TMC and modern DATEX II services.
 
 ### Format Independence
+
 The two-stage approach (generate index → validate references) makes it adaptable to any traffic information format, including DATEX II, RDS-TMC, legacy national formats, or custom implementations.
 
 ### Operational Efficiency
+
 Automates validation that would otherwise require manual checking of thousands of location references.
 
 ### Compliance
+
 Ensures conformance with ISO/DIS 14819 standard for ALERT-C location tables.
 
 ### Reusability
+
 While developed for Czech use case, the tool can work with any country's ALERT-C location tables in standard TMC format.
 
 ## Community & Contributions
@@ -182,10 +196,12 @@ If you have properly licensed ALERT-C location tables for your country, consider
 ## Getting Started
 
 ### Prerequisites
+
 - Python 3.x
 - TMC location tables for your country (.DAT format)
 
 ### Installation
+
 ```bash
 git clone https://github.com/tamtamresearch/alert-c-locations-tester.git
 cd alert-c-locations-tester
@@ -195,6 +211,7 @@ pip install -r requirements.txt
 ### Basic Usage
 
 1. **Generate location index**:
+
    ```bash
    inv generate-index --location-table=your-table.DAT
    ```
@@ -202,6 +219,7 @@ pip install -r requirements.txt
 2. **Implement reference extraction** for your format (use DDR.xml example as template)
 
 3. **Validate your traffic data**:
+
    ```bash
    inv validate --content=your-traffic-data.xml
    ```
@@ -211,6 +229,7 @@ pip install -r requirements.txt
 ## Related Tools
 
 This tool complements other DATEX II and traffic information tools:
+
 - [DATEX II Browser](/tools/datex-browser) - For exploring DATEX II model
 - [DATEX II Schema Tool](/tools/datex-schema-tool) - For creating DATEX II profiles
 - Validators for DATEX II content (coming soon to catalog)

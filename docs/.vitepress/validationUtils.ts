@@ -6,15 +6,15 @@
  */
 
 export interface ValidationError {
-  field: string
-  message: string
-  severity: 'error' | 'warning'
+  field: string;
+  message: string;
+  severity: 'error' | 'warning';
 }
 
 export interface ValidationResult {
-  valid: boolean
-  errors: ValidationError[]
-  warnings: ValidationError[]
+  valid: boolean;
+  errors: ValidationError[];
+  warnings: ValidationError[];
 }
 
 /**
@@ -23,29 +23,26 @@ export interface ValidationResult {
  * @param result - Validation result to format
  * @returns Formatted string for console output
  */
-export function formatValidationResult(
-  context: string,
-  result: ValidationResult
-): string {
-  const lines: string[] = []
+export function formatValidationResult(context: string, result: ValidationResult): string {
+  const lines: string[] = [];
 
   if (result.errors.length > 0) {
-    lines.push(`\n❌ Validation FAILED for "${context}":`)
-    result.errors.forEach(err => {
-      lines.push(`   - [${err.field}] ${err.message}`)
-    })
+    lines.push(`\n❌ Validation FAILED for "${context}":`);
+    result.errors.forEach((err) => {
+      lines.push(`   - [${err.field}] ${err.message}`);
+    });
   }
 
   if (result.warnings.length > 0) {
     if (result.errors.length === 0) {
-      lines.push(`\n⚠️  Validation warnings for "${context}":`)
+      lines.push(`\n⚠️  Validation warnings for "${context}":`);
     }
-    result.warnings.forEach(warn => {
-      lines.push(`   - [${warn.field}] ${warn.message}`)
-    })
+    result.warnings.forEach((warn) => {
+      lines.push(`   - [${warn.field}] ${warn.message}`);
+    });
   }
 
-  return lines.join('\n')
+  return lines.join('\n');
 }
 
 /**
@@ -55,21 +52,18 @@ export function formatValidationResult(
  * @param context - Context string (e.g., filename or "STANDARD_METADATA")
  * @param result - Validation result to handle
  */
-export function handleValidationResult(
-  context: string,
-  result: ValidationResult
-): void {
-  const isProduction = process.env.NODE_ENV === 'production'
+export function handleValidationResult(context: string, result: ValidationResult): void {
+  const isProduction = process.env.NODE_ENV === 'production';
 
   if (!result.valid || result.warnings.length > 0) {
-    const message = formatValidationResult(context, result)
+    const message = formatValidationResult(context, result);
 
     if (!result.valid && isProduction) {
       // Fail build in production
-      throw new Error(`Validation failed: ${context}\n${message}`)
+      throw new Error(`Validation failed: ${context}\n${message}`);
     } else {
       // Log to console in dev (or warnings in prod)
-      console.error(message)
+      console.error(message);
     }
   }
 }

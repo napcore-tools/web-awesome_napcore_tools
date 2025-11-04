@@ -46,30 +46,35 @@ To be included in the catalog, tools should meet these criteria:
 When submitting a tool, please provide:
 
 ### Basic Information
+
 - **Tool name**
 - **Brief description** (1-2 sentences)
 - **Category** (Validators, Converters, SDKs, etc.)
 - **Current status** (Active, Maintenance, Beta, etc.)
 
 ### Links
+
 - **Live demo or website** (if applicable)
 - **Source code repository** (if open source)
 - **Documentation**
 - **Issue tracker**
 
 ### Technical Details
+
 - **Standards supported** (DATEX II, NeTEx, SIRI, mobilityDCAT-AP, etc.)
 - **License** (MIT, Apache, GPL, proprietary, etc.)
 - **Maintenance status** (actively maintained, maintenance mode, etc.)
 - **Key features** (3-5 bullet points)
 
 ### Context
+
 - **Target audience** (who should use this tool?)
 - **Use cases** (when should this tool be used?)
 - **Developer/Organization**
 - **Development history** (optional but helpful)
 
 ### Optional but Helpful
+
 - Screenshots or demo videos
 - Related tools or dependencies
 - Known limitations
@@ -86,6 +91,7 @@ When submitting a tool, please provide:
 [1-2 sentence description of what the tool does]
 
 **Links**:
+
 - Live Demo: [URL]
 - Source Code: [URL]
 - Documentation: [URL]
@@ -97,6 +103,7 @@ When submitting a tool, please provide:
 **Status**: [Active / Maintenance / Beta / Deprecated]
 
 **Key Features**:
+
 - Feature 1
 - Feature 2
 - Feature 3
@@ -156,6 +163,7 @@ Using a tool from the catalog? Share your experience!
 ### Rejection Reasons
 
 Tools may not be included if they:
+
 - Are not relevant to European mobility data
 - Are unmaintained or non-functional
 - Have no documentation

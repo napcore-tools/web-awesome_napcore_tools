@@ -9,11 +9,11 @@
   --vp-c-brand-2: #0052a3;
   --vp-c-brand-3: #004080;
   --vp-c-brand-soft: rgba(0, 102, 204, 0.14);
-  
+
   /* Accent Colors */
   --napcore-green: #00a651;
   --napcore-orange: #ff6b35;
-  
+
   /* Custom Theme Colors */
   --vp-c-green-1: #00a651;
   --vp-c-green-2: #008a44;
@@ -23,7 +23,7 @@
   /* Hero Gradient */
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: linear-gradient(135deg, #0066cc 0%, #004080 100%);
-  
+
   /* Button Colors */
   --vp-button-brand-bg: #0066cc;
   --vp-button-brand-hover-bg: #0052a3;
@@ -323,19 +323,19 @@ a.tool-link:hover {
   .VPHero .name {
     font-size: 2.5rem;
   }
-  
+
   .VPHero .tagline {
     font-size: 1.2rem;
   }
-  
+
   .category-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .feature-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -21,18 +21,23 @@ Development tools are utilities that support your daily development workflow whe
 ## Common Use Cases
 
 ### Quick Reference
+
 When you're implementing a standard and need to quickly look up element definitions, relationships, or data types without digging through PDF specifications.
 
 ### Learning New Standards
+
 Interactive tools help you understand complex standards like DATEX II, NeTEx, or SIRI by exploring them in a more intuitive way than reading specifications.
 
 ### Metadata Creation
+
 Generate compliant metadata for your datasets using form-based interfaces that guide you through the required fields.
 
 ### Location Reference Validation
+
 Validate ALERT-C location codes during development to catch errors before deployment.
 
 ### Code Generation
+
 Some tools can generate boilerplate code or schemas based on your selections, saving development time.
 
 ## Related Categories

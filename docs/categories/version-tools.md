@@ -18,12 +18,15 @@ Version upgrade tools help you migrate data and implementations between differen
 ## Common Use Cases
 
 ### Standard Updates
+
 When a new version of DATEX II, NeTEx, or SIRI is released, migrate existing data and implementations.
 
 ### System Modernization
+
 Upgrade legacy systems using old standard versions to current versions.
 
 ### Multi-Version Support
+
 Maintain compatibility with systems using different standard versions.
 
 ## Needed Tools

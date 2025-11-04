@@ -21,15 +21,19 @@ Metadata tools help you create, manage, and publish the descriptive information 
 In the European mobility data ecosystem, metadata is critical for:
 
 ### National Access Points (NAPs)
+
 NAPs need standardized metadata to catalog and publish datasets in a way that's discoverable across borders. mobilityDCAT-AP provides this standardization.
 
 ### Data Publishers
+
 Clear, structured metadata helps data publishers communicate what their data contains, how often it's updated, and how it can be accessed.
 
 ### Data Consumers
+
 Good metadata allows developers and analysts to quickly determine if a dataset meets their needs without having to download and inspect the actual data.
 
 ### Cross-border Services
+
 Harmonized metadata enables pan-European services to discover and aggregate data from multiple NAPs automatically.
 
 ## mobilityDCAT-AP Standard
@@ -45,6 +49,7 @@ mobilityDCAT-AP is the recommended metadata standard for European mobility data:
 ### Key Metadata Elements
 
 mobilityDCAT-AP describes:
+
 - Dataset titles and descriptions
 - Data formats and schemas
 - Access methods and endpoints
@@ -56,15 +61,19 @@ mobilityDCAT-AP describes:
 ## Common Use Cases
 
 ### Creating NAP Catalogs
+
 Generate standardized metadata for all datasets on your National Access Point, enabling cross-border discovery.
 
 ### Learning the Standard
+
 Use interactive tools to understand what metadata is required vs. optional, and how to properly describe mobility data.
 
 ### API Documentation
+
 Create machine-readable metadata that documents your data APIs and services.
 
 ### Testing Compliance
+
 Experiment with metadata to ensure it meets mobilityDCAT-AP requirements before publishing.
 
 ## Standards Covered

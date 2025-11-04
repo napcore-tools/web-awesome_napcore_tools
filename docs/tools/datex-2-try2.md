@@ -44,15 +44,19 @@ The documentation portal at docs.datex2.eu provides structured, multi-level tech
 The portal organizes content into four support levels:
 
 ### 1. DATEX II Basics
+
 Tailored for people interested in using DATEX II who want to understand the fundamentals and core concepts.
 
 ### 2. Using DATEX II
+
 First-level support for basic users implementing standard case-driven profiles for common scenarios.
 
 ### 3. Mastering DATEX II
+
 Second-level support for experienced users working with pre-packaged solutions and advanced configurations.
 
 ### 4. DATEX II Expert
+
 Third-level support for expert users who need to assemble custom profiles and implement specialized solutions.
 
 ## Use Cases
@@ -77,9 +81,11 @@ Third-level support for expert users who need to assemble custom profiles and im
 ### CEN 16157 Standard Series
 
 **European Standards (approved 2018-2021):**
+
 - Parts 1, 2, 3, 4, 5, and 7 - Core specifications for DATEX II version 3
 
 **CEN Technical Specifications:**
+
 - Parts 6, 8, 9, 10, 11, 12, and 13 - Additional domain-specific specifications (progressing toward European Standard status)
 
 ## Target Audience
@@ -96,6 +102,7 @@ Third-level support for expert users who need to assemble custom profiles and im
 ## Technical Architecture
 
 ### Data Content
+
 - **Traffic incidents**: Real-time incident reporting and management
 - **Road works**: Planned and emergency roadwork information
 - **Traffic conditions**: Speed, flow, and congestion data
@@ -106,6 +113,7 @@ Third-level support for expert users who need to assemble custom profiles and im
 - **Variable message signs**: VMS content and status
 
 ### Technical Approach
+
 - **Platform Independent Model (PIM)**: UML-based data modeling
 - **Platform Specific Model (PSM)**: XML schema implementations
 - **Content/Protocol separation**: Flexible exchange mechanism support
@@ -135,6 +143,7 @@ DATEX II is deployed across Europe with:
 - **EU project implementations**: TEMPO, EasyWay, CROCODILE, and other EU-funded initiatives
 
 ### Notable Implementations
+
 - National traffic management centers across EU member states
 - Pan-European traffic information services
 - Urban traffic control integrations
@@ -157,6 +166,7 @@ The DATEX II documentation portal addresses critical needs in the European mobil
 ## Related Standards and Tools
 
 DATEX II complements and interoperates with:
+
 - **NeTEx**: Public transport data exchange
 - **SIRI**: Real-time public transport information
 - **TransModel**: European reference data model for public transport
@@ -175,6 +185,7 @@ DATEX II complements and interoperates with:
 ## Documentation Resources
 
 ### Documentation Portal Sections
+
 - **Levels**: Tailored documentation for each experience level
 - **Reference Profiles**: Standard case-driven implementation profiles
 - **Specifications**: Complete technical specifications and schemas
@@ -182,6 +193,7 @@ DATEX II complements and interoperates with:
 - **Downloads**: XML schemas, UML models, and validation tools
 
 ### External Resources
+
 - **Main Website**: [datex2.eu](https://datex2.eu/)
 - **CEN/TC 278**: [itsstandards.eu](https://www.itsstandards.eu/)
 - **NAPCORE Project**: [napcore.eu](https://napcore.eu/)

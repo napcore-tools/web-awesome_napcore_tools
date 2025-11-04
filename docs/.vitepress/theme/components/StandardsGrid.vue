@@ -15,51 +15,51 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { data as tools } from '../../tools.data'
-import { getStandardMetadata } from '../../standards'
+import { computed } from 'vue';
+import { data as tools } from '../../tools.data';
+import { getStandardMetadata } from '../../standards';
 
 interface Props {
-  sortByCount?: boolean
+  sortByCount?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  sortByCount: false
-})
+  sortByCount: false,
+});
 
 // Extract unique standards and count tools
 const standards = computed(() => {
-  const standardsMap = new Map<string, number>()
+  const standardsMap = new Map<string, number>();
 
   // Count tools per standard (standards are already slugified in tool frontmatter)
   for (const tool of tools) {
     if (tool.standards && tool.standards.length > 0) {
       for (const standardSlug of tool.standards) {
-        const count = standardsMap.get(standardSlug) || 0
-        standardsMap.set(standardSlug, count + 1)
+        const count = standardsMap.get(standardSlug) || 0;
+        standardsMap.set(standardSlug, count + 1);
       }
     }
   }
 
   // Convert to array with metadata
   const standardsList = Array.from(standardsMap.entries()).map(([slug, count]) => {
-    const metadata = getStandardMetadata(slug)
+    const metadata = getStandardMetadata(slug);
     return {
       name: metadata.title,
       slug,
       count,
       icon: metadata.icon,
-      description: metadata.description
-    }
-  })
+      description: metadata.description,
+    };
+  });
 
   // Sort by count if requested (descending order), otherwise alphabetically by title
   if (props.sortByCount) {
-    return standardsList.sort((a, b) => b.count - a.count)
+    return standardsList.sort((a, b) => b.count - a.count);
   }
 
-  return standardsList.sort((a, b) => a.name.localeCompare(b.name))
-})
+  return standardsList.sort((a, b) => a.name.localeCompare(b.name));
+});
 </script>
 
 <style scoped>

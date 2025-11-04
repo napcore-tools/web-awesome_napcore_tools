@@ -1,9 +1,7 @@
 <template>
   <div class="tool-card">
     <div class="tool-card-header">
-      <div :class="['tool-status', tool.status]">
-        {{ statusEmoji }} {{ statusLabel }}
-      </div>
+      <div :class="['tool-status', tool.status]">{{ statusEmoji }} {{ statusLabel }}</div>
       <h3 class="tool-card-title">
         <a :href="`/tools/${tool.slug}`">{{ tool.title }}</a>
       </h3>
@@ -20,51 +18,47 @@
       </div>
     </div>
     <div class="tool-links">
-      <a v-if="tool.liveDemo" :href="tool.liveDemo" target="_blank" class="tool-link">
-        Link
-      </a>
-      <a v-if="tool.sourceCode" :href="tool.sourceCode" target="_blank" class="tool-link">
-        Source Code
-      </a>
+      <a v-if="tool.liveDemo" :href="tool.liveDemo" target="_blank" class="tool-link"> Link </a>
+      <a v-if="tool.sourceCode" :href="tool.sourceCode" target="_blank" class="tool-link"> Source Code </a>
       <a :href="`/tools/${tool.slug}`" class="tool-link">Details</a>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import type { Tool } from '../../tools.data'
+import { computed } from 'vue';
+import type { Tool } from '../../tools.data';
 
 interface Props {
-  tool: Tool
-  subtitle?: string
+  tool: Tool;
+  subtitle?: string;
 }
 
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 
 const statusEmoji = computed(() => {
   switch (props.tool.status) {
     case 'active':
-      return '🟢'
+      return '🟢';
     case 'maintenance':
-      return '🟡'
+      return '🟡';
     case 'deprecated':
-      return '🔴'
+      return '🔴';
     default:
-      return '⚪'
+      return '⚪';
   }
-})
+});
 
 const statusLabel = computed(() => {
   switch (props.tool.status) {
     case 'active':
-      return 'Active'
+      return 'Active';
     case 'maintenance':
-      return 'Maintenance'
+      return 'Maintenance';
     case 'deprecated':
-      return 'Deprecated'
+      return 'Deprecated';
     default:
-      return 'Unknown'
+      return 'Unknown';
   }
-})
+});
 </script>

@@ -1,44 +1,44 @@
-import { defineConfig } from 'vitepress'
-import { _getToolsSidebar, getCategoriesSidebar } from './sidebar'
-import { napCoreMarkdownPlugin } from './plugins/napCoreMarkdownPlugin'
-import { validateAllStandards } from './standardValidation'
-import { handleValidationResult } from './validationUtils'
+import { defineConfig } from 'vitepress';
+import { _getToolsSidebar, getCategoriesSidebar } from './sidebar';
+import { napCoreMarkdownPlugin } from './plugins/napCoreMarkdownPlugin';
+import { validateAllStandards } from './standardValidation';
+import { handleValidationResult } from './validationUtils';
 
 // Validate STANDARD_METADATA at config load time
-const standardsValidationResult = validateAllStandards()
-handleValidationResult('STANDARD_METADATA', standardsValidationResult)
+const standardsValidationResult = validateAllStandards();
+handleValidationResult('STANDARD_METADATA', standardsValidationResult);
 
 export default defineConfig({
   title: 'NAPCORE Store',
   description: 'Curated catalog of European mobility data-related tools',
-  
+
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { name: 'theme-color', content: '#0066cc' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'NAPCORE Store' }],
-    ['meta', { property: 'og:description', content: 'Curated tools for European mobility data professionals' }]
+    ['meta', { property: 'og:description', content: 'Curated tools for European mobility data professionals' }],
   ],
   markdown: {
     config: (md) => {
-      md.use(napCoreMarkdownPlugin)
-    }
+      md.use(napCoreMarkdownPlugin);
+    },
   },
 
   // Transform page data to set dynamic titles from params
   async transformPageData(pageData) {
     // For dynamic routes with title param, set the page title
     if (pageData.params?.title) {
-      pageData.title = pageData.params.title
+      pageData.title = pageData.params.title;
     }
   },
 
   themeConfig: {
     logo: 'https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png',
-    
+
     nav: [
       { text: 'Home', link: '/' },
-//      { text: 'Browse Tools', link: '/tools/' },
+      //      { text: 'Browse Tools', link: '/tools/' },
       { text: 'Tools', link: '/categories/' },
       { text: 'Contribute', link: '/contribute' },
       { text: 'Status (WIP)', link: '/about' },
@@ -46,17 +46,15 @@ export default defineConfig({
 
     sidebar: {
       // '/tools/': getToolsSidebar(),
-      '/categories/': {base: '/', items: getCategoriesSidebar()},
-      '/tools/': {base: '/', items: getCategoriesSidebar()},
-      '/standards/': {base: '/', items: getCategoriesSidebar()},
+      '/categories/': { base: '/', items: getCategoriesSidebar() },
+      '/tools/': { base: '/', items: getCategoriesSidebar() },
+      '/standards/': { base: '/', items: getCategoriesSidebar() },
     },
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/napcore' }
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/napcore' }],
 
     footer: {
       message: 'Co-financed by the Connecting Europe Facility of the European Union',
-      copyright: 'Copyright © 2025 NAPCORE - National Access Point Coordination Organisation for Europe'
+      copyright: 'Copyright © 2025 NAPCORE - National Access Point Coordination Organisation for Europe',
     },
 
     search: {
@@ -66,23 +64,23 @@ export default defineConfig({
         translations: {
           button: {
             buttonText: 'Search',
-            buttonAriaLabel: 'Search tools'
+            buttonAriaLabel: 'Search tools',
           },
           modal: {
             noResultsText: 'No results for',
             resetButtonTitle: 'Reset search',
             footer: {
               selectText: 'to select',
-              navigateText: 'to navigate'
-            }
-          }
-        }
-      }
+              navigateText: 'to navigate',
+            },
+          },
+        },
+      },
     },
 
     // editLink: {
     //   pattern: 'https://github.com/napcore/napcore-web-store/edit/main/docs/:path',
     //   text: 'Suggest changes to this page'
     // }
-  }
-})
+  },
+});

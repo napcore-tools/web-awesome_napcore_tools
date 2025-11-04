@@ -11,11 +11,15 @@
       </tr>
       <tr v-if="frontmatter.liveDemo">
         <td><strong>Link</strong></td>
-        <td><a :href="frontmatter.liveDemo" target="_blank">{{ getLinkText(frontmatter.liveDemo) }}</a></td>
+        <td>
+          <a :href="frontmatter.liveDemo" target="_blank">{{ getLinkText(frontmatter.liveDemo) }}</a>
+        </td>
       </tr>
       <tr v-if="frontmatter.sourceCode">
         <td><strong>Source Code</strong></td>
-        <td><a :href="frontmatter.sourceCode" target="_blank">{{ getRepoText(frontmatter.sourceCode) }}</a></td>
+        <td>
+          <a :href="frontmatter.sourceCode" target="_blank">{{ getRepoText(frontmatter.sourceCode) }}</a>
+        </td>
       </tr>
       <tr v-if="frontmatter.developer">
         <td><strong>Developer</strong></td>
@@ -38,56 +42,56 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useData } from 'vitepress'
+import { computed } from 'vue';
+import { useData } from 'vitepress';
 
-const { frontmatter } = useData()
+const { frontmatter } = useData();
 
 const statusEmoji = computed(() => {
   switch (frontmatter.value.status) {
     case 'active':
-      return '🟢'
+      return '🟢';
     case 'maintenance':
-      return '🟡'
+      return '🟡';
     case 'deprecated':
-      return '🔴'
+      return '🔴';
     default:
-      return '⚪'
+      return '⚪';
   }
-})
+});
 
 const statusLabel = computed(() => {
   switch (frontmatter.value.status) {
     case 'active':
-      return 'Active'
+      return 'Active';
     case 'maintenance':
-      return 'Maintenance'
+      return 'Maintenance';
     case 'deprecated':
-      return 'Deprecated'
+      return 'Deprecated';
     default:
-      return 'Unknown'
+      return 'Unknown';
   }
-})
+});
 
 // Extract clean domain and path from URL for display
 const getLinkText = (url: string): string => {
   try {
-    const urlObj = new URL(url)
-    const path = urlObj.pathname === '/' ? '' : urlObj.pathname
-    return urlObj.hostname.replace(/^www\./, '') + path
+    const urlObj = new URL(url);
+    const path = urlObj.pathname === '/' ? '' : urlObj.pathname;
+    return urlObj.hostname.replace(/^www\./, '') + path;
   } catch {
-    return url
+    return url;
   }
-}
+};
 
 // Get repository text based on URL
 const getRepoText = (url: string): string => {
   if (url.includes('github.com')) {
-    return 'GitHub Repository'
+    return 'GitHub Repository';
   } else if (url.includes('gitlab.com')) {
-    return 'GitLab Repository'
+    return 'GitLab Repository';
   } else {
-    return 'Source Code Repository'
+    return 'Source Code Repository';
   }
-}
+};
 </script>

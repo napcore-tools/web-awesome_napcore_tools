@@ -19,15 +19,19 @@ SDKs (Software Development Kits) and libraries provide programming interfaces th
 ## Common Use Cases
 
 ### Application Development
+
 Build applications that consume or produce mobility data using familiar programming languages.
 
 ### API Integration
+
 Integrate with NAP APIs or other mobility data services.
 
 ### Data Processing
+
 Process large volumes of mobility data programmatically.
 
 ### Custom Tools
+
 Build custom tools and utilities on top of standard libraries.
 
 ## Needed SDKs & Libraries
@@ -35,6 +39,7 @@ Build custom tools and utilities on top of standard libraries.
 We're looking for libraries in:
 
 ### Programming Languages
+
 - Python
 - Java / Kotlin
 - JavaScript / TypeScript
@@ -44,6 +49,7 @@ We're looking for libraries in:
 - PHP
 
 ### Standards
+
 - DATEX II
 - NeTEx
 - SIRI

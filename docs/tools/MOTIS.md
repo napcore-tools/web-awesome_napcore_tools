@@ -76,7 +76,7 @@ The system can serve multiple purposes beyond routing: it functions as a real-ti
 
 - **Core**: High-performance routing engine with modular design
 - **Data formats**: NeTEx, SIRI, GTFS, GBFS, OSM
-- **Capabilities**: 
+- **Capabilities**:
   - Routing and journey planning
   - Geocoding services
   - Map tile generation
@@ -114,6 +114,7 @@ MOTIS addresses key challenges in the European and global mobility ecosystem:
 ## Related Tools
 
 MOTIS complements other mobility tools in the ecosystem:
+
 - Real-time validators for SIRI and GTFS-RT feeds
 - NeTEx converters and validators
 - Other journey planning engines and routing services

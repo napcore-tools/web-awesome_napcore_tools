@@ -20,47 +20,58 @@ Data quality tools help ensure mobility data is accurate, complete, consistent, 
 ## Common Use Cases
 
 ### Pre-Publication Quality Checks
+
 Ensure data quality before publishing on National Access Points.
 
 ### Continuous Monitoring
+
 Monitor data quality over time to maintain standards.
 
 ### Data Enrichment
+
 Enhance data with additional information (geocoding, standardization, etc.).
 
 ### Error Detection
+
 Automatically identify and flag data quality issues.
 
 ### Location Reference Quality
+
 Validate that ALERT-C and other location references are correct and won't mislead drivers.
 
 ### Safety-Critical Validation
+
 Ensure traffic information accuracy to prevent incorrect routing or driver confusion.
 
 ## Data Quality Dimensions
 
 ### Completeness
+
 - Missing required fields
 - Incomplete records
 - Coverage gaps
 
 ### Accuracy
+
 - Coordinate validation
 - Temporal consistency
 - Reference data matching
 - Location code validity
 
 ### Consistency
+
 - Internal consistency
 - Cross-dataset consistency
 - Standard compliance
 
 ### Timeliness
+
 - Update frequency
 - Data freshness
 - Temporal validity
 
 ### Safety
+
 - Location reference correctness
 - Critical information accuracy
 - Impact on driver behavior

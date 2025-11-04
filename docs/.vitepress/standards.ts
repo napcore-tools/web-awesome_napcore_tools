@@ -5,20 +5,20 @@
  * The actual data is loaded from standards.yaml via the VitePress data loader (standards.data.ts).
  */
 
-import { data as STANDARDS } from './standards.data'
-import type { Standard } from './standards.data'
+import { data as STANDARDS } from './standards.data';
+import type { Standard } from './standards.data';
 
 // Re-export the Standard interface for convenience
-export type { Standard }
+export type { Standard };
 
 /**
  * For backward compatibility - subset of Standard interface
  * Used by components that only need title, icon, description
  */
 export interface StandardMetadata {
-  title: string
-  icon: string
-  description?: string
+  title: string;
+  icon: string;
+  description?: string;
 }
 
 /**
@@ -30,25 +30,25 @@ export interface StandardMetadata {
  * only the UI-relevant fields (title, icon, description)
  */
 export function getStandardMetadata(standardSlug: string): StandardMetadata {
-  const standard = STANDARDS[standardSlug]
+  const standard = STANDARDS[standardSlug];
 
   if (standard) {
     return {
       title: standard.title,
       icon: standard.icon,
-      description: standard.description
-    }
+      description: standard.description,
+    };
   }
 
   // Fallback for unknown standards
   return {
-    title: standardSlug,     // Use slug as title if metadata not found
-    icon: '📄',              // Default icon for unknown standards
-    description: undefined
-  }
+    title: standardSlug, // Use slug as title if metadata not found
+    icon: '📄', // Default icon for unknown standards
+    description: undefined,
+  };
 }
 
 /**
  * Export the complete standards data for modules that need full details
  */
-export { STANDARDS }
+export { STANDARDS };

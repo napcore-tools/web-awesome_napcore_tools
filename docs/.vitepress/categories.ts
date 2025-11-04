@@ -17,10 +17,10 @@
  */
 
 export interface Category {
-  slug: string        // kebab-case slug - THE canonical identifier: 'data-quality'
-  title: string       // Display name: 'Data Quality Tools'
-  icon: string        // Emoji icon: '📊'
-  description: string // Short description for category cards
+  slug: string; // kebab-case slug - THE canonical identifier: 'data-quality'
+  title: string; // Display name: 'Data Quality Tools'
+  icon: string; // Emoji icon: '📊'
+  description: string; // Short description for category cards
 }
 
 /**
@@ -32,69 +32,70 @@ export const CATEGORIES: Category[] = [
     slug: 'validators',
     title: 'Validators',
     icon: '✓',
-    description: 'Schema validation and business rule checking tools'
+    description: 'Schema validation and business rule checking tools',
   },
   {
     slug: 'converters',
     title: 'Converters & Transformers',
     icon: '⇄',
-    description: 'Format conversion and data transformation utilities'
+    description: 'Format conversion and data transformation utilities',
   },
   {
     slug: 'version-tools',
     title: 'Version Upgrade Tools',
     icon: '⬆',
-    description: 'Migration and compatibility utilities'
+    description: 'Migration and compatibility utilities',
   },
   {
     slug: 'sdks',
     title: 'SDKs & Libraries',
     icon: '📦',
-    description: 'Programming language bindings and libraries'
+    description: 'Programming language bindings and libraries',
   },
   {
     slug: 'reference-implementations',
     title: 'Reference Implementations',
     icon: '🎯',
-    description: 'Working examples and demo applications'
+    description: 'Working examples and demo applications',
   },
   {
     slug: 'development',
     title: 'Development Tools',
     icon: '🛠',
-    description: 'Browsers, editors, and generators'
+    description: 'Browsers, editors, and generators',
   },
   {
     slug: 'data-quality',
     title: 'Data Quality Tools',
     icon: '📊',
-    description: 'Validation, enrichment, and cleaning'
+    description: 'Validation, enrichment, and cleaning',
   },
   {
     slug: 'testing',
     title: 'Testing Utilities',
     icon: '🧪',
-    description: 'Test data generation and validation'
+    description: 'Test data generation and validation',
   },
   {
     slug: 'metadata',
     title: 'Metadata Tools',
     icon: '🏷',
-    description: 'Catalog generation and discovery'
+    description: 'Catalog generation and discovery',
   },
   {
     slug: 'route-planners',
     title: 'Route Planners',
     icon: '🗺️',
-    description: 'Intermodal travel information system'
+    description: 'Intermodal travel information system',
   },
   {
     slug: 'references',
     title: 'References',
     icon: '📚',
-    description: 'Technical documentation, specifications, and implementation guides for mobility data standards and systems'
-  }
-]
+    description:
+      'Technical documentation, specifications, and implementation guides for mobility data standards and systems',
+  },
+];
 
 /**
  * Utility: Get array of all category slugs
@@ -103,12 +104,12 @@ export const CATEGORIES: Category[] = [
  * Example output: ['validators', 'converters', 'version-tools', 'data-quality', ...]
  */
 export function getCategorySlugs(): string[] {
-  return CATEGORIES.map(cat => cat.slug)
+  return CATEGORIES.map((cat) => cat.slug);
 }
 
 /**
  * Utility: Get category by slug
  */
 export function getCategoryBySlug(slug: string): Category | undefined {
-  return CATEGORIES.find(cat => cat.slug === slug)
+  return CATEGORIES.find((cat) => cat.slug === slug);
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { data as stats } from '../../stats.data'
+import { data as stats } from '../../stats.data';
 </script>
 
 <template>

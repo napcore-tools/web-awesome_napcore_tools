@@ -4,8 +4,6 @@
 This site is work in progress and in a proof-of-concept stage.
 :::
 
-
-
 The NAPCORE Store is a community-driven initiative to collect, curate, and showcase open-source tools that support European mobility data standards.
 
 ## Mission
@@ -32,6 +30,7 @@ The NAPCORE Store brings these tools together in one place, with:
 ### Tool Types
 
 We catalog tools across nine categories:
+
 - Validators
 - Converters & Transformers
 - Version Upgrade Tools
@@ -45,6 +44,7 @@ We catalog tools across nine categories:
 ### Standards Covered
 
 Tools supporting European mobility data standards:
+
 - **DATEX II** - Traffic and travel information
 - **NeTEx** - Public transport networks
 - **SIRI** - Real-time public transport information
@@ -55,18 +55,23 @@ Tools supporting European mobility data standards:
 ## Who This Is For
 
 ### Developers & Implementers
+
 Find tools to help implement mobility data standards in your applications and services.
 
 ### NAP Operators
+
 Discover tools for publishing, validating, and managing mobility data on National Access Points.
 
 ### System Architects
+
 Explore tools and components for designing mobility data infrastructure.
 
 ### Data Publishers
+
 Find tools for creating metadata, validating data, and ensuring quality.
 
 ### Students & Researchers
+
 Learn about available tools and reference implementations for academic projects.
 
 ## About NAPCORE
@@ -118,6 +123,7 @@ Tool submissions are reviewed by the managing team with input from the community
 ### Quality Standards
 
 We maintain quality standards to ensure tools in the catalog are:
+
 - Functional and accessible
 - Properly documented
 - Relevant to European mobility data
@@ -126,41 +132,49 @@ We maintain quality standards to ensure tools in the catalog are:
 ## Principles
 
 ### Community-First
+
 The catalog is built by and for the European mobility data community. We welcome contributions from anyone passionate about improving mobility data infrastructure.
 
 ### Open and Transparent
+
 All catalog content is open source. Tool submissions and reviews happen in public through GitHub Discussions.
 
 ### Quality Over Quantity
+
 We prefer a curated selection of quality tools over an exhaustive list of unmaintained projects.
 
 ### Standards-Focused
+
 We prioritize tools that support recognized European mobility data standards.
 
 ### Vendor-Neutral
+
 We welcome both open source and commercial tools, provided they're accessible and meet our criteria.
 
 ## Statistics
 
 <StatsBar />
 
-*Stats as of October 2025*
+_Stats as of October 2025_
 
 ## Roadmap
 
 ### Short Term
+
 - Expand tool coverage across all categories
 - Add more DATEX II, NeTEx, and SIRI tools
 - Improve search and filtering capabilities
 - Add tool comparison features
 
 ### Medium Term
+
 - Implement user ratings and reviews
 - Add tool usage statistics
 - Create tool integration guides
 - Develop API for programmatic access
 
 ### Long Term
+
 - Establish tool certification program
 - Create testing infrastructure
 - Build automated tool discovery

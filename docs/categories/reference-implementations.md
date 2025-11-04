@@ -19,15 +19,19 @@ Reference implementations are working examples that demonstrate how to properly 
 ## Common Use Cases
 
 ### Learning
+
 Understand how to implement a standard by studying working examples.
 
 ### Starting Point
+
 Use reference implementations as a template for your own projects.
 
 ### Verification
+
 Compare your implementation against a reference to ensure correctness.
 
 ### Teaching
+
 Use in training materials and workshops.
 
 ## Needed Reference Implementations

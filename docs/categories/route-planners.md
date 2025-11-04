@@ -6,10 +6,10 @@ Route planners are digital tools that help you find the best way to get from one
 
 <ToolsGrid />
 
-
 ## How they work
 
 Route planners use algorithms to analyze road networks, distances, and various other factors to calculate optimal paths. They typically consider:
+
 - Distance between points
 - Current traffic conditions
 - Speed limits and road types

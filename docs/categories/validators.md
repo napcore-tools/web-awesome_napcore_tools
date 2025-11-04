@@ -19,18 +19,23 @@ Validators are essential tools that help ensure your mobility data meets specifi
 ## Common Use Cases
 
 ### Pre-Publication Validation
+
 Validate data before publishing on a National Access Point to ensure quality and compliance.
 
 ### Development Testing
+
 Continuously validate data during development to catch issues early.
 
 ### Quality Assurance
+
 Regular validation to maintain data quality standards over time.
 
 ### Debugging
+
 Identify and diagnose specific data issues with detailed error messages.
 
 ### Location Reference Validation
+
 Ensure ALERT-C location codes and references are valid and comply with ISO/DIS 14819.
 
 ## Needed Validators

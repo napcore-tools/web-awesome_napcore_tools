@@ -6,7 +6,7 @@ A community-driven catalog of open-source tools that support European mobility d
 
 ## 🌐 Live Site
 
-Visit the catalog at: **[napcore-tools.eu](#)** *(coming soon)*
+Visit the catalog at: **[napcore-tools.eu](#)** _(coming soon)_
 
 ## 🎯 Mission
 
@@ -23,7 +23,7 @@ Make it easier for developers, data publishers, and mobility professionals to fi
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
@@ -118,6 +118,7 @@ See [CONTRIBUTING.md](./docs/contribute.md) for detailed guidelines.
 ## 🎨 Design
 
 The catalog features:
+
 - NAPCORE brand colors and official logo
 - Responsive, mobile-first design
 - Accessible (WCAG AA compliant)

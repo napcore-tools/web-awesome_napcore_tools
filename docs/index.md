@@ -21,42 +21,42 @@ features:
     title: Validators
     details: Schema validation and business rule checking tools for ensuring data quality and compliance
     link: /categories/validators
-  
+
   - icon: ⇄
     title: Converters & Transformers
     details: Format conversion and data transformation utilities for mobility data standards
     link: /categories/converters
-  
+
   - icon: ⬆
     title: Version Upgrade Tools
     details: Migration and compatibility utilities for standard version upgrades
     link: /categories/version-tools
-  
+
   - icon: 📦
     title: SDKs & Libraries
     details: Programming language bindings and libraries for easier implementation
     link: /categories/sdks
-  
+
   - icon: 🎯
     title: Reference Implementations
     details: Working examples and demo applications showing best practices
     link: /categories/reference-implementations
-  
+
   - icon: 🛠
     title: Development Tools
     details: Browsers, editors, and generators for development workflows
     link: /categories/development
-  
+
   - icon: 📊
     title: Data Quality Tools
     details: Validation, enrichment, and cleaning utilities for high-quality data
     link: /categories/data-quality
-  
+
   - icon: 🧪
     title: Testing Utilities
     details: Test data generation and validation tools for robust testing
     link: /categories/testing
-  
+
   - icon: 🏷
     title: Metadata Tools
     details: Catalog generation and discovery tools for better data findability
@@ -82,7 +82,6 @@ This site is work in progress and in a proof-of-concept stage.
 ---
 
 <StatsBar />
-
 
 ## Featured Tools
 

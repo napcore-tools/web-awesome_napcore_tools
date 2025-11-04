@@ -19,38 +19,46 @@ Reference documentation provides the authoritative technical information needed 
 ## Common Use Cases
 
 ### Implementation Planning
+
 Understand requirements and scope before building mobility data systems.
 
 ### Development Reference
+
 Access detailed technical specifications during implementation.
 
 ### Standards Compliance
+
 Ensure implementations align with official specifications and profiles.
 
 ### Learning and Training
+
 Educate teams on mobility data standards and best practices.
 
 ## Types of Reference Documentation
 
 ### Standard Specifications
+
 - Official DATEX II, NeTEx, and SIRI documentation
 - XML schemas and data models
 - Profile definitions (e.g., NAP profiles)
 - Version history and change logs
 
 ### Implementation Guides
+
 - Getting started tutorials
 - Integration patterns
 - Deployment guidelines
 - Migration guides
 
 ### API Documentation
+
 - Endpoint references
 - Request/response examples
 - Authentication and authorization
 - Rate limits and usage policies
 
 ### Technical Guides
+
 - Data modeling guidance
 - Mapping between standards
 - Performance optimization

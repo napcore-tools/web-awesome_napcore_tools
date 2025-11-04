@@ -109,6 +109,7 @@ DATEX II Browser fills a critical need in the European mobility data ecosystem:
 ## Related Tools
 
 This browser complements other DATEX II tools like:
+
 - [DATEX II Schema Generation Tool](/tools/datex-schema-tool) - For creating custom profiles
 - Validators and converters (coming soon to catalog)
 
