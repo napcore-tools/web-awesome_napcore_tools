@@ -7,8 +7,10 @@ categories:
   - references
 status: active
 license: CEN Standard
-liveDemo: https://docs.datex2.eu/
-sourceCode: https://datex2.eu/downloads/
+repository: null
+website: https://datex2.eu/
+documentation: https://docs.datex2.eu/
+demo: null
 developer: CEN TC 278 / NAPCORE
 standards:
   - datex-ii

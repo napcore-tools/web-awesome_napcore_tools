@@ -9,16 +9,28 @@
         <td><strong>License</strong></td>
         <td>{{ frontmatter.license }}</td>
       </tr>
-      <tr v-if="frontmatter.liveDemo">
-        <td><strong>Link</strong></td>
+      <tr v-if="frontmatter.website">
+        <td><strong>Website</strong></td>
         <td>
-          <a :href="frontmatter.liveDemo" target="_blank">{{ getLinkText(frontmatter.liveDemo) }}</a>
+          <a :href="frontmatter.website" target="_blank">{{ getLinkText(frontmatter.website) }}</a>
         </td>
       </tr>
-      <tr v-if="frontmatter.sourceCode">
-        <td><strong>Source Code</strong></td>
+      <tr v-if="frontmatter.repository">
+        <td><strong>Repository</strong></td>
         <td>
-          <a :href="frontmatter.sourceCode" target="_blank">{{ getRepoText(frontmatter.sourceCode) }}</a>
+          <a :href="frontmatter.repository" target="_blank">{{ getRepoText(frontmatter.repository) }}</a>
+        </td>
+      </tr>
+      <tr v-if="frontmatter.documentation">
+        <td><strong>Documentation</strong></td>
+        <td>
+          <a :href="frontmatter.documentation" target="_blank">{{ getLinkText(frontmatter.documentation) }}</a>
+        </td>
+      </tr>
+      <tr v-if="frontmatter.demo">
+        <td><strong>Demo</strong></td>
+        <td>
+          <a :href="frontmatter.demo" target="_blank">{{ getLinkText(frontmatter.demo) }}</a>
         </td>
       </tr>
       <tr v-if="frontmatter.developer">

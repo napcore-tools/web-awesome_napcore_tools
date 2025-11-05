@@ -7,7 +7,10 @@ categories:
   - converters
   - development
 status: active
-liveDemo: https://webtool.datex2.eu
+repository: null
+website: https://webtool.datex2.eu
+documentation: null
+demo: null
 developer: DATEX II community (datex2.eu)
 mainContributor: Jonas Jäderberg
 standards:

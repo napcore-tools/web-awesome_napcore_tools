@@ -11,8 +11,10 @@ export interface Tool {
   categories: string[];
   status: string;
   license?: string;
-  liveDemo?: string;
-  sourceCode?: string;
+  repository?: string;
+  website?: string;
+  documentation?: string;
+  demo?: string;
   developer?: string;
   maintainedBy?: string;
   mainContributor?: string;
@@ -72,8 +74,10 @@ export default {
           categories: Array.isArray(data.categories) ? data.categories : [data.categories],
           status: data.status || 'unknown',
           license: data.license,
-          liveDemo: data.liveDemo,
-          sourceCode: data.sourceCode,
+          repository: data.repository,
+          website: data.website,
+          documentation: data.documentation,
+          demo: data.demo,
           developer: data.developer,
           maintainedBy: data.maintainedBy,
           mainContributor: data.mainContributor,

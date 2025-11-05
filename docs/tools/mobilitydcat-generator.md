@@ -8,8 +8,10 @@ categories:
   - development
 status: active
 license: Apache-2.0
-liveDemo: https://mobilitydcat-ap.github.io/mobilitydcatap-ui/
-sourceCode: https://github.com/mobilityDCAT-AP/mobilitydcatap-ui
+repository: https://github.com/mobilityDCAT-AP/mobilitydcatap-ui
+website: https://mobilitydcat-ap.github.io/mobilitydcatap-ui/
+documentation: null
+demo: null
 developer: Cefriel
 maintainedBy: NAPCORE Metadata Working Group
 standards:

@@ -18,8 +18,9 @@
       </div>
     </div>
     <div class="tool-links">
-      <a v-if="tool.liveDemo" :href="tool.liveDemo" target="_blank" class="tool-link"> Link </a>
-      <a v-if="tool.sourceCode" :href="tool.sourceCode" target="_blank" class="tool-link"> Source Code </a>
+      <a v-if="tool.website" :href="tool.website" target="_blank" class="tool-link"> Website </a>
+      <a v-if="tool.repository" :href="tool.repository" target="_blank" class="tool-link"> Repository </a>
+      <a v-if="tool.documentation" :href="tool.documentation" target="_blank" class="tool-link"> Documentation </a>
       <a :href="`/tools/${tool.slug}`" class="tool-link">Details</a>
     </div>
   </div>

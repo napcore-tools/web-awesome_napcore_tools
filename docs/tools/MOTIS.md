@@ -7,8 +7,10 @@ categories:
   - route-planners
 status: active
 license: MIT
-liveDemo: https://transitous.org/
-sourceCode: https://github.com/motis-project/motis
+repository: https://github.com/motis-project/motis
+website: https://transitous.org/
+documentation: null
+demo: null
 developer: MOTIS Project
 standards:
   - netex

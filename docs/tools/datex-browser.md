@@ -8,8 +8,10 @@ categories:
   - converters
 status: active
 license: MIT
-liveDemo: https://browser.datex2.eu
-sourceCode: https://gitlab.com/tamtamresearch-public/datex2/browser
+repository: https://gitlab.com/tamtamresearch-public/datex2/browser
+website: https://browser.datex2.eu
+documentation: null
+demo: null
 developer: TamTam Research s.r.o.
 standards:
   - datex-ii

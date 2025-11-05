@@ -7,8 +7,10 @@ categories:
   - references
 status: active
 license: Open Standard
-liveDemo: https://docs.datex2.eu/
-sourceCode: https://docs.datex2.eu/downloads/
+repository: null
+website: https://datex2.eu/
+documentation: https://docs.datex2.eu/
+demo: null
 developer: DATEX II Project
 standards:
   - datex-ii

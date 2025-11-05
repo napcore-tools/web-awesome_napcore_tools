@@ -38,7 +38,7 @@ This is a VitePress documentation site for the NAPCORE Store - a catalog of tool
 
 Tool pages live in `docs/tools/*.md` with YAML frontmatter containing metadata:
 - `title`, `description`, `categories`, `status`, `license`
-- Optional: `liveDemo`, `sourceCode`, `developer`, `maintainedBy`, `mainContributor`, `technology`
+- Optional: `repository`, `website`, `documentation`, `demo`, `developer`, `maintainedBy`, `mainContributor`, `technology`
 - Arrays: `standards`, `tags`
 
 ### Components

@@ -9,7 +9,10 @@ categories:
   - testing
 status: active
 license: MIT
-sourceCode: https://github.com/tamtamresearch/alert-c-locations-tester
+repository: https://github.com/tamtamresearch/alert-c-locations-tester
+website: null
+documentation: null
+demo: null
 developer: TamTam Research s.r.o.
 technology: Python, SQLite, CLI
 standards:
