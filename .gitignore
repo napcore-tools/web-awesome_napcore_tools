@@ -44,3 +44,8 @@ dist-ssr/
 homepage-mockup.html
 mockup.html
 DESIGN-NOTES.md
+
+# Playwright test results
+test-results/
+playwright-report/
+playwright/.cache/

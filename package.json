@@ -12,7 +12,10 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "prepare": "npx simple-git-hooks",
-    "precommit": "npx lint-staged"
+    "precommit": "npx lint-staged",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed"
   },
   "simple-git-hooks": {
     "pre-commit": "npm run precommit"
