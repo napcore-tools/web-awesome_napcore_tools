@@ -2,11 +2,16 @@ import { defineConfig } from 'vitepress';
 import { _getToolsSidebar, getCategoriesSidebar } from './sidebar';
 import { napCoreMarkdownPlugin } from './plugins/napCoreMarkdownPlugin';
 import { validateAllStandards } from './standardValidation';
+import { validateAllCategories } from './categoryValidation';
 import { handleValidationResult } from './validationUtils';
 
 // Validate STANDARD_METADATA at config load time
 const standardsValidationResult = validateAllStandards();
 handleValidationResult('STANDARD_METADATA', standardsValidationResult);
+
+// Validate CATEGORIES at config load time
+const categoriesValidationResult = validateAllCategories();
+handleValidationResult('CATEGORIES', categoriesValidationResult);
 
 export default defineConfig({
   title: 'NAPCORE Store',
