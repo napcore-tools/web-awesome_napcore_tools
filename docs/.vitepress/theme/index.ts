@@ -10,6 +10,7 @@ import ToolsGrid from './components/ToolsGrid.vue';
 import CategoryGrid from './components/CategoryGrid.vue';
 import StandardsGrid from './components/StandardsGrid.vue';
 import QuickInfo from './components/QuickInfo.vue';
+import RelatedCategories from './components/RelatedCategories.vue';
 
 export default {
   extends: DefaultTheme,
@@ -27,5 +28,6 @@ export default {
     app.component('CategoryGrid', CategoryGrid);
     app.component('StandardsGrid', StandardsGrid);
     app.component('QuickInfo', QuickInfo);
+    app.component('RelatedCategories', RelatedCategories);
   },
 } satisfies Theme;
