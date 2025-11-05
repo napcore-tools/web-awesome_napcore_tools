@@ -101,7 +101,7 @@ export const CATEGORIES: Category[] = [
   },
   {
     slug: 'references',
-    title: 'References',
+    title: 'Reference Documentations',
     icon: '📚',
     description:
       'Technical documentation, specifications, and implementation guides for mobility data standards and systems',
