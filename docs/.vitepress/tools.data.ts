@@ -1,8 +1,12 @@
 // Data loader for tools - reads front matter from all tool markdown files
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { parse as parseYaml } from 'yaml';
 import { validateToolWithCache } from './toolValidation';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export interface Tool {
   slug: string;
