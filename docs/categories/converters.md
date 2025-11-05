@@ -57,10 +57,7 @@ Adapt dataset metadata between **DCAT-AP** and **mobilityDCAT-AP** profiles for 
 
 ## Related Categories
 
-- [Validators](./validators)
-- [Data Quality Tools](./data-quality)
-- [Testing Utilities](./testing)
-- [Development Tools](./development)
+<RelatedCategories />
 
 ---
 

@@ -56,10 +56,7 @@ Integrate excerpts into training materials or technical guides.
 
 ## Related Categories
 
-- [Validators](./validators)
-- [Reference Implementations](./reference-implementations)
-- [SDKs & Libraries](./sdks-libraries)
-- [Development Tools](./development)
+<RelatedCategories />
 
 ---
 

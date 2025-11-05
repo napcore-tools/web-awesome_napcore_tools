@@ -56,10 +56,7 @@ Update catalog metadata to align with new schema profiles.
 
 ## Related Categories
 
-- [Converters](./converters)
-- [Validators](./validators)
-- [Development Tools](./development)
-- [Data Quality Tools](./data-quality)
+<RelatedCategories />
 
 ---
 

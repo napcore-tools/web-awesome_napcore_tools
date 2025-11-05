@@ -55,10 +55,7 @@ Support workshops or technical documentation with live examples.
 
 ## Related Categories
 
-- [Development Tools](./development)
-- [SDKs & Libraries](./sdks-libraries)
-- [Testing Utilities](./testing)
-- [Validators](./validators)
+<RelatedCategories />
 
 ---
 

@@ -56,10 +56,7 @@ The **ALERT-C Locations Tester** validates the consistency and correctness of lo
 
 ## Related Categories
 
-- [Data Quality Tools](./data-quality)
-- [Testing Utilities](./testing)
-- [Converters](./converters)
-- [Development Tools](./development)
+<RelatedCategories />
 
 ---
 

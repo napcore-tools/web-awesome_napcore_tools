@@ -56,11 +56,7 @@ Simulate transport data or API calls to test system behavior under controlled co
 
 ## Related Categories
 
-- [Validators](./validators)
-- [Data Quality Tools](./data-quality)
-- [Converters](./converters)
-- [Development Tools](./development)
-- [Reference Documentation](./references)
+<RelatedCategories />
 
 ---
 

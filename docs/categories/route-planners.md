@@ -54,10 +54,7 @@ Power integrated travel apps and regional journey planners.
 
 ## Related Categories
 
-- [Development Tools](./development)
-- [SDKs & Libraries](./sdks-libraries)
-- [Converters](./converters)
-- [Testing Utilities](./testing)
+<RelatedCategories />
 
 ---
 

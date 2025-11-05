@@ -56,10 +56,7 @@ Identify missing, inconsistent, or invalid data fields that affect downstream us
 
 ## Related Categories
 
-- [Validators](./validators)
-- [Converters](./converters)
-- [Testing Utilities](./testing)
-- [Development Tools](./development)
+<RelatedCategories />
 
 ---
 

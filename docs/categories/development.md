@@ -56,10 +56,7 @@ Use data simulators or mock feeds to test new transport systems before deploymen
 
 ## Related Categories
 
-- [Validators](./validators)
-- [Data Quality Tools](./data-quality)
-- [Converters](./converters)
-- [Testing Utilities](./testing)
+<RelatedCategories />
 
 ---
 

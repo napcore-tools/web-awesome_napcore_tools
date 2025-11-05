@@ -56,10 +56,7 @@ Transform or map metadata between internal and public catalog formats.
 
 ## Related Categories
 
-- [Validators](./validators)
-- [Converters](./converters)
-- [Data Quality Tools](./data-quality)
-- [Development Tools](./development)
+<RelatedCategories />
 
 ---
 

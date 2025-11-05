@@ -56,10 +56,7 @@ Generate or update DCAT-AP or mobilityDCAT-AP metadata programmatically.
 
 ## Related Categories
 
-- [Development Tools](./development)
-- [Converters](./converters)
-- [Validators](./validators)
-- [Reference Implementations](./reference-implementations)
+<RelatedCategories />
 
 ---
 
