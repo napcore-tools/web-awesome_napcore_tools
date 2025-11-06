@@ -108,21 +108,38 @@ const formattedDate = computed(() => {
   display: inline-block;
   padding: 0.25rem 0.75rem;
   font-size: 0.875rem;
-  background-color: var(--vp-c-default-soft);
   border-radius: 12px;
-  color: var(--vp-c-text-2);
   text-decoration: none;
   transition: all 0.2s;
   cursor: pointer;
+  background-color: var(--vp-c-default-soft);
+  color: var(--vp-c-text-2);
+  border: 1px solid var(--vp-c-divider);
 }
 
-.tag:hover {
+/* Slightly different background for tags linking to actual pages */
+.tag.category,
+.tag.standard {
   background-color: var(--vp-c-brand-soft);
   color: var(--vp-c-brand-1);
-  transform: translateY(-1px);
 }
 
-/* Tag type-specific styling will be added in blog.css */
+/* Hover states - general tags */
+.tag.blog-tag:hover {
+  transform: translateY(-1px);
+  background-color: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+/* Hover states - category and standard tags (maintain accent) */
+.tag.category:hover,
+.tag.standard:hover {
+  transform: translateY(-1px);
+  background-color: var(--vp-c-brand-1);
+  color: white;
+  border-color: var(--vp-c-brand-1);
+}
 
 @media (max-width: 640px) {
   .blog-post-meta {

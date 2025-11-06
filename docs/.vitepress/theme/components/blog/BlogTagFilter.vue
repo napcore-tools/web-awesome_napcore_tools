@@ -152,7 +152,7 @@ function clearFilters() {
   gap: 0.375rem;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
-  background-color: var(--vp-c-bg);
+  background-color: var(--vp-c-default-soft);
   border: 1px solid var(--vp-c-divider);
   border-radius: 20px;
   color: var(--vp-c-text-2);
@@ -160,12 +160,31 @@ function clearFilters() {
   transition: all 0.2s;
 }
 
+/* Slightly different background for tags linking to actual pages */
+/*
+.tag-button.category,
+.tag-button.standard {
+  background-color: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+}
+*/
+
 .tag-button:hover {
   border-color: var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
   transform: translateY(-2px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--vp-c-brand-soft);
 }
+
+/* Enhanced hover for category/standard tags */
+/*
+.tag-button.category:hover,
+.tag-button.standard:hover {
+  background-color: var(--vp-c-brand-1);
+  color: white;
+}
+*/
 
 .tag-button.active {
   background-color: var(--vp-c-brand-1);

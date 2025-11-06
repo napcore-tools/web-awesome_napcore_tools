@@ -128,6 +128,65 @@ published: true           # Set to false for drafts
 - Respects preview mode environment variable
 - Output: `feed.rss` in build directory
 
+### Blog Tag Resolution System
+
+**Architecture Overview:**
+The blog uses a smart tag resolution system that maps tag slugs to proper display titles and URLs based on their type. Tags automatically link to category pages, standard pages, or blog filtering.
+
+**Tag Types:**
+1. **Category tags** (`type: 'category'`) - Link to `/categories/{slug}` (e.g., "validators" → "Validators")
+2. **Standard tags** (`type: 'standard'`) - Link to `/standards/{slug}` (e.g., "datex-ii" → "DATEX II")
+3. **Blog-specific tags** (`type: 'blog-tag'`) - Link to `/blog?tag={slug}` (e.g., "technical" → "Technical")
+
+**Resolution Order** (`docs/.vitepress/theme/utils/tagResolver.ts`):
+1. Check if slug matches a category in `categories.ts` → return category title and `/categories/{slug}` URL
+2. Check if slug matches a standard in `standards.data.ts` → return standard title and `/standards/{slug}` URL
+3. Check if slug exists in `data/blogTags.yaml` → return custom title and `/blog?tag={slug}` URL
+4. Fallback: use slug as-is for title and `/blog?tag={slug}` URL
+
+**Key Files:**
+- `docs/.vitepress/theme/utils/tagResolver.ts` - Core resolution logic, exports `resolveTag()` and `resolveTags()`
+- `docs/.vitepress/blogTags.ts` - Client-safe wrapper for blog tag metadata
+- `docs/.vitepress/blogTags.data.ts` - VitePress data loader for `blogTags.yaml`
+- `docs/data/blogTags.yaml` - YAML source for custom blog tag titles
+
+**Adding Custom Blog Tags:**
+Edit `docs/data/blogTags.yaml`:
+```yaml
+technical:
+  title: Technical
+traffic-management:
+  title: Traffic Management
+```
+
+**Tag Resolution Interface:**
+```typescript
+interface ResolvedTag {
+  slug: string;        // Original slug from frontmatter
+  title: string;       // Display title (resolved)
+  type: TagType;       // 'category' | 'standard' | 'blog-tag'
+  url: string;         // Link URL
+}
+```
+
+**CSS Styling Organization:**
+- **All tag styles are component-specific** - each component owns 100% of its CSS classes in its `<style>` section
+  - `BlogCard.vue` owns ALL `.blog-tag` styles (including `.blog-tag.category`, `.blog-tag.standard`, etc.)
+  - `BlogPostMeta.vue` owns ALL `.tag` styles (including `.tag.category`, `.tag.standard`, etc.)
+  - `BlogTagFilter.vue` owns ALL `.tag-button` styles (including `.tag-button.category`, `.tag-button.standard`, etc.)
+- **blog.css contains NO tag-specific styles** - only blog-wide layout and container styles
+- **Design principle:** Each component is fully self-contained and portable
+
+**Visual Design:**
+- **Blog-only tags**: Gray background, gray text → light blue on hover
+- **Category/Standard tags**: Light blue background, blue text → solid blue with white text on hover
+- **Design principle**: Tags linking to dedicated pages get a subtle brand-colored accent to distinguish them from filter-only tags
+
+**URL Parameter Filtering:**
+- Tags link to `/blog?tag={slug}` for blog-specific filtering
+- BlogTagFilter reads `?tag=` parameter on mount and selects matching tag
+- "Clear All" button removes query parameter using `window.history.replaceState()`
+
 ## File Organization
 
 ```
