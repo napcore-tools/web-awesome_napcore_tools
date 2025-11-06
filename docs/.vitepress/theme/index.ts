@@ -16,6 +16,7 @@ import BlogCard from './components/blog/BlogCard.vue';
 import BlogGrid from './components/blog/BlogGrid.vue';
 import BlogPostMeta from './components/blog/BlogPostMeta.vue';
 import BlogTagFilter from './components/blog/BlogTagFilter.vue';
+import BlogPreviewBanner from './components/blog/BlogPreviewBanner.vue';
 
 export default {
   extends: DefaultTheme,
@@ -38,5 +39,6 @@ export default {
     app.component('BlogGrid', BlogGrid);
     app.component('BlogPostMeta', BlogPostMeta);
     app.component('BlogTagFilter', BlogTagFilter);
+    app.component('BlogPreviewBanner', BlogPreviewBanner);
   },
 } satisfies Theme;

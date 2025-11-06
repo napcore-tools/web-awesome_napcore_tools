@@ -8,6 +8,8 @@ layout: page
 
 Stay updated with the latest news, insights, and updates about mobility data standards, tools, and the European ITS ecosystem.
 
+<BlogPreviewBanner />
+
 <BlogTagFilter />
 
 </div>

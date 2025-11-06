@@ -12,6 +12,7 @@ export interface BlogPost {
   description: string;
   excerpt?: string;
   published?: boolean;
+  publishDate?: string;
 }
 
 declare const data: BlogPost[];
@@ -20,6 +21,9 @@ export { data };
 export default createContentLoader('blog/posts/*.md', {
   excerpt: true,
   transform(raw): BlogPost[] {
+    const now = Date.now();
+    const isPreviewMode = typeof process.env.VITE_PREVIEW_MODE !== 'undefined';
+
     return raw
       .map(({ url, frontmatter, excerpt }) => ({
         title: frontmatter.title,
@@ -30,8 +34,23 @@ export default createContentLoader('blog/posts/*.md', {
         description: frontmatter.description || '',
         excerpt: excerpt || frontmatter.description,
         published: frontmatter.published !== false,
+        publishDate: frontmatter.publishDate,
       }))
-      .filter((post) => post.published !== false)
+      .filter((post) => {
+        // Filter out unpublished posts
+        if (post.published === false) return false;
+
+        // In preview mode, show all posts regardless of publishDate
+        if (isPreviewMode) return true;
+
+        // Filter out posts with future publishDate
+        if (post.publishDate) {
+          const publishTime = new Date(post.publishDate).getTime();
+          if (publishTime > now) return false;
+        }
+
+        return true;
+      })
       .sort((a, b) => b.date.time - a.date.time);
   },
 });

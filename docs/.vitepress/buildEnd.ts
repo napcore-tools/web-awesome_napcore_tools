@@ -30,9 +30,19 @@ export const buildEnd = async (config: SiteConfig): Promise<void> => {
   posts.sort((a, b) => +new Date(b.frontmatter.date as string) - +new Date(a.frontmatter.date as string));
 
   // Add posts to feed
+  const now = Date.now();
+  const isPreviewMode = typeof process.env.VITE_PREVIEW_MODE !== 'undefined';
+  let publishedCount = 0;
+
   for (const { url, excerpt, frontmatter, html } of posts) {
     // Skip draft posts
     if (frontmatter.published === false) continue;
+
+    // In preview mode, include all posts regardless of publishDate
+    if (!isPreviewMode && frontmatter.publishDate) {
+      const publishTime = new Date(frontmatter.publishDate as string).getTime();
+      if (publishTime > now) continue;
+    }
 
     feed.addItem({
       title: frontmatter.title,
@@ -43,10 +53,12 @@ export const buildEnd = async (config: SiteConfig): Promise<void> => {
       author: frontmatter.author ? [{ name: frontmatter.author }] : undefined,
       date: new Date(frontmatter.date),
     });
+
+    publishedCount++;
   }
 
   // Write RSS feed to output directory
   writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2());
 
-  console.log(`✅ Generated RSS feed with ${posts.filter((p) => p.frontmatter.published !== false).length} posts`);
+  console.log(`✅ Generated RSS feed with ${publishedCount} posts`);
 };
