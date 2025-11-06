@@ -4,6 +4,7 @@ import { napCoreMarkdownPlugin } from './plugins/napCoreMarkdownPlugin';
 import { validateAllStandards } from './standardValidation';
 import { validateAllCategories } from './categoryValidation';
 import { handleValidationResult } from './validationUtils';
+import { buildEnd } from './buildEnd';
 
 // Validate STANDARD_METADATA at config load time
 const standardsValidationResult = validateAllStandards();
@@ -38,6 +39,9 @@ export default defineConfig({
     }
   },
 
+  // Generate RSS feed at build time
+  buildEnd,
+
   themeConfig: {
     logo: 'https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png',
 
@@ -46,6 +50,7 @@ export default defineConfig({
       //      { text: 'Browse Tools', link: '/tools/' },
       { text: 'Tools', link: '/categories/' },
       { text: 'Contribute', link: '/contribute' },
+      { text: 'Blog', link: '/blog' },
       { text: 'Status (WIP)', link: '/about' },
     ],
 

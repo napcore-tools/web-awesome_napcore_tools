@@ -1,0 +1,13 @@
+---
+layout: page
+---
+
+<div class="blog-page-container">
+
+# NAPCORE Blog
+
+Stay updated with the latest news, insights, and updates about mobility data standards, tools, and the European ITS ecosystem.
+
+<BlogTagFilter />
+
+</div>

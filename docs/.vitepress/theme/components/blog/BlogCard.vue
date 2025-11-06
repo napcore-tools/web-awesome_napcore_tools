@@ -1,0 +1,119 @@
+<template>
+  <div class="blog-card">
+    <div class="blog-card-header">
+      <h3 class="blog-card-title">
+        <a :href="post.url">{{ post.title }}</a>
+      </h3>
+      <div class="blog-card-meta">
+        <span class="blog-date">📅 {{ post.date.string }}</span>
+        <span v-if="post.author" class="blog-author">✍️ {{ post.author }}</span>
+      </div>
+    </div>
+    <div class="blog-card-body">
+      <p class="blog-card-description">{{ post.description }}</p>
+    </div>
+    <div v-if="post.tags && post.tags.length > 0" class="blog-tags">
+      <span v-for="tag in post.tags.slice(0, 5)" :key="tag" class="blog-tag">
+        {{ tag }}
+      </span>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import type { BlogPost } from '../../../blog.data';
+
+interface Props {
+  post: BlogPost;
+}
+
+defineProps<Props>();
+</script>
+
+<style scoped>
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  height: 100%;
+  background-color: var(--vp-c-bg-soft);
+}
+
+.blog-card:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.blog-card-header {
+  margin-bottom: 1rem;
+}
+
+.blog-card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.blog-card-title a {
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.blog-card-title a:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.blog-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+}
+
+.blog-date,
+.blog-author {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.blog-card-body {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.blog-card-description {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+
+.blog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.blog-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  background-color: var(--vp-c-default-soft);
+  border-radius: 12px;
+  color: var(--vp-c-text-2);
+  transition: all 0.2s;
+}
+
+.blog-tag:hover {
+  background-color: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+}
+</style>

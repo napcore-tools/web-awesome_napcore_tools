@@ -1,0 +1,33 @@
+/**
+ * Blog-specific styles for NAPCORE Store
+ */
+
+/* Blog page layout - wider container for better card display */
+.blog-page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 24px 3rem;
+}
+
+.blog-page-container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.blog-page-container > p {
+  max-width: 800px;
+  margin-bottom: 2rem;
+  color: var(--vp-c-text-2);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .blog-page-container {
+    padding: 1.5rem 16px 2rem;
+  }
+}
