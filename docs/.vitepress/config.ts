@@ -89,7 +89,7 @@ export default defineConfig({
     },
 
     // editLink: {
-    //   pattern: 'https://github.com/napcore/napcore-web-store/edit/main/docs/:path',
+    //   pattern: 'https://github.com/napcore/napcore-store/edit/main/docs/:path',
     //   text: 'Suggest changes to this page'
     // }
   },

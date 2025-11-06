@@ -4,6 +4,10 @@
 
 A community-driven catalog of open-source tools that support European mobility data standards like DATEX II, NeTEx, SIRI, and mobilityDCAT-AP.
 
+## DEV Note
+
+TODO: replace all links to `/napcore-store/` with the proper links when they are ready!
+
 ## 🌐 Live Site
 
 Visit the catalog at: **[napcore-tools.eu](#)** _(coming soon)_
@@ -14,8 +18,8 @@ Make it easier for developers, data publishers, and mobility professionals to fi
 
 ## 📚 What's Inside
 
-- **9 Tool Categories**: Validators, Converters, SDKs, and more
-- **Standards Coverage**: DATEX II, NeTEx, SIRI, mobilityDCAT-AP, DCAT-AP
+- **Tool Categories**: Validators, Converters, SDKs, and more
+- **Standards Coverage**: DATEX II, NeTEx, SIRI, mobilityDCAT-AP, DCAT-AP, and more
 - **Quality Curated**: Only functional, documented, maintained tools
 - **Community-Driven**: Submit tools and improvements via GitHub
 - **Blog**: News, insights, and updates about mobility data standards and tools
@@ -31,8 +35,8 @@ Make it easier for developers, data publishers, and mobility professionals to fi
 
 ```bash
 # Clone the repository
-git clone https://github.com/napcore/napcore-web-store.git
-cd napcore-web-store
+git clone https://github.com/napcore/napcore-store.git
+cd napcore-store
 
 # Install dependencies
 npm install
@@ -114,36 +118,26 @@ The blog automatically generates an RSS feed at `/feed.rss` during build. Subscr
 ## 📂 Project Structure
 
 ```
-napcore-web-store/
+napcore-store/
 ├── docs/
 │   ├── .vitepress/
 │   │   ├── config.ts          # VitePress configuration
-│   │   ├── blog.data.ts       # Blog post loader
+│   │   ├── blog.data.ts       # Blog post data loader
 │   │   ├── buildEnd.ts        # RSS feed generation
-│   │   └── theme/
+│   │   └── theme/             # Custom theme & components
 │   │       ├── components/
-│   │       │   └── blog/      # Blog components
-│   │       ├── index.ts       # Custom theme
-│   │       ├── custom.css     # NAPCORE branding
-│   │       └── blog.css       # Blog-specific styles
+│   │       │   └── blog/      # Blog-specific Vue components
+│   │       └── *.css          # Styling files
 │   ├── index.md               # Homepage
-│   ├── tools/                 # Tool documentation
-│   │   ├── index.md
-│   │   ├── datex-browser.md
-│   │   ├── datex-schema-tool.md
-│   │   └── mobilitydcat-generator.md
-│   ├── categories/            # Category pages
-│   │   ├── index.md
-│   │   ├── validators.md
-│   │   ├── converters.md
-│   │   └── ... (more categories)
+│   ├── tools/                 # Tool documentation pages
+│   │   └── *.md               # Individual tool pages
+│   ├── categories/            # Category pages (validators, converters, etc.)
+│   │   └── *.md
 │   ├── blog/                  # Blog
 │   │   ├── index.md           # Blog listing page
-│   │   └── posts/             # Blog posts
-│   │       ├── YYYY-MM-DD-post-slug.md
-│   │       └── ...
-│   ├── contribute.md          # Contribution guide
-│   └── about.md               # About page
+│   │   └── posts/             # Blog post files
+│   │       └── YYYY-MM-DD-post-slug.md
+│   └── *.md                   # Other pages (contribute, about, etc.)
 ├── package.json
 └── README.md
 ```
@@ -156,7 +150,7 @@ We welcome contributions! Here's how:
 
 1. Check our [criteria](./docs/contribute.md#tool-criteria)
 2. Gather [required information](./docs/contribute.md#required-information)
-3. [Start a discussion](https://github.com/napcore/napcore-web-store/discussions) with "Tool Submission" category
+3. [Start a discussion](https://github.com/napcore/napcore-store/discussions) with "Tool Submission" category
 4. Community review and approval
 5. Tool added to catalog!
 
@@ -168,10 +162,10 @@ We welcome contributions! Here's how:
 
 ### Report Issues
 
-- [Open an issue](https://github.com/napcore/napcore-web-store/issues)
-- [Start a discussion](https://github.com/napcore/napcore-web-store/discussions)
+- [Open an issue](https://github.com/napcore/napcore-store/issues)
+- [Start a discussion](https://github.com/napcore/napcore-store/discussions)
 
-See [CONTRIBUTING.md](./docs/contribute.md) for detailed guidelines.
+See [contribute.md](./docs/contribute.md) for detailed guidelines.
 
 ## 🛠 Technology Stack
 
@@ -180,13 +174,6 @@ See [CONTRIBUTING.md](./docs/contribute.md) for detailed guidelines.
 - **[TypeScript](https://www.typescriptlang.org/)**: Type-safe JavaScript
 - **[Feed](https://www.npmjs.com/package/feed)**: RSS feed generation
 - **Custom CSS**: NAPCORE branding and styling
-
-## 📊 Current Stats
-
-- **Tools**: 3
-- **Categories**: 9
-- **Standards**: 5+
-- **Open Source**: 100%
 
 ## 🎨 Design
 
@@ -233,6 +220,6 @@ This catalog is made possible by:
 
 ## 📬 Contact
 
-- **GitHub**: [napcore/napcore-web-store](https://github.com/napcore/napcore-web-store)
-- **Discussions**: [GitHub Discussions](https://github.com/napcore/napcore-web-store/discussions)
-- **Website**: [napcore.eu](https://napcore.eu)
+- **GitHub**: [napcore/napcore-store](https://github.com/napcore/napcore-store)
+- **Discussions**: [GitHub Discussions](https://github.com/napcore/napcore-store/discussions)
+- **NAPCORE Website**: [napcore.eu](https://napcore.eu)

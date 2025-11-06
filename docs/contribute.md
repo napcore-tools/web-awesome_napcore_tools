@@ -92,9 +92,11 @@ When submitting a tool, please provide:
 
 **Links**:
 
-- Live Demo: [URL]
+- Webpage: [URL]
 - Source Code: [URL]
 - Documentation: [URL]
+- Repository: [URL]
+- Demo: [URL]
 
 **Standards Supported**: [DATEX II / NeTEx / SIRI / mobilityDCAT-AP / Other]
 
@@ -129,8 +131,8 @@ Found outdated information or want to add more details to a tool page?
 
 Found a broken link or incorrect information?
 
-- Open an issue in our [GitHub repository](https://github.com/napcore/napcore-web-store/issues)
-- Or mention it in [Discussions](https://github.com/napcore/napcore-web-store/discussions)
+- Open an issue in our [GitHub repository](https://github.com/napcore/napcore-store/issues)
+- Or mention it in [Discussions](https://github.com/napcore/napcore-store/discussions)
 
 ### Suggest Improvements
 
@@ -199,7 +201,7 @@ We are committed to providing a welcoming and inclusive environment for all cont
 ---
 
 ::: tip Quick Start
-Ready to submit a tool? [Start a GitHub Discussion](https://github.com/napcore/napcore-web-store/discussions/new) with the "Tool Submission" category!
+Ready to submit a tool? [Start a GitHub Discussion](https://github.com/napcore-tools/web-napcore_store/discussions/new) with the "Tool Submission" category!
 :::
 
 Thank you for helping build the European mobility tools ecosystem! 🚀
