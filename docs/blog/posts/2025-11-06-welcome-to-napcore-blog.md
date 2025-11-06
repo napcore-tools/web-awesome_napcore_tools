@@ -6,7 +6,7 @@ author: NAPCORE Team
 tags:
   - announcement
   - napcore
-  - mobility-data
+  - datex-ii
 published: true
 ---
 

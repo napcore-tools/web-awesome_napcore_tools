@@ -13,7 +13,14 @@
     <div v-if="tags && tags.length > 0" class="meta-tags">
       <span class="meta-icon">🏷️</span>
       <div class="tags-list">
-        <span v-for="tag in tags" :key="tag" class="tag">{{ tag }}</span>
+        <a
+          v-for="resolvedTag in resolvedTags"
+          :key="resolvedTag.slug"
+          :href="resolvedTag.url"
+          :class="['tag', resolvedTag.type]"
+        >
+          {{ resolvedTag.title }}
+        </a>
       </div>
     </div>
   </div>
@@ -22,12 +29,18 @@
 <script setup lang="ts">
 import { useData } from 'vitepress';
 import { computed } from 'vue';
+import { resolveTags } from '../../utils/tagResolver';
 
 const { frontmatter } = useData();
 
 const date = computed(() => frontmatter.value.date);
 const author = computed(() => frontmatter.value.author);
 const tags = computed(() => frontmatter.value.tags);
+
+const resolvedTags = computed(() => {
+  if (!tags.value) return [];
+  return resolveTags(tags.value);
+});
 
 const formattedDate = computed(() => {
   if (!date.value) return '';
@@ -98,13 +111,18 @@ const formattedDate = computed(() => {
   background-color: var(--vp-c-default-soft);
   border-radius: 12px;
   color: var(--vp-c-text-2);
+  text-decoration: none;
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 .tag:hover {
   background-color: var(--vp-c-brand-soft);
   color: var(--vp-c-brand-1);
+  transform: translateY(-1px);
 }
+
+/* Tag type-specific styling will be added in blog.css */
 
 @media (max-width: 640px) {
   .blog-post-meta {

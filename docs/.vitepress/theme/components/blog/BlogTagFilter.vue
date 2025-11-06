@@ -7,11 +7,11 @@
     <div class="tags-cloud">
       <button
         v-for="tag in availableTags"
-        :key="tag.name"
-        :class="['tag-button', { active: isTagSelected(tag.name) }]"
-        @click="toggleTag(tag.name)"
+        :key="tag.slug"
+        :class="['tag-button', tag.type, { active: isTagSelected(tag.slug) }]"
+        @click="toggleTag(tag.slug)"
       >
-        {{ tag.name }}
+        {{ tag.title }}
         <span class="tag-count">{{ tag.count }}</span>
       </button>
     </div>
@@ -20,16 +20,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { data as posts } from '../../../blog.data';
 import BlogGrid from './BlogGrid.vue';
+import { resolveTag, type TagType } from '../../utils/tagResolver';
 
 interface TagInfo {
-  name: string;
+  slug: string;
+  title: string;
+  type: TagType;
   count: number;
 }
 
 const selectedTags = ref<string[]>([]);
+
+// Initialize selected tags from URL query parameter on mount
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    const params = new URLSearchParams(window.location.search);
+    const tagParam = params.get('tag');
+    if (tagParam) {
+      selectedTags.value = [tagParam];
+    }
+  }
+});
 
 // Compute all available tags with their counts
 const availableTags = computed((): TagInfo[] => {
@@ -43,14 +57,22 @@ const availableTags = computed((): TagInfo[] => {
     }
   });
 
-  // Convert to array and sort by count (descending), then by name
+  // Convert to array, resolve tags, and sort by count (descending), then by title
   return Array.from(tagCounts.entries())
-    .map(([name, count]) => ({ name, count }))
+    .map(([slug, count]) => {
+      const resolved = resolveTag(slug);
+      return {
+        slug,
+        title: resolved.title,
+        type: resolved.type,
+        count,
+      };
+    })
     .sort((a, b) => {
       if (b.count !== a.count) {
         return b.count - a.count;
       }
-      return a.name.localeCompare(b.name);
+      return a.title.localeCompare(b.title);
     });
 });
 
@@ -69,6 +91,12 @@ function isTagSelected(tag: string): boolean {
 
 function clearFilters() {
   selectedTags.value = [];
+  // Remove 'tag' query parameter from URL
+  if (typeof window !== 'undefined') {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('tag');
+    window.history.replaceState({}, '', url.toString());
+  }
 }
 </script>
 

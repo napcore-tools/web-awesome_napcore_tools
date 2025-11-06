@@ -13,21 +13,33 @@
       <p class="blog-card-description">{{ post.description }}</p>
     </div>
     <div v-if="post.tags && post.tags.length > 0" class="blog-tags">
-      <span v-for="tag in post.tags.slice(0, 5)" :key="tag" class="blog-tag">
-        {{ tag }}
-      </span>
+      <a
+        v-for="resolvedTag in resolvedTags.slice(0, 5)"
+        :key="resolvedTag.slug"
+        :href="resolvedTag.url"
+        :class="['blog-tag', resolvedTag.type]"
+      >
+        {{ resolvedTag.title }}
+      </a>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import type { BlogPost } from '../../../blog.data';
+import { resolveTags } from '../../utils/tagResolver';
 
 interface Props {
   post: BlogPost;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+
+const resolvedTags = computed(() => {
+  if (!props.post.tags) return [];
+  return resolveTags(props.post.tags);
+});
 </script>
 
 <style scoped>
@@ -109,11 +121,16 @@ defineProps<Props>();
   background-color: var(--vp-c-default-soft);
   border-radius: 12px;
   color: var(--vp-c-text-2);
+  text-decoration: none;
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 .blog-tag:hover {
   background-color: var(--vp-c-brand-soft);
   color: var(--vp-c-brand-1);
+  transform: translateY(-1px);
 }
+
+/* Tag type-specific styling will be added in blog.css */
 </style>

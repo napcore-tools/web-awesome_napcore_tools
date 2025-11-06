@@ -1,0 +1,58 @@
+# Blog Tags Configuration
+#
+# Custom display names for blog-specific tags.
+# Tags that match category or standard slugs are automatically resolved by the tag resolver.
+#
+# Structure:
+#   slug:
+#     title: Display Title
+#
+# Future fields can be added (description, color, icon, etc.) without breaking changes.
+
+technical:
+  title: Technical
+
+tutorial:
+  title: Tutorial
+
+getting-started:
+  title: Getting Started
+
+best-practices:
+  title: Best Practices
+
+case-study:
+  title: Case Study
+
+announcement:
+  title: Announcement
+
+update:
+  title: Update
+
+guide:
+  title: Guide
+
+standards:
+  title: Standards
+
+traffic-management:
+  title: Traffic Management
+
+mobility:
+  title: Mobility
+
+transport:
+  title: Transport
+
+integration:
+  title: Integration
+
+development:
+  title: Development
+
+tools:
+  title: Tools
+
+napcore:
+  title: NAPCORE

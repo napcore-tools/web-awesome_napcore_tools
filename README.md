@@ -70,8 +70,8 @@ description: A short description for the listing page
 date: 2025-11-06
 author: Your Name
 tags:
-  - mobility-data
-  - standards
+  - datex-ii
+  - netex
 published: true
 ---
 ```
@@ -114,6 +114,38 @@ When preview mode is active, you'll see an orange banner and all scheduled posts
 ### RSS Feed
 
 The blog automatically generates an RSS feed at `/feed.rss` during build. Subscribe to stay updated with the latest posts.
+
+### Blog Tag Resolution
+
+Blog post tags are automatically enhanced with proper titles and links based on their type:
+
+**Resolution Order:**
+
+1. **Category tags** (e.g., `validators`) → Displays as "Validators" → Links to `/categories/validators`
+2. **Standard tags** (e.g., `datex-ii`) → Displays as "DATEX II" → Links to `/standards/datex-ii`
+3. **Blog-specific tags** (e.g., `technical`) → Displays as "Technical" → Links to `/blog?tag=technical`
+4. **Unknown tags** → Displays as-is → Links to `/blog?tag={slug}`
+
+**Examples:**
+
+```yaml
+tags:
+  - validators # → "Validators" (links to category page)
+  - datex-ii # → "DATEX II" (links to standard page)
+  - technical # → "Technical" (filters blog by tag)
+  - custom-tag # → "custom-tag" (filters blog by tag)
+```
+
+**Adding Custom Blog Tags:**
+
+To add display titles for blog-specific tags, edit `docs/data/blogTags.yaml`:
+
+```yaml
+your-tag-slug:
+  title: Your Tag Display Title
+```
+
+All tags are clickable and styled consistently throughout the blog.
 
 ## 📂 Project Structure
 
