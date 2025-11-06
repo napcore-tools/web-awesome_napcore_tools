@@ -42,6 +42,9 @@ export default defineConfig({
   // Generate RSS feed at build time
   buildEnd,
 
+  // Ignore dead link check for RSS feed (generated in buildEnd hook)
+  ignoreDeadLinks: ['/feed.rss'],
+
   themeConfig: {
     logo: 'https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png',
 

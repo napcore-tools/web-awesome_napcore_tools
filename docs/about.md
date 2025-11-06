@@ -189,6 +189,7 @@ There are many ways to contribute:
 - **Share your experience** using catalog tools
 - **Suggest improvements** to the catalog
 - **Help other users** in discussions
+- **Stay updated** by subscribing to our blog via [RSS feed](/feed.rss){target="blank"}
 
 [Learn How to Contribute →](/contribute)
 
