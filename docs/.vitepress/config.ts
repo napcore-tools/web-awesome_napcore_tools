@@ -48,6 +48,11 @@ export default defineConfig({
   themeConfig: {
     logo: 'https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png',
 
+    outline: {
+      level: [2, 3],
+      // label: 'On this page', // Optional title text above the outline
+    },
+
     nav: [
       { text: 'Home', link: '/' },
       //      { text: 'Browse Tools', link: '/tools/' },
