@@ -61,3 +61,75 @@
 .custom-block.details.plain ol {
   margin: 0.5rem 0;
 }
+
+/* ============================================================================
+   Collapse Sections (Custom Container)
+   ============================================================================ */
+
+/**
+ * Plain-text collapsible sections using custom ::: collapse syntax.
+ * Generates clean HTML without custom-block class.
+ *
+ * Usage in markdown:
+ *   ::: collapse Section Title
+ *   Content here...
+ *   :::
+ *
+ * Features:
+ * - No background color or borders
+ * - Normal font weight (not bold)
+ * - Arrow indicator (▶ rotates to ▼ when open)
+ * - Subtle hover effect
+ * - Natural text flow
+ */
+
+.collapse-section {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  /*margin: 1.5rem 0;*/
+}
+
+.collapse-title {
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--vp-c-text-1);
+  /*padding: 0.75rem 0;*/
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.collapse-title:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* Ensure nested content flows naturally */
+.collapse-body p {
+  margin: 0.5rem 0;
+}
+
+.collapse-body ul,
+.collapse-body ol {
+  margin: 0.5rem 0;
+}
+
+/* Selects headings inside a <summary> element within the .collapse-section container */
+.collapse-section summary h1,
+.collapse-section summary h2,
+.collapse-section summary h3,
+.collapse-section summary h4,
+.collapse-section summary h5,
+.collapse-section summary h6 {
+  /* CRITICAL CHANGE: Keeps element inline with the marker,
+     but allows us to set the width */
+  display: inline-block;
+
+  /* Forces the inline-block element to cover the full available width
+     within the <summary> element */
+  width: 100%;
+
+  /* Still recommended to remove default margins for clean vertical alignment */
+  margin: 0;
+}
