@@ -4,6 +4,7 @@ import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
 import './custom.css';
 import './blog.css';
+import './markdown-sections.css';
 import StatsBar from './components/StatsBar.vue';
 import ToolStats from './components/ToolStats.vue';
 import ToolCard from './components/ToolCard.vue';

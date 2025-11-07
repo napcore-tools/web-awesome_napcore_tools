@@ -1,0 +1,63 @@
+/**
+ * Markdown Sections - Custom Styling for VitePress Containers
+ *
+ * Provides enhanced styling for markdown sections, particularly
+ * plain-text collapsible sections for Wikipedia-style expandable content.
+ */
+
+/* ============================================================================
+   Plain-Text Collapsible Sections
+   ============================================================================ */
+
+/**
+ * Wikipedia-style collapsible sections that blend seamlessly with text flow.
+ *
+ * Usage in markdown:
+ *   ::: details plain Section Title
+ *   Content here...
+ *   :::
+ *
+ * Features:
+ * - No background color or borders
+ * - Normal font weight (not bold)
+ * - Subtle hover effect
+ * - Natural text flow
+ */
+
+.custom-block.details.plain {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.custom-block.details.plain summary {
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--vp-c-text-1);
+  padding: 0.75rem 0;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.custom-block.details.plain summary:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* Remove default padding from content area */
+.custom-block.details.plain > :not(summary) {
+  /*padding-left: 0;*/
+  margin-top: 1rem;
+}
+
+/* Ensure nested content flows naturally */
+.custom-block.details.plain p {
+  margin: 0.5rem 0;
+}
+
+.custom-block.details.plain ul,
+.custom-block.details.plain ol {
+  margin: 0.5rem 0;
+}
