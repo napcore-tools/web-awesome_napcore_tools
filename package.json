@@ -50,6 +50,7 @@
     "feed": "^5.1.0",
     "gray-matter": "^4.0.3",
     "lint-staged": "^16.2.6",
+    "markdown-it-container": "^4.0.0",
     "prettier": "^3.6.2",
     "simple-git-hooks": "^2.13.1",
     "typescript": "^5.9.3",
