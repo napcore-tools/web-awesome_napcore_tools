@@ -133,3 +133,67 @@
   /* Still recommended to remove default margins for clean vertical alignment */
   margin: 0;
 }
+
+/* ---------------------------------- */
+/* --- Collapsible Chapter Styles --- */
+/* ---------------------------------- */
+
+/* Base summary styles for the clickable header */
+details.chapter summary {
+  /* Layout and Interactivity */
+  cursor: pointer;
+  display: flex;
+  align-items: baseline; /* Generally better for vertical centering than baseline */
+  user-select: none;
+  gap: 0.6em;
+  padding-left: 0; /* Remove default padding */
+  transition: color 0.2s;
+}
+
+/* H2 has a separator */
+details.chapter > summary:has(h2) {
+  border-top: 0.8px solid rgb(226, 226, 227); /* The continuous horizontal bar */
+  margin-top: 48px;
+}
+
+/* Heading alignment and reset */
+details.chapter summary h2,
+details.chapter summary h3 {
+  margin: 0;
+  display: inline-block;
+  line-height: 1.2;
+  border-top: 0;
+}
+
+/* Large triangle marker - Base Style */
+.chapter-marker {
+  /* Display & Positioning */
+  display: inline-block;
+  width: 0;
+  height: 0;
+  flex-shrink: 0; /* Prevents marker from shrinking */
+
+  /* Triangle Shape */
+  border-top: 0.45em solid transparent;
+  border-bottom: 0.45em solid transparent;
+  border-left: 0.65em solid var(--vp-c-text-1);
+
+  /* Animation */
+  transition: transform 0.25s ease;
+  transform-origin: center center;
+}
+
+/* Rotate marker when chapter is open */
+details.chapter[open] > summary span.chapter-marker {
+  transform: rotate(90deg);
+}
+
+/* Adjust H3 marker size */
+details.chapter > summary > span.chapter-marker:has(+ h3) {
+  font-size: 14px;
+}
+
+/* Hover color */
+details.chapter summary:hover {
+  color: var(--vp-c-brand-1);
+}

@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress';
 import { _getToolsSidebar, getCategoriesSidebar } from './sidebar';
 import { napCoreMarkdownPlugin } from './plugins/napCoreMarkdownPlugin';
 import { collapsePlugin } from './plugins/collapsePlugin';
+import { chapterPlugin } from './plugins/chapterPlugin';
 import { validateAllStandards } from './standardValidation';
 import { validateAllCategories } from './categoryValidation';
 import { handleValidationResult } from './validationUtils';
@@ -30,6 +31,7 @@ export default defineConfig({
     config: (md) => {
       md.use(napCoreMarkdownPlugin);
       md.use(collapsePlugin);
+      md.use(chapterPlugin);
     },
   },
 
