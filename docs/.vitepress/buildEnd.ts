@@ -8,6 +8,14 @@ import { createContentLoader } from 'vitepress';
 const siteUrl = process.env.SITE_URL || 'https://napcore-store.eu';
 const blogUrl = `${siteUrl}/blog`;
 
+/**
+ * VitePress buildEnd hook that generates an RSS feed for blog posts.
+ * Loads all blog posts, filters by publish status and date, and creates feed.rss in the output directory.
+ * Respects VITE_PREVIEW_MODE environment variable for scheduled posts.
+ *
+ * @param config - VitePress site configuration object
+ * @returns Promise that resolves when RSS feed is written
+ */
 export const buildEnd = async (config: SiteConfig): Promise<void> => {
   const feed = new Feed({
     title: 'NAPCORE Store Blog',

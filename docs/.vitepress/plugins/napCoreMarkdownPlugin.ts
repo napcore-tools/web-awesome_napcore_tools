@@ -9,6 +9,13 @@ interface FrontmatterData {
   [key: string]: unknown;
 }
 
+/**
+ * Generates markdown header for tool documents.
+ * Creates a standardized header with title, description (as blockquote), and QuickInfo component.
+ *
+ * @param data - Frontmatter data from the tool markdown file
+ * @returns Markdown string with formatted header content
+ */
 function processToolDocument(data: FrontmatterData): string {
   let header = '';
 
@@ -29,6 +36,13 @@ function processToolDocument(data: FrontmatterData): string {
   return header;
 }
 
+/**
+ * Custom markdown-it plugin for NAPCORE documentation.
+ * Intercepts markdown rendering to inject document-specific headers based on frontmatter.
+ * Currently supports 'tool' document type, with extensibility for additional types.
+ *
+ * @param md - MarkdownIt instance to extend
+ */
 export function napCoreMarkdownPlugin(md: MarkdownIt) {
   const originalRender = md.render.bind(md);
 

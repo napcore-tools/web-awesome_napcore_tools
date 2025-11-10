@@ -35,7 +35,12 @@ export default defineConfig({
     },
   },
 
-  // Transform page data to set dynamic titles from params
+  /**
+   * Transforms page data to set dynamic titles from route parameters.
+   * For dynamic routes, uses the title from params to override the page title.
+   *
+   * @param pageData - VitePress page data object containing route params and metadata
+   */
   async transformPageData(pageData) {
     // For dynamic routes with title param, set the page title
     if (pageData.params?.title) {

@@ -12,6 +12,9 @@ import { type ValidationError, type ValidationResult } from './validationUtils';
 
 /**
  * Validate standard slug format (kebab-case, lowercase, alphanumeric + hyphens only)
+ *
+ * @param slug - Standard slug to validate
+ * @returns Array of validation errors (empty if valid)
  */
 function validateStandardSlug(slug: string): ValidationError[] {
   const errors: ValidationError[] = [];
@@ -57,6 +60,11 @@ function validateStandardSlug(slug: string): ValidationError[] {
 
 /**
  * Validate standard metadata completeness
+ *
+ * @param slug - Standard slug being validated
+ * @param standard - Standard object to validate
+ * @param allStandards - Record of all standards for cross-reference validation
+ * @returns Array of validation errors (empty if valid)
  */
 function validateStandardMetadata(
   slug: string,
@@ -146,6 +154,10 @@ function validateStandardMetadata(
 
 /**
  * Validate tool standards array against STANDARDS
+ *
+ * @param tool - Partial tool object containing standards field
+ * @param _filename - Filename for error reporting (unused)
+ * @returns Array of validation errors (empty if valid)
  */
 export function validateStandards(tool: Partial<Tool>, _filename: string): ValidationError[] {
   const errors: ValidationError[] = [];
@@ -210,6 +222,8 @@ export function validateStandards(tool: Partial<Tool>, _filename: string): Valid
 
 /**
  * Validate all standards in STANDARDS (loaded from standards.yaml)
+ *
+ * @returns Validation result with errors and warnings
  */
 export function validateAllStandards(): ValidationResult {
   const allErrors: ValidationError[] = [];

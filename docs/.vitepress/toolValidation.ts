@@ -28,6 +28,10 @@ const VALID_STATUSES = ['active', 'maintenance', 'deprecated'] as const;
 
 /**
  * Validate tool categories against defined CATEGORIES
+ *
+ * @param tool - Partial tool object containing categories field
+ * @param _filename - Filename for error reporting (unused)
+ * @returns Array of validation errors and warnings (empty if valid)
  */
 function validateCategories(tool: Partial<Tool>, _filename: string): ValidationError[] {
   const errors: ValidationError[] = [];
@@ -91,6 +95,10 @@ function validateCategories(tool: Partial<Tool>, _filename: string): ValidationE
 
 /**
  * Validate required fields are present and non-empty
+ *
+ * @param tool - Partial tool object to validate
+ * @param _filename - Filename for error reporting (unused)
+ * @returns Array of validation errors (empty if valid)
  */
 function validateRequiredFields(tool: Partial<Tool>, _filename: string): ValidationError[] {
   const errors: ValidationError[] = [];
@@ -118,6 +126,10 @@ function validateRequiredFields(tool: Partial<Tool>, _filename: string): Validat
 
 /**
  * Validate status field
+ *
+ * @param tool - Partial tool object containing status field
+ * @param _filename - Filename for error reporting (unused)
+ * @returns Array of validation errors and warnings (empty if valid)
  */
 function validateStatus(tool: Partial<Tool>, _filename: string): ValidationError[] {
   const errors: ValidationError[] = [];
@@ -144,6 +156,10 @@ function validateStatus(tool: Partial<Tool>, _filename: string): ValidationError
 
 /**
  * Main validation function - aggregates all validations
+ *
+ * @param tool - Partial tool object to validate
+ * @param filename - Filename for error reporting
+ * @returns Validation result with errors and warnings
  */
 export function validateTool(tool: Partial<Tool>, filename: string): ValidationResult {
   const allErrors: ValidationError[] = [];

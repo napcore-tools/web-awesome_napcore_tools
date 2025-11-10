@@ -3,7 +3,12 @@ import toolsDataLoader from './tools.data';
 import standardsDataLoader from './standards.data';
 import { CATEGORIES } from './categories';
 
-// Load tools and calculate counts per category
+/**
+ * Calculates the number of tools in each category.
+ * Loads all tools and counts how many belong to each category slug.
+ *
+ * @returns Record mapping category slugs to tool counts
+ */
 function getCategoryCounts(): Record<string, number> {
   const tools = toolsDataLoader.load();
   const counts: Record<string, number> = {};
@@ -25,7 +30,12 @@ function getCategoryCounts(): Record<string, number> {
   return counts;
 }
 
-// Generate category sidebar items with counts
+/**
+ * Generates category sidebar items with tool count badges.
+ * Creates sidebar navigation items for each category, displaying title and count.
+ *
+ * @returns Array of sidebar items with category titles, links, and count badges
+ */
 function getCategoryItemsWithCounts() {
   const counts = getCategoryCounts();
 
@@ -35,7 +45,12 @@ function getCategoryItemsWithCounts() {
   }));
 }
 
-// Load tools and calculate counts per standard
+/**
+ * Calculates the number of tools implementing each standard.
+ * Loads all tools and counts how many reference each standard slug.
+ *
+ * @returns Record mapping standard slugs to tool counts
+ */
 function getStandardCounts(): Record<string, number> {
   const tools = toolsDataLoader.load();
   const counts: Record<string, number> = {};
@@ -55,7 +70,12 @@ function getStandardCounts(): Record<string, number> {
   return counts;
 }
 
-// Generate standard sidebar items with counts
+/**
+ * Generates standard sidebar items with tool count badges.
+ * Creates sidebar navigation items for each standard, sorted alphabetically by title.
+ *
+ * @returns Array of sidebar items with standard titles, links, and count badges (sorted A-Z)
+ */
 function getStandardItemsWithCounts() {
   const counts = getStandardCounts();
   const standards = standardsDataLoader.load();
@@ -79,7 +99,12 @@ function getStandardItemsWithCounts() {
   }));
 }
 
-// Sidebar for /tools/ section
+/**
+ * Generates sidebar configuration for the /tools/ section.
+ * Includes category navigation with counts and featured tools list.
+ *
+ * @returns Sidebar configuration array for tools pages
+ */
 export function getToolsSidebar() {
   return [
     {
@@ -98,7 +123,12 @@ export function getToolsSidebar() {
   ];
 }
 
-// Sidebar for /categories/ section
+/**
+ * Generates sidebar configuration for the /categories/ section.
+ * Includes navigation by category and standard, both with tool counts.
+ *
+ * @returns Sidebar configuration array for category and standard pages
+ */
 export function getCategoriesSidebar() {
   return [
     {

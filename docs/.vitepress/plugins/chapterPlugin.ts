@@ -47,9 +47,23 @@
 import type MarkdownIt from 'markdown-it';
 import container from 'markdown-it-container';
 
+/**
+ * Registers the chapter container plugin with markdown-it.
+ * Enables +++ chapter syntax with heading support and markdown-it-attrs integration.
+ *
+ * @param md - MarkdownIt instance to extend
+ */
 export function chapterPlugin(md: MarkdownIt) {
   md.use(container, 'chapter', {
     marker: '+',
+    /**
+     * Renders chapter container opening and closing tags.
+     * Processes attributes from markdown-it-attrs and generates HTML details/summary elements.
+     *
+     * @param tokens - Array of markdown tokens
+     * @param idx - Current token index
+     * @returns HTML string for opening or closing tag
+     */
     render(tokens, idx) {
       const token = tokens[idx];
       const info = token.info.trim().slice('chapter'.length).trim();

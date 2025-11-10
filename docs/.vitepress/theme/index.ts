@@ -26,6 +26,14 @@ export default {
       // Additional custom layout slots can go here
     });
   },
+  /**
+   * Enhances the VitePress app by registering global Vue components.
+   * Makes all custom components available throughout the documentation site.
+   *
+   * @param app - Vue app instance
+   * @param _router - VitePress router instance (unused)
+   * @param _siteData - Site data object (unused)
+   */
   enhanceApp({ app, _router, _siteData }) {
     // Register global components
     app.component('StatsBar', StatsBar);

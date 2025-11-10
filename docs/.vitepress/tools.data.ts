@@ -29,7 +29,13 @@ export interface Tool {
   lastUpdated?: string;
 }
 
-// Simple front matter parser
+/**
+ * Parses YAML frontmatter from markdown content.
+ * Extracts the YAML block between --- delimiters and parses it into an object.
+ *
+ * @param content - Raw markdown file content with frontmatter
+ * @returns Object containing parsed frontmatter data and remaining markdown content
+ */
 function parseFrontMatter(content: string): { data: Partial<Tool>; content: string } {
   const frontMatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/;
   const match = content.match(frontMatterRegex);
@@ -52,6 +58,13 @@ function parseFrontMatter(content: string): { data: Partial<Tool>; content: stri
 
 export default {
   watch: ['../tools/*.md'],
+  /**
+   * Loads and validates all tool markdown files from the tools directory.
+   * Reads frontmatter from each .md file, validates it, and constructs Tool objects.
+   * Skips invalid tools and logs validation errors.
+   *
+   * @returns Array of validated Tool objects with complete metadata
+   */
   load() {
     const toolsDir = path.resolve(__dirname, '../tools');
     const tools: Tool[] = [];

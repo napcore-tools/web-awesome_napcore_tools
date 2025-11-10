@@ -3,6 +3,12 @@ import toolsDataLoader from '../.vitepress/tools.data';
 import standardsDataLoader from '../.vitepress/standards.data';
 
 export default {
+  /**
+   * Generates dynamic paths for standard pages in VitePress.
+   * Creates routes for each standard with metadata including title and related standards.
+   *
+   * @returns Array of path objects with params for dynamic routing
+   */
   paths() {
     // Collect all unique standards (already slugified in tool frontmatter)
     const standardSlugsSet = new Set<string>();

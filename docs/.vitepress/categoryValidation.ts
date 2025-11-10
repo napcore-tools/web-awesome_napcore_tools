@@ -11,6 +11,9 @@ import { type ValidationError, type ValidationResult } from './validationUtils';
 
 /**
  * Validate category slug format (kebab-case, lowercase, alphanumeric + hyphens only)
+ *
+ * @param slug - Category slug to validate
+ * @returns Array of validation errors (empty if valid)
  */
 function validateCategorySlug(slug: string): ValidationError[] {
   const errors: ValidationError[] = [];
@@ -56,6 +59,10 @@ function validateCategorySlug(slug: string): ValidationError[] {
 
 /**
  * Validate category metadata completeness
+ *
+ * @param category - Category object to validate
+ * @param allCategories - Array of all categories for cross-reference validation
+ * @returns Array of validation errors (empty if valid)
  */
 function validateCategoryMetadata(category: Category, allCategories: Category[]): ValidationError[] {
   const errors: ValidationError[] = [];
@@ -139,6 +146,8 @@ function validateCategoryMetadata(category: Category, allCategories: Category[])
 
 /**
  * Validate all categories in CATEGORIES
+ *
+ * @returns Validation result with errors and warnings
  */
 export function validateAllCategories(): ValidationResult {
   const allErrors: ValidationError[] = [];

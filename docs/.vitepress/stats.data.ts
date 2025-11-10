@@ -5,6 +5,12 @@ import { getCategorySlugs } from './categories';
 export default {
   // Watch tool files for dynamic calculations
   watch: ['../tools/*.md', '../data/standards.yaml'],
+  /**
+   * Calculates dynamic statistics for tools, categories, and standards.
+   * Loads all tools and computes counts, status breakdowns, and category distribution.
+   *
+   * @returns Object containing tools, categories, and standards statistics
+   */
   load() {
     // Load tools data dynamically
     const tools = toolsDataLoader.load();
