@@ -2,11 +2,9 @@
 
 Authoritative documentation and specifications that define the structure, semantics, and usage of mobility and transport data standards.
 
-## Available Tools
+::: details Click for more
 
-<ToolsGrid />
-
-## What Is Reference Documentation?
+### What Is Reference Documentation?
 
 Reference documentation provides **official definitions and guidance** for implementing European mobility data standards.
 It includes schemas, UML models, reference guides, and technical specifications that ensure consistent interpretation across implementations.
@@ -17,7 +15,7 @@ Used by:
 - **System architects** to design interoperable platforms
 - **Public authorities** to ensure conformance in data publication
 
-## Types of Reference Documentation
+### Types of Reference Documentation
 
 | Type                        | Description                              | Example                       |
 | --------------------------- | ---------------------------------------- | ----------------------------- |
@@ -27,25 +25,25 @@ Used by:
 | **Data Model Definitions**  | UML or XSD reference files               | DATEX II UML Model            |
 | **Metadata Profiles**       | DCAT-AP extensions and mobility profiles | mobilityDCAT-AP Specification |
 
-## Common Use Cases
+### Common Use Cases
 
-### Implementation Support
+#### Implementation Support
 
 Use as the authoritative source when developing or validating systems.
 
-### Schema and Model Understanding
+#### Schema and Model Understanding
 
 Consult data element definitions, UML diagrams, and constraints.
 
-### Policy and Compliance
+#### Policy and Compliance
 
 Align local or national initiatives with European standard specifications.
 
-### Documentation Reuse
+#### Documentation Reuse
 
 Integrate excerpts into training materials or technical guides.
 
-## Example Tool
+### Example Tool
 
 **DATEX II Specification Repository**
 
@@ -54,9 +52,15 @@ Integrate excerpts into training materials or technical guides.
 - Maintained by the DATEX II community
 - Freely accessible via GitHub and the official portal
 
-## Related Categories
+### Related Categories
 
 <RelatedCategories />
+
+:::
+
+## Available Tools
+
+<ToolsGrid />
 
 ---
 

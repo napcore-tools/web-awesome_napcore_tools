@@ -2,11 +2,9 @@
 
 Tools that support the day-to-day development workflow for mobility data systems.
 
-## Available Tools
+::: details Click for more
 
-<ToolsGrid />
-
-## What Are Development Tools?
+### What Are Development Tools?
 
 Development tools assist engineers and data practitioners in creating, testing, and maintaining mobility data solutions.
 They include SDKs, libraries, APIs, and utilities designed to simplify working with standards like DATEX II, NeTEx, SIRI, or mobilityDCAT-AP.
@@ -17,7 +15,7 @@ Typical users include:
 - **Data engineers** integrating and transforming data feeds
 - **Researchers** prototyping and testing mobility data workflows
 
-## Types of Development Tools
+### Types of Development Tools
 
 | Type                   | Description                                                   | Example                |
 | ---------------------- | ------------------------------------------------------------- | ---------------------- |
@@ -27,25 +25,25 @@ Typical users include:
 | **Testing Frameworks** | Automate validation and integration testing                   | Mobility Test Runner   |
 | **Data Simulators**    | Generate mock data for development environments               | Traffic Feed Simulator |
 
-## Common Use Cases
+### Common Use Cases
 
-### Application Development
+#### Application Development
 
 Use SDKs and APIs to quickly integrate mobility data into software applications.
 
-### Data Integration
+#### Data Integration
 
 Leverage libraries or converters to harmonize incoming datasets.
 
-### Testing and QA
+#### Testing and QA
 
 Automate validation, conversion, and functional tests in CI/CD pipelines.
 
-### Simulation and Prototyping
+#### Simulation and Prototyping
 
 Use data simulators or mock feeds to test new transport systems before deployment.
 
-## Example Tool
+### Example Tool
 
 **Mobility Data SDK**
 
@@ -54,9 +52,15 @@ Use data simulators or mock feeds to test new transport systems before deploymen
 - Integrates easily with Python and Node.js environments
 - Open source, with community support
 
-## Related Categories
+### Related Categories
 
 <RelatedCategories />
+
+:::
+
+## Available Tools
+
+<ToolsGrid />
 
 ---
 

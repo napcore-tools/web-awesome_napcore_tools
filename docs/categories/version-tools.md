@@ -2,22 +2,20 @@
 
 Utilities and scripts that help migrate or convert datasets and systems between different versions of mobility and transport data standards.
 
-## Available Tools
+::: details Click for more
 
-<ToolsGrid />
-
-## What Are Version Upgrade Tools?
+### What Are Version Upgrade Tools?
 
 Version upgrade tools automate the process of **updating data or interfaces** from older to newer standard versions — ensuring compatibility, data integrity, and compliance.
-They’re essential when standards evolve (e.g., DATEX II v2 → v3, NeTEx profile updates) and systems need to stay interoperable.
+They're essential when standards evolve (e.g., DATEX II v2 → v3, NeTEx profile updates) and systems need to stay interoperable.
 
-They’re typically used by:
+They're typically used by:
 
 - **Data providers** upgrading published datasets
 - **System integrators** maintaining interoperability across versions
 - **Developers** adapting applications to new schema versions
 
-## Types of Version Upgrade Tools
+### Types of Version Upgrade Tools
 
 | Type                        | Description                                | Example                         |
 | --------------------------- | ------------------------------------------ | ------------------------------- |
@@ -27,25 +25,25 @@ They’re typically used by:
 | **Migration Assistants**    | Interactive tools for data migration       | XML Schema Migration Assistant  |
 | **Multi-Profile Upgraders** | Handle regional or custom profile mappings | DATEX II Profile Upgrader       |
 
-## Common Use Cases
+### Common Use Cases
 
-### Standard Migration
+#### Standard Migration
 
 Convert existing datasets to newer standard versions to maintain compliance.
 
-### Compatibility Testing
+#### Compatibility Testing
 
 Ensure backward compatibility when consuming mixed-version data feeds.
 
-### Automated Conversion
+#### Automated Conversion
 
 Integrate upgrade utilities in pipelines to process datasets dynamically.
 
-### Metadata Synchronization
+#### Metadata Synchronization
 
 Update catalog metadata to align with new schema profiles.
 
-## Example Tool
+### Example Tool
 
 **DATEX II Version Migration Tool**
 
@@ -54,9 +52,15 @@ Update catalog metadata to align with new schema profiles.
 - Command-line utility with configurable profiles
 - Used by several European NAPs
 
-## Related Categories
+### Related Categories
 
 <RelatedCategories />
+
+:::
+
+## Available Tools
+
+<ToolsGrid />
 
 ---
 

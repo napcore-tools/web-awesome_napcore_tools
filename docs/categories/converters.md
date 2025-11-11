@@ -2,11 +2,9 @@
 
 Tools that transform mobility and transport data between different formats, standards, or structures — enabling interoperability, integration, and reuse across systems.
 
-## Available Tools
+::: details Click for more
 
-<ToolsGrid />
-
-## What Are Converters?
+### What Are Converters?
 
 Converters help you translate datasets or messages from one technical or semantic format to another.
 They are essential for:
@@ -18,7 +16,7 @@ They are essential for:
 
 Converters often include format mapping, schema translation, and metadata transformation features.
 
-## Types of Converters
+### Types of Converters
 
 | Type                          | Description                                               | Example                      |
 | ----------------------------- | --------------------------------------------------------- | ---------------------------- |
@@ -28,25 +26,25 @@ Converters often include format mapping, schema translation, and metadata transf
 | **Geospatial Converters**     | Reproject or transform geographic coordinates or formats  | WGS84 ↔ ETRS89 converter    |
 | **Multi-standard Converters** | Handle several formats and provide mapping configurations | Multi-schema data gateway    |
 
-## Common Use Cases
+### Common Use Cases
 
-### Data Publication
+#### Data Publication
 
 Convert internal data to **DATEX II**, **NeTEx**, or **mobilityDCAT-AP** formats for publication on a National Access Point (NAP).
 
-### Data Integration
+#### Data Integration
 
 Transform heterogeneous inputs from different systems into a single harmonized schema.
 
-### Migration
+#### Migration
 
 Convert legacy data (CSV, XML, JSON) into standardized mobility formats for interoperability.
 
-### Metadata Alignment
+#### Metadata Alignment
 
 Adapt dataset metadata between **DCAT-AP** and **mobilityDCAT-AP** profiles for consistent cataloging.
 
-## Example Tool
+### Example Tool
 
 **DATEX II – JSON Converter**
 
@@ -55,9 +53,15 @@ Adapt dataset metadata between **DCAT-AP** and **mobilityDCAT-AP** profiles for 
 - Useful for APIs and web-based applications
 - Open source and standard-compliant
 
-## Related Categories
+### Related Categories
 
 <RelatedCategories />
+
+:::
+
+## Available Tools
+
+<ToolsGrid />
 
 ---
 

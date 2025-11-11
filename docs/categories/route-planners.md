@@ -2,11 +2,9 @@
 
 Applications and APIs that calculate, visualize, and share routes for transport networks — integrating mobility data from multiple standards and sources.
 
-## Available Tools
+::: details Click for more
 
-<ToolsGrid />
-
-## What Are Route Planners?
+### What Are Route Planners?
 
 Route planners compute **optimal travel routes** for vehicles, cyclists, or passengers, using transport datasets and standards such as NeTEx, SIRI, and DATEX II.
 They enable multimodal transport planning, traffic management, and navigation services.
@@ -17,7 +15,7 @@ They are used by:
 - **Traffic authorities** for information services
 - **Developers** creating mobility apps and digital twins
 
-## Types of Route Planners
+### Types of Route Planners
 
 | Type                           | Description                                    | Example                            |
 | ------------------------------ | ---------------------------------------------- | ---------------------------------- |
@@ -26,25 +24,25 @@ They are used by:
 | **Multimodal Planners**        | Combine modes (car, train, bike, walk)         | OpenTripPlanner                    |
 | **Geospatial Routing Engines** | Compute optimized paths using map data         | OSRM, GraphHopper                  |
 
-## Common Use Cases
+### Common Use Cases
 
-### Journey Planning
+#### Journey Planning
 
 Calculate routes and travel times for multimodal transport networks.
 
-### Traffic Management
+#### Traffic Management
 
 Integrate road events and congestion data from DATEX II feeds.
 
-### Real-Time Updates
+#### Real-Time Updates
 
 Combine static NeTEx data with live SIRI feeds for dynamic route planning.
 
-### Mobility-as-a-Service (MaaS)
+#### Mobility-as-a-Service (MaaS)
 
 Power integrated travel apps and regional journey planners.
 
-## Example Tool
+### Example Tool
 
 **OpenTripPlanner**
 
@@ -52,9 +50,15 @@ Power integrated travel apps and regional journey planners.
 - Provides multimodal routing and real-time updates
 - Extensible open-source platform widely used across Europe
 
-## Related Categories
+### Related Categories
 
 <RelatedCategories />
+
+:::
+
+## Available Tools
+
+<ToolsGrid />
 
 ---
 

@@ -2,11 +2,9 @@
 
 Tools that help create, manage, and validate metadata for mobility and transport datasets — ensuring discoverability, interoperability, and compliance with European data catalog standards.
 
-## Available Tools
+::: details Click for more
 
-<ToolsGrid />
-
-## What Are Metadata Tools?
+### What Are Metadata Tools?
 
 Metadata tools assist in describing datasets in a structured and standardized way, enabling users to **find, understand, and reuse** mobility data.
 They often implement profiles such as **DCAT-AP** and **mobilityDCAT-AP**, required for data publication on National Access Points and open data portals.
@@ -17,7 +15,7 @@ They are used by:
 - **Catalog administrators** – to manage metadata repositories
 - **Developers and integrators** – to automate metadata generation and harvesting
 
-## Types of Metadata Tools
+### Types of Metadata Tools
 
 | Type                         | Description                                                | Example                           |
 | ---------------------------- | ---------------------------------------------------------- | --------------------------------- |
@@ -27,25 +25,25 @@ They are used by:
 | **Metadata Converters**      | Transform metadata between different profiles              | DCAT ↔ mobilityDCAT-AP Converter |
 | **Harvesting Tools**         | Automate metadata synchronization between catalogs         | DCAT Harvester                    |
 
-## Common Use Cases
+### Common Use Cases
 
-### Dataset Publication
+#### Dataset Publication
 
 Create compliant metadata to publish datasets on National Access Points and open data portals.
 
-### Metadata Validation
+#### Metadata Validation
 
 Check dataset descriptions for completeness and compliance with DCAT-AP or mobilityDCAT-AP requirements.
 
-### Catalog Management
+#### Catalog Management
 
 Maintain collections of datasets with version control, search, and linked data capabilities.
 
-### Metadata Conversion
+#### Metadata Conversion
 
 Transform or map metadata between internal and public catalog formats.
 
-## Example Tool
+### Example Tool
 
 **mobilityDCAT-AP Validator**
 
@@ -54,9 +52,15 @@ Transform or map metadata between internal and public catalog formats.
 - Supports JSON-LD, Turtle, and RDF/XML
 - Open source, actively maintained
 
-## Related Categories
+### Related Categories
 
 <RelatedCategories />
+
+:::
+
+## Available Tools
+
+<ToolsGrid />
 
 ---
 

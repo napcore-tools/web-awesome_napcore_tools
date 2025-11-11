@@ -2,11 +2,9 @@
 
 Tools and services that **check the structure and quality of mobility and transport data**, ensuring it complies with European standards such as DATEX II, NeTEx, SIRI, and mobilityDCAT-AP.
 
-## Available Tools
+::: details Click for more
 
-<ToolsGrid />
-
-## What Are Validators?
+### What Are Validators?
 
 Validators automatically verify whether datasets conform to technical and business specifications.
 They are essential for maintaining **data quality, interoperability, and regulatory compliance** in digital mobility ecosystems.
@@ -18,7 +16,7 @@ Validators typically perform:
 - **Data quality checks** – Detects missing, inconsistent, or implausible values
 - **Compliance checks** – Confirms datasets meet European standards for publication or exchange
 
-## Types of Validators
+### Types of Validators
 
 | Type                          | Description                                               |
 | ----------------------------- | --------------------------------------------------------- |
@@ -27,25 +25,25 @@ Validators typically perform:
 | **Multi-standard Validators** | Handle several transport formats together                 |
 | **Geographic Validators**     | Verify geospatial and reference integrity                 |
 
-## Common Use Cases
+### Common Use Cases
 
-### Pre-Publication Validation
+#### Pre-Publication Validation
 
 Ensure datasets comply with DATEX II, NeTEx, or mobilityDCAT-AP before submission to a **National Access Point (NAP)**.
 
-### Development & Testing
+#### Development & Testing
 
 Integrate validators in your CI/CD workflow to catch schema or logical errors early.
 
-### Quality Monitoring
+#### Quality Monitoring
 
 Run scheduled validations to monitor dataset quality and detect degradation over time.
 
-### Location Reference Validation
+#### Location Reference Validation
 
 Validate ALERT-C or RDS-TMC location codes for correctness and alignment with reference tables.
 
-## Example Tool: ALERT-C Locations Tester
+### Example Tool: ALERT-C Locations Tester
 
 The **ALERT-C Locations Tester** validates the consistency and correctness of location codes used in traffic messages.
 
@@ -54,9 +52,15 @@ The **ALERT-C Locations Tester** validates the consistency and correctness of lo
 - **European coverage**: ALERT-C widely used across Europe
 - **License**: Open source (MIT)
 
-## Related Categories
+### Related Categories
 
 <RelatedCategories />
+
+:::
+
+## Available Tools
+
+<ToolsGrid />
 
 ---
 

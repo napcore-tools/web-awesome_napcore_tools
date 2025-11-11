@@ -2,11 +2,9 @@
 
 Tools and frameworks that support testing of mobility and transport data, services, and systems — ensuring reliability, interoperability, and compliance with data exchange standards.
 
-## Available Tools
+::: details Click for more
 
-<ToolsGrid />
-
-## What Are Testing Utilities?
+### What Are Testing Utilities?
 
 Testing utilities help developers and data providers **verify the correctness and robustness** of their mobility data solutions.
 They automate testing of data transformations, API endpoints, and validation workflows to catch issues early in the development or publication process.
@@ -17,7 +15,7 @@ They are commonly used by:
 - **Data providers** verifying output against standard schemas
 - **Quality assurance teams** running automated test suites
 
-## Types of Testing Utilities
+### Types of Testing Utilities
 
 | Type                              | Description                                                   | Example                     |
 | --------------------------------- | ------------------------------------------------------------- | --------------------------- |
@@ -27,25 +25,25 @@ They are commonly used by:
 | **Mock & Simulation Tools**       | Generate mock data or simulate service responses              | Traffic Data Simulator      |
 | **Continuous Testing Frameworks** | Automate validation in CI/CD pipelines                        | Mobility Data CI Runner     |
 
-## Common Use Cases
+### Common Use Cases
 
-### Schema and Rule Testing
+#### Schema and Rule Testing
 
 Validate datasets or API responses to ensure structural and logical compliance.
 
-### Integration Testing
+#### Integration Testing
 
 Verify compatibility between different data providers or transport systems.
 
-### Automated Quality Assurance
+#### Automated Quality Assurance
 
 Run validation tests automatically in CI/CD environments to prevent regressions.
 
-### Mocking and Simulation
+#### Mocking and Simulation
 
 Simulate transport data or API calls to test system behavior under controlled conditions.
 
-## Example Tool
+### Example Tool
 
 **SIRI Service Tester**
 
@@ -54,9 +52,15 @@ Simulate transport data or API calls to test system behavior under controlled co
 - Supports configurable scenarios for automated testing
 - Used in transport system integration projects across Europe
 
-## Related Categories
+### Related Categories
 
 <RelatedCategories />
+
+:::
+
+## Available Tools
+
+<ToolsGrid />
 
 ---
 

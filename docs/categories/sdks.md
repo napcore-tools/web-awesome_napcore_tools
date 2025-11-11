@@ -2,22 +2,20 @@
 
 Programming language bindings and reusable libraries that simplify the implementation of mobility and transport data standards.
 
-## Available Tools
+::: details Click for more
 
-<ToolsGrid />
-
-## What Are SDKs & Libraries?
+### What Are SDKs & Libraries?
 
 SDKs and libraries provide **ready-to-use code components** for developers working with transport data.
 They help parse, validate, generate, and exchange standard-compliant datasets without needing to implement low-level logic from scratch.
 
-They’re ideal for:
+They're ideal for:
 
 - **Developers** building transport apps or APIs
 - **Data engineers** processing or transforming datasets
 - **Integrators** creating standardized data interfaces
 
-## Types of SDKs & Libraries
+### Types of SDKs & Libraries
 
 | Type                     | Description                                | Example                |
 | ------------------------ | ------------------------------------------ | ---------------------- |
@@ -27,25 +25,25 @@ They’re ideal for:
 | **API Client SDKs**      | Simplify communication with transport APIs | SIRI REST Client       |
 | **Metadata Libraries**   | Handle DCAT-AP / mobilityDCAT-AP metadata  | DCAT-AP Toolkit        |
 
-## Common Use Cases
+### Common Use Cases
 
-### Application Development
+#### Application Development
 
 Quickly build standard-compliant APIs or data integrations.
 
-### Data Transformation
+#### Data Transformation
 
 Convert and harmonize datasets in pipelines or ETL jobs.
 
-### Testing and Validation
+#### Testing and Validation
 
 Integrate schema validation within your application logic.
 
-### Metadata Automation
+#### Metadata Automation
 
 Generate or update DCAT-AP or mobilityDCAT-AP metadata programmatically.
 
-## Example Tool
+### Example Tool
 
 **DATEX II Python SDK**
 
@@ -54,9 +52,15 @@ Generate or update DCAT-AP or mobilityDCAT-AP metadata programmatically.
 - Compatible with Python 3 and modern frameworks
 - Open source, community-maintained
 
-## Related Categories
+### Related Categories
 
 <RelatedCategories />
+
+:::
+
+## Available Tools
+
+<ToolsGrid />
 
 ---
 

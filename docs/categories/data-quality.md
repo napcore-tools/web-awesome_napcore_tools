@@ -2,11 +2,9 @@
 
 Tools that measure, monitor, and improve the quality of mobility and transport data — ensuring accuracy, consistency, and reliability across datasets and systems.
 
-## Available Tools
+::: details Click for more
 
-<ToolsGrid />
-
-## What Are Data Quality Tools?
+### What Are Data Quality Tools?
 
 Data quality tools help organizations ensure their data is **fit for purpose** before it is published, exchanged, or used in analytics.
 They detect issues such as missing values, schema violations, or inconsistent references, supporting better decision-making and regulatory compliance.
@@ -17,7 +15,7 @@ These tools are often used by:
 - **System integrators** – to ensure data compatibility
 - **Authorities** – to monitor data quality in National Access Points (NAPs)
 
-## Types of Data Quality Tools
+### Types of Data Quality Tools
 
 | Type                    | Description                                       | Example                     |
 | ----------------------- | ------------------------------------------------- | --------------------------- |
@@ -27,25 +25,25 @@ These tools are often used by:
 | **Reference Checkers**  | Verify identifiers, codes, and locations          | ALERT-C Reference Validator |
 | **Visualization Tools** | Provide dashboards for data quality KPIs          | Quality Metrics Dashboard   |
 
-## Common Use Cases
+### Common Use Cases
 
-### Pre-Publication Checks
+#### Pre-Publication Checks
 
 Ensure datasets meet standard and structural requirements before being published on a NAP.
 
-### Quality Monitoring
+#### Quality Monitoring
 
 Automate recurring checks to monitor dataset quality trends over time.
 
-### Benchmarking
+#### Benchmarking
 
 Compare datasets or data sources using defined quality metrics (completeness, consistency, timeliness).
 
-### Debugging and Diagnostics
+#### Debugging and Diagnostics
 
 Identify missing, inconsistent, or invalid data fields that affect downstream use.
 
-## Example Tool
+### Example Tool
 
 **NAP Data Quality Dashboard**
 
@@ -54,9 +52,15 @@ Identify missing, inconsistent, or invalid data fields that affect downstream us
 - Used by multiple European National Access Points
 - Open source and modular
 
-## Related Categories
+### Related Categories
 
 <RelatedCategories />
+
+:::
+
+## Available Tools
+
+<ToolsGrid />
 
 ---
 
