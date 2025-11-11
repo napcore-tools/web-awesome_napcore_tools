@@ -23,6 +23,8 @@ export interface Tool {
   maintainedBy?: string;
   mainContributor?: string;
   technology?: string;
+  language?: string;
+  type?: string | string[];
   standards?: string[];
   tags?: string[];
   firstRelease?: string;
@@ -99,6 +101,8 @@ export default {
           maintainedBy: data.maintainedBy,
           mainContributor: data.mainContributor,
           technology: data.technology,
+          language: data.language,
+          type: data.type,
           standards: data.standards || [],
           tags: data.tags || [],
           firstRelease: data.firstRelease,
