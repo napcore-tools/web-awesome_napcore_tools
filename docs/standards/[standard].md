@@ -11,9 +11,11 @@ import { data as _standardsData } from '../.vitepress/standards.data'
 
 <div v-if="$params.details">
 
-> {{ $params.details.longTitle }}
+{{ $params.details.longTitle }}
 
-## Overview
+::: details Click for more
+
+### Overview
 
 **Domain:** {{ $params.details.domain }}
 
@@ -23,7 +25,7 @@ import { data as _standardsData } from '../.vitepress/standards.data'
 
 {{ $params.details.purpose }}
 
-## Technical Details
+### Technical Details
 
 **Format/Technology:** {{ $params.details.format_technology }}
 
@@ -31,7 +33,7 @@ import { data as _standardsData } from '../.vitepress/standards.data'
 
 <div v-if="$params.details.related_standards_with_titles && $params.details.related_standards_with_titles.length > 0">
 
-## Related Standards
+### Related Standards
 
 <ul>
   <li v-for="related in $params.details.related_standards_with_titles" :key="related.slug">
@@ -40,6 +42,7 @@ import { data as _standardsData } from '../.vitepress/standards.data'
 </ul>
 
 </div>
+:::
 
 </div>
 
