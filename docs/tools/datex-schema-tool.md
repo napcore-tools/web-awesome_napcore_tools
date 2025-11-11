@@ -12,6 +12,9 @@ website: https://webtool.datex2.eu
 documentation: null
 demo: null
 developer: DATEX II community (datex2.eu)
+technology: Platform Independent Model
+language: XML Schema, JSON
+type: Web Application, Profile Generator
 mainContributor: Jonas Jäderberg
 standards:
   - datex-ii
@@ -132,17 +135,4 @@ No installation or registration required!
 
 ---
 
-<div style="background: var(--vp-c-bg-soft); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
-  <p style="margin: 0;"><strong>Tool Metadata</strong></p>
-  <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
-    <li><strong>Category</strong>: Converters & Transformers, Development Tools</li>
-    <li><strong>Standards</strong>: DATEX II</li>
-    <li><strong>License</strong>: Proprietary (potential future open source)</li>
-    <li><strong>Maintenance</strong>: Actively maintained by DATEX II community</li>
-    <li><strong>Type</strong>: Web Application, Profile Generator</li>
-  </ul>
-</div>
-
-::: info Quick Example
-This is a brief tool description format. If you have more detailed information about this tool, we welcome contributions! [Learn how to contribute](/contribute)
-:::
+<ToolMetadata />

@@ -12,6 +12,9 @@ website: https://datex2.eu/
 documentation: https://docs.datex2.eu/
 demo: null
 developer: CEN TC 278 / NAPCORE
+technology: Platform Independent Model
+language: XML Schema, JSON
+type: Standard
 standards:
   - datex-ii
 tags:
@@ -224,15 +227,4 @@ When using DATEX II to exchange privacy-affected data, organizations must take a
 
 ---
 
-<div style="background: var(--vp-c-bg-soft); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
-  <p style="margin: 0;"><strong>Resource Metadata</strong></p>
-  <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
-    <li><strong>Category</strong>: References, Documentation</li>
-    <li><strong>Standards</strong>: DATEX II (CEN 16157 series)</li>
-    <li><strong>Resource Type</strong>: Technical Documentation, Standard Specifications</li>
-    <li><strong>Standard Body</strong>: CEN Technical Committee 278</li>
-    <li><strong>Maintenance</strong>: Actively maintained (NAPCORE project)</li>
-    <li><strong>Coverage</strong>: European (pan-European deployment)</li>
-    <li><strong>Data Format</strong>: XML-based</li>
-  </ul>
-</div>
+<ToolMetadata />

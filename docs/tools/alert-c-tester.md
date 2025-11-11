@@ -15,6 +15,8 @@ documentation: null
 demo: null
 developer: TamTam Research s.r.o.
 technology: Python, SQLite, CLI
+language: Python
+type: CLI Tool
 standards:
   - datex-ii
   - isodis-14819
@@ -245,14 +247,4 @@ This tool complements other DATEX II and traffic information tools:
 
 ---
 
-<div style="background: var(--vp-c-bg-soft); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
-  <p style="margin: 0;"><strong>Tool Metadata</strong></p>
-  <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
-    <li><strong>Category</strong>: Validators, Development Tools, Data Quality Tools</li>
-    <li><strong>Standards</strong>: DATEX II (with ALERT-C), ISO/DIS 14819, RDS-TMC</li>
-    <li><strong>License</strong>: MIT</li>
-    <li><strong>Maintenance</strong>: Actively maintained (October 2025)</li>
-    <li><strong>Type</strong>: CLI Tool, Validator, Data Quality Assurance</li>
-    <li><strong>Language</strong>: Python</li>
-  </ul>
-</div>
+<ToolMetadata />

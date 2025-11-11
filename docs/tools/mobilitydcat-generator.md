@@ -13,6 +13,9 @@ website: https://mobilitydcat-ap.github.io/mobilitydcatap-ui/
 documentation: null
 demo: null
 developer: Cefriel
+technology: RDF, JSON
+language: JavaScript, Vue
+type: Web Application, Generator
 maintainedBy: NAPCORE Metadata Working Group
 standards:
   - mobilitydcat-ap
@@ -167,13 +170,4 @@ This tool is an excellent way to learn mobilityDCAT-AP by doing. Start with a si
 
 ---
 
-<div style="background: var(--vp-c-bg-soft); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
-  <p style="margin: 0;"><strong>Tool Metadata</strong></p>
-  <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
-    <li><strong>Category</strong>: Metadata Tools, Development Tools</li>
-    <li><strong>Standards</strong>: mobilityDCAT-AP, DCAT-AP, RDF</li>
-    <li><strong>License</strong>: Apache-2.0</li>
-    <li><strong>Maintenance</strong>: Actively maintained by NAPCORE Metadata Working Group</li>
-    <li><strong>Type</strong>: Web Application, Form Generator, Educational Tool</li>
-  </ul>
-</div>
+<ToolMetadata />

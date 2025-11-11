@@ -13,6 +13,9 @@ website: https://browser.datex2.eu
 documentation: null
 demo: null
 developer: TamTam Research s.r.o.
+technology: HTML, JavaScript
+language: JavaScript
+type: Web application
 standards:
   - datex-ii
 tags:
@@ -135,13 +138,4 @@ No installation or registration required!
 
 ---
 
-<div style="background: var(--vp-c-bg-soft); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
-  <p style="margin: 0;"><strong>Tool Metadata</strong></p>
-  <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
-    <li><strong>Category</strong>: Development Tools, Converters</li>
-    <li><strong>Standards</strong>: DATEX II (v2.3, v3.4, v3.6)</li>
-    <li><strong>License</strong>: MIT</li>
-    <li><strong>Maintenance</strong>: Actively maintained</li>
-    <li><strong>First Release</strong>: 2014</li>
-  </ul>
-</div>
+<ToolMetadata />

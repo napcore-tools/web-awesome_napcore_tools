@@ -12,6 +12,9 @@ website: https://transitous.org/
 documentation: null
 demo: null
 developer: MOTIS Project
+technology: null
+language: C++, TypeScript
+type: Web Application
 standards:
   - netex
   - siri
@@ -145,13 +148,4 @@ MOTIS's modular architecture is particularly valuable - you can deploy only the 
 
 ---
 
-<div style="background: var(--vp-c-bg-soft); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
-  <p style="margin: 0;"><strong>Tool Metadata</strong></p>
-  <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
-    <li><strong>Category</strong>: Routing, Converters, Reference Implementation</li>
-    <li><strong>Standards</strong>: NeTEx, SIRI, GTFS, GBFS, OSM</li>
-    <li><strong>Tool Types</strong>: Converter/Transformer, Reference Implementation, Routing Engine, Geocoder</li>
-    <li><strong>License</strong>: MIT</li>
-    <li><strong>Maintenance</strong>: Actively maintained</li>
-  </ul>
-</div>
+<ToolMetadata />

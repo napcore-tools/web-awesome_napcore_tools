@@ -6,12 +6,15 @@ fullDescription: DATEX II is a robust, platform-independent data model and excha
 categories:
   - references
 status: active
-license: Open Standard
+license: CEN Standard
 repository: null
 website: https://datex2.eu/
 documentation: https://docs.datex2.eu/
 demo: null
 developer: DATEX II Project
+technology: Platform Independent Model
+language: XML Schema, JSON
+type: Standard
 standards:
   - datex-ii
 tags:
@@ -80,13 +83,4 @@ A key strength of DATEX II is its support for various location referencing metho
 
 ---
 
-<div style="background: var(--vp-c-bg-soft); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
-  <p style="margin: 0;"><strong>Standard Metadata</strong></p>
-  <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
-    <li><strong>Category</strong>: Data Standard, Reference Implementation</li>
-    <li><strong>Data Model</strong>: Platform Independent Model (UML)</li>
-    <li><strong>Key Profiles</strong>: RTTI, SRTI, MMTIS</li>
-    <li><strong>Supported Formats</strong>: XML Schema, JSON</li>
-    <li><strong>Maintenance</strong>: Actively maintained</li>
-  </ul>
-</div>
+<ToolMetadata />
