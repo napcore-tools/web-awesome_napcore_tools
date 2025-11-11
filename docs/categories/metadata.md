@@ -1,3 +1,8 @@
+---
+document: category
+contributeTip: Know a metadata editor, validator, or catalog management tool for mobility datasets?
+---
+
 # Metadata Tools
 
 Tools that help create, manage, and validate metadata for mobility and transport datasets — ensuring discoverability, interoperability, and compliance with European data catalog standards.
@@ -61,10 +66,3 @@ Transform or map metadata between internal and public catalog formats.
 ## Available Tools
 
 <ToolsGrid />
-
----
-
-::: tip Want to Contribute?
-Know a metadata editor, validator, or catalog management tool for mobility datasets?
-[Submit your tool →](/contribute)
-:::

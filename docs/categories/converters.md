@@ -1,3 +1,8 @@
+---
+document: category
+contributeTip: Know a reliable converter or open-source mapping tool?
+---
+
 # Converters & Transformers
 
 Tools that transform mobility and transport data between different formats, standards, or structures — enabling interoperability, integration, and reuse across systems.
@@ -62,10 +67,3 @@ Adapt dataset metadata between **DCAT-AP** and **mobilityDCAT-AP** profiles for 
 ## Available Tools
 
 <ToolsGrid />
-
----
-
-::: tip Want to Contribute?
-Know a reliable converter or open-source mapping tool?
-[Submit your tool →](/contribute)
-:::

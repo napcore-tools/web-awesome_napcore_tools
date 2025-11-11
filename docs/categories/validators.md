@@ -1,3 +1,8 @@
+---
+document: category
+contributeTip: Know a validator for DATEX II, NeTEx, SIRI, or mobilityDCAT-AP?
+---
+
 # Validators
 
 Tools and services that **check the structure and quality of mobility and transport data**, ensuring it complies with European standards such as DATEX II, NeTEx, SIRI, and mobilityDCAT-AP.
@@ -61,10 +66,3 @@ The **ALERT-C Locations Tester** validates the consistency and correctness of lo
 ## Available Tools
 
 <ToolsGrid />
-
----
-
-::: tip Want to Contribute?
-Know a validator for DATEX II, NeTEx, SIRI, or mobilityDCAT-AP?
-Help the community improve data quality by submitting your tool! [Submit a tool →](/contribute)
-:::

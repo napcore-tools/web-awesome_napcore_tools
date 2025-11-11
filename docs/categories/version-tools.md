@@ -1,3 +1,8 @@
+---
+document: category
+contributeTip: Created or used a migration or upgrade tool for mobility standards?
+---
+
 # Version Upgrade Tools
 
 Utilities and scripts that help migrate or convert datasets and systems between different versions of mobility and transport data standards.
@@ -61,10 +66,3 @@ Update catalog metadata to align with new schema profiles.
 ## Available Tools
 
 <ToolsGrid />
-
----
-
-::: tip Want to Contribute?
-Created or used a migration or upgrade tool for mobility standards?
-[Submit your tool →](/contribute)
-:::

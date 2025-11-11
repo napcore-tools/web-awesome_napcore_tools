@@ -1,3 +1,8 @@
+---
+document: category
+contributeTip: Have a working demo or reference implementation of a mobility data standard?
+---
+
 # Reference Implementations
 
 Working examples and demo applications that showcase best practices for implementing mobility and transport data standards in real-world scenarios.
@@ -60,10 +65,3 @@ Support workshops or technical documentation with live examples.
 ## Available Tools
 
 <ToolsGrid />
-
----
-
-::: tip Want to Contribute?
-Have a working demo or reference implementation of a mobility data standard?
-[Submit your project →](/contribute)
-:::

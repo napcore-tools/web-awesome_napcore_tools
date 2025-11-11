@@ -1,3 +1,8 @@
+---
+document: category
+contributeTip: Built or use a tool that supports development with mobility data?
+---
+
 # Development Tools
 
 Tools that support the day-to-day development workflow for mobility data systems.
@@ -61,10 +66,3 @@ Use data simulators or mock feeds to test new transport systems before deploymen
 ## Available Tools
 
 <ToolsGrid />
-
----
-
-::: tip Want to Contribute?
-Built or use a tool that supports development with mobility data?
-[Submit your tool →](/contribute)
-:::

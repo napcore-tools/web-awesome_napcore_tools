@@ -1,3 +1,8 @@
+---
+document: category
+contributeTip: Know a public repository or authoritative documentation set?
+---
+
 # Reference Documentations
 
 Authoritative documentation and specifications that define the structure, semantics, and usage of mobility and transport data standards.
@@ -61,10 +66,3 @@ Integrate excerpts into training materials or technical guides.
 ## Available Tools
 
 <ToolsGrid />
-
----
-
-::: tip Want to Contribute?
-Know a public repository or authoritative documentation set?
-[Submit a link →](/contribute)
-:::

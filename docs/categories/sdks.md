@@ -1,3 +1,8 @@
+---
+document: category
+contributeTip: Developed or used an SDK or library for mobility standards?
+---
+
 # SDKs & Libraries
 
 Programming language bindings and reusable libraries that simplify the implementation of mobility and transport data standards.
@@ -61,10 +66,3 @@ Generate or update DCAT-AP or mobilityDCAT-AP metadata programmatically.
 ## Available Tools
 
 <ToolsGrid />
-
----
-
-::: tip Want to Contribute?
-Developed or used an SDK or library for mobility standards?
-[Submit your library →](/contribute)
-:::

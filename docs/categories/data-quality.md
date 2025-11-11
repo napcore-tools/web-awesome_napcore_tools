@@ -1,3 +1,8 @@
+---
+document: category
+contributeTip: Know a data quality tool used in transport data management?
+---
+
 # Data Quality Tools
 
 Tools that measure, monitor, and improve the quality of mobility and transport data — ensuring accuracy, consistency, and reliability across datasets and systems.
@@ -61,10 +66,3 @@ Identify missing, inconsistent, or invalid data fields that affect downstream us
 ## Available Tools
 
 <ToolsGrid />
-
----
-
-::: tip Want to Contribute?
-Know a data quality tool used in transport data management?
-[Submit your tool →](/contribute)
-:::
