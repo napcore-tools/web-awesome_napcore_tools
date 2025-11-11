@@ -213,6 +213,68 @@ Know a validator for DATEX II, NeTEx, SIRI, or mobilityDCAT-AP?
 
 **Location**: Plugin implementation in `docs/.vitepress/plugins/napCoreMarkdownPlugin.ts`
 
+### ToolMetadata Component
+
+The `<ToolMetadata />` component displays a formatted metadata box at the end of tool documentation pages, providing a standardized way to show tool information.
+
+**What it displays:**
+
+- **Categories** - Clickable links to category pages (resolves slugs to titles)
+- **Standards** - Clickable links to standard pages (resolves slugs to titles)
+- **License** - License information (e.g., MIT, Apache 2.0)
+- **Maintenance** - Derived from `lastUpdated` field (e.g., "Actively maintained (October 2025)")
+- **Type** - Tool type(s) - supports single string or array (e.g., "CLI Tool", "Web Application")
+- **Language** - Programming language (e.g., "Python", "TypeScript")
+- **Technology** - Technology stack (e.g., "Python, SQLite, CLI")
+- **Tags** - Comma-separated tags
+
+**Usage:**
+
+Place `<ToolMetadata />` at the end of your tool markdown file, typically after a separator:
+
+```markdown
+## Support
+
+- **Issues**: [GitHub Issues](https://github.com/...)
+- **Repository**: [GitHub](https://github.com/...)
+
+---
+
+<ToolMetadata />
+```
+
+**Frontmatter fields:**
+
+```yaml
+---
+document: tool
+title: ALERT-C Locations Tester
+categories:
+  - validators
+  - data-quality
+standards:
+  - datex-ii
+  - isodis-14819
+license: MIT
+language: Python
+type: CLI Tool
+technology: Python, SQLite, CLI
+tags:
+  - Validator
+  - Command-line
+lastUpdated: 2025-10-22
+---
+```
+
+**Key features:**
+
+- **Conditional rendering**: Only displays fields that have values
+- **Smart resolution**: Automatically converts category/standard slugs to display names
+- **Automatic linking**: Categories and standards become clickable links to their pages
+- **Single source of truth**: All data comes from frontmatter
+
+**Location**: Component implementation in `docs/.vitepress/theme/components/ToolMetadata.vue`
+
 ## 📝 Custom Markdown Directives
 
 The NAPCORE Store includes custom markdown directives for creating collapsible sections.
@@ -300,6 +362,8 @@ napcore-store/
 │   │   ├── config.ts          # VitePress configuration
 │   │   ├── blog.data.ts       # Blog post data loader
 │   │   ├── buildEnd.ts        # RSS feed generation
+│   │   ├── plugins/           # Custom markdown plugins
+│   │   │   └── napCoreMarkdownPlugin.ts  # Document type handler
 │   │   └── theme/             # Custom theme & components
 │   │       ├── components/
 │   │       │   └── blog/      # Blog-specific Vue components
