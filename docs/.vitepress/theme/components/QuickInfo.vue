@@ -1,7 +1,7 @@
 <template>
   <table v-if="frontmatter">
     <tbody>
-      <tr v-if="frontmatter.status">
+      <tr v-if="frontmatter.status && frontmatter.status !== 'active'">
         <td><strong>Status</strong></td>
         <td>{{ statusEmoji }} {{ statusLabel }}</td>
       </tr>
