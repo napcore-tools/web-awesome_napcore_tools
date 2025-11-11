@@ -74,6 +74,9 @@ test.describe('All Standard Pages', () => {
       // Check page doesn't 404
       await expect(page).not.toHaveTitle(/404|Not Found/);
 
+      // Wait for content to load by checking for h1 first
+      await expect(page.locator('h1')).toBeVisible();
+
       // Check for standard title or icon
       const bodyText = await page.locator('body').textContent();
       expect(bodyText).toContain(standard.title);
