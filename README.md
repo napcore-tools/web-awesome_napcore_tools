@@ -147,6 +147,84 @@ your-tag-slug:
 
 All tags are clickable and styled consistently throughout the blog.
 
+## 📝 Custom Markdown Directives
+
+The NAPCORE Store includes custom markdown directives for creating collapsible sections.
+
+### `chapter` Directive
+
+Creates collapsible sections with heading support and attributes.
+
+**Syntax:**
+
+```markdown
++++ chapter ## Heading Title
+Content goes here...
++++
+```
+
+**With attributes:**
+
+```markdown
++++ chapter ## Open by Default {open}
+This chapter is open by default.
++++
+
++++ chapter ### Custom ID and Class {#my-id .my-class}
+Chapter with custom attributes.
++++
+```
+
+**Features:**
+
+- Supports any heading level (##, ###, ####, etc.)
+- Attributes: `{#id}` for custom ID, `{.class}` for CSS classes, `{open}` to open by default
+- Triangle marker that rotates when opened
+- H2 chapters have top border separator
+
+### `collapse` Directive
+
+Creates plain-text collapsible sections without headings.
+
+**Syntax:**
+
+```markdown
++++ collapse Click to expand
+Content goes here...
++++
+```
+
+**Default title:**
+
+```markdown
++++ collapse
+Content with default "Click to expand" title.
++++
+```
+
+**Use case:** Collapse content after a heading without affecting the heading itself.
+
+### `.plain` Class on `details`
+
+Applies minimal styling to VitePress's built-in `details` directive for Wikipedia-style collapsible sections.
+
+**Syntax:**
+
+```markdown
+::: details Section Title {.plain}
+Content that blends seamlessly with text flow.
+:::
+```
+
+**Features:**
+
+- No background color or borders
+- Normal font weight (not bold)
+- Subtle hover effect
+- Blends naturally with surrounding text
+
+**Location**: Plugin implementations in `docs/.vitepress/plugins/`
+
 ## 📂 Project Structure
 
 ```
