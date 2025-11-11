@@ -42,7 +42,7 @@ cd napcore-store
 npm install
 
 # Start development server
-npm run docs:dev
+npm run dev
 ```
 
 Visit `http://localhost:5173` to see the site locally.
@@ -50,8 +50,8 @@ Visit `http://localhost:5173` to see the site locally.
 ### Build for Production
 
 ```bash
-npm run docs:build
-npm run docs:preview
+npm run build
+npm run preview
 ```
 
 ## 📝 Blog
@@ -103,10 +103,10 @@ published: true
 
 ```bash
 # Development with preview mode
-VITE_PREVIEW_MODE=1 npm run docs:dev
+VITE_PREVIEW_MODE=1 npm run dev
 
 # Windows PowerShell
-$env:VITE_PREVIEW_MODE="1"; npm run docs:dev
+$env:VITE_PREVIEW_MODE="1"; npm run dev
 ```
 
 When preview mode is active, you'll see an orange banner and all scheduled posts will be visible.
