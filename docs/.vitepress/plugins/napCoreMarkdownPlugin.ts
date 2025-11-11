@@ -6,6 +6,7 @@ interface FrontmatterData {
   title?: string;
   description?: string;
   fullDescription?: string;
+  contributeTip?: string;
   [key: string]: unknown;
 }
 
@@ -37,9 +38,27 @@ function processToolDocument(data: FrontmatterData): string {
 }
 
 /**
+ * Generates markdown footer for category documents.
+ * Creates a standardized footer with separator and contribution tip.
+ *
+ * @param data - Frontmatter data from the category markdown file
+ * @returns Markdown string with formatted footer content
+ */
+function processCategoryDocument(data: FrontmatterData): string {
+  let footer = '\n\n---\n\n';
+
+  // Add contribution tip if provided
+  if (data.contributeTip) {
+    footer += `::: tip Want to Contribute?\n\n${data.contributeTip}\n[Submit your tool →](/contribute)\n:::\n`;
+  }
+
+  return footer;
+}
+
+/**
  * Custom markdown-it plugin for NAPCORE documentation.
- * Intercepts markdown rendering to inject document-specific headers based on frontmatter.
- * Currently supports 'tool' document type, with extensibility for additional types.
+ * Intercepts markdown rendering to inject document-specific headers and footers based on frontmatter.
+ * Currently supports 'tool' and 'category' document types, with extensibility for additional types.
  *
  * @param md - MarkdownIt instance to extend
  */
@@ -50,17 +69,20 @@ export function napCoreMarkdownPlugin(md: MarkdownIt) {
     const { data, content } = matter(src);
 
     let header = '';
+    let footer = '';
 
     if (data.document === 'tool') {
       header = processToolDocument(data as FrontmatterData);
+    } else if (data.document === 'category') {
+      footer = processCategoryDocument(data as FrontmatterData);
     }
     // Add more document types here:
     // else if (data.document === 'guide') {
     //   header = processGuideDocument(data)
     // }
 
-    if (header) {
-      src = src.replace(content, header + content);
+    if (header || footer) {
+      src = src.replace(content, header + content + footer);
     }
 
     return originalRender(src, env);
