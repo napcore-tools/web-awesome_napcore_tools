@@ -12,6 +12,7 @@ import ToolsGrid from './components/ToolsGrid.vue';
 import CategoryGrid from './components/CategoryGrid.vue';
 import StandardsGrid from './components/StandardsGrid.vue';
 import QuickInfo from './components/QuickInfo.vue';
+import ToolMetadata from './components/ToolMetadata.vue';
 import RelatedCategories from './components/RelatedCategories.vue';
 import BlogCard from './components/blog/BlogCard.vue';
 import BlogGrid from './components/blog/BlogGrid.vue';
@@ -44,6 +45,7 @@ export default {
     app.component('CategoryGrid', CategoryGrid);
     app.component('StandardsGrid', StandardsGrid);
     app.component('QuickInfo', QuickInfo);
+    app.component('ToolMetadata', ToolMetadata);
     app.component('RelatedCategories', RelatedCategories);
     app.component('BlogCard', BlogCard);
     app.component('BlogGrid', BlogGrid);
