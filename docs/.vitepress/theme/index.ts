@@ -18,6 +18,7 @@ import BlogGrid from './components/blog/BlogGrid.vue';
 import BlogPostMeta from './components/blog/BlogPostMeta.vue';
 import BlogTagFilter from './components/blog/BlogTagFilter.vue';
 import BlogPreviewBanner from './components/blog/BlogPreviewBanner.vue';
+import { initializeDetailsNavigation } from './utils/detailsNavigation';
 
 export default {
   extends: DefaultTheme,
@@ -49,5 +50,10 @@ export default {
     app.component('BlogPostMeta', BlogPostMeta);
     app.component('BlogTagFilter', BlogTagFilter);
     app.component('BlogPreviewBanner', BlogPreviewBanner);
+
+    // Initialize details navigation (client-side only)
+    if (typeof window !== 'undefined') {
+      initializeDetailsNavigation();
+    }
   },
 } satisfies Theme;
