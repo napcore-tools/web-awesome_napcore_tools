@@ -390,7 +390,7 @@ We welcome contributions! Here's how:
 
 1. Check our [criteria](./docs/contribute.md#tool-criteria)
 2. Gather [required information](./docs/contribute.md#required-information)
-3. [Start a discussion](https://github.com/napcore/napcore-store/discussions) with "Tool Submission" category
+3. [Start a discussion](https://github.com/napcore-tools/web-napcore_store/discussions) with "Tool Submission" category
 4. Community review and approval
 5. Tool added to catalog!
 
@@ -403,7 +403,7 @@ We welcome contributions! Here's how:
 ### Report Issues
 
 - [Open an issue](https://github.com/napcore/napcore-store/issues)
-- [Start a discussion](https://github.com/napcore/napcore-store/discussions)
+- [Start a discussion](https://github.com/napcore-tools/web-napcore_store/discussions)
 
 See [contribute.md](./docs/contribute.md) for detailed guidelines.
 
@@ -461,5 +461,5 @@ This catalog is made possible by:
 ## 📬 Contact
 
 - **GitHub**: [napcore/napcore-store](https://github.com/napcore/napcore-store)
-- **Discussions**: [GitHub Discussions](https://github.com/napcore/napcore-store/discussions)
+- **Discussions**: [GitHub Discussions](https://github.com/napcore-tools/web-napcore_store/discussions)
 - **NAPCORE Website**: [napcore.eu](https://napcore.eu)

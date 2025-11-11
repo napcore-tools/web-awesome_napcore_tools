@@ -131,8 +131,8 @@ Found outdated information or want to add more details to a tool page?
 
 Found a broken link or incorrect information?
 
-- Open an issue in our [GitHub repository](https://github.com/napcore/napcore-store/issues)
-- Or mention it in [Discussions](https://github.com/napcore/napcore-store/discussions)
+- Open an issue in our [GitHub repository](https://github.com/napcore-tools/web-napcore_store/issues)
+- Or mention it in [Discussions](https://github.com/napcore-tools/web-napcore_store/discussions)
 
 ### Suggest Improvements
 
