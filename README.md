@@ -147,6 +147,72 @@ your-tag-slug:
 
 All tags are clickable and styled consistently throughout the blog.
 
+## 📄 Document Types
+
+The NAPCORE Store uses a custom markdown plugin (`napCoreMarkdownPlugin`) to automatically generate standardized content based on document type. This keeps content DRY (Don't Repeat Yourself) by defining metadata once in frontmatter.
+
+### Tool Documents (`document: tool`)
+
+Tool pages automatically get a header with title, description, and Quick Info section.
+
+**Frontmatter example:**
+
+```yaml
+---
+document: tool
+title: DATEX II Browser
+description: Interactive web tool for browsing DATEX II schemas
+fullDescription: A comprehensive browser for exploring DATEX II data models...
+categories:
+  - validators
+  - development
+status: active
+license: MIT
+---
+```
+
+**Auto-generated content:**
+
+- H1 title
+- Description as blockquote
+- "## Quick Info" section with `<QuickInfo />` component
+
+The QuickInfo component automatically displays all tool metadata from frontmatter.
+
+### Category Documents (`document: category`)
+
+Category pages automatically get a footer with contribution tip section.
+
+**Frontmatter example:**
+
+```yaml
+---
+document: category
+contributeTip: Know a validator for DATEX II, NeTEx, SIRI, or mobilityDCAT-AP?
+---
+```
+
+**Auto-generated content:**
+
+```markdown
+---
+
+::: tip Want to Contribute?
+
+Know a validator for DATEX II, NeTEx, SIRI, or mobilityDCAT-AP?
+[Submit your tool →](/contribute)
+:::
+```
+
+**Benefits:**
+
+- **Single source of truth**: Tip text lives only in frontmatter
+- **Consistency**: All category pages have uniform contribution CTAs
+- **Easy updates**: Change tip text in frontmatter, not in markdown body
+- **Maintainability**: Plugin handles formatting and structure
+
+**Location**: Plugin implementation in `docs/.vitepress/plugins/napCoreMarkdownPlugin.ts`
+
 ## 📝 Custom Markdown Directives
 
 The NAPCORE Store includes custom markdown directives for creating collapsible sections.
