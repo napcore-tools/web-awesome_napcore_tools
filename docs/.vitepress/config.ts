@@ -7,6 +7,7 @@ import { validateAllStandards } from './standardValidation';
 import { validateAllCategories } from './categoryValidation';
 import { handleValidationResult } from './validationUtils';
 import { buildEnd } from './buildEnd';
+import llmstxtPlugin from 'vitepress-plugin-llmstxt';
 
 // Validate STANDARD_METADATA at config load time
 const standardsValidationResult = validateAllStandards();
@@ -109,5 +110,9 @@ export default defineConfig({
     //   pattern: 'https://github.com/napcore/napcore-store/edit/main/docs/:path',
     //   text: 'Suggest changes to this page'
     // }
+  },
+
+  vite: {
+    plugins: [llmstxtPlugin()],
   },
 });
