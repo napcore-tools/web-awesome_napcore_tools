@@ -13,9 +13,13 @@
     "format:fix": "prettier --write .",
     "prepare": "npx simple-git-hooks",
     "precommit": "npx lint-staged",
-    "test": "playwright test",
-    "test:ui": "playwright test --ui",
-    "test:headed": "playwright test --headed"
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "vitest",
+    "test:unit:ui": "vitest --ui",
+    "test:unit:coverage": "vitest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed"
   },
   "simple-git-hooks": {
     "pre-commit": "npm run precommit"
@@ -44,18 +48,24 @@
     "@playwright/test": "^1.56.1",
     "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@typescript-eslint/parser": "^8.46.2",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitest/ui": "^4.0.8",
+    "@vue/test-utils": "^2.4.6",
     "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.5.1",
     "feed": "^5.1.0",
     "gray-matter": "^4.0.3",
+    "happy-dom": "^20.0.10",
+    "jsdom": "^27.2.0",
     "lint-staged": "^16.2.6",
     "markdown-it-container": "^4.0.0",
     "prettier": "^3.6.2",
     "simple-git-hooks": "^2.13.1",
     "typescript": "^5.9.3",
     "vitepress": "2.0.0-alpha.12",
-    "vitepress-plugin-llmstxt": "^0.5.0"
+    "vitepress-plugin-llmstxt": "^0.5.0",
+    "vitest": "^4.0.8"
   },
   "overrides": {
     "vitepress-plugin-llmstxt": {
