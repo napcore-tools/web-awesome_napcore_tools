@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { data as posts } from '../../../blog.data';
-import type { BlogPost } from '../../../blog.data';
+import { data as posts } from '../../../core/data-loaders/blog.data';
+import type { BlogPost } from '../../../core/data-loaders/blog.data';
 import BlogCard from './BlogCard.vue';
 
 interface Props {

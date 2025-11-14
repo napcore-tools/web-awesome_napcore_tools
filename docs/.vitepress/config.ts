@@ -1,11 +1,11 @@
 import { defineConfig } from 'vitepress';
-import { _getToolsSidebar, getCategoriesSidebar } from './sidebar';
+import { _getToolsSidebar, getCategoriesSidebar } from './core/config/sidebar';
 import { napCoreMarkdownPlugin } from './plugins/napCoreMarkdownPlugin';
 import { collapsePlugin } from './plugins/collapsePlugin';
 import { chapterPlugin } from './plugins/chapterPlugin';
-import { validateAllStandards } from './standardValidation';
-import { validateAllCategories } from './categoryValidation';
-import { handleValidationResult } from './validationUtils';
+import { validateAllStandards } from './core/validation/standards';
+import { validateAllCategories } from './core/validation/categories';
+import { handleValidationResult } from './core/validation/utils';
 import { buildEnd } from './buildEnd';
 import llmstxtPlugin from 'vitepress-plugin-llmstxt';
 

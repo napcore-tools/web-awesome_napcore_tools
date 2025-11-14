@@ -9,7 +9,7 @@ import { defineConfig, devices } from '@playwright/test';
  * - Dev server starts correctly
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: './tests/e2e',
 
   // Run tests in parallel for faster execution
   fullyParallel: true,

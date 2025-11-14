@@ -1,6 +1,6 @@
 // Dynamic path generator for standard pages
-import toolsDataLoader from '../.vitepress/tools.data';
-import standardsDataLoader from '../.vitepress/standards.data';
+import toolsDataLoader from '../.vitepress/core/data-loaders/tools.data';
+import standardsDataLoader from '../.vitepress/core/data-loaders/standards.data';
 
 export default {
   /**

@@ -4,7 +4,7 @@
 
 <script setup>
 // This import ensures VitePress watches standards.yaml for changes
-import { data as _standardsData } from '../.vitepress/standards.data'
+import { data as _standardsData } from '../.vitepress/core/data-loaders/standards.data'
 </script>
 
 # {{ $params.standardName }}

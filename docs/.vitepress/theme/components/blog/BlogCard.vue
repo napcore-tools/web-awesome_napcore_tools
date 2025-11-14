@@ -27,8 +27,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { BlogPost } from '../../../blog.data';
-import { resolveTags } from '../../utils/tagResolver';
+import type { BlogPost } from '../../../core/data-loaders/blog.data';
+import { resolveTags } from '../../../core/utils/tagResolver';
 
 interface Props {
   post: BlogPost;

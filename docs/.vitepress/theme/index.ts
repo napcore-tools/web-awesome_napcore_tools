@@ -5,21 +5,21 @@ import DefaultTheme from 'vitepress/theme';
 import './custom.css';
 import './blog.css';
 import './markdown-sections.css';
-import StatsBar from './components/StatsBar.vue';
-import ToolStats from './components/ToolStats.vue';
-import ToolCard from './components/ToolCard.vue';
-import ToolsGrid from './components/ToolsGrid.vue';
-import CategoryGrid from './components/CategoryGrid.vue';
-import StandardsGrid from './components/StandardsGrid.vue';
-import QuickInfo from './components/QuickInfo.vue';
-import ToolMetadata from './components/ToolMetadata.vue';
-import RelatedCategories from './components/RelatedCategories.vue';
+import StatsBar from './components/index/StatsBar.vue';
+import ToolStats from './components/tools/ToolStats.vue';
+import ToolCard from './components/tools/ToolCard.vue';
+import ToolsGrid from './components/tools/ToolsGrid.vue';
+import CategoryGrid from './components/categories/CategoryGrid.vue';
+import StandardsGrid from './components/standards/StandardsGrid.vue';
+import QuickInfo from './components/tools/ToolQuickInfo.vue';
+import ToolMetadata from './components/tools/ToolMetadata.vue';
+import RelatedCategories from './components/categories/RelatedCategories.vue';
 import BlogCard from './components/blog/BlogCard.vue';
 import BlogGrid from './components/blog/BlogGrid.vue';
 import BlogPostMeta from './components/blog/BlogPostMeta.vue';
 import BlogTagFilter from './components/blog/BlogTagFilter.vue';
 import BlogPreviewBanner from './components/blog/BlogPreviewBanner.vue';
-import { initializeDetailsNavigation } from './utils/detailsNavigation';
+import { initializeDetailsNavigation } from '../core/utils';
 
 export default {
   extends: DefaultTheme,

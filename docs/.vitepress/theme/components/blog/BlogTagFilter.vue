@@ -21,9 +21,9 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
-import { data as posts } from '../../../blog.data';
+import { data as posts } from '../../../core/data-loaders/blog.data';
 import BlogGrid from './BlogGrid.vue';
-import { resolveTag, type TagType } from '../../utils/tagResolver';
+import { resolveTag, type TagType } from '../../../core/utils/tagResolver';
 
 interface TagInfo {
   slug: string;
