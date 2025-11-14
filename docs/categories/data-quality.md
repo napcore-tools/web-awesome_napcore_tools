@@ -65,4 +65,4 @@ Identify missing, inconsistent, or invalid data fields that affect downstream us
 
 ## Available Tools
 
-<ToolsGrid />
+<ToolsFilter />

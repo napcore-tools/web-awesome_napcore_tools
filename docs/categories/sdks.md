@@ -65,4 +65,4 @@ Generate or update DCAT-AP or mobilityDCAT-AP metadata programmatically.
 
 ## Available Tools
 
-<ToolsGrid />
+<ToolsFilter />

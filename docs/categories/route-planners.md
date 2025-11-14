@@ -63,4 +63,4 @@ Power integrated travel apps and regional journey planners.
 
 ## Available Tools
 
-<ToolsGrid />
+<ToolsFilter />

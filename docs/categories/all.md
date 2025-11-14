@@ -1,6 +1,6 @@
 # All Tools
 
-<ToolsGrid :show-all=true />
+<ToolsFilter :show-all=true />
 
 ## Submit Your Tool
 

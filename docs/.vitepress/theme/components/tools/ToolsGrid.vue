@@ -20,9 +20,8 @@
       </small>
     </div>
 
-    <p v-if="filteredTools.length === 0" class="no-tools-message">
-      No tools available in this category yet. <a href="/contribute">Contribute a tool →</a>
-    </p>
+    <!-- eslint-disable-next-line vue/no-v-html -->
+    <p v-if="filteredTools.length === 0" class="no-tools-message" v-html="emptyStateMessage"></p>
     <div v-else class="feature-grid">
       <ToolCard v-for="tool in filteredTools" :key="tool.slug" :tool="tool" :subtitle="getSubtitle(tool)" />
     </div>
@@ -63,6 +62,7 @@ interface Props {
   standards?: string[];
   selectedTools?: string[];
   showAll?: boolean;
+  textFilter?: string;
 }
 
 const props = defineProps<Props>();
@@ -142,20 +142,22 @@ const activeStandards = computed(() => {
  * Filtered tools based on active filters
  *
  * Filter priority (first match wins):
- * 1. showAll prop - Shows all tools, ignores all filters
- * 2. selectedTools prop - Shows only specified tools by slug, preserves order, ignores all other filters
+ * 1. showAll prop - Shows all tools, ignores all filters except text filter
+ * 2. selectedTools prop - Shows only specified tools by slug, preserves order, ignores category/standard filters
  * 3. Category + Standards - Combines category and standards filters (both must match if both are active)
+ * 4. Text filter - Applied last to results from above steps (searches title, description, tags, categories)
  *
  * @returns Array of Tool objects matching the active filters
  */
 const filteredTools = computed(() => {
-  // Priority 1: If showAll is true, return all tools (ignores all filters)
-  if (props.showAll === true) {
-    return tools;
-  }
+  let result: Tool[] = [];
 
-  // Priority 2: If selectedTools is provided, show only those tools (ignores all other filters)
-  if (props.selectedTools && props.selectedTools.length > 0) {
+  // Priority 1: If showAll is true, return all tools (ignores category/standard filters)
+  if (props.showAll === true) {
+    result = tools;
+  }
+  // Priority 2: If selectedTools is provided, show only those tools (ignores category/standard filters)
+  else if (props.selectedTools && props.selectedTools.length > 0) {
     // Create a map of tools by slug for O(1) lookup performance
     const toolsBySlug = new Map<string, Tool>();
     tools.forEach((tool) => {
@@ -172,30 +174,91 @@ const filteredTools = computed(() => {
       // Silently skip non-existent slugs (no error thrown)
     });
 
-    return selectedToolsList;
+    result = selectedToolsList;
+  }
+  // Priority 3: Apply category and/or standards filters
+  else {
+    result = tools.filter((tool: Tool) => {
+      let matches = true;
+
+      // Filter by category if detected from route or prop
+      if (currentCategory.value) {
+        matches = matches && tool.categories.includes(currentCategory.value);
+      }
+
+      // Filter by standards if detected from route, prop, or query params
+      if (activeStandards.value.length > 0) {
+        // Tool must have at least one of the specified standards (OR logic within standards)
+        const hasStandards = tool.standards && tool.standards.length > 0;
+        const matchesStandards =
+          hasStandards && tool.standards.some((standard) => activeStandards.value.includes(standard));
+
+        matches = matches && matchesStandards;
+      }
+
+      return matches;
+    });
   }
 
-  // Priority 2: Apply category and/or standards filters
-  return tools.filter((tool: Tool) => {
-    let matches = true;
+  // Priority 4: Apply text filter if provided (searches across multiple fields)
+  if (props.textFilter && props.textFilter.trim().length > 0) {
+    const searchTerm = props.textFilter.trim().toLowerCase();
 
-    // Filter by category if detected from route or prop
-    if (currentCategory.value) {
-      matches = matches && tool.categories.includes(currentCategory.value);
-    }
+    result = result.filter((tool: Tool) => {
+      // Search in title
+      if (tool.title.toLowerCase().includes(searchTerm)) {
+        return true;
+      }
 
-    // Filter by standards if detected from route, prop, or query params
-    if (activeStandards.value.length > 0) {
-      // Tool must have at least one of the specified standards (OR logic within standards)
-      const hasStandards = tool.standards && tool.standards.length > 0;
-      const matchesStandards =
-        hasStandards && tool.standards.some((standard) => activeStandards.value.includes(standard));
+      // Search in description
+      if (tool.description.toLowerCase().includes(searchTerm)) {
+        return true;
+      }
 
-      matches = matches && matchesStandards;
-    }
+      // Search in tags (joined as string)
+      if (tool.tags.join(' ').toLowerCase().includes(searchTerm)) {
+        return true;
+      }
 
-    return matches;
-  });
+      // Search in categories (joined as string)
+      if (tool.categories.join(' ').toLowerCase().includes(searchTerm)) {
+        return true;
+      }
+
+      return false;
+    });
+  }
+
+  return result;
+});
+
+// Detect if any filters are actively applied (excluding category-only filtering)
+const hasActiveFilters = computed(() => {
+  // Text filter is active
+  if (props.textFilter && props.textFilter.trim().length > 0) {
+    return true;
+  }
+
+  // Standards filter is active (from route, props, or URL params)
+  if (activeStandards.value.length > 0) {
+    return true;
+  }
+
+  // SelectedTools filter is active (but showAll is not)
+  if (props.selectedTools && props.selectedTools.length > 0 && props.showAll !== true) {
+    return true;
+  }
+
+  // No filters active, so empty result means truly empty category
+  return false;
+});
+
+// Generate appropriate empty state message based on active filters
+const emptyStateMessage = computed(() => {
+  if (hasActiveFilters.value) {
+    return 'No tools match your current filters. Try adjusting your search or filters.';
+  }
+  return 'No tools available in this category yet. <a href="/contribute">Contribute a tool →</a>';
 });
 
 // Generate a subtitle based on tool characteristics

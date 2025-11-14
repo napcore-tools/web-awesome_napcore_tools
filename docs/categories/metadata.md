@@ -65,4 +65,4 @@ Transform or map metadata between internal and public catalog formats.
 
 ## Available Tools
 
-<ToolsGrid />
+<ToolsFilter />

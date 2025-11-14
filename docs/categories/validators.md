@@ -65,4 +65,4 @@ The **ALERT-C Locations Tester** validates the consistency and correctness of lo
 
 ## Available Tools
 
-<ToolsGrid />
+<ToolsFilter />

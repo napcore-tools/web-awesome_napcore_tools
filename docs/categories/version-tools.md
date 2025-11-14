@@ -65,4 +65,4 @@ Update catalog metadata to align with new schema profiles.
 
 ## Available Tools
 
-<ToolsGrid />
+<ToolsFilter />

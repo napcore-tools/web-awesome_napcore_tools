@@ -9,6 +9,7 @@ import StatsBar from './components/index/StatsBar.vue';
 import ToolStats from './components/tools/ToolStats.vue';
 import ToolCard from './components/tools/ToolCard.vue';
 import ToolsGrid from './components/tools/ToolsGrid.vue';
+import ToolsFilter from './components/tools/ToolsFilter.vue';
 import CategoryGrid from './components/categories/CategoryGrid.vue';
 import StandardsGrid from './components/standards/StandardsGrid.vue';
 import QuickInfo from './components/tools/ToolQuickInfo.vue';
@@ -42,6 +43,7 @@ export default {
     app.component('ToolStats', ToolStats);
     app.component('ToolCard', ToolCard);
     app.component('ToolsGrid', ToolsGrid);
+    app.component('ToolsFilter', ToolsFilter);
     app.component('CategoryGrid', CategoryGrid);
     app.component('StandardsGrid', StandardsGrid);
     app.component('QuickInfo', QuickInfo);

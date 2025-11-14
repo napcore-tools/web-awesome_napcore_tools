@@ -65,4 +65,4 @@ Use data simulators or mock feeds to test new transport systems before deploymen
 
 ## Available Tools
 
-<ToolsGrid />
+<ToolsFilter />

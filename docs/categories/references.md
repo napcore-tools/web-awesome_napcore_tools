@@ -65,4 +65,4 @@ Integrate excerpts into training materials or technical guides.
 
 ## Available Tools
 
-<ToolsGrid />
+<ToolsFilter />

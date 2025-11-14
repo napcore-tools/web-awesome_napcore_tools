@@ -65,4 +65,4 @@ Simulate transport data or API calls to test system behavior under controlled co
 
 ## Available Tools
 
-<ToolsGrid />
+<ToolsFilter />

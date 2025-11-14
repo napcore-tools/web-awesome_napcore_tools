@@ -66,4 +66,4 @@ Adapt dataset metadata between **DCAT-AP** and **mobilityDCAT-AP** profiles for 
 
 ## Available Tools
 
-<ToolsGrid />
+<ToolsFilter />

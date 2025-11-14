@@ -152,7 +152,7 @@ describe('ToolsGrid Component', () => {
 
       const noToolsMessage = wrapper.find('.no-tools-message');
       expect(noToolsMessage.exists()).toBe(true);
-      expect(noToolsMessage.text()).toContain('No tools available');
+      expect(noToolsMessage.text()).toContain('No tools match your current filters');
     });
   });
 

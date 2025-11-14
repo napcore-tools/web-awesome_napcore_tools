@@ -64,4 +64,4 @@ Support workshops or technical documentation with live examples.
 
 ## Available Tools
 
-<ToolsGrid />
+<ToolsFilter />

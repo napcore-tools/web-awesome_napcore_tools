@@ -50,4 +50,4 @@ import { data as _standardsData } from '../.vitepress/core/data-loaders/standard
 
 Browse all tools that support the **{{ $params.standardName }}** standard.
 
-<ToolsGrid :standard="$params.standard" />
+<ToolsFilter :standard="$params.standard" />
