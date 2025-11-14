@@ -19,7 +19,7 @@ export default [
 
   // Config 4: General project settings
   {
-    files: ['docs/**/*.{js,ts,vue}', '../*.js', '../package.json'],
+    files: ['docs/**/*.{js,ts,vue}', '../*.{js,ts}', '../package.json'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -41,7 +41,7 @@ export default [
 
   // Config 5: TypeScript-specific
   {
-    files: ['docs/**/*.ts'],
+    files: ['docs/**/*.ts', 'tests/**/*.ts', '../*.ts'],
     languageOptions: {
       parser: tsparser,
       parserOptions: {
@@ -77,6 +77,31 @@ export default [
     },
   },
 
-  // Config 7: Prettier integration — MUST be last
+  // Config 7: Test files specific globals
+  {
+    files: ['tests/**/*.ts'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        // Vitest globals
+        describe: 'readonly',
+        it: 'readonly',
+        test: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly',
+        vi: 'readonly',
+      },
+    },
+    rules: {
+      // Allow 'any' types in test mocks and test utilities
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
+
+  // Config 8: Prettier integration — MUST be last
   prettierConfig,
 ];
