@@ -4,11 +4,19 @@ import globals from 'globals';
 import prettierConfig from 'eslint-config-prettier';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsparser from '@typescript-eslint/parser';
+import vueParser from 'vue-eslint-parser';
 
 export default [
-  // Config 1: Ignore patterns
+  // Config 1: Global ignore patterns
   {
-    ignores: ['node_modules/**', 'docs/.vitepress/cache/**', 'docs/.vitepress/dist/**', 'docs/public/**', '.claude/**'],
+    ignores: [
+      'node_modules/**',
+      'docs/.vitepress/cache/**',
+      'docs/.vitepress/dist/**',
+      'docs/public/**',
+      '.claude/**',
+      `playwright-report/**`,
+    ],
   },
 
   // Config 2: Base JavaScript rules
@@ -19,7 +27,7 @@ export default [
 
   // Config 4: General project settings
   {
-    files: ['docs/**/*.{js,ts,vue}', '../*.{js,ts}', '../package.json'],
+    files: ['docs/**/*.{js,ts,vue}', '*.{js,ts}'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -32,8 +40,8 @@ export default [
       'no-unused-vars': 'warn',
       'no-console': 'off',
 
-      // 👇 Your style preferences
-      indent: ['error', 4, { SwitchCase: 1 }],
+      // Your style preferences
+      indent: ['error', 2, { SwitchCase: 1 }],
       semi: ['error', 'always'],
       'comma-dangle': ['error', 'always-multiline'],
     },
@@ -41,7 +49,7 @@ export default [
 
   // Config 5: TypeScript-specific
   {
-    files: ['docs/**/*.ts', 'tests/**/*.ts', '../*.ts'],
+    files: ['docs/**/*.ts', 'tests/**/*.ts', '*.ts'],
     languageOptions: {
       parser: tsparser,
       parserOptions: {
@@ -69,11 +77,27 @@ export default [
   {
     files: ['docs/**/*.vue'],
     languageOptions: {
+      parser: vueParser,
       parserOptions: {
         parser: tsparser,
         ecmaVersion: 'latest',
         sourceType: 'module',
+        extraFileExtensions: ['.vue'],
       },
+    },
+    plugins: {
+      '@typescript-eslint': tseslint,
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
+      'no-unused-vars': 'off',
     },
   },
 
