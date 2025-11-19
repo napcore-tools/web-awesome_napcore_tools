@@ -8,6 +8,7 @@ import { validateAllCategories } from './core/validation/categories';
 import { handleValidationResult } from './core/validation/utils';
 import { buildEnd } from './buildEnd';
 import llmstxtPlugin from 'vitepress-plugin-llmstxt';
+import { fileURLToPath, URL } from 'node:url';
 
 // Validate STANDARD_METADATA at config load time
 const standardsValidationResult = validateAllStandards();
@@ -114,5 +115,10 @@ export default defineConfig({
 
   vite: {
     plugins: [llmstxtPlugin()],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('.', import.meta.url)),
+      },
+    },
   },
 });
