@@ -49,3 +49,6 @@ DESIGN-NOTES.md
 test-results/
 playwright-report/
 playwright/.cache/
+
+# ESLint
+.eslintcache
