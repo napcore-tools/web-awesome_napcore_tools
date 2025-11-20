@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { data as stats } from '../../../core/data-loaders/stats.data';
+import { data as stats } from '@/core/data-loaders/stats.data';
 </script>
 
 <template>

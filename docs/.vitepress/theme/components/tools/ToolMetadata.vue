@@ -90,8 +90,8 @@
  */
 import { computed } from 'vue';
 import { useData } from 'vitepress';
-import { getCategoryBySlug } from '../../../core/metadata/categories';
-import { data as standardsData } from '../../../core/data-loaders/standards.data';
+import { getCategoryBySlug } from '@/core/metadata/categories';
+import { data as standardsData } from '@/core/data-loaders/standards.data';
 
 const { frontmatter } = useData();
 

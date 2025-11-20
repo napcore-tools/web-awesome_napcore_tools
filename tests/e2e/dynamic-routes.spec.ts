@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import toolsDataLoader from '../../docs/.vitepress/core/data-loaders/tools.data';
-import { CATEGORIES } from '../../docs/.vitepress/core/metadata/categories';
-import standardsDataLoader from '../../docs/.vitepress/core/data-loaders/standards.data';
+import toolsDataLoader from '@/core/data-loaders/tools.data';
+import { CATEGORIES } from '@/core/metadata/categories';
+import standardsDataLoader from '@/core/data-loaders/standards.data';
 
 /**
  * Dynamic Route Tests

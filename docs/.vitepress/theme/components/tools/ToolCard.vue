@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Tool } from '../../../core/data-loaders/tools.data';
+import type { Tool } from '@/core/data-loaders/tools.data';
 
 interface Props {
   tool: Tool;

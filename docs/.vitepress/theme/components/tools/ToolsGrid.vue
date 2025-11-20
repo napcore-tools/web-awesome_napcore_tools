@@ -31,9 +31,9 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue';
 import { useRoute } from 'vitepress';
-import { data as tools } from '../../../core/data-loaders/tools.data';
-import type { Tool } from '../../../core/data-loaders/tools.data';
-import { createSlug } from '../../../core/utils';
+import { data as tools } from '@/core/data-loaders/tools.data';
+import type { Tool } from '@/core/data-loaders/tools.data';
+import { createSlug } from '@/core/utils';
 import ToolCard from './ToolCard.vue';
 
 // Debug mode (enable by adding ?debug=true to URL)

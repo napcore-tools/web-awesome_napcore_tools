@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { data as tools } from '../../../core/data-loaders/tools.data';
-import { CATEGORIES } from '../../../core/metadata/categories';
+import { data as tools } from '@/core/data-loaders/tools.data';
+import { CATEGORIES } from '@/core/metadata/categories';
 
 interface Props {
   sortByCount?: boolean;

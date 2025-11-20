@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useRoute } from 'vitepress';
-import { getCategoryBySlug } from '../../../core/metadata/categories';
+import { getCategoryBySlug } from '@/core/metadata/categories';
 
 const route = useRoute();
 

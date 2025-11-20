@@ -27,8 +27,8 @@
 import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vitepress';
 import ToolsGrid from './ToolsGrid.vue';
-import { CATEGORIES } from '../../../core/metadata/categories';
-import { data as standardsData } from '../../../core/data-loaders/standards.data';
+import { CATEGORIES } from '@/core/metadata/categories';
+import { data as standardsData } from '@/core/data-loaders/standards.data';
 
 interface Props {
   category?: string;

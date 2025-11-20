@@ -29,7 +29,7 @@
 <script setup lang="ts">
 import { useData } from 'vitepress';
 import { computed } from 'vue';
-import { resolveTags } from '../../../core/utils/tagResolver';
+import { resolveTags } from '@/core/utils/tagResolver';
 
 const { frontmatter } = useData();
 
