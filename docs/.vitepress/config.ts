@@ -78,6 +78,7 @@ export default defineConfig({
       '/categories/': { base: '/', items: getCategoriesSidebar() },
       '/tools/': { base: '/', items: getCategoriesSidebar() },
       '/standards/': { base: '/', items: getCategoriesSidebar() },
+      '/all/': { base: '/', items: getCategoriesSidebar() },
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/napcore' }],
 
