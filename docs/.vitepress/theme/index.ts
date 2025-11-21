@@ -37,7 +37,7 @@ export default {
    * @param _router - VitePress router instance (unused)
    * @param _siteData - Site data object (unused)
    */
-  enhanceApp({ app, _router, _siteData }) {
+  enhanceApp({ app }) {
     // Register global components
     app.component('StatsBar', StatsBar);
     app.component('ToolStats', ToolStats);

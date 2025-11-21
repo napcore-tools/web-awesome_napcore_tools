@@ -44,8 +44,7 @@ export default {
 
     try {
       const content = fs.readFileSync(yamlPath, 'utf-8');
-      const standards = parseYaml(content) as Record<string, Standard>;
-      return standards;
+      return parseYaml(content) as Record<string, Standard>;
     } catch (e) {
       console.error('Error loading standards.yaml:', e);
       return {};

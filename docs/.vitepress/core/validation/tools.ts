@@ -24,7 +24,7 @@ if (!globalWithCache.__toolValidationCache) {
 const validationCache: Map<string, number> = globalWithCache.__toolValidationCache;
 
 // Valid status values
-const VALID_STATUSES = ['active', 'maintenance', 'deprecated'] as const;
+const VALID_STATUSES: string[] = ['active', 'maintenance', 'deprecated'] as const;
 
 /**
  * Validate tool categories against defined CATEGORIES
@@ -69,7 +69,6 @@ function validateCategories(tool: Partial<Tool>, _filename: string): ValidationE
 
   // Check for invalid category slugs
   const invalidCategories = tool.categories.filter((cat: string) => !validCategorySlugs.has(cat));
-
   if (invalidCategories.length > 0) {
     const validList = Array.from(validCategorySlugs).join(', ');
     errors.push({
@@ -82,7 +81,7 @@ function validateCategories(tool: Partial<Tool>, _filename: string): ValidationE
   // Check for duplicate categories
   const uniqueCategories = new Set(tool.categories);
   if (uniqueCategories.size < tool.categories.length) {
-    const duplicates = tool.categories.filter((cat: string, index: number) => tool.categories.indexOf(cat) !== index);
+    const duplicates = tool.categories.filter((cat: string, index: number) => tool.categories?.indexOf(cat) !== index);
     errors.push({
       field: 'categories',
       message: `Duplicate categories found: ${[...new Set(duplicates)].join(', ')}`,
@@ -104,7 +103,7 @@ function validateRequiredFields(tool: Partial<Tool>, _filename: string): Validat
   const errors: ValidationError[] = [];
 
   // Check title
-  if (!tool.title || typeof tool.title !== 'string' || tool.title.trim() === '') {
+  if (!tool.title?.trim()) {
     errors.push({
       field: 'title',
       message: 'Missing or empty required field "title"',
@@ -113,7 +112,7 @@ function validateRequiredFields(tool: Partial<Tool>, _filename: string): Validat
   }
 
   // Check description
-  if (!tool.description || typeof tool.description !== 'string' || tool.description.trim() === '') {
+  if (!tool.description?.trim()) {
     errors.push({
       field: 'description',
       message: 'Missing or empty required field "description"',

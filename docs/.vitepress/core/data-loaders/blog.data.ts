@@ -46,7 +46,7 @@ export default createContentLoader('blog/posts/*.md', {
       }))
       .filter((post) => {
         // Filter out unpublished posts
-        if (post.published === false) return false;
+        if (!post.published) return false;
 
         // In preview mode, show all posts regardless of publishDate
         if (isPreviewMode) return true;

@@ -179,7 +179,7 @@ const filteredTools = computed(() => {
   // Priority 3: Apply category and/or standards filters
   else {
     result = tools.filter((tool: Tool) => {
-      let matches = true;
+      let matches: boolean = true;
 
       // Filter by category if detected from route or prop
       if (currentCategory.value) {
@@ -191,9 +191,9 @@ const filteredTools = computed(() => {
         // Tool must have at least one of the specified standards (OR logic within standards)
         const hasStandards = tool.standards && tool.standards.length > 0;
         const matchesStandards =
-          hasStandards && tool.standards.some((standard) => activeStandards.value.includes(standard));
+          hasStandards && tool.standards?.some((standard) => activeStandards.value.includes(standard));
 
-        matches = matches && matchesStandards;
+        matches = matches && !!matchesStandards;
       }
 
       return matches;
@@ -216,7 +216,7 @@ const filteredTools = computed(() => {
       }
 
       // Search in tags (joined as string)
-      if (tool.tags.join(' ').toLowerCase().includes(searchTerm)) {
+      if ((tool.tags?.join(' ') || '').toLowerCase().includes(searchTerm)) {
         return true;
       }
 
@@ -264,27 +264,27 @@ const emptyStateMessage = computed(() => {
 // Generate a subtitle based on tool characteristics
 function getSubtitle(tool: Tool): string {
   // Check for specific patterns to determine subtitle
-  if (tool.tags.includes('Browser') || tool.tags.includes('Reference')) {
+  if (tool.tags?.includes('Browser') || tool.tags?.includes('Reference')) {
     return 'Reference Documentation Tool';
   }
-  if (tool.tags.includes('Wizard') || tool.tags.includes('Generator')) {
-    return tool.tags.includes('Profile') ? 'Profile Generation Wizard' : 'Metadata Generation Tool';
+  if (tool.tags?.includes('Wizard') || tool.tags?.includes('Generator')) {
+    return tool.tags?.includes('Profile') ? 'Profile Generation Wizard' : 'Metadata Generation Tool';
   }
-  if (tool.tags.includes('Validator') || tool.categories.includes('validators')) {
+  if (tool.tags?.includes('Validator') || tool.categories.includes('validators')) {
     return 'Location Reference Validator';
   }
-  if (tool.tags.includes('Converter')) {
+  if (tool.tags?.includes('Converter')) {
     return 'Model Browser & Converter Foundation';
   }
-  if (['Journey Planner', 'Router', 'Intermodal'].some((r) => tool.tags.includes(r))) {
+  if (['Journey Planner', 'Router', 'Intermodal'].some((r) => tool.tags?.includes(r))) {
     return 'Journey Planner';
   }
-  if (['Data Model', 'Documentation'].some((r) => tool.tags.includes(r))) {
+  if (['Data Model', 'Documentation'].some((r) => tool.tags?.includes(r))) {
     return 'Documentation';
   }
 
   // Default: use first tag or category
-  if (tool.tags.length > 0) {
+  if (tool.tags && tool.tags.length > 0) {
     return `${tool.tags[0]} Tool`;
   }
   return 'Development Tool';

@@ -204,14 +204,19 @@ vi.mock('@/core/utils', () => ({
       url: `/blog?tag=${slug}`,
     };
   }),
-  resolveTags: vi.fn((tags = []) =>
-    tags.map((tag) => ({
+  resolveTags: vi.fn((tags = []) => {
+    const tagTitles: Record<string, string> = {
+      javascript: 'JavaScript',
+      testing: 'Testing',
+      technical: 'Technical',
+    };
+    return tags.map((tag) => ({
       slug: tag,
-      title: tag.charAt(0).toUpperCase() + tag.slice(1),
+      title: tagTitles[tag] || tag.charAt(0).toUpperCase() + tag.slice(1),
       type: 'blog-tag' as const,
       url: `/blog?tag=${tag}`,
-    }))
-  ),
+    }));
+  }),
   createSlug: vi.fn((text) => text.toLowerCase().replace(/\s+/g, '-')),
   initializeDetailsNavigation: vi.fn(),
 }));

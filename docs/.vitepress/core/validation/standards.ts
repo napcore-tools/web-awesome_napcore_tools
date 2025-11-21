@@ -202,9 +202,10 @@ export function validateStandards(tool: Partial<Tool>, _filename: string): Valid
   }
 
   // Check for duplicate standards
-  const uniqueStandards = new Set(tool.standards);
-  if (uniqueStandards.size < tool.standards.length) {
-    const duplicates = tool.standards.filter((std: string, index: number) => tool.standards.indexOf(std) !== index);
+  const standardsArray = tool.standards;
+  const uniqueStandards = new Set(standardsArray);
+  if (uniqueStandards.size < standardsArray.length) {
+    const duplicates = standardsArray.filter((std: string, index: number) => standardsArray.indexOf(std) !== index);
     errors.push({
       field: 'standards',
       message: `Duplicate standards found: ${[...new Set(duplicates)].join(', ')}`,
@@ -213,7 +214,7 @@ export function validateStandards(tool: Partial<Tool>, _filename: string): Valid
   }
 
   // Validate slug format for each standard
-  tool.standards.forEach((slug: string) => {
+  standardsArray.forEach((slug: string) => {
     errors.push(...validateStandardSlug(slug));
   });
 

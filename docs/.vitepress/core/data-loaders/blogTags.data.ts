@@ -35,8 +35,7 @@ export default {
 
     try {
       const content = fs.readFileSync(yamlPath, 'utf-8');
-      const blogTags = parseYaml(content) as Record<string, BlogTag>;
-      return blogTags;
+      return parseYaml(content) as Record<string, BlogTag>;
     } catch (e) {
       console.error('Error loading blogTags.yaml:', e);
       return {};

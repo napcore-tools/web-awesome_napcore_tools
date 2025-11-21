@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress';
-import { _getToolsSidebar, getCategoriesSidebar } from './core/config/sidebar';
+import { getCategoriesSidebar } from './core/config/sidebar';
 import { napCoreMarkdownPlugin } from './plugins/napCoreMarkdownPlugin';
 import { collapsePlugin } from './plugins/collapsePlugin';
 import { chapterPlugin } from './plugins/chapterPlugin';
@@ -89,7 +89,6 @@ export default defineConfig({
     search: {
       provider: 'local',
       options: {
-        placeholder: 'Search tools...',
         translations: {
           button: {
             buttonText: 'Search',
