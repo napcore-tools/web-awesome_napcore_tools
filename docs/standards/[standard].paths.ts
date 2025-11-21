@@ -1,6 +1,15 @@
 // Dynamic path generator for standard pages
 import toolsDataLoader from '../.vitepress/core/data-loaders/tools.data';
 import standardsDataLoader from '../.vitepress/core/data-loaders/standards.data';
+import type { Standard } from '../.vitepress/core/data-loaders/standards.data';
+
+/**
+ * Enhanced standard with computed related standards titles
+ * Used in dynamic routes to pass resolved standard references
+ */
+export interface EnhancedStandard extends Standard {
+  related_standards_with_titles?: Array<{ slug: string; title: string }>;
+}
 
 export default {
   /**
@@ -31,7 +40,7 @@ export default {
       const title = standard?.title || slug; // Fallback to slug if not found
 
       // Enhance related standards with titles
-      let enhancedDetails = standard;
+      let enhancedDetails: EnhancedStandard | undefined = standard;
       if (standard && standard.related_standards) {
         enhancedDetails = {
           ...standard,

@@ -9,6 +9,7 @@
     "preview": "vitepress preview docs",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix --cache",
+    "type-check": "vue-tsc --noEmit",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "prepare": "npx simple-git-hooks",
