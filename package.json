@@ -26,7 +26,7 @@
     "pre-commit": "npm run precommit"
   },
   "lint-staged": {
-    "*.{js,ts,vue,md,json,yml,yaml}": [
+    "*.{js,ts,css,vue,md,json,yml,yaml}": [
       "eslint --fix",
       "prettier --write"
     ]
