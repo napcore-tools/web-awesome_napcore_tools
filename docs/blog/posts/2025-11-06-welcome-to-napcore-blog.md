@@ -1,6 +1,6 @@
 ---
-title: Welcome to the NAPCORE Store Blog
-description: Introducing the new NAPCORE Store blog for updates on European mobility data tools and standards.
+title: Welcome to the Awesome NAPCORE Tools Blog
+description: Introducing the new Awesome NAPCORE Tools blog for updates on European mobility data tools and standards.
 date: 2025-11-06
 author: NAPCORE Team
 tags:
@@ -12,13 +12,13 @@ published: true
 
 <BlogPostMeta />
 
-# Welcome to the NAPCORE Store Blog
+# Welcome to the Awesome NAPCORE Tools Blog
 
-We're excited to announce the launch of the NAPCORE Store blog! This blog will be your go-to resource for staying informed about the latest developments in European mobility data exchange and Intelligent Transport Systems (ITS).
+We're excited to announce the launch of the Awesome NAPCORE Tools blog! This blog will be your go-to resource for staying informed about the latest developments in European mobility data exchange and Intelligent Transport Systems (ITS).
 
 ## What to Expect
 
-The NAPCORE Store blog will feature:
+The Awesome NAPCORE Tools blog will feature:
 
 - **Tool Updates**: Announcements about new tools added to the catalog and updates to existing tools
 - **Standards Insights**: In-depth articles about mobility data standards like DATEX II, SIRI, NeTEx, and more
@@ -28,7 +28,7 @@ The NAPCORE Store blog will feature:
 
 ## About NAPCORE
 
-The National Access Point Coordination Organisation for Europe (NAPCORE) supports the coordination and evolution of National Access Points (NAPs) across Europe. The NAPCORE Store serves as a comprehensive catalog of tools, standards, and resources that facilitate mobility data exchange and ITS implementation.
+The National Access Point Coordination Organisation for Europe (NAPCORE) supports the coordination and evolution of National Access Points (NAPs) across Europe. The Awesome NAPCORE Tools serves as a comprehensive catalog of tools, standards, and resources that facilitate mobility data exchange and ITS implementation.
 
 ## Stay Connected
 

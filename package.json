@@ -1,7 +1,7 @@
 {
   "name": "napcore-store",
   "version": "0.1.0",
-  "description": "NAPCORE Store - Curated tools for European mobility data professionals",
+  "description": "Awesome NAPCORE Tools - Curated tools for European mobility data professionals",
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs",

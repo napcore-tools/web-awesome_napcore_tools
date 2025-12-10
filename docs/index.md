@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: NAPCORE Store
+  name: Awesome NAPCORE Tools
   text: "Status: Proof-of-concept"
   tagline: Curated catalog of European mobility data-related tools
   image:
@@ -89,7 +89,7 @@ This site is work in progress and in a proof-of-concept stage.
 
 ## About the Catalog
 
-The NAPCORE Store is a community-driven initiative to collect, curate, and showcase open-source tools that support European mobility data standards. Our mission is to make it easier for developers, data publishers, and mobility professionals to find and use the right tools for their needs.
+The Awesome NAPCORE Tools is a community-driven initiative to collect, curate, and showcase open-source tools that support European mobility data standards. Our mission is to make it easier for developers, data publishers, and mobility professionals to find and use the right tools for their needs.
 
 ::: info Community-Driven
 This catalog is built and maintained by the European mobility data community. We welcome contributions from tool developers, users, and anyone passionate about improving mobility data infrastructure.

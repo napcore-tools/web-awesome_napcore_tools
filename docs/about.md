@@ -1,10 +1,10 @@
-# About the NAPCORE Store
+# About the Awesome NAPCORE Tools project
 
 ::: warning
 This site is work in progress and in a proof-of-concept stage.
 :::
 
-The NAPCORE Store is a community-driven initiative to collect, curate, and showcase open-source tools that support European mobility data standards.
+The Awesome NAPCORE Tools is a community-driven initiative to collect, curate, and showcase open-source tools that support European mobility data standards.
 
 ## Mission
 
@@ -18,7 +18,7 @@ The European mobility data ecosystem is rich with standards and tools, but they'
 
 ### The Solution
 
-The NAPCORE Store brings these tools together in one place, with:
+The Awesome NAPCORE Tools brings these tools together in one place, with:
 
 - **Standardized descriptions** so you can quickly understand what each tool does
 - **Clear categorization** to help you find tools for specific needs
@@ -101,7 +101,7 @@ Learn more at [napcore.eu](https://napcore.eu)
 
 ### Origins
 
-The NAPCORE Store was created as part of NAPCORE Task 5.2 to support the European mobility data community by providing a centralized resource for discovering tools.
+The Awesome NAPCORE Tools was created as part of NAPCORE Task 5.2 to support the European mobility data community by providing a centralized resource for discovering tools.
 
 ### Development
 

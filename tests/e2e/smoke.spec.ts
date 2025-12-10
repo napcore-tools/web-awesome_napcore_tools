@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * Smoke Tests for NAPCORE Store
+ * Smoke Tests for Awesome NAPCORE Tools
  *
  * Tests basic functionality:
  * - Home page loads
@@ -15,7 +15,7 @@ test.describe('Basic Page Tests', () => {
     await page.goto('/');
 
     // Check for main headings/content
-    await expect(page).toHaveTitle(/NAPCORE Store/);
+    await expect(page).toHaveTitle(/Awesome NAPCORE Tools/);
 
     // Check for key sections
     await expect(page.locator('h1')).toBeVisible();
@@ -25,7 +25,7 @@ test.describe('Basic Page Tests', () => {
     await page.goto('/categories/');
 
     // Check page renders
-    await expect(page).toHaveTitle(/Categories|NAPCORE Store/);
+    await expect(page).toHaveTitle(/Categories|Awesome NAPCORE Tools/);
 
     // Check for category grid or content
     await expect(page.locator('body')).toContainText(/Categories|Tools/);

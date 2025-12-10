@@ -18,7 +18,7 @@ const blogUrl = `${siteUrl}/blog`;
  */
 export const buildEnd = async (config: SiteConfig): Promise<void> => {
   const feed = new Feed({
-    title: 'NAPCORE Store Blog',
+    title: 'Awesome NAPCORE Tools Blog',
     description: 'Latest updates on European mobility data tools and standards',
     id: blogUrl,
     link: blogUrl,

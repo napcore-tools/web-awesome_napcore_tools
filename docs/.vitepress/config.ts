@@ -23,7 +23,7 @@ handleValidationResult('CATEGORIES', categoriesValidationResult);
 const BASE_PATH = process.env.VITEPRESS_BASE || '/';
 
 export default defineConfig({
-  title: 'NAPCORE Store',
+  title: 'Awesome NAPCORE Tools',
   description: 'Curated catalog of European mobility data-related tools',
   // Dynamically set the base path for assets and routing
   base: BASE_PATH,
@@ -32,7 +32,7 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { name: 'theme-color', content: '#0066cc' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'NAPCORE Store' }],
+    ['meta', { property: 'og:title', content: 'Awesome NAPCORE Tools' }],
     ['meta', { property: 'og:description', content: 'Curated tools for European mobility data professionals' }],
   ],
   markdown: {

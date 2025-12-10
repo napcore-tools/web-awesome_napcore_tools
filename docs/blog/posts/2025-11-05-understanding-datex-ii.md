@@ -16,7 +16,7 @@ published: true
 
 # Understanding DATEX II for Traffic Management
 
-DATEX II is one of the most important standards in European traffic management and traveler information systems. In this article, we'll explore what makes DATEX II essential and how you can leverage tools in the NAPCORE Store to work with it.
+DATEX II is one of the most important standards in European traffic management and traveler information systems. In this article, we'll explore what makes DATEX II essential and how you can leverage tools in the Awesome NAPCORE Tools to work with it.
 
 ## What is DATEX II?
 
@@ -52,7 +52,7 @@ DATEX II is mandated for use in National Access Points (NAPs) across Europe, ens
 
 ## Tools for Working with DATEX II
 
-The NAPCORE Store includes several tools specifically designed for DATEX II:
+The Awesome NAPCORE Tools includes several tools specifically designed for DATEX II:
 
 - **Validators**: Ensure your DATEX II data conforms to the standard
 - **Converters**: Transform data between different versions or formats

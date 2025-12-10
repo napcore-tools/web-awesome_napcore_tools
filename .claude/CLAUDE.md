@@ -1,8 +1,8 @@
-# NAPCORE Store - Project Context
+# Awesome NAPCORE Tools - Project Context
 
 ## Project Overview
 
-This is a VitePress documentation site for the NAPCORE Store - a catalog of tools, standards, and resources for European mobility data exchange and Intelligent Transport Systems (ITS).
+This is a VitePress documentation site for the Awesome NAPCORE Tools - a catalog of tools, standards, and resources for European mobility data exchange and Intelligent Transport Systems (ITS).
 
 ## Technology Stack
 

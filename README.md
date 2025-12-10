@@ -1,4 +1,4 @@
-# NAPCORE Store
+# Awesome NAPCORE Tools
 
 > Curated tools for European mobility data professionals
 
@@ -56,7 +56,7 @@ npm run preview
 
 ## 📝 Blog
 
-The NAPCORE Store includes a blog for news, updates, and insights about European mobility data standards and tools.
+The Awesome NAPCORE Tools includes a blog for news, updates, and insights about European mobility data standards and tools.
 
 ### Creating a Blog Post
 
@@ -149,7 +149,7 @@ All tags are clickable and styled consistently throughout the blog.
 
 ## 📄 Document Types
 
-The NAPCORE Store uses a custom markdown plugin (`napCoreMarkdownPlugin`) to automatically generate standardized content based on document type. This keeps content DRY (Don't Repeat Yourself) by defining metadata once in frontmatter.
+The Awesome NAPCORE Tools uses a custom markdown plugin (`napCoreMarkdownPlugin`) to automatically generate standardized content based on document type. This keeps content DRY (Don't Repeat Yourself) by defining metadata once in frontmatter.
 
 ### Tool Documents (`document: tool`)
 
@@ -277,7 +277,7 @@ lastUpdated: 2025-10-22
 
 ## 📝 Custom Markdown Directives
 
-The NAPCORE Store includes custom markdown directives for creating collapsible sections.
+The Awesome NAPCORE Tools includes custom markdown directives for creating collapsible sections.
 
 ### `chapter` Directive
 

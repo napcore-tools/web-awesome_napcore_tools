@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 /**
- * Playwright Configuration for NAPCORE Store
+ * Playwright Configuration for Awesome NAPCORE Tools
  *
  * Tests the built VitePress site to ensure:
  * - All pages build successfully
