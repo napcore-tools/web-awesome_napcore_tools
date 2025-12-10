@@ -18,9 +18,15 @@ handleValidationResult('STANDARD_METADATA', standardsValidationResult);
 const categoriesValidationResult = validateAllCategories();
 handleValidationResult('CATEGORIES', categoriesValidationResult);
 
+// Use process.env to read the variable.
+// If the variable is not set, default to '/' (root path).
+const BASE_PATH = process.env.VITEPRESS_BASE || '/';
+
 export default defineConfig({
   title: 'NAPCORE Store',
   description: 'Curated catalog of European mobility data-related tools',
+  // Dynamically set the base path for assets and routing
+  base: BASE_PATH,
 
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],

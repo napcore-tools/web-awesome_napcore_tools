@@ -36,11 +36,17 @@ jobs:
           node-version: 20
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          # Explicitly enables GitHub Pages for the repository if not already set.
+          enablement: true
       - name: Install dependencies and build pages
         # This assumes your package.json (at the root) has a 'build' script defined
         run: |
+          # Get the repository name from the built-in GITHUB_REPOSITORY variable
+          REPO_NAME=${GITHUB_REPOSITORY#*/}
+          BASE_PATH=/${REPO_NAME}/
           npm install
-          npm run build
+          VITEPRESS_BASE=$BASE_PATH npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
