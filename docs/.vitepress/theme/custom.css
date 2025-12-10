@@ -416,3 +416,19 @@ a.tool-link:hover {
 .pager .sidebar-badge {
   display: none;
 }
+
+/* Site title text can wrap (if needed) instead of just  overflowing */
+a.title > span {
+  white-space: normal; /* Allows text to wrap to the next line */
+
+  /* Breaks words that are too long to fit within the container,
+     even if there are no natural break opportunities.
+     Use 'break-all' for more aggressive breaking (breaks any character),
+     or 'break-word' (legacy for overflow-wrap) which breaks at arbitrary points if necessary.
+     Consider `overflow-wrap` first for most cases. */
+  word-break: break-word; /* or break-all */
+
+  /* Allows words to be broken if they are too long to fit within the container.
+     This is generally the preferred method for breaking long words. */
+  overflow-wrap: break-word;
+}
