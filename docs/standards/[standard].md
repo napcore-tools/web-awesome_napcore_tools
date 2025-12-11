@@ -5,6 +5,7 @@
 <script setup>
 // This import ensures VitePress watches standards.yaml for changes
 import { data as _standardsData } from '../.vitepress/core/data-loaders/standards.data'
+import { withBase } from 'vitepress'
 </script>
 
 # {{ $params.standardName }}
@@ -37,7 +38,7 @@ import { data as _standardsData } from '../.vitepress/core/data-loaders/standard
 
 <ul>
   <li v-for="related in $params.details.related_standards_with_titles" :key="related.slug">
-    <a :href="`/standards/${related.slug}`">{{ related.title }}</a>
+    <a :href="withBase(`/standards/${related.slug}`)">{{ related.title }}</a>
   </li>
 </ul>
 

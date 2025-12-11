@@ -5,7 +5,7 @@
         {{ statusEmoji }} {{ statusLabel }}
       </div>
       <h3 class="tool-card-title">
-        <a :href="`/tools/${tool.slug}`">{{ tool.title }}</a>
+        <a :href="withBase(`/tools/${tool.slug}`)">{{ tool.title }}</a>
       </h3>
       <p v-if="subtitle" class="tool-card-subtitle">{{ subtitle }}</p>
     </div>
@@ -23,7 +23,7 @@
       <a v-if="tool.website" :href="tool.website" target="_blank" class="tool-link"> Website </a>
       <a v-if="tool.repository" :href="tool.repository" target="_blank" class="tool-link"> Repository </a>
       <a v-if="tool.documentation" :href="tool.documentation" target="_blank" class="tool-link"> Documentation </a>
-      <a :href="`/tools/${tool.slug}`" class="tool-link">Details</a>
+      <a :href="withBase(`/tools/${tool.slug}`)" class="tool-link">Details</a>
     </div>
   </div>
 </template>
@@ -31,6 +31,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import type { Tool } from '@/core/data-loaders/tools.data';
+import { withBase } from 'vitepress';
 
 interface Props {
   tool: Tool;

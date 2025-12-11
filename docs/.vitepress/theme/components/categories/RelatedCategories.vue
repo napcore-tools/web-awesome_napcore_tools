@@ -2,7 +2,7 @@
   <div v-if="relatedCategories.length > 0">
     <ul>
       <li v-for="category in relatedCategories" :key="category.slug">
-        <a :href="`./${category.slug}`">{{ category.title }}</a>
+        <a :href="withBase(`./${category.slug}`)">{{ category.title }}</a>
       </li>
     </ul>
   </div>
@@ -13,6 +13,7 @@
 import { computed } from 'vue';
 import { useRoute } from 'vitepress';
 import { getCategoryBySlug } from '@/core/metadata/categories';
+import { withBase } from 'vitepress';
 
 const route = useRoute();
 

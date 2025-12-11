@@ -5,14 +5,14 @@
       <li v-if="resolvedCategories.length > 0">
         <strong>Categories</strong>:
         <template v-for="(category, index) in resolvedCategories" :key="category.slug">
-          <a :href="category.url">{{ category.title }}</a>
+          <a :href="withBase(category.url)">{{ category.title }}</a>
           <span v-if="index < resolvedCategories.length - 1">, </span>
         </template>
       </li>
       <li v-if="resolvedStandards.length > 0">
         <strong>Standards</strong>:
         <template v-for="(standard, index) in resolvedStandards" :key="standard.slug">
-          <a :href="standard.url">{{ standard.title }}</a>
+          <a :href="withBase(standard.url)">{{ standard.title }}</a>
           <span v-if="index < resolvedStandards.length - 1">, </span>
         </template>
       </li>
@@ -92,6 +92,7 @@ import { computed } from 'vue';
 import { useData } from 'vitepress';
 import { getCategoryBySlug } from '@/core/metadata/categories';
 import { data as standardsData } from '@/core/data-loaders/standards.data';
+import { withBase } from 'vitepress';
 
 const { frontmatter } = useData();
 

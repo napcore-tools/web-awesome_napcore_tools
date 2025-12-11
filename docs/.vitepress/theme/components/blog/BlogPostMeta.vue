@@ -16,7 +16,7 @@
         <a
           v-for="resolvedTag in resolvedTags"
           :key="resolvedTag.slug"
-          :href="resolvedTag.url"
+          :href="withBase(resolvedTag.url)"
           :class="['tag', resolvedTag.type]"
         >
           {{ resolvedTag.title }}
@@ -30,6 +30,7 @@
 import { useData } from 'vitepress';
 import { computed } from 'vue';
 import { resolveTags } from '@/core/utils/tagResolver';
+import { withBase } from 'vitepress';
 
 const { frontmatter } = useData();
 

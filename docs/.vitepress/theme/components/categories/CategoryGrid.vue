@@ -1,6 +1,11 @@
 <template>
   <div class="category-grid">
-    <a v-for="category in categories" :key="category.slug" :href="`/categories/${category.slug}`" class="category-card">
+    <a
+      v-for="category in categories"
+      :key="category.slug"
+      :href="withBase(`/categories/${category.slug}`)"
+      class="category-card"
+    >
       <span class="category-badge">{{ category.count }}</span>
       <span class="category-icon">{{ category.icon }}</span>
       <h3 class="category-title">{{ category.title }}</h3>
@@ -13,6 +18,7 @@
 import { computed } from 'vue';
 import { data as tools } from '@/core/data-loaders/tools.data';
 import { CATEGORIES } from '@/core/metadata/categories';
+import { withBase } from 'vitepress';
 
 interface Props {
   sortByCount?: boolean;

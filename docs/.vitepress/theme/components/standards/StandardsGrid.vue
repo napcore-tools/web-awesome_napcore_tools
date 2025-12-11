@@ -3,7 +3,7 @@
     <a
       v-for="standard in standards"
       :key="standard.slug"
-      :href="`/standards/${standard.slug}`"
+      :href="withBase(`/standards/${standard.slug}`)"
       class="category-card standard-card"
     >
       <span class="category-badge">{{ standard.count }}</span>
@@ -18,6 +18,7 @@
 import { computed } from 'vue';
 import { data as tools } from '@/core/data-loaders/tools.data';
 import { getStandardMetadata } from '@/core/metadata/standards';
+import { withBase } from 'vitepress';
 
 interface Props {
   sortByCount?: boolean;

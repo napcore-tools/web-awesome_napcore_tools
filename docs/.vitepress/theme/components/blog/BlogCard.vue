@@ -2,7 +2,7 @@
   <div class="blog-card">
     <div class="blog-card-header">
       <h3 class="blog-card-title">
-        <a :href="post.url">{{ post.title }}</a>
+        <a :href="withBase(post.url)">{{ post.title }}</a>
       </h3>
       <div class="blog-card-meta">
         <span class="blog-date">📅 {{ post.date.string }}</span>
@@ -16,7 +16,7 @@
       <a
         v-for="resolvedTag in resolvedTags.slice(0, 5)"
         :key="resolvedTag.slug"
-        :href="resolvedTag.url"
+        :href="withBase(resolvedTag.url)"
         :class="['blog-tag', resolvedTag.type]"
       >
         {{ resolvedTag.title }}
@@ -29,6 +29,7 @@
 import { computed } from 'vue';
 import type { BlogPost } from '@/core/data-loaders/blog.data';
 import { resolveTags } from '@/core/utils';
+import { withBase } from 'vitepress';
 
 interface Props {
   post: BlogPost;
