@@ -34,6 +34,11 @@ export default defineConfig({
       'link',
       { rel: 'alternate', type: 'application/rss+xml', title: 'Awesome NAPCORE Tools Blog Feed', href: '/feed.rss' },
     ],
+    ['link', { rel: 'alternate', type: 'text/markdown', title: 'LLM-friendly documentation', href: '/llms.txt' }],
+    [
+      'link',
+      { rel: 'alternate', type: 'text/markdown', title: 'Complete LLM-friendly documentation', href: '/llms-full.txt' },
+    ],
     ['meta', { name: 'theme-color', content: '#0066cc' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Awesome NAPCORE Tools' }],
