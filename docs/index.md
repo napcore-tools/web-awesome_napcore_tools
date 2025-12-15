@@ -115,7 +115,7 @@ Have a tool that helps with mobility data? Share it with the community through o
 
 Connect with other mobility data professionals, ask questions, and share your experiences.
 
-[GitHub Discussions →](https://github.com/napcore-tools/web-napcore_store/discussions)
+[GitHub Discussions →](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
 
 </div>
 
