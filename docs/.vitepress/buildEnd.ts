@@ -5,7 +5,7 @@ import type { SiteConfig } from 'vitepress';
 import { createContentLoader } from 'vitepress';
 
 // TODO: Update this with your actual site URL when deploying
-const siteUrl = process.env.SITE_URL || 'https://napcore-store.eu';
+const siteUrl = process.env.SITE_URL || 'https://awesome.napcore.eu';
 const blogUrl = `${siteUrl}/blog`;
 
 /**
