@@ -39,14 +39,27 @@ jobs:
         with:
           # Explicitly enables GitHub Pages for the repository if not already set.
           enablement: true
-      - name: Install dependencies and build pages
-        # This assumes your package.json (at the root) has a 'build' script defined
+      - name: Check for custom domain
+        id: check-domain
         run: |
-          # Get the repository name from the built-in GITHUB_REPOSITORY variable
-          REPO_NAME=${GITHUB_REPOSITORY#*/}
-          BASE_PATH=/${REPO_NAME}/
+          CNAME=$(gh api repos/${{ github.repository }}/pages --jq '.cname // empty')
+          if [ -n "$CNAME" ]; then
+            echo "has_custom_domain=true" >> $GITHUB_OUTPUT
+            echo "Custom domain detected: $CNAME"
+          else
+            echo "has_custom_domain=false" >> $GITHUB_OUTPUT
+            echo "No custom domain set"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install dependencies and build pages
+        run: |
           npm install
-          VITEPRESS_BASE=$BASE_PATH npm run build
+          # Set base path only if no custom domain is configured
+          if [ "${{ steps.check-domain.outputs.has_custom_domain }}" = "false" ]; then
+            export VITEPRESS_BASE=/${GITHUB_REPOSITORY#*/}/
+          fi
+          npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
