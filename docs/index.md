@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Awesome NAPCORE Tools
-  text: "Status: Proof-of-concept"
+  text: ""
   tagline: Curated catalog of European mobility data-related tools
   image:
     src: https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png
@@ -72,12 +72,6 @@ features:
     details: Technical documentation, specifications, and implementation guides
     link: /categories/references
 ---
-
----
-
-::: warning
-This site is work in progress and in a proof-of-concept stage.
-:::
 
 ---
 

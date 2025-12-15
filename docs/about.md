@@ -1,9 +1,5 @@
 # About the Awesome NAPCORE Tools project
 
-::: warning
-This site is work in progress and in a proof-of-concept stage.
-:::
-
 The Awesome NAPCORE Tools is a community-driven initiative to collect, curate, and showcase open-source tools that support European mobility data standards.
 
 ## Mission
