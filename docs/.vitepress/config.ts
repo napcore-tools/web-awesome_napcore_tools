@@ -30,6 +30,10 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+    [
+      'link',
+      { rel: 'alternate', type: 'application/rss+xml', title: 'Awesome NAPCORE Tools Blog Feed', href: '/feed.rss' },
+    ],
     ['meta', { name: 'theme-color', content: '#0066cc' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Awesome NAPCORE Tools' }],
