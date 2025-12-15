@@ -122,6 +122,7 @@ export default defineConfig({
   vite: {
     plugins: [llmstxtPlugin()],
     resolve: {
+      preserveSymlinks: true,
       alias: {
         '@': fileURLToPath(new URL('.', import.meta.url)),
       },
