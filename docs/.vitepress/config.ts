@@ -98,6 +98,7 @@ export default defineConfig({
         },
         link: 'https://github.com/napcore-tools/web-awesome_napcore_tools/discussions',
       },
+      { icon: 'rss', link: '/feed.rss' },
     ],
 
     footer: {
