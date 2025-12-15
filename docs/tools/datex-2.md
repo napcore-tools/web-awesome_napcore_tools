@@ -1,6 +1,6 @@
 ---
 document: tool
-title: DATEX II (example 1)
+title: DATEX II Documentation
 description: Platform Independent data model for the exchange of traffic and travel information (TTI) for Intelligent Transport Systems (ITS).
 fullDescription: DATEX II is a robust, platform-independent data model and exchange standard used primarily in Europe for the real-time sharing of traffic and travel information (TTI) between traffic management centers, service providers, and end-users.
 categories:
