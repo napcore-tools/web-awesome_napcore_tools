@@ -122,7 +122,7 @@ This browser complements other DATEX II tools like:
 The **datex2json converter** is particularly interesting as it demonstrates how to extract and transform DATEX II model data from Enterprise Architect files into a web-friendly format. This approach could be valuable for other standard-specific browsers.
 :::
 
-## Getting Started
+## Getting Started Just Now
 
 1. Visit [browser.datex2.eu](https://browser.datex2.eu)
 2. Use the search bar to find specific elements
