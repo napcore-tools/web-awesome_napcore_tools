@@ -76,7 +76,7 @@ export default defineConfig({
       { text: 'Tools', link: '/categories/' },
       { text: 'Contribute', link: '/contribute' },
       { text: 'Blog', link: '/blog' },
-      { text: 'Status (WIP)', link: '/about' },
+      { text: 'About', link: '/about' },
     ],
 
     sidebar: {
