@@ -4,13 +4,9 @@
 
 A community-driven catalog of open-source tools that support European mobility data standards like DATEX II, NeTEx, SIRI, and mobilityDCAT-AP.
 
-## DEV Note
-
-TODO: replace all links to `/napcore-store/` with the proper links when they are ready!
-
 ## 🌐 Live Site
 
-Visit the catalog at: **[napcore-tools.eu](#)** _(coming soon)_
+Visit the catalog at: [awesome.napcore.eu](https://awesome.napcore.eu/)
 
 ## 🎯 Mission
 
@@ -35,8 +31,8 @@ Make it easier for developers, data publishers, and mobility professionals to fi
 
 ```bash
 # Clone the repository
-git clone https://github.com/napcore/napcore-store.git
-cd napcore-store
+git clone https://github.com/napcore-tools/web-awesome_napcore_tools.git
+cd web-awesome_napcore_tools
 
 # Install dependencies
 npm install
@@ -356,7 +352,7 @@ Content that blends seamlessly with text flow.
 ## 📂 Project Structure
 
 ```
-napcore-store/
+web-awesome_napcore_tools/
 ├── docs/
 │   ├── .vitepress/
 │   │   ├── config.ts          # VitePress configuration
@@ -390,7 +386,7 @@ We welcome contributions! Here's how:
 
 1. Check our [criteria](./docs/contribute.md#tool-criteria)
 2. Gather [required information](./docs/contribute.md#required-information)
-3. [Start a discussion](https://github.com/napcore-tools/web-napcore_store/discussions) with "Tool Submission" category
+3. [Start a discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions) with "Tool Submission" category
 4. Community review and approval
 5. Tool added to catalog!
 
@@ -402,8 +398,8 @@ We welcome contributions! Here's how:
 
 ### Report Issues
 
-- [Open an issue](https://github.com/napcore/napcore-store/issues)
-- [Start a discussion](https://github.com/napcore-tools/web-napcore_store/discussions)
+- [Open an issue](https://github.com/napcore-tools/web-awesome_napcore_tools/issues)
+- [Start a discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
 
 See [contribute.md](./docs/contribute.md) for detailed guidelines.
 
@@ -460,6 +456,6 @@ This catalog is made possible by:
 
 ## 📬 Contact
 
-- **GitHub**: [napcore/napcore-store](https://github.com/napcore/napcore-store)
-- **Discussions**: [GitHub Discussions](https://github.com/napcore-tools/web-napcore_store/discussions)
+- **GitHub**: [GitHub](https://github.com/napcore-tools/web-awesome_napcore_tools)
+- **Discussions**: [GitHub Discussions](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
 - **NAPCORE Website**: [napcore.eu](https://napcore.eu)
