@@ -113,10 +113,10 @@ export default defineConfig({
       },
     },
 
-    // editLink: {
-    //   pattern: 'https://github.com/napcore/napcore-store/edit/main/docs/:path',
-    //   text: 'Suggest changes to this page'
-    // }
+    editLink: {
+      pattern: 'https://github.com/napcore-tools/web-awesome_napcore_tools/edit/main/docs/:path',
+      text: 'Suggest changes to this page',
+    },
   },
 
   vite: {
