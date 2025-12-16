@@ -26,6 +26,8 @@ To be included in the catalog, tools should meet these criteria:
 - ✅ **Functional**: Currently working and maintained
 - ✅ **Documented**: Has basic documentation or usage instructions
 
+If you tool mainly focuses on international data standards like GTFS and GBFS, consider adding it to the [awesome-transit list](https://github.com/MobilityData/awesome-transit).
+
 ### Preferred Characteristics
 
 - 🌟 **Open source**: Open source tools are preferred
