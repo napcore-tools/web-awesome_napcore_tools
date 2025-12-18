@@ -2,14 +2,17 @@
 layout: home
 
 hero:
-  name: Awesome NAPCORE Tools
-  text: ""
+  name: Awesome NAPCORE Tools [PoC]
+  text: "Proof of Concept - Awaiting Official Approval"
   tagline: Curated catalog of European mobility data-related tools
   image:
     src: https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png
     alt: NAPCORE Logo
   actions:
     - theme: brand
+      text: Read About This Proof of Concept
+      link: /blog/posts/2025-12-18-proof-of-concept.html
+    - theme: alt
       text: Browse Tools
       link: /categories/
     - theme: alt
@@ -74,6 +77,12 @@ features:
 ---
 
 ---
+
+::: warning
+This site is in the state of Proof of Concept add is awaiting official approval.
+
+See this [blog post](/blog/posts/2025-12-18-proof-of-concept.html).
+:::
 
 <StatsBar />
 

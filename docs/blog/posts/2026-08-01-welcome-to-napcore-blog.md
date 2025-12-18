@@ -7,7 +7,7 @@ tags:
   - announcement
   - napcore
   - datex-ii
-published: true
+published: false
 ---
 
 <BlogPostMeta />
