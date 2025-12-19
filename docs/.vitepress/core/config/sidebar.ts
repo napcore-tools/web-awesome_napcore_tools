@@ -87,14 +87,22 @@ function getStandardItemsWithCounts() {
       slug,
       title: standard?.title || slug, // Fallback to slug if not found
       count: counts[slug] || 0,
+      endorsed: standard?.endorsed ? '🏆' : '',
     };
   });
 
-  // Sort standards alphabetically by title
-  standardsWithMetadata.sort((a, b) => a.title.localeCompare(b.title));
+  // Sort standards: endorsed first, then alphabetically by title
+  standardsWithMetadata.sort((a, b) => {
+    // First, sort by endorsed status (endorsed items first)
+    if (a.endorsed && !b.endorsed) return -1;
+    if (!a.endorsed && b.endorsed) return 1;
 
-  return standardsWithMetadata.map(({ slug, title, count }) => ({
-    text: `${title} <span class="sidebar-badge">${count}</span>`,
+    // If both have same endorsed status, sort alphabetically by title
+    return a.title.localeCompare(b.title);
+  });
+
+  return standardsWithMetadata.map(({ slug, title, count, endorsed }) => ({
+    text: `${endorsed} ${title} <span class="sidebar-badge">${count}</span>`,
     link: `/standards/${slug}`,
   }));
 }
@@ -112,7 +120,7 @@ export function getToolsSidebar() {
       items: getCategoryItemsWithCounts(),
     },
     {
-      text: 'Featured Tools',
+      text: 'NAPCORE Endorsed',
       items: [
         { text: 'DATEX II Browser', link: '/tools/datex-browser' },
         { text: 'DATEX II Schema Tool', link: '/tools/datex-schema-tool' },
@@ -137,7 +145,7 @@ export function getCategoriesSidebar() {
       items: [
         { text: 'By Categories', link: 'categories/' },
         { text: 'By Standards', link: 'standards/' },
-        { text: 'Featured', link: 'categories/featured' },
+        { text: 'NAPCORE Endorsed', link: 'categories/endorsed/' },
         { text: 'All', link: 'all/' },
       ],
     },

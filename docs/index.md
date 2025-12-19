@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: Awesome NAPCORE Tools [PoC]
-  text: "Proof of Concept - Awaiting Official Approval"
+  name: Awesome NAPCORE Tools Catalog [PoC]
+  text: ""
   tagline: Curated catalog of European mobility data-related tools
   image:
     src: https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png
@@ -20,75 +20,81 @@ hero:
       link: /contribute
 
 features:
-  - icon: ✓
-    title: Validators
-    details: Schema validation and business rule checking tools for ensuring data quality and compliance
-    link: /categories/validators
-
-  - icon: ⇄
-    title: Converters & Transformers
-    details: Format conversion and data transformation utilities for mobility data standards
-    link: /categories/converters
-
-  - icon: ⬆
-    title: Version Upgrade Tools
-    details: Migration and compatibility utilities for standard version upgrades
-    link: /categories/version-tools
-
-  - icon: 📦
-    title: SDKs & Libraries
-    details: Programming language bindings and libraries for easier implementation
-    link: /categories/sdks
-
-  - icon: 🎯
-    title: Reference Implementations
-    details: Working examples and demo applications showing best practices
-    link: /categories/reference-implementations
-
   - icon: 🛠
-    title: Development Tools
-    details: Browsers, editors, and generators for development workflows
-    link: /categories/development
-
-  - icon: 📊
-    title: Data Quality Tools
-    details: Validation, enrichment, and cleaning utilities for high-quality data
-    link: /categories/data-quality
-
-  - icon: 🧪
-    title: Testing Utilities
-    details: Test data generation and validation tools for robust testing
-    link: /categories/testing
-
-  - icon: 🏷
-    title: Metadata Tools
-    details: Catalog generation and discovery tools for better data findability
-    link: /categories/metadata
-
-  - icon: 🗺️
-    title: Route planners
-    details: Route planners are digital tools that help you find the best way to get from one location to another
-    link: /categories/route-planners
-
+    title: Categories
+    details: Development Tools, Validators, Converters, Libraries, ...
+    link: /categories/
   - icon: 📚
-    title: References
-    details: Technical documentation, specifications, and implementation guides
-    link: /categories/references
+    title: Standards
+    details: DATEX II, NeTEx, SIRI, TN-ITS, mobilityDCAT-AP, ...
+    link: /standards/
+  - icon: 🏆
+    title: NAPCORE Endorsed
+    details: Tool officially recommended by NAPCORE community
+    link: /categories/endorsed/
+#  - icon: ✓
+#    title: Validators
+#    details: Schema validation and business rule checking tools for ensuring data quality and compliance
+#    link: /categories/validators
+#
+#  - icon: ⇄
+#    title: Converters & Transformers
+#    details: Format conversion and data transformation utilities for mobility data standards
+#    link: /categories/converters
+#
+#  - icon: ⬆
+#    title: Version Upgrade Tools
+#    details: Migration and compatibility utilities for standard version upgrades
+#    link: /categories/version-tools
+#
+#  - icon: 📦
+#    title: SDKs & Libraries
+#    details: Programming language bindings and libraries for easier implementation
+#    link: /categories/sdks
+#
+#  - icon: 🎯
+#    title: Reference Implementations
+#    details: Working examples and demo applications showing best practices
+#    link: /categories/reference-implementations
+#
+#  - icon: 🛠
+#    title: Development Tools
+#    details: Browsers, editors, and generators for development workflows
+#    link: /categories/development
+#
+#  - icon: 📊
+#    title: Data Quality Tools
+#    details: Validation, enrichment, and cleaning utilities for high-quality data
+#    link: /categories/data-quality
+#
+#  - icon: 🧪
+#    title: Testing Utilities
+#    details: Test data generation and validation tools for robust testing
+#    link: /categories/testing
+#
+#  - icon: 🏷
+#    title: Metadata Tools
+#    details: Catalog generation and discovery tools for better data findability
+#    link: /categories/metadata
+#
+#  - icon: 🗺️
+#    title: Route planners
+#    details: Route planners are digital tools that help you find the best way to get from one location to another
+#    link: /categories/route-planners
+#
+#  - icon: 📚
+#    title: References
+#    details: Technical documentation, specifications, and implementation guides
+#    link: /categories/references
 ---
 
----
-
-::: warning
-This site is in the state of Proof of Concept add is awaiting official approval.
-
-See this [blog post](/blog/posts/2025-12-18-proof-of-concept.html).
-:::
-
-<StatsBar />
-
-## Featured Tools
+## NAPCORE Endorsed
 
 <ToolsGrid :selectedTools="['datex-browser', 'mobilitydcat-generator', 'datex-schema-tool']" />
+
+---
+
+<StatsBar />
 
 ## About the Catalog
 
