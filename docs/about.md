@@ -54,6 +54,8 @@ Tools supporting European mobility data standards:
 - **DCAT-AP** - General data catalog metadata
 - And other related standards
 
+Note that the [awesome-transit list](https://github.com/MobilityData/awesome-transit) collects tools for international data standards like GTFS and GBFS, as well as a few tools for NeTEx and SIRI.
+
 ## Who This Is For
 
 ### Developers & Implementers
