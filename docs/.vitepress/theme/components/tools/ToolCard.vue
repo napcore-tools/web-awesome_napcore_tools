@@ -4,6 +4,7 @@
       <div v-if="tool.status !== 'active'" :class="['tool-status', tool.status]">
         {{ statusEmoji }} {{ statusLabel }}
       </div>
+      <div v-if="tool.endorsed" :class="['tool-endorsed']">🏆 NAPCORE Endorsed</div>
       <h3 class="tool-card-title">
         <a :href="withBase(`/tools/${tool.slug}`)">{{ tool.title }}</a>
       </h3>
