@@ -6,6 +6,7 @@ fullDescription: DATEX II is a robust, platform-independent data model and excha
 categories:
   - references
 status: active
+endorsed: true
 license: CEN Standard
 repository: null
 website: https://datex2.eu/

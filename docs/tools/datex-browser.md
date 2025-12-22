@@ -7,6 +7,7 @@ categories:
   - development
   - converters
 status: active
+endorsed: true
 license: MIT
 repository: https://gitlab.com/tamtamresearch-public/datex2/browser
 website: https://browser.datex2.eu

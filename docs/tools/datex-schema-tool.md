@@ -7,6 +7,7 @@ categories:
   - converters
   - development
 status: active
+endorsed: true
 repository: null
 website: https://webtool.datex2.eu
 documentation: null

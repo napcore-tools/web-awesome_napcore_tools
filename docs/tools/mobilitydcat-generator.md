@@ -7,6 +7,7 @@ categories:
   - metadata
   - development
 status: active
+endorsed: true
 license: Apache-2.0
 repository: https://github.com/mobilityDCAT-AP/mobilitydcatap-ui
 website: https://mobilitydcat-ap.github.io/mobilitydcatap-ui/

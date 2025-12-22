@@ -163,6 +163,7 @@ categories:
   - validators
   - development
 status: active
+endorsed: true
 license: MIT
 ---
 ```

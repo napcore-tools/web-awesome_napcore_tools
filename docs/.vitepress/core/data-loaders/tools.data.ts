@@ -14,6 +14,7 @@ export interface Tool {
   description: string;
   categories: string[];
   status: string;
+  endorsed?: boolean;
   license?: string;
   repository?: string;
   website?: string;
@@ -92,6 +93,7 @@ export default {
           description: data.description || '',
           categories: Array.isArray(data.categories) ? data.categories : [data.categories],
           status: data.status || 'unknown',
+          endorsed: data.endorsed,
           license: data.license,
           repository: data.repository,
           website: data.website,
