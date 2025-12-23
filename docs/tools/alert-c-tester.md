@@ -8,7 +8,7 @@ categories:
   - data-quality
   - testing
 status: active
-endorsed: true
+endorsed: false
 license: MIT
 repository: https://github.com/tamtamresearch/alert-c-locations-tester
 website: null
