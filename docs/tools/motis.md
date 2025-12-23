@@ -6,7 +6,7 @@ fullDescription: Scalable high-performance intermodal travel information system 
 categories:
   - route-planners
 status: active
-endorsed: true
+endorsed: false
 license: MIT
 repository: https://github.com/motis-project/motis
 website: https://transitous.org/
