@@ -6,7 +6,10 @@ A community-driven catalog of open-source tools that support European mobility d
 
 ## 🌐 Live Site
 
-Visit the catalog at: [awesome.napcore.eu](https://awesome.napcore.eu/)
+Visit the catalog at:
+
+- Proof of Concept: <https://napcore-tools.github.io/web-awesome_napcore_tools/>
+- Finally (after approving version 1):  [awesome.napcore.eu](https://awesome.napcore.eu/) (expected January/February 2026)
 
 ## 🎯 Mission
 
