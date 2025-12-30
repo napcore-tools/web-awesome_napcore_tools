@@ -1,0 +1,106 @@
+{
+  "workflow_version": "1.2.0",
+  "timestamps": {
+    "started": "2025-12-30T14:55:00Z",
+    "last_updated": "2025-12-30T15:47:00Z",
+    "completed": "2025-12-30T15:47:00Z"
+  },
+  "mode": "initial_scan_yolo",
+  "scan_level": "deep",
+  "project_root": "/Users/javl/devel/ttr/gitlab/personal/honza/try-bmad-v6/web-awesome_napcore_tools",
+  "output_folder": "/Users/javl/devel/ttr/gitlab/personal/honza/try-bmad-v6/web-awesome_napcore_tools/project-docs",
+  "completed_steps": [
+    {
+      "step": "step_1",
+      "status": "completed",
+      "timestamp": "2025-12-30T15:06:00Z",
+      "summary": "Classified as monolith with 1 part"
+    },
+    {
+      "step": "step_2",
+      "status": "completed",
+      "timestamp": "2025-12-30T15:10:00Z",
+      "summary": "Found 3 existing docs, governance context noted"
+    },
+    {
+      "step": "step_3",
+      "status": "completed",
+      "timestamp": "2025-12-30T15:15:00Z",
+      "summary": "Tech stack: VitePress on TypeScript"
+    },
+    {
+      "step": "step_4",
+      "status": "completed",
+      "timestamp": "2025-12-30T15:20:00Z",
+      "summary": "Conditional analysis complete, 1 file written"
+    },
+    {
+      "step": "step_5",
+      "status": "completed",
+      "timestamp": "2025-12-30T15:25:00Z",
+      "summary": "Source tree documented"
+    },
+    {
+      "step": "step_6",
+      "status": "completed",
+      "timestamp": "2025-12-30T15:30:00Z",
+      "summary": "Dev/deployment guides written"
+    },
+    {
+      "step": "step_8",
+      "status": "completed",
+      "timestamp": "2025-12-30T15:35:00Z",
+      "summary": "Architecture docs written for 1 part"
+    },
+    {
+      "step": "step_9",
+      "status": "completed",
+      "timestamp": "2025-12-30T15:40:00Z",
+      "summary": "All supporting docs written"
+    },
+    {
+      "step": "step_10",
+      "status": "completed",
+      "timestamp": "2025-12-30T15:45:00Z",
+      "summary": "Master index generated"
+    },
+    {
+      "step": "step_11",
+      "status": "completed",
+      "timestamp": "2025-12-30T15:46:00Z",
+      "summary": "Validation and review complete"
+    },
+    {
+      "step": "step_12",
+      "status": "completed",
+      "timestamp": "2025-12-30T15:47:00Z",
+      "summary": "Workflow complete"
+    }
+  ],
+  "current_step": "completed",
+  "findings": {
+    "project_classification": "Monolith, 1 part, VitePress (Vue 3) + TypeScript",
+    "existing_docs_count": 3,
+    "user_context": "Governance framework for tool catalog submissions, two-tier endorsement system",
+    "technology_stack": "VitePress 2.0 + Vue 3 + TypeScript 5.9, testing with Vitest + Playwright"
+  },
+  "project_types": [
+    {
+      "part_id": "main",
+      "project_type_id": "web",
+      "display_name": "Web Application (VitePress)"
+    }
+  ],
+  "outputs_generated": [
+    "project-scan-report.json",
+    "ui-components.md",
+    "source-tree-analysis.md",
+    "development-guide.md",
+    "deployment-guide.md",
+    "architecture.md",
+    "governance.md",
+    "project-overview.md",
+    "index.md"
+  ],
+  "resume_instructions": "Workflow completed successfully"
+}
