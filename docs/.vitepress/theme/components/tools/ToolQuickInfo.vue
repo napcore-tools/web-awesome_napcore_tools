@@ -5,6 +5,10 @@
         <td><strong>Status</strong></td>
         <td>{{ statusEmoji }} {{ statusLabel }}</td>
       </tr>
+      <tr v-if="frontmatter.endorsed">
+        <td><strong>Endorsed</strong></td>
+        <td>🏆 NAPCORE Endorsed</td>
+      </tr>
       <tr v-if="frontmatter.license">
         <td><strong>License</strong></td>
         <td>{{ frontmatter.license }}</td>
