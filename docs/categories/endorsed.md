@@ -1,4 +1,4 @@
-# NAPCORE Endorsed
+# Endorsed Tools
 
 <ToolsFilter :selected-tools="['datex-browser', 'mobilitydcat-generator', 'alert-c-tester', 'datex-schema-tool']" />
 

@@ -20,6 +20,7 @@ const __dirname = path.dirname(__filename);
 export interface Standard {
   title: string; // Display name of the standard
   longTitle?: string; // Optional long/full title
+  endorsed?: boolean; // Whether the standard is endorsed
   icon: string; // Emoji icon for visual identification
   description?: string; // Optional short description for UI
   domain: string; // Domain/category (e.g., "Public transport")

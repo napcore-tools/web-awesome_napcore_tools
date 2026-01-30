@@ -22,10 +22,14 @@ import { withBase } from 'vitepress';
 
 interface Props {
   sortByCount?: boolean;
+  showEndorsed?: boolean;
+  showNotEndorsed?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   sortByCount: false,
+  showEndorsed: true,
+  showNotEndorsed: true,
 });
 
 // Extract unique standards and count tools
@@ -43,7 +47,7 @@ const standards = computed(() => {
   }
 
   // Convert to array with metadata
-  const standardsList = Array.from(standardsMap.entries()).map(([slug, count]) => {
+  let standardsList = Array.from(standardsMap.entries()).map(([slug, count]) => {
     const metadata = getStandardMetadata(slug);
     return {
       name: metadata.title,
@@ -51,7 +55,13 @@ const standards = computed(() => {
       count,
       icon: metadata.icon,
       description: metadata.description,
+      endorsed: metadata.endorsed,
     };
+  });
+
+  // Filter byt endorsed
+  standardsList = standardsList.filter((standard) => {
+    return (props.showEndorsed && standard.endorsed) || (props.showNotEndorsed && !standard.endorsed);
   });
 
   // Sort by count if requested (descending order), otherwise alphabetically by title

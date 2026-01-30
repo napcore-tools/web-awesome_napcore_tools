@@ -23,7 +23,7 @@ handleValidationResult('CATEGORIES', categoriesValidationResult);
 const BASE_PATH = process.env.VITEPRESS_BASE || '/';
 
 export default defineConfig({
-  title: 'Awesome NAPCORE Tools [PoC]',
+  title: 'Awesome NAPCORE Tools',
   description: 'Curated catalog of European mobility data-related tools',
   // Dynamically set the base path for assets and routing
   base: BASE_PATH,

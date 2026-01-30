@@ -120,7 +120,7 @@ export function getToolsSidebar() {
       items: getCategoryItemsWithCounts(),
     },
     {
-      text: 'NAPCORE Endorsed',
+      text: 'Endorsed Tools',
       items: [
         { text: 'DATEX II Browser', link: '/tools/datex-browser' },
         { text: 'DATEX II Schema Tool', link: '/tools/datex-schema-tool' },
@@ -145,7 +145,7 @@ export function getCategoriesSidebar() {
       items: [
         { text: 'By Categories', link: 'categories/' },
         { text: 'By Standards', link: 'standards/' },
-        { text: 'NAPCORE Endorsed', link: 'categories/endorsed/' },
+        { text: 'Endorsed Tools', link: 'categories/endorsed/' },
         { text: 'All', link: 'all/' },
       ],
     },

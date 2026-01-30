@@ -17,6 +17,7 @@ export type { Standard };
  */
 export interface StandardMetadata {
   title: string;
+  endorsed?: boolean;
   icon: string;
   description?: string;
 }
@@ -35,6 +36,7 @@ export function getStandardMetadata(standardSlug: string): StandardMetadata {
   if (standard) {
     return {
       title: standard.title,
+      endorsed: standard.endorsed,
       icon: standard.icon,
       description: standard.description,
     };
@@ -43,6 +45,7 @@ export function getStandardMetadata(standardSlug: string): StandardMetadata {
   // Fallback for unknown standards
   return {
     title: standardSlug, // Use slug as title if metadata not found
+    endorsed: standard.endorsed,
     icon: '📄', // Default icon for unknown standards
     description: undefined,
   };
