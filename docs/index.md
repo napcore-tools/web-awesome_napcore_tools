@@ -100,7 +100,7 @@ features:
 
 ## NAPCORE Endorsed
 
-<ToolsGrid :selectedTools="['datex-browser', 'mobilitydcat-generator', 'datex-schema-tool']" />
+<ToolsGrid :selected-tools="['datex-2', 'datex-browser', 'mobilitydcat-generator', 'datex-schema-tool', 'nplan']" />
 
 ---
 
