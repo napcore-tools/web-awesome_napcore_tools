@@ -1,6 +1,6 @@
 # Endorsed Tools
 
-<ToolsFilter :selected-tools="['mobilitydcat-generator', 'alert-c-tester', 'datex-schema-tool']" />
+<ToolsFilter :selected-tools="['datex-2', 'datex-browser', 'mobilitydcat-generator', 'datex-schema-tool', 'nplan']" />
 
 ## Submit Your Tool
 

@@ -13,10 +13,10 @@ hero:
     #      text: Read About This Proof of Concept
     #      link: /blog/posts/2025-12-18-proof-of-concept.html
     - theme: brand
-      text: Endorsed Tools
+      text: 🏆 NAPCORE Endorsed Tools
       link: /categories/endorsed.html
     - theme: brand
-      text: Endorsed Standards
+      text: 🏆 NAPCORE Endorsed Standards
       link: /standards/
     - theme: alt
       text: Browse Tools
@@ -35,11 +35,11 @@ features:
     details: Development Tools, Validators, Converters, Libraries, ...
     link: /categories/
   - icon: 📚
-    title: Standards
-    details: DATEX II, NeTEx, SIRI, TN-ITS, mobilityDCAT-AP, ...
+    title: NAPCORE Endorsed Standards
+    details: Standards recognised by NAPCORE Community marked as endorsed
     link: /standards/
   - icon: 🏆
-    title: NAPCORE Endorsed
+    title: NAPCORE Endorsed Tools
     details: Tool officially recommended by NAPCORE community
     link: /categories/endorsed/
 #  - icon: ✓
