@@ -6,7 +6,7 @@ fullDescription: NPlan is an open-source editor and backend system designed for 
 categories:
   - reference-implementations
 status: active
-endorsed: false
+endorsed: true
 license: EUPL-1.2
 repository: https://github.com/entur/Transportdata-open-source-intro#nplan
 website: null
