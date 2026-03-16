@@ -41,10 +41,10 @@ Together, they form a complete toolchain for planning, editing, and exporting tr
 
 ## Key Features
 
-- **Flexible service planning**: Support for demand-responsive transport, booking-based services, and scheduled routes
+- **Flexible service planning**: Support for demand-responsive transport, flexible transport, and scheduled routes
 - **NeTEx export**: Native support for exporting data in NeTEx format with Nordic profile compliance
 - **User-friendly interface**: Web-based editor designed for non-technical transport planners
-- **Small-scale optimization**: Tailored for operators managing up to 30 flexible or scheduled lines
+- **Small-scale optimization**: Used by operators managing up to 30 flexible or scheduled lines
 - **Complete workflow**: Integrated planning, editing, and export in a single system
 - **Open source**: Community-driven development with contributions from multiple countries
 - **Production-proven**: Active use across multiple Nordic countries with real-world validation
