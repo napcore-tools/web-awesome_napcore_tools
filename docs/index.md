@@ -24,7 +24,7 @@ features:
     details: Only openly accessible tools are included.
   - icon: 🇪🇺
     title: NAPCORE Provided
-    details: Present tools built directly by the NAPCORE project.
+    details: Lists tools built by NAPCORE project.
     link: /categories/napcore-provided/
   - icon: 🌍
     title: Community Provided
