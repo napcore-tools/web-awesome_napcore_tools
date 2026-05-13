@@ -25,7 +25,7 @@ export const buildEnd = async (config: SiteConfig): Promise<void> => {
     language: 'en',
     image: `${siteUrl}/favicon.png`,
     favicon: `${siteUrl}/favicon.png`,
-    copyright: 'Copyright © 2025 NAPCORE - National Access Point Coordination Organisation for Europe',
+    copyright: 'Copyright © 2026 NAPCORE - National Access Point Coordination Organisation for Europe',
   });
 
   // Load blog posts with content

@@ -108,7 +108,7 @@ export default defineConfig({
 
     footer: {
       message: 'Co-financed by the Connecting Europe Facility of the European Union',
-      copyright: 'Copyright © 2025 NAPCORE - National Access Point Coordination Organisation for Europe',
+      copyright: 'Copyright © 2026 NAPCORE - National Access Point Coordination Organisation for Europe',
     },
 
     search: {
