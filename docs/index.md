@@ -1,10 +1,9 @@
 ---
 layout: home
-
 hero:
   name: Awesome NAPCORE Tools
-  text: ""
-  tagline: Tools built by the NAPCORE team and curated from the European mobility data ecosystem
+  text: European Mobility Data Tools Catalog
+  tagline: Discover tools from NAPCORE and the wider community
   image:
     src: https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png
     alt: NAPCORE Logo
