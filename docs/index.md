@@ -22,81 +22,55 @@ hero:
 features:
   - icon: 🏆
     title: NAPCORE Provided Tools
-    details: Tools built or endorsed by the NAPCORE team
+    details: Tools built directly by the NAPCORE team - verified, maintained, and ready to use.
     link: /categories/napcore-provided/
-  - icon: 🛠
+  - icon: 🛠️
     title: Categories
-    details: Development Tools, Validators, Converters, Libraries, ...
+    details: Validators, converters, SDKs, metadata tools, and more  organised by use case.
     link: /categories/
   - icon: 📚
     title: Standards
-    details: Standards recognised by the NAPCORE community
+    details: Browse tools by mobility data standard - DATEX II, NeTEx, SIRI, mobilityDCAT-AP, and more.
     link: /standards/
-#  - icon: ✓
-#    title: Validators
-#    details: Schema validation and business rule checking tools for ensuring data quality and compliance
-#    link: /categories/validators
-#
-#  - icon: ⇄
-#    title: Converters & Transformers
-#    details: Format conversion and data transformation utilities for mobility data standards
-#    link: /categories/converters
-#
-#  - icon: ⬆
-#    title: Version Upgrade Tools
-#    details: Migration and compatibility utilities for standard version upgrades
-#    link: /categories/version-tools
-#
-#  - icon: 📦
-#    title: SDKs & Libraries
-#    details: Programming language bindings and libraries for easier implementation
-#    link: /categories/sdks
-#
-#  - icon: 🎯
-#    title: Reference Implementations
-#    details: Working examples and demo applications showing best practices
-#    link: /categories/reference-implementations
-#
-#  - icon: 🛠
-#    title: Development Tools
-#    details: Browsers, editors, and generators for development workflows
-#    link: /categories/development
-#
-#  - icon: 📊
-#    title: Data Quality Tools
-#    details: Validation, enrichment, and cleaning utilities for high-quality data
-#    link: /categories/data-quality
-#
-#  - icon: 🧪
-#    title: Testing Utilities
-#    details: Test data generation and validation tools for robust testing
-#    link: /categories/testing
-#
-#  - icon: 🏷
-#    title: Metadata Tools
-#    details: Catalog generation and discovery tools for better data findability
-#    link: /categories/metadata
-#
-#  - icon: 🗺️
-#    title: Route planners
-#    details: Route planners are digital tools that help you find the best way to get from one location to another
-#    link: /categories/route-planners
-#
-#  - icon: 📚
-#    title: References
-#    details: Technical documentation, specifications, and implementation guides
-#    link: /categories/references
+  - icon: 📰
+    title: Blog
+    details: News, updates, and technical articles from the NAPCORE team and community.
+    link: /blog/
 ---
 
-## NAPCORE Provided
+<div class="hp-sections">
+
+<div class="hp-section hp-panel">
+
+<div class="hp-section-header">
+
+## 🏆 NAPCORE Provided Tools
+
+Tools built directly by the NAPCORE team - verified, maintained, and ready to use.
+
+</div>
 
 <ToolsGrid :endorsed-only="true" />
 
----
+<div class="hp-section-cta">
 
-<StatsBar />
+[View all Tools →](/categories/)
+
+</div>
+
+</div>
+
+<div class="hp-section hp-panel hp-panel--slim">
+  <StatsBar />
+</div>
+
+<div class="hp-section hp-panel">
+
+<div class="hp-section-header">
 
 ## About
+
+</div>
 
 Awesome NAPCORE Tools is a curated catalogue of tools for European mobility data, built and maintained by the NAPCORE team. It covers tools developed in-house by NAPCORE as well as third-party tools the team considers valuable for the ecosystem.
 
@@ -104,11 +78,19 @@ Awesome NAPCORE Tools is a curated catalogue of tools for European mobility data
 While the catalogue is curated by NAPCORE, we welcome tool submissions from the wider community. All submissions are reviewed by the NAPCORE team before inclusion.
 :::
 
+</div>
+
+<div class="hp-section hp-panel">
+
+<div class="hp-section-header">
+
 ## Get Involved
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-  
-<div class="info-box">
+</div>
+
+<div class="hp-cards">
+
+<div class="hp-card">
 
 ### 🎯 Submit a Tool
 
@@ -118,31 +100,34 @@ Have a tool that helps with mobility data? Submit it for review by the NAPCORE t
 
 </div>
 
-<div class="info-box green">
+<div class="hp-card hp-card--green">
 
 ### 💬 Join the Discussion
 
-Connect with other mobility data professionals, ask questions, and share your experiences.
+Connect with other mobility data professionals, ask questions, and share your experiences with the community.
 
 [GitHub Discussions →](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
 
 </div>
 
-<div class="info-box orange">
+<div class="hp-card hp-card--orange">
 
-### 📚 Browse by Category
+### 📰 Read the Blog
 
-Looking for a specific type of tool? Browse the full catalog organized by category.
+Stay up to date with news, technical articles, and updates from the NAPCORE team.
 
-[View Tools →](/categories/)
+[Go to Blog →](/blog/)
+
+</div>
 
 </div>
 
 </div>
 
----
+</div>
 
-<div style="text-align: center; padding: 2rem 0; color: var(--vp-c-text-2);">
-  <p><strong>NAPCORE</strong> - National Access Point Coordination Organisation for Europe</p>
-  <p style="font-size: 0.9rem; margin-top: 0.5rem;">Co-financed by the Connecting Europe Facility of the European Union</p>
+<div class="hp-footer">
+
+**NAPCORE** - National Access Point Coordination Organisation for Europe
+
 </div>

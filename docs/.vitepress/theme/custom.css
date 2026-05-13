@@ -446,3 +446,129 @@ a.title > span {
      This is generally the preferred method for breaking long words. */
   overflow-wrap: break-word;
 }
+
+/* ============================================
+   Homepage Layout (hp-*)
+   ============================================ */
+
+.hp-stats-band {
+  margin: 2rem 0;
+  padding: 0.25rem 2rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+}
+
+.hp-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.hp-section {
+  padding: 0;
+}
+
+.hp-section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.hp-section-header h2 {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.hp-section-header p,
+.hp-section-header > p {
+  color: var(--vp-c-text-2);
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin: 0.75rem auto 0;
+}
+
+.hp-section-cta {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.hp-panel {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  padding: 2.5rem;
+}
+
+.hp-panel--slim {
+  padding: 0.5rem 2.5rem;
+}
+
+.hp-panel--slim .stats-grid {
+  margin: 0;
+}
+
+/* Get Involved cards */
+.hp-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.hp-card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-left: 4px solid var(--vp-c-brand-1);
+  border-radius: 8px;
+  padding: 1.75rem;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hp-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 102, 204, 0.1);
+  transform: translateY(-2px);
+}
+
+.hp-card--green {
+  border-left-color: var(--napcore-green);
+}
+
+.hp-card--orange {
+  border-left-color: var(--napcore-orange);
+}
+
+.VPHome {
+  margin-bottom: 0 !important;
+}
+
+.VPHomeContent {
+  padding-top: 0 !important;
+  padding-bottom: 2rem !important;
+}
+
+.hp-footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--vp-c-text-2);
+}
+
+.hp-footer strong {
+  color: var(--vp-c-text-1);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hp-panel {
+    padding: 1.5rem;
+  }
+
+  .hp-stats-band {
+    padding: 0.25rem 1rem;
+  }
+}
