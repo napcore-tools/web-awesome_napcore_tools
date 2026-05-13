@@ -1,11 +1,11 @@
 ---
 document: category
-contributeTip: Know a metadata editor, validator, or catalog management tool for mobility datasets?
+contributeTip: Know a metadata editor, validator, or catalogue management tool for mobility datasets?
 ---
 
 # Metadata Tools
 
-Tools that help create, manage, and validate metadata for mobility and transport datasets — ensuring discoverability, interoperability, and compliance with European data catalog standards.
+Tools that help create, manage, and validate metadata for mobility and transport datasets — ensuring discoverability, interoperability, and compliance with European data catalogue standards.
 
 ::: details Click for more
 
@@ -17,18 +17,18 @@ They often implement profiles such as **DCAT-AP** and **mobilityDCAT-AP**, requi
 They are used by:
 
 - **Data publishers** – to describe datasets and APIs
-- **Catalog administrators** – to manage metadata repositories
+- **Catalogue administrators** – to manage metadata repositories
 - **Developers and integrators** – to automate metadata generation and harvesting
 
 ### Types of Metadata Tools
 
-| Type                         | Description                                                | Example                           |
-| ---------------------------- | ---------------------------------------------------------- | --------------------------------- |
-| **Metadata Editors**         | Create or edit dataset descriptions manually               | DCAT-AP Metadata Editor           |
-| **Metadata Validators**      | Check metadata against DCAT-AP or mobilityDCAT-AP profiles | mobilityDCAT-AP Validator         |
-| **Catalog Management Tools** | Manage and publish metadata catalogs                       | CKAN, GeoNetwork                  |
-| **Metadata Converters**      | Transform metadata between different profiles              | DCAT ↔ mobilityDCAT-AP Converter |
-| **Harvesting Tools**         | Automate metadata synchronization between catalogs         | DCAT Harvester                    |
+| Type                           | Description                                                | Example                           |
+| ------------------------------ | ---------------------------------------------------------- | --------------------------------- |
+| **Metadata Editors**           | Create or edit dataset descriptions manually               | DCAT-AP Metadata Editor           |
+| **Metadata Validators**        | Check metadata against DCAT-AP or mobilityDCAT-AP profiles | mobilityDCAT-AP Validator         |
+| **Catalogue Management Tools** | Manage and publish metadata catalogues                     | CKAN, GeoNetwork                  |
+| **Metadata Converters**        | Transform metadata between different profiles              | DCAT ↔ mobilityDCAT-AP Converter |
+| **Harvesting Tools**           | Automate metadata synchronisation between catalogues       | DCAT Harvester                    |
 
 ### Common Use Cases
 
@@ -40,13 +40,13 @@ Create compliant metadata to publish datasets on National Access Points and open
 
 Check dataset descriptions for completeness and compliance with DCAT-AP or mobilityDCAT-AP requirements.
 
-#### Catalog Management
+#### Catalogue Management
 
 Maintain collections of datasets with version control, search, and linked data capabilities.
 
 #### Metadata Conversion
 
-Transform or map metadata between internal and public catalog formats.
+Transform or map metadata between internal and public catalogue formats.
 
 ### Example Tool
 

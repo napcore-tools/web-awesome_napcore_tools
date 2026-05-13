@@ -47,7 +47,7 @@ Convert legacy data (CSV, XML, JSON) into standardized mobility formats for inte
 
 #### Metadata Alignment
 
-Adapt dataset metadata between **DCAT-AP** and **mobilityDCAT-AP** profiles for consistent cataloging.
+Adapt dataset metadata between **DCAT-AP** and **mobilityDCAT-AP** profiles for consistent cataloguing.
 
 ### Example Tool
 

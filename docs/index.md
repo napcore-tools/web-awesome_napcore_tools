@@ -98,10 +98,10 @@ features:
 
 ## About
 
-Awesome NAPCORE Tools is a curated catalog of tools for European mobility data, built and maintained by the NAPCORE team. It covers tools developed in-house by NAPCORE as well as third-party tools the team considers valuable for the ecosystem.
+Awesome NAPCORE Tools is a curated catalogue of tools for European mobility data, built and maintained by the NAPCORE team. It covers tools developed in-house by NAPCORE as well as third-party tools the team considers valuable for the ecosystem.
 
 ::: info Contributions Welcome
-While the catalog is curated by NAPCORE, we welcome tool submissions from the wider community. All submissions are reviewed by the NAPCORE team before inclusion.
+While the catalogue is curated by NAPCORE, we welcome tool submissions from the wider community. All submissions are reviewed by the NAPCORE team before inclusion.
 :::
 
 ## Get Involved

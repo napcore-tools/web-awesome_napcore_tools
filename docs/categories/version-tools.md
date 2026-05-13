@@ -46,7 +46,7 @@ Integrate upgrade utilities in pipelines to process datasets dynamically.
 
 #### Metadata Synchronization
 
-Update catalog metadata to align with new schema profiles.
+Update catalogue metadata to align with new schema profiles.
 
 ### Example Tool
 

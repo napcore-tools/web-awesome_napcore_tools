@@ -1,6 +1,6 @@
 # All Tools
 
-Browse all available tools in the NAPCORE catalog. Use the sidebar to filter by category or search above.
+Browse all available tools in the NAPCORE catalogue. Use the sidebar to filter by category or search above.
 
 ## Currently Available Tools
 

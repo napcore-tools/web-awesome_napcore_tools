@@ -4,6 +4,18 @@
 
 This is a VitePress documentation site for the Awesome NAPCORE Tools - a catalog of tools, standards, and resources for European mobility data exchange and Intelligent Transport Systems (ITS).
 
+## Language
+
+All user-facing content must use **British English** spelling. Key differences:
+- catalogue (not catalog), cataloguing (not cataloging)
+- organisation/organisations (not organization/organizations)
+- recognised (not recognized)
+- standardised (not standardized)
+- prioritise (not prioritize)
+- harmonise (not harmonize)
+- centralised (not centralized)
+- synchronisation (not synchronization)
+
 ## Technology Stack
 
 - **Framework**: VitePress (Vue 3-based static site generator)

@@ -11,7 +11,7 @@ Tools that measure, monitor, and improve the quality of mobility and transport d
 
 ### What Are Data Quality Tools?
 
-Data quality tools help organizations ensure their data is **fit for purpose** before it is published, exchanged, or used in analytics.
+Data quality tools help organisations ensure their data is **fit for purpose** before it is published, exchanged, or used in analytics.
 They detect issues such as missing values, schema violations, or inconsistent references, supporting better decision-making and regulatory compliance.
 
 These tools are often used by:

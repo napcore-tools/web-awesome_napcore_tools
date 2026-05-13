@@ -120,7 +120,7 @@ export function getCategoriesSidebar() {
       text: 'Tools',
       collapsed: false,
       items: [
-        { text: 'Provided by NAPCORE', link: 'categories/napcore-provided/' },
+        { text: 'NAPCORE Provided', link: 'categories/napcore-provided/' },
         { text: 'By Categories', link: 'categories/' },
         { text: 'By Standards', link: 'standards/' },
         { text: 'All', link: 'all/' },

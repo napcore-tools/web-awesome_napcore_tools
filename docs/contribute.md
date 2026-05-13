@@ -1,23 +1,23 @@
-# Contribute to the Catalog
+# Contribute to the Catalogue
 
 Help grow the European mobility tools ecosystem by contributing tools, improvements, and feedback.
 
 ## How to Submit a Tool
 
-We welcome tool submissions from developers, organizations, and mobility data professionals. The submission process is designed to be simple while ensuring quality and relevance.
+We welcome tool submissions from developers, organisations, and mobility data professionals. The submission process is designed to be simple while ensuring quality and relevance.
 
 ### Submission Process
 
 1. **Check if tool fits**: Review our [criteria](#tool-criteria) below
 2. **Gather information**: Collect the details listed in [required information](#required-information)
 3. **Start a discussion**: Create a new discussion in our [GitHub Discussions](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions) with the "Tool Submission" category
-4. **Community review**: The managing team and community will review your submission
+4. **Community review**: The NAPCORE team and community will review your submission
 5. **Documentation**: Once approved, we'll help create the tool page
-6. **Publication**: Your tool will be added to the catalog!
+6. **Publication**: Your tool will be added to the catalogue!
 
 ## Tool Criteria
 
-To be included in the catalog, tools should meet these criteria:
+To be included in the catalogue, tools should meet these criteria:
 
 ### Essential Requirements
 
@@ -29,7 +29,7 @@ To be included in the catalog, tools should meet these criteria:
 ### Preferred Characteristics
 
 - 🌟 **Open source**: Open source tools are preferred
-- 🌟 **Standards-compliant**: Supports recognized European mobility standards
+- 🌟 **Standards-compliant**: Supports recognised European mobility standards
 - 🌟 **Actively maintained**: Regular updates and responsive to issues
 - 🌟 **Community-driven**: Open to contributions and feedback
 - 🌟 **Well-documented**: Comprehensive documentation and examples
@@ -136,7 +136,7 @@ Found a broken link or incorrect information?
 
 ### Suggest Improvements
 
-Have ideas for improving the catalog?
+Have ideas for improving the catalogue?
 
 - Share them in [GitHub Discussions](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
 - Propose new categories
@@ -145,7 +145,7 @@ Have ideas for improving the catalog?
 
 ### Share Feedback
 
-Using a tool from the catalog? Share your experience!
+Using a tool from the catalogue? Share your experience!
 
 - Add comments to tool discussions
 - Share success stories
@@ -160,7 +160,7 @@ Using a tool from the catalog? Share your experience!
 2. **Community Input** (3-7 days): Community members can provide feedback
 3. **Decision** (within 2 weeks): Tool is approved, needs revisions, or is not suitable
 4. **Documentation** (1-2 weeks): If approved, tool page is created
-5. **Publication**: Tool appears in catalog
+5. **Publication**: Tool appears in the catalogue
 
 ### Rejection Reasons
 

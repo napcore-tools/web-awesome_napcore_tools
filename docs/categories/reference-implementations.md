@@ -26,7 +26,7 @@ They are useful for:
 | ------------------------ | ----------------------------------------------------- | ------------------------------- |
 | **Data Exchange APIs**   | Implementations of DATEX II, SIRI, or NeTEx services  | DATEX II REST API Reference     |
 | **Publishing Workflows** | Sample pipelines for data publication on NAPs         | NeTEx → NAP Publisher Demo      |
-| **Metadata Catalogs**    | Example DCAT-AP / mobilityDCAT-AP portals             | Open Mobility Metadata Portal   |
+| **Metadata Catalogues**  | Example DCAT-AP / mobilityDCAT-AP portals             | Open Mobility Metadata Portal   |
 | **End-to-End Solutions** | Complete integration demos showing multiple standards | Cross-Standard Integration Demo |
 
 ### Common Use Cases
