@@ -87,7 +87,8 @@ function getStandardItemsWithCounts() {
       slug,
       title: standard?.title || slug, // Fallback to slug if not found
       count: counts[slug] || 0,
-      endorsed: standard?.endorsed ? '🏆' : '',
+      // We do not support endorsed standards anymore
+      endorsed: '',
     };
   });
 

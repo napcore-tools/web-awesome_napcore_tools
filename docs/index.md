@@ -15,9 +15,6 @@ hero:
     - theme: brand
       text: 🏆 NAPCORE Endorsed Tools
       link: /categories/endorsed.html
-    - theme: brand
-      text: 🏆 NAPCORE Endorsed Standards
-      link: /standards/
     - theme: alt
       text: Browse Tools
       link: /categories/
@@ -31,7 +28,7 @@ features:
     details: Development Tools, Validators, Converters, Libraries, ...
     link: /categories/
   - icon: 📚
-    title: NAPCORE Endorsed Standards
+    title: Standards
     details: Standards recognised by NAPCORE Community marked as endorsed
     link: /standards/
   - icon: 🏆
