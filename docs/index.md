@@ -19,13 +19,15 @@ hero:
       link: /contribute
 
 features:
-  - icon: 🌱 Openly Accessible Tools
+  - icon: 🌱
+    title: Openly Accessible Tools
     details: Only openly accessible tools are included.
-  - icon: 🏆
+  - icon: 🇪🇺
     title: NAPCORE Provided Tools
     details: Present tools built directly by the NAPCORE project.
     link: /categories/napcore-provided/
-  - icon: 🌍 Community Provided Tools
+  - icon: 🌍
+    title: Community Provided Tools
     details: Community provided tools enlisted too.
 ---
 
