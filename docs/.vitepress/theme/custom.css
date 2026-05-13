@@ -272,34 +272,6 @@ a.tool-link:hover {
   line-height: 1.5;
 }
 
-/* Stats section */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
-  text-align: center;
-}
-
-.stat-item {
-  padding: 1.5rem;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--vp-c-brand-1);
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  color: var(--vp-c-text-2);
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 500;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .VPHero .name {
@@ -312,10 +284,6 @@ a.tool-link:hover {
 
   .category-grid {
     grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -436,10 +404,6 @@ a.title > span {
 
 .hp-panel--slim {
   padding: 0.5rem 2.5rem;
-}
-
-.hp-panel--slim .stats-grid {
-  margin: 0;
 }
 
 /* Get Involved cards */

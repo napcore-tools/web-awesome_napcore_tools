@@ -24,12 +24,12 @@ import { data as stats } from '@/core/data-loaders/stats.data';
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 1.5rem 0;
   text-align: center;
 }
 
 .stat-item {
-  padding: 1.5rem;
+  padding: 0.75rem;
 }
 
 .stat-number {
