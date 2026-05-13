@@ -22,7 +22,7 @@
 
     <!-- eslint-disable-next-line vue/no-v-html -->
     <p v-if="filteredTools.length === 0" class="no-tools-message" v-html="emptyStateMessage"></p>
-    <div v-else class="feature-grid">
+    <div v-else class="tools-grid">
       <ToolCard v-for="tool in filteredTools" :key="tool.slug" :tool="tool" :subtitle="getSubtitle(tool)" />
     </div>
   </div>
@@ -297,6 +297,13 @@ function getSubtitle(tool: Tool): string {
 </script>
 
 <style scoped>
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
 .no-tools-message {
   padding: 2rem;
   text-align: center;

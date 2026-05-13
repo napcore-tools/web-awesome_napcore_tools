@@ -300,39 +300,6 @@ a.tool-link:hover {
   font-weight: 500;
 }
 
-/* Feature grid for homepage */
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-/* Custom badges */
-.badge {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-right: 0.5rem;
-}
-
-.badge-green {
-  background: var(--vp-c-green-soft);
-  color: var(--napcore-green);
-}
-
-.badge-blue {
-  background: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
-}
-
-.badge-orange {
-  background: rgba(255, 107, 53, 0.14);
-  color: var(--napcore-orange);
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .VPHero .name {
@@ -347,10 +314,6 @@ a.tool-link:hover {
     grid-template-columns: 1fr;
   }
 
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
-
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -360,30 +323,6 @@ a.tool-link:hover {
 .VPFooter {
   border-top: 1px solid var(--vp-c-divider);
   padding-top: 2rem;
-}
-
-/* Custom container for tool listings */
-.tools-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* Info boxes */
-.info-box {
-  background: var(--vp-c-bg-soft);
-  border-left: 4px solid var(--vp-c-brand-1);
-  padding: 1rem 1.5rem;
-  margin: 1.5rem 0;
-  border-radius: 4px;
-}
-
-.info-box.green {
-  border-left-color: var(--napcore-green);
-}
-
-.info-box.orange {
-  border-left-color: var(--napcore-orange);
 }
 
 /* Standards supported list */
@@ -450,14 +389,6 @@ a.title > span {
 /* ============================================
    Homepage Layout (hp-*)
    ============================================ */
-
-.hp-stats-band {
-  margin: 2rem 0;
-  padding: 0.25rem 2rem;
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
-}
 
 .hp-sections {
   display: flex;
@@ -566,9 +497,5 @@ a.title > span {
 @media (max-width: 768px) {
   .hp-panel {
     padding: 1.5rem;
-  }
-
-  .hp-stats-band {
-    padding: 0.25rem 1rem;
   }
 }
