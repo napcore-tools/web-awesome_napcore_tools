@@ -1,13 +1,13 @@
 ---
 title: Welcome to the Awesome NAPCORE Tools Blog
 description: Introducing the new Awesome NAPCORE Tools blog for updates on European mobility data tools and standards.
-date: 2025-11-06
+date: 2026-05-13
 author: NAPCORE Team
 tags:
   - announcement
   - napcore
   - datex-ii
-published: false
+published: true
 ---
 
 <BlogPostMeta />

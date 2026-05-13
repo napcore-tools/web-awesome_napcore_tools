@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: Awesome NAPCORE Tools Catalog [Provisional Content]
+  name: Awesome NAPCORE Tools
   text: ""
-  tagline: Curated catalog of European mobility data-related tools
+  tagline: Tools built by the NAPCORE team and curated from the European mobility data ecosystem
   image:
     src: https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png
     alt: NAPCORE Logo
@@ -26,10 +26,6 @@ hero:
       link: /contribute
 
 features:
-  - icon: ⏳
-    title: Provisional Content
-    details: Content, including standard and tool endorsements, is provisional until approximately May 2026
-    link: /blog/posts/2025-12-18-proof-of-concept.html
   - icon: 🛠
     title: Categories
     details: Development Tools, Validators, Converters, Libraries, ...
