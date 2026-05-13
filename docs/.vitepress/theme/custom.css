@@ -46,6 +46,7 @@
 /* Custom homepage styles */
 .VPHome {
   padding-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 /* Hero section customization */
@@ -338,19 +339,9 @@ a.tool-link:hover {
   display: none;
 }
 
-/* Site title text can wrap (if needed) instead of just  overflowing */
 a.title > span {
-  white-space: normal; /* Allows text to wrap to the next line */
-
-  /* Breaks words that are too long to fit within the container,
-     even if there are no natural break opportunities.
-     Use 'break-all' for more aggressive breaking (breaks any character),
-     or 'break-word' (legacy for overflow-wrap) which breaks at arbitrary points if necessary.
-     Consider `overflow-wrap` first for most cases. */
-  word-break: break-word; /* or break-all */
-
-  /* Allows words to be broken if they are too long to fit within the container.
-     This is generally the preferred method for breaking long words. */
+  white-space: normal;
+  word-break: break-word;
   overflow-wrap: break-word;
 }
 
@@ -380,8 +371,7 @@ a.title > span {
   margin-top: 0;
 }
 
-.hp-section-header p,
-.hp-section-header > p {
+.hp-section-header p {
   color: var(--vp-c-text-2);
   font-size: 1.05rem;
   max-width: 640px;
@@ -436,10 +426,6 @@ a.title > span {
 
 .hp-card--orange {
   border-left-color: var(--napcore-orange);
-}
-
-.VPHome {
-  margin-bottom: 0 !important;
 }
 
 .VPHomeContent {
