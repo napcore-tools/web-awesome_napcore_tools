@@ -9,12 +9,9 @@ hero:
     src: https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png
     alt: NAPCORE Logo
   actions:
-    #    - theme: brand
-    #      text: Read About This Proof of Concept
-    #      link: /blog/posts/2025-12-18-proof-of-concept.html
     - theme: brand
-      text: 🏆 NAPCORE Endorsed Tools
-      link: /categories/endorsed.html
+      text: 🏆 NAPCORE Provided Tools
+      link: /categories/napcore-provided/
     - theme: alt
       text: Browse Tools
       link: /categories/
@@ -23,18 +20,18 @@ hero:
       link: /contribute
 
 features:
+  - icon: 🏆
+    title: NAPCORE Provided Tools
+    details: Tools built or endorsed by the NAPCORE team
+    link: /categories/napcore-provided/
   - icon: 🛠
     title: Categories
     details: Development Tools, Validators, Converters, Libraries, ...
     link: /categories/
   - icon: 📚
     title: Standards
-    details: Standards recognised by NAPCORE Community marked as endorsed
+    details: Standards recognised by the NAPCORE community
     link: /standards/
-  - icon: 🏆
-    title: NAPCORE Endorsed Tools
-    details: Tool officially recommended by NAPCORE community
-    link: /categories/endorsed/
 #  - icon: ✓
 #    title: Validators
 #    details: Schema validation and business rule checking tools for ensuring data quality and compliance
@@ -91,20 +88,20 @@ features:
 #    link: /categories/references
 ---
 
-## NAPCORE Endorsed
+## NAPCORE Provided
 
-<ToolsGrid :selected-tools="['datex-2', 'datex-browser', 'mobilitydcat-generator', 'datex-schema-tool', 'nplan']" />
+<ToolsGrid :endorsed-only="true" />
 
 ---
 
 <StatsBar />
 
-## About the Catalog
+## About
 
-The Awesome NAPCORE Tools is a community-driven initiative to collect, curate, and showcase open-source tools that support European mobility data standards. Our mission is to make it easier for developers, data publishers, and mobility professionals to find and use the right tools for their needs.
+Awesome NAPCORE Tools is a curated catalog of tools for European mobility data, built and maintained by the NAPCORE team. It covers tools developed in-house by NAPCORE as well as third-party tools the team considers valuable for the ecosystem.
 
-::: info Community-Driven
-This catalog is built and maintained by the European mobility data community. We welcome contributions from tool developers, users, and anyone passionate about improving mobility data infrastructure.
+::: info Contributions Welcome
+While the catalog is curated by NAPCORE, we welcome tool submissions from the wider community. All submissions are reviewed by the NAPCORE team before inclusion.
 :::
 
 ## Get Involved
@@ -115,7 +112,7 @@ This catalog is built and maintained by the European mobility data community. We
 
 ### 🎯 Submit a Tool
 
-Have a tool that helps with mobility data? Share it with the community through our contribution process.
+Have a tool that helps with mobility data? Submit it for review by the NAPCORE team through our contribution process.
 
 [Learn How to Contribute →](/contribute)
 
@@ -135,7 +132,7 @@ Connect with other mobility data professionals, ask questions, and share your ex
 
 ### 📚 Browse by Category
 
-Looking for tools for a specific standard? Browse tools by the standards they support.
+Looking for a specific type of tool? Browse the full catalog organized by category.
 
 [View Tools →](/categories/)
 

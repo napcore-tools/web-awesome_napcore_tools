@@ -109,30 +109,6 @@ function getStandardItemsWithCounts() {
 }
 
 /**
- * Generates sidebar configuration for the /tools/ section.
- * Includes category navigation with counts and featured tools list.
- *
- * @returns Sidebar configuration array for tools pages
- */
-export function getToolsSidebar() {
-  return [
-    {
-      text: 'By Category',
-      items: getCategoryItemsWithCounts(),
-    },
-    {
-      text: 'Endorsed Tools',
-      items: [
-        { text: 'DATEX II Browser', link: '/tools/datex-browser' },
-        { text: 'DATEX II Schema Tool', link: '/tools/datex-schema-tool' },
-        { text: 'mobilityDCAT-AP Generator', link: '/tools/mobilitydcat-generator' },
-        { text: 'ALERT-C Locations Tester', link: '/tools/alert-c-tester' },
-      ],
-    },
-  ];
-}
-
-/**
  * Generates sidebar configuration for the /categories/ section.
  * Includes navigation by category and standard, both with tool counts.
  *
@@ -144,9 +120,9 @@ export function getCategoriesSidebar() {
       text: 'Tools',
       collapsed: false,
       items: [
+        { text: 'Provided by NAPCORE', link: 'categories/napcore-provided/' },
         { text: 'By Categories', link: 'categories/' },
         { text: 'By Standards', link: 'standards/' },
-        { text: 'Endorsed Tools', link: 'categories/endorsed/' },
         { text: 'All', link: 'all/' },
       ],
     },

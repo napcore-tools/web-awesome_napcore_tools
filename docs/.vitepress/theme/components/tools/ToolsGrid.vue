@@ -63,6 +63,7 @@ interface Props {
   selectedTools?: string[];
   showAll?: boolean;
   textFilter?: string;
+  endorsedOnly?: boolean;
 }
 
 const props = defineProps<Props>();
@@ -156,7 +157,11 @@ const filteredTools = computed(() => {
   if (props.showAll === true) {
     result = tools;
   }
-  // Priority 2: If selectedTools is provided, show only those tools (ignores category/standard filters)
+  // Priority 2a: If endorsedOnly is true, show all endorsed tools (ignores category/standard filters)
+  else if (props.endorsedOnly === true) {
+    result = tools.filter((tool: Tool) => tool.endorsed === true);
+  }
+  // Priority 2b: If selectedTools is provided, show only those tools (ignores category/standard filters)
   else if (props.selectedTools && props.selectedTools.length > 0) {
     // Create a map of tools by slug for O(1) lookup performance
     const toolsBySlug = new Map<string, Tool>();

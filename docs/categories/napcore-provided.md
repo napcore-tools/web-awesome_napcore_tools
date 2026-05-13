@@ -1,6 +1,6 @@
-# Endorsed Tools
+# NAPCORE Provided Tools
 
-<ToolsFilter :selected-tools="['datex-2', 'datex-browser', 'mobilitydcat-generator', 'datex-schema-tool', 'nplan']" />
+<ToolsFilter :endorsed-only="true" />
 
 ## Submit Your Tool
 

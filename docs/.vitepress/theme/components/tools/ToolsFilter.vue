@@ -18,6 +18,7 @@
       :standards="props.standards"
       :selected-tools="props.selectedTools"
       :show-all="props.showAll"
+      :endorsed-only="props.endorsedOnly"
       :text-filter="searchText || undefined"
     />
   </div>
@@ -36,11 +37,16 @@ interface Props {
   standards?: string[];
   selectedTools?: string[];
   showAll?: boolean;
+  endorsedOnly?: boolean;
 }
 
 const props = defineProps<Props>();
 const route = useRoute();
 const searchText = ref<string>('');
+
+const CATEGORY_DISPLAY_OVERRIDES: Record<string, string> = {
+  'napcore-provided': 'NAPCORE Provided tools',
+};
 
 // Auto-detect category from route path (e.g., /categories/validators -> validators)
 const autoDetectedCategory = computed(() => {
@@ -82,7 +88,8 @@ const dynamicPlaceholder = computed(() => {
     if (category) {
       return `Search ${category.title}...`;
     }
-    return `Search ${effectiveCategory.value}...`;
+    const override = CATEGORY_DISPLAY_OVERRIDES[effectiveCategory.value];
+    return `Search ${override ?? effectiveCategory.value}...`;
   }
 
   // If filtering by selected tools
@@ -91,7 +98,7 @@ const dynamicPlaceholder = computed(() => {
   }
 
   // Default: all tools or no specific filter
-  return 'Search all tools...';
+  return 'Search All tools...';
 });
 
 // Initialize search from URL query parameter on mount
