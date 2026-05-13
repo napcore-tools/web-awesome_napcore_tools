@@ -23,11 +23,11 @@ features:
     title: Openly Accessible Tools
     details: Only openly accessible tools are included.
   - icon: 🇪🇺
-    title: NAPCORE Provided Tools
+    title: NAPCORE Provided
     details: Present tools built directly by the NAPCORE project.
     link: /categories/napcore-provided/
   - icon: 🌍
-    title: Community Provided Tools
+    title: Community Provided
     details: Community provided tools enlisted too.
 ---
 
