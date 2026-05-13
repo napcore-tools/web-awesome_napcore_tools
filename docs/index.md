@@ -9,32 +9,24 @@ hero:
     alt: NAPCORE Logo
   actions:
     - theme: brand
-      text: 🏆 NAPCORE Provided Tools
+      text: See NAPCORE Provided Tools
       link: /categories/napcore-provided/
     - theme: alt
-      text: Browse Tools
+      text: Browse All Tools
       link: /categories/
     - theme: alt
       text: Submit a Tool
       link: /contribute
 
 features:
+  - icon: 🌱 Openly Accessible Tools
+    details: Only openly accessible tools are included.
   - icon: 🏆
     title: NAPCORE Provided Tools
-    details: Tools built directly by the NAPCORE team - verified, maintained, and ready to use.
+    details: Present tools built directly by the NAPCORE project.
     link: /categories/napcore-provided/
-  - icon: 🛠️
-    title: Categories
-    details: Validators, converters, SDKs, metadata tools, and more  organised by use case.
-    link: /categories/
-  - icon: 📚
-    title: Standards
-    details: Browse tools by mobility data standard - DATEX II, NeTEx, SIRI, mobilityDCAT-AP, and more.
-    link: /standards/
-  - icon: 📰
-    title: Blog
-    details: News, updates, and technical articles from the NAPCORE team and community.
-    link: /blog/
+  - icon: 🌍 Community Provided Tools
+    details: Community provided tools enlisted too.
 ---
 
 <div class="hp-sections">
