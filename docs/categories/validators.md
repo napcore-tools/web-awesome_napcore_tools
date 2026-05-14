@@ -5,9 +5,7 @@ contributeTip: Know a validator for DATEX II, NeTEx, SIRI, or mobilityDCAT-AP?
 
 # Validators
 
-Tools and services that **check the structure and quality of mobility and transport data**, ensuring it complies with European standards such as DATEX II, NeTEx, SIRI, and mobilityDCAT-AP.
-
-::: details Click for more
+::: details Tools and services that **check the structure and quality of mobility and transport data**, ensuring it complies with European standards such as DATEX II, NeTEx, SIRI, and mobilityDCAT-AP.
 
 ### What Are Validators?
 

@@ -5,9 +5,7 @@ contributeTip: Developed or used an SDK or library for mobility standards?
 
 # SDKs & Libraries
 
-Programming language bindings and reusable libraries that simplify the implementation of mobility and transport data standards.
-
-::: details Click for more
+::: details Programming language bindings and reusable libraries that simplify the implementation of mobility and transport data standards.
 
 ### What Are SDKs & Libraries?
 

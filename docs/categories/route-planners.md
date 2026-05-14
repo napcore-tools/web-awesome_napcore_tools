@@ -5,9 +5,7 @@ contributeTip: Know a route planning engine or API using mobility standards?
 
 # Route Planners
 
-Applications and APIs that calculate, visualize, and share routes for transport networks — integrating mobility data from multiple standards and sources.
-
-::: details Click for more
+::: details Applications and APIs that calculate, visualize, and share routes for transport networks — integrating mobility data from multiple standards and sources.
 
 ### What Are Route Planners?
 

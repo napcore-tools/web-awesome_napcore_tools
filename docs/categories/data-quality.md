@@ -5,9 +5,7 @@ contributeTip: Know a data quality tool used in transport data management?
 
 # Data Quality Tools
 
-Tools that measure, monitor, and improve the quality of mobility and transport data — ensuring accuracy, consistency, and reliability across datasets and systems.
-
-::: details Click for more
+::: details Tools that measure, monitor, and improve the quality of mobility and transport data — ensuring accuracy, consistency, and reliability across datasets and systems.
 
 ### What Are Data Quality Tools?
 

@@ -5,9 +5,7 @@ contributeTip: Know a public repository or authoritative documentation set?
 
 # Reference Documentations
 
-Authoritative documentation and specifications that define the structure, semantics, and usage of mobility and transport data standards.
-
-::: details Click for more
+::: details Authoritative documentation and specifications that define the structure, semantics, and usage of mobility and transport data standards.
 
 ### What Is Reference Documentation?
 

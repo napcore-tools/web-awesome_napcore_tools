@@ -5,9 +5,7 @@ contributeTip: Have a working demo or reference implementation of a mobility dat
 
 # Reference Implementations
 
-Working examples and demo applications that showcase best practices for implementing mobility and transport data standards in real-world scenarios.
-
-::: details Click for more
+::: details Working examples and demo applications that showcase best practices for implementing mobility and transport data standards in real-world scenarios.
 
 ### What Are Reference Implementations?
 

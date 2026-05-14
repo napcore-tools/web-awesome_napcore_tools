@@ -5,9 +5,7 @@ contributeTip: Built or use a tool that supports development with mobility data?
 
 # Development Tools
 
-Tools that support the day-to-day development workflow for mobility data systems.
-
-::: details Click for more
+::: details Tools that support the day-to-day development workflow for mobility data systems.
 
 ### What Are Development Tools?
 

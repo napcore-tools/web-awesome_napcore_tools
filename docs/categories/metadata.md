@@ -5,9 +5,7 @@ contributeTip: Know a metadata editor, validator, or catalogue management tool f
 
 # Metadata Tools
 
-Tools that help create, manage, and validate metadata for mobility and transport datasets — ensuring discoverability, interoperability, and compliance with European data catalogue standards.
-
-::: details Click for more
+::: details Tools that help create, manage, and validate metadata for mobility and transport datasets — ensuring discoverability, interoperability, and compliance with European data catalogue standards.
 
 ### What Are Metadata Tools?
 

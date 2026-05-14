@@ -5,9 +5,7 @@ contributeTip: Know a testing framework or simulator for mobility data systems?
 
 # Testing Utilities
 
-Tools and frameworks that support testing of mobility and transport data, services, and systems — ensuring reliability, interoperability, and compliance with data exchange standards.
-
-::: details Click for more
+::: details Tools and frameworks that support testing of mobility and transport data, services, and systems — ensuring reliability, interoperability, and compliance with data exchange standards.
 
 ### What Are Testing Utilities?
 

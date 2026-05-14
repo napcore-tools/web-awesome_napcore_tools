@@ -5,9 +5,7 @@ contributeTip: Know a reliable converter or open-source mapping tool?
 
 # Converters & Transformers
 
-Tools that transform mobility and transport data between different formats, standards, or structures — enabling interoperability, integration, and reuse across systems.
-
-::: details Click for more
+::: details Tools that transform mobility and transport data between different formats, standards, or structures — enabling interoperability, integration, and reuse across systems.
 
 ### What Are Converters?
 

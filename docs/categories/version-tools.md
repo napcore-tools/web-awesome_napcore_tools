@@ -5,9 +5,7 @@ contributeTip: Created or used a migration or upgrade tool for mobility standard
 
 # Version Upgrade Tools
 
-Utilities and scripts that help migrate or convert datasets and systems between different versions of mobility and transport data standards.
-
-::: details Click for more
+::: details Utilities and scripts that help migrate or convert datasets and systems between different versions of mobility and transport data standards.
 
 ### What Are Version Upgrade Tools?
 
