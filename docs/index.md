@@ -5,7 +5,7 @@ hero:
   text: European Mobility Data Tools Catalogue
   tagline: Discover tools from NAPCORE and the wider community
   image:
-    src: https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png
+    src: /napcore-logo.png
     alt: NAPCORE Logo
   actions:
     - theme: brand
@@ -22,7 +22,12 @@ features:
   - icon: 🌱
     title: Openly Accessible Tools
     details: Only openly accessible tools are included.
-  - icon: 🇪🇺
+  - icon:
+      src: /napcore-logo.png
+      alt: NAPCORE
+      width: "32"
+      height: "32"
+      wrap: true
     title: NAPCORE Provided
     details: Lists tools built by the NAPCORE project.
     link: /categories/napcore-provided/
