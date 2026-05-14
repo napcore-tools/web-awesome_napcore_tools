@@ -2,7 +2,7 @@
 layout: home
 hero:
   name: Awesome NAPCORE
-  text: European Mobility Data Tools Catalog
+  text: European Mobility Data Tools Catalogue
   tagline: Discover tools from NAPCORE and the wider community
   image:
     src: https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png
@@ -24,7 +24,7 @@ features:
     details: Only openly accessible tools are included.
   - icon: 🇪🇺
     title: NAPCORE Provided
-    details: Lists tools built by NAPCORE project.
+    details: Lists tools built by the NAPCORE project.
     link: /categories/napcore-provided/
   - icon: 🌍
     title: Community Provided
@@ -39,7 +39,7 @@ features:
 
 ## 🏆 NAPCORE Provided Tools
 
-Tools built directly by the NAPCORE team - verified, maintained, and ready to use.
+Tools developed directly by the NAPCORE team
 
 </div>
 

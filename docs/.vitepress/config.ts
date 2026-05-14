@@ -23,17 +23,14 @@ handleValidationResult('CATEGORIES', categoriesValidationResult);
 const BASE_PATH = process.env.VITEPRESS_BASE || '/';
 
 export default defineConfig({
-  title: 'Awesome NAPCORE Tools',
-  description: 'Curated catalog of European mobility data-related tools',
+  title: 'Awesome NAPCORE',
+  description: 'European Mobility Data Tools Catalogue',
   // Dynamically set the base path for assets and routing
   base: BASE_PATH,
 
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
-    [
-      'link',
-      { rel: 'alternate', type: 'application/rss+xml', title: 'Awesome NAPCORE Tools Blog Feed', href: '/feed.rss' },
-    ],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'Awesome NAPCORE Blog Feed', href: '/feed.rss' }],
     ['link', { rel: 'alternate', type: 'text/markdown', title: 'LLM-friendly documentation', href: '/llms.txt' }],
     [
       'link',
@@ -41,7 +38,7 @@ export default defineConfig({
     ],
     ['meta', { name: 'theme-color', content: '#0066cc' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'Awesome NAPCORE Tools' }],
+    ['meta', { property: 'og:title', content: 'Awesome NAPCORE' }],
     ['meta', { property: 'og:description', content: 'Curated tools for European mobility data professionals' }],
   ],
   markdown: {
