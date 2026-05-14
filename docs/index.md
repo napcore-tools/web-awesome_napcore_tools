@@ -13,7 +13,7 @@ hero:
       link: /categories/napcore-provided/
     - theme: alt
       text: Browse All Tools
-      link: /categories/
+      link: /all/
     - theme: alt
       text: Submit a Tool
       link: /contribute
