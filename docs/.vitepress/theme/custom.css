@@ -371,6 +371,17 @@ a.title > span {
   margin-top: 0;
 }
 
+.hp-logo-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+}
+
+.hp-logo-heading img {
+  height: 1.7em;
+}
+
 .hp-section-header p {
   color: var(--vp-c-text-2);
   font-size: 1.05rem;
