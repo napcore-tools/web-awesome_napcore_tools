@@ -79,7 +79,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       //      { text: 'Browse Tools', link: '/tools/' },
-      { text: 'Tools', link: '/categories/' },
+      { text: 'Tools', link: '/all/' },
       { text: 'Contribute', link: '/contribute' },
       { text: 'Blog', link: '/blog' },
       { text: 'About', link: '/about' },
