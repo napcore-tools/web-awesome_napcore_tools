@@ -116,6 +116,10 @@ const getRepoText = (url: string): string => {
 </script>
 
 <style scoped>
+img {
+  margin: 0;
+}
+
 .endorsed-cell {
   display: flex;
   align-items: center;
