@@ -20,7 +20,7 @@ We're excited to announce the launch of the Awesome NAPCORE Tools blog! This blo
 
 The Awesome NAPCORE Tools blog will feature:
 
-- **Tool Updates**: Announcements about new tools added to the catalog and updates to existing tools
+- **Tool Updates**: Announcements about new tools added to the catalogue and updates to existing tools
 - **Standards Insights**: In-depth articles about mobility data standards like DATEX II, SIRI, NeTEx, and more
 - **Best Practices**: Practical guides for working with European mobility data
 - **Community Stories**: Success stories and case studies from the mobility data community
@@ -28,13 +28,13 @@ The Awesome NAPCORE Tools blog will feature:
 
 ## About NAPCORE
 
-The National Access Point Coordination Organisation for Europe (NAPCORE) supports the coordination and evolution of National Access Points (NAPs) across Europe. The Awesome NAPCORE Tools serves as a comprehensive catalog of tools, standards, and resources that facilitate mobility data exchange and ITS implementation.
+The National Access Point Coordination Organisation for Europe (NAPCORE) supports the coordination and evolution of National Access Points (NAPs) across Europe. The Awesome NAPCORE Tools serves as a comprehensive catalogue of tools, standards, and resources that facilitate mobility data exchange and ITS implementation.
 
 ## Stay Connected
 
 This blog is part of our commitment to fostering a vibrant community around European mobility data standards. We encourage you to:
 
-- Browse our [tool catalog](/categories/) to discover available resources
+- Browse our [tool catalogue](/categories/) to discover available resources
 - Explore the various [categories](/categories/) of tools and standards
 - [Contribute](/contribute) your own tools or improvements to the store
 
@@ -42,7 +42,7 @@ This blog is part of our commitment to fostering a vibrant community around Euro
 
 Stay tuned for regular updates as we:
 
-- Add new tools to the catalog
+- Add new tools to the catalogue
 - Publish guides and tutorials
 - Share community contributions
 - Announce events and workshops
