@@ -3,6 +3,7 @@
     <div class="filter-header">
       <div class="search-wrapper">
         <input
+          ref="searchInput"
           v-model="searchText"
           type="text"
           class="search-input"
@@ -25,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, nextTick } from 'vue';
 import { useRoute } from 'vitepress';
 import ToolsGrid from './ToolsGrid.vue';
 import { CATEGORIES } from '@/core/metadata/categories';
@@ -43,6 +44,7 @@ interface Props {
 const props = defineProps<Props>();
 const route = useRoute();
 const searchText = ref<string>('');
+const searchInput = ref<HTMLInputElement | null>(null);
 
 const CATEGORY_DISPLAY_OVERRIDES: Record<string, string> = {
   'napcore-provided': 'NAPCORE Provided tools',
@@ -110,6 +112,7 @@ onMounted(() => {
       searchText.value = searchParam;
     }
   }
+  nextTick(() => searchInput.value?.focus());
 });
 
 // Update URL query parameter when search changes (real-time)
