@@ -432,6 +432,10 @@ a.title > span {
     transform 0.2s ease;
 }
 
+.hp-card h3 {
+  margin-top: 0;
+}
+
 .hp-card:hover {
   box-shadow: 0 4px 16px rgba(0, 102, 204, 0.1);
   transform: translateY(-2px);
