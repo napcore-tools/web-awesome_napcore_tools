@@ -49,7 +49,7 @@ features:
 
 <div class="hp-section-header">
 
-<h2 class="hp-logo-heading"><img src="/napcore-logo.png" alt="NAPCORE">NAPCORE Provided Tools</h2>
+<h2>Official NAPCORE Tools</h2>
 
 Tools developed directly by the NAPCORE team
 
