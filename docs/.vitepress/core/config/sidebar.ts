@@ -121,7 +121,7 @@ export function getCategoriesSidebar() {
       collapsed: false,
       items: [
         { text: 'All', link: '/all/' },
-        { text: 'NAPCORE Provided', link: 'categories/napcore-provided' },
+        { text: 'By NAPCORE', link: 'categories/napcore-provided' },
         { text: 'Categories', link: '/categories/' },
         { text: 'Standards', link: '/standards/' },
       ],

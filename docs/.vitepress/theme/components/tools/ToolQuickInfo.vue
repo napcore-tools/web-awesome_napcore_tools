@@ -9,7 +9,7 @@
         <td><strong>Provenance</strong></td>
         <td class="endorsed-cell">
           <img src="/napcore-logo.png" alt="NAPCORE" class="endorsed-logo" />
-          NAPCORE provided
+          By NAPCORE
         </td>
       </tr>
       <tr v-if="frontmatter.license">

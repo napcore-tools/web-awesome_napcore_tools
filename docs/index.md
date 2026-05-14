@@ -9,7 +9,7 @@ hero:
     alt: NAPCORE Logo
   actions:
     - theme: brand
-      text: See NAPCORE Provided Tools
+      text: See Tools by NAPCORE
       link: /categories/napcore-provided/
     - theme: alt
       text: Browse All Tools
@@ -31,7 +31,7 @@ features:
       alt: NAPCORE logo
       width: "64"
       height: "64"
-    title: NAPCORE Provided
+    title: By NAPCORE
     details: Lists tools built by the NAPCORE project.
     link: /categories/napcore-provided/
   - icon:

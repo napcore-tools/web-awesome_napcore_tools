@@ -47,7 +47,7 @@ const searchText = ref<string>('');
 const searchInput = ref<HTMLInputElement | null>(null);
 
 const CATEGORY_DISPLAY_OVERRIDES: Record<string, string> = {
-  'napcore-provided': 'NAPCORE Provided tools',
+  'napcore-provided': 'Tools by NAPCORE',
 };
 
 // Auto-detect category from route path (e.g., /categories/validators -> validators)
