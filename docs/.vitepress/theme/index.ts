@@ -9,6 +9,8 @@ import StatsBar from './components/index/StatsBar.vue';
 import ToolStats from './components/tools/ToolStats.vue';
 import ToolCard from './components/tools/ToolCard.vue';
 import ToolsGrid from './components/tools/ToolsGrid.vue';
+import HomePageToolCard from './components/tools/HomePageToolCard.vue';
+import HomePageToolsGrid from './components/tools/HomePageToolsGrid.vue';
 import ToolsFilter from './components/tools/ToolsFilter.vue';
 import CategoryGrid from './components/categories/CategoryGrid.vue';
 import StandardsGrid from './components/standards/StandardsGrid.vue';
@@ -43,6 +45,8 @@ export default {
     app.component('ToolStats', ToolStats);
     app.component('ToolCard', ToolCard);
     app.component('ToolsGrid', ToolsGrid);
+    app.component('HomePageToolCard', HomePageToolCard);
+    app.component('HomePageToolsGrid', HomePageToolsGrid);
     app.component('ToolsFilter', ToolsFilter);
     app.component('CategoryGrid', CategoryGrid);
     app.component('StandardsGrid', StandardsGrid);

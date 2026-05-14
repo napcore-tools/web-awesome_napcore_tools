@@ -55,7 +55,7 @@ Tools developed directly by the NAPCORE team
 
 </div>
 
-<ToolsGrid :endorsed-only="true" />
+<HomePageToolsGrid />
 
 <div class="hp-section-cta">
 
