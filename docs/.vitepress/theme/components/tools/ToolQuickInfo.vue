@@ -6,8 +6,11 @@
         <td>{{ statusEmoji }} {{ statusLabel }}</td>
       </tr>
       <tr v-if="frontmatter.endorsed">
-        <td><strong>Endorsed</strong></td>
-        <td>🏆 NAPCORE Provided</td>
+        <td><strong>Provenance</strong></td>
+        <td class="endorsed-cell">
+          <img src="/napcore-logo.png" alt="NAPCORE" class="endorsed-logo" />
+          NAPCORE provided
+        </td>
       </tr>
       <tr v-if="frontmatter.license">
         <td><strong>License</strong></td>
@@ -111,3 +114,17 @@ const getRepoText = (url: string): string => {
   }
 };
 </script>
+
+<style scoped>
+.endorsed-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.endorsed-logo {
+  height: 2em;
+  width: auto;
+  vertical-align: middle;
+}
+</style>
