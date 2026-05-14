@@ -59,7 +59,7 @@ Tools developed directly by the NAPCORE team
 
 <div class="hp-section-cta">
 
-[View all Tools →](/categories/)
+[View all Tools →](/all/)
 
 </div>
 
