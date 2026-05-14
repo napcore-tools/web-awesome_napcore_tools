@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed, nextTick } from 'vue';
+import { ref, onMounted, onUnmounted, computed, nextTick } from 'vue';
 import { useRoute } from 'vitepress';
 import ToolsGrid from './ToolsGrid.vue';
 import { CATEGORIES } from '@/core/metadata/categories';
@@ -103,6 +103,21 @@ const dynamicPlaceholder = computed(() => {
   return 'Search All tools...';
 });
 
+function onDocumentMouseDown(e: MouseEvent) {
+  const a = (e.target as Element).closest('a[href]');
+  if (!a) return;
+  try {
+    const href = new URL(a.getAttribute('href')!, location.origin);
+    if (href.pathname === location.pathname) {
+      // mousedown fires before focusin, so we can schedule re-focus
+      // after VitePress finishes its own focus management (setTimeout 0)
+      setTimeout(() => searchInput.value?.focus(), 50);
+    }
+  } catch {
+    // invalid href — ignore
+  }
+}
+
 // Initialize search from URL query parameter on mount
 onMounted(() => {
   if (typeof window !== 'undefined') {
@@ -111,8 +126,13 @@ onMounted(() => {
     if (searchParam) {
       searchText.value = searchParam;
     }
+    document.addEventListener('mousedown', onDocumentMouseDown);
   }
   nextTick(() => searchInput.value?.focus());
+});
+
+onUnmounted(() => {
+  document.removeEventListener('mousedown', onDocumentMouseDown);
 });
 
 // Update URL query parameter when search changes (real-time)
