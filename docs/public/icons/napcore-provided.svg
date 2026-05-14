@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Shield: solid NAPCORE navy -->
+  <path d="M12,4 L36,4 Q42,4 42,10 L42,26 C42,38 32,44 24,44 C16,44 6,38 6,26 L6,10 Q6,4 12,4Z"
+    fill="#00309D"/>
+  <!-- Ring of dots referencing the NAPCORE logo motif, in NAPCORE yellow -->
+  <circle cx="24"    cy="12"    r="2.5" fill="#FFCD00"/>
+  <circle cx="31.07" cy="14.93" r="2.5" fill="#FFCD00"/>
+  <circle cx="34"    cy="22"    r="2.5" fill="#FFCD00"/>
+  <circle cx="31.07" cy="29.07" r="2.5" fill="#FFCD00"/>
+  <circle cx="24"    cy="32"    r="2.5" fill="#FFCD00"/>
+  <circle cx="16.93" cy="29.07" r="2.5" fill="#FFCD00"/>
+  <circle cx="14"    cy="22"    r="2.5" fill="#FFCD00"/>
+  <circle cx="16.93" cy="14.93" r="2.5" fill="#FFCD00"/>
+</svg>

@@ -19,19 +19,26 @@ hero:
       link: /contribute
 
 features:
-  - icon: 🌱
+  - icon:
+      src: /icons/open-access.svg
+      alt: Open padlock representing open access
+      width: "48"
+      height: "48"
     title: Openly Accessible Tools
     details: Only openly accessible tools are included.
   - icon:
       src: /napcore-logo.png
-      alt: NAPCORE
-      width: "32"
-      height: "32"
-      wrap: true
+      alt: NAPCORE logo
+      width: "64"
+      height: "64"
     title: NAPCORE Provided
     details: Lists tools built by the NAPCORE project.
     link: /categories/napcore-provided/
-  - icon: 🌍
+  - icon:
+      src: /icons/community.svg
+      alt: Honeycomb representing community collaboration
+      width: "48"
+      height: "48"
     title: Community Provided
     details: Community provided tools enlisted too.
 ---
