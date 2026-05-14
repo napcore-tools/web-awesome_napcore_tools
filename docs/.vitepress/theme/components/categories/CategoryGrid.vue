@@ -22,6 +22,7 @@ import { withBase } from 'vitepress';
 
 interface Props {
   sortByCount?: boolean;
+  textFilter?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -40,10 +41,12 @@ const categories = computed(() => {
   });
 
   // Sort by count if requested (descending order, with ties preserving original order)
-  if (props.sortByCount) {
-    return [...categoriesWithCounts].sort((a, b) => b.count - a.count);
-  }
+  const result = props.sortByCount ? [...categoriesWithCounts].sort((a, b) => b.count - a.count) : categoriesWithCounts;
 
-  return categoriesWithCounts;
+  if (props.textFilter) {
+    const term = props.textFilter.trim().toLowerCase();
+    return result.filter((c) => c.title.toLowerCase().includes(term) || c.description.toLowerCase().includes(term));
+  }
+  return result;
 });
 </script>

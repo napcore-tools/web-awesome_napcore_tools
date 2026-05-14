@@ -1,33 +1,23 @@
 <template>
-  <div class="tools-filter">
-    <div class="filter-header">
-      <div class="search-wrapper">
-        <input
-          ref="searchInput"
-          v-model="searchText"
-          type="text"
-          class="search-input"
-          :placeholder="dynamicPlaceholder"
-          @input="updateSearch"
-        />
-        <button v-if="searchText" class="clear-button" @click="clearSearch">Clear</button>
-      </div>
-    </div>
-    <ToolsGrid
-      :category="effectiveCategory || undefined"
-      :standard="effectiveStandard || undefined"
-      :standards="props.standards"
-      :selected-tools="props.selectedTools"
-      :show-all="props.showAll"
-      :endorsed-only="props.endorsedOnly"
-      :text-filter="searchText || undefined"
-    />
-  </div>
+  <SearchFilter :placeholder="dynamicPlaceholder">
+    <template #default="{ textFilter }">
+      <ToolsGrid
+        :category="effectiveCategory || undefined"
+        :standard="effectiveStandard || undefined"
+        :standards="props.standards"
+        :selected-tools="props.selectedTools"
+        :show-all="props.showAll"
+        :endorsed-only="props.endorsedOnly"
+        :text-filter="textFilter"
+      />
+    </template>
+  </SearchFilter>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed, nextTick } from 'vue';
+import { computed } from 'vue';
 import { useRoute } from 'vitepress';
+import SearchFilter from '../SearchFilter.vue';
 import ToolsGrid from './ToolsGrid.vue';
 import { CATEGORIES } from '@/core/metadata/categories';
 import { data as standardsData } from '@/core/data-loaders/standards.data';
@@ -43,34 +33,25 @@ interface Props {
 
 const props = defineProps<Props>();
 const route = useRoute();
-const searchText = ref<string>('');
-const searchInput = ref<HTMLInputElement | null>(null);
 
 const CATEGORY_DISPLAY_OVERRIDES: Record<string, string> = {
   'napcore-provided': 'Tools by NAPCORE',
 };
 
-// Auto-detect category from route path (e.g., /categories/validators -> validators)
 const autoDetectedCategory = computed(() => {
   const match = route.path.match(/\/categories\/([^/.]+)/);
   return match ? match[1] : null;
 });
 
-// Auto-detect standard from route path (e.g., /standards/datex-ii -> datex-ii)
 const autoDetectedStandard = computed(() => {
   const match = route.path.match(/\/standards\/([^/.]+)/);
   return match ? match[1] : null;
 });
 
-// Use provided category or fall back to auto-detected
 const effectiveCategory = computed(() => props.category || autoDetectedCategory.value);
-
-// Use provided standard or fall back to auto-detected
 const effectiveStandard = computed(() => props.standard || autoDetectedStandard.value);
 
-// Generate dynamic placeholder based on filter context
 const dynamicPlaceholder = computed(() => {
-  // If filtering by standards
   if (effectiveStandard.value) {
     const standardName = standardsData[effectiveStandard.value]?.title || effectiveStandard.value;
     return `Search ${standardName} tools...`;
@@ -84,7 +65,6 @@ const dynamicPlaceholder = computed(() => {
     return 'Search selected standards...';
   }
 
-  // If filtering by category
   if (effectiveCategory.value) {
     const category = CATEGORIES.find((c) => c.slug === effectiveCategory.value);
     if (category) {
@@ -94,140 +74,10 @@ const dynamicPlaceholder = computed(() => {
     return `Search ${override ?? effectiveCategory.value}...`;
   }
 
-  // If filtering by selected tools
   if (props.selectedTools && props.selectedTools.length > 0) {
     return 'Search selected tools...';
   }
 
-  // Default: all tools or no specific filter
   return 'Search All tools...';
 });
-
-function onDocumentMouseDown(e: MouseEvent) {
-  const a = (e.target as Element).closest('a[href]');
-  if (!a) return;
-  try {
-    const href = new URL(a.getAttribute('href')!, location.origin);
-    if (href.pathname === location.pathname) {
-      // mousedown fires before focusin, so we can schedule re-focus
-      // after VitePress finishes its own focus management (setTimeout 0)
-      setTimeout(() => searchInput.value?.focus(), 50);
-    }
-  } catch {
-    // invalid href — ignore
-  }
-}
-
-// Initialize search from URL query parameter on mount
-onMounted(() => {
-  if (typeof window !== 'undefined') {
-    const params = new URLSearchParams(window.location.search);
-    const searchParam = params.get('search');
-    if (searchParam) {
-      searchText.value = searchParam;
-    }
-    document.addEventListener('mousedown', onDocumentMouseDown);
-  }
-  nextTick(() => searchInput.value?.focus());
-});
-
-onUnmounted(() => {
-  document.removeEventListener('mousedown', onDocumentMouseDown);
-});
-
-// Update URL query parameter when search changes (real-time)
-function updateSearch() {
-  if (typeof window !== 'undefined') {
-    const url = new URL(window.location.href);
-    if (searchText.value) {
-      url.searchParams.set('search', searchText.value);
-    } else {
-      url.searchParams.delete('search');
-    }
-    window.history.replaceState({}, '', url.toString());
-  }
-}
-
-// Clear search and remove query parameter
-function clearSearch() {
-  searchText.value = '';
-  if (typeof window !== 'undefined') {
-    const url = new URL(window.location.href);
-    url.searchParams.delete('search');
-    window.history.replaceState({}, '', url.toString());
-  }
-}
 </script>
-
-<style scoped>
-.tools-filter {
-  margin: 2rem 0;
-}
-
-.filter-header {
-  margin-bottom: 2rem;
-}
-
-.search-wrapper {
-  position: relative;
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-.search-input {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  color: var(--vp-c-text-1);
-  background-color: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  outline: none;
-  transition: all 0.2s;
-}
-
-.search-input:focus {
-  border-color: var(--vp-c-brand-1);
-  background-color: var(--vp-c-bg);
-  box-shadow: 0 0 0 3px var(--vp-c-brand-soft);
-}
-
-.search-input::placeholder {
-  color: var(--vp-c-text-3);
-}
-
-.clear-button {
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--vp-c-text-2);
-  background-color: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-
-.clear-button:hover {
-  color: var(--vp-c-brand-1);
-  border-color: var(--vp-c-brand-1);
-  background-color: var(--vp-c-brand-soft);
-}
-
-@media (max-width: 640px) {
-  .search-wrapper {
-    flex-direction: column;
-    max-width: 100%;
-  }
-
-  .search-input {
-    width: 100%;
-  }
-
-  .clear-button {
-    width: 100%;
-  }
-}
-</style>

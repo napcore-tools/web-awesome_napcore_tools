@@ -22,14 +22,11 @@ import { withBase } from 'vitepress';
 
 interface Props {
   sortByCount?: boolean;
-  showEndorsed?: boolean;
-  showNotEndorsed?: boolean;
+  textFilter?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   sortByCount: false,
-  showEndorsed: true,
-  showNotEndorsed: true,
 });
 
 // Extract unique standards and count tools
@@ -47,7 +44,7 @@ const standards = computed(() => {
   }
 
   // Convert to array with metadata
-  let standardsList = Array.from(standardsMap.entries()).map(([slug, count]) => {
+  const standardsList = Array.from(standardsMap.entries()).map(([slug, count]) => {
     const metadata = getStandardMetadata(slug);
     return {
       name: metadata.title,
@@ -55,21 +52,24 @@ const standards = computed(() => {
       count,
       icon: metadata.icon,
       description: metadata.description,
-      endorsed: metadata.endorsed,
     };
   });
 
-  // Filter byt endorsed
-  standardsList = standardsList.filter((standard) => {
-    return (props.showEndorsed && standard.endorsed) || (props.showNotEndorsed && !standard.endorsed);
-  });
-
   // Sort by count if requested (descending order), otherwise alphabetically by title
+  let result: typeof standardsList;
   if (props.sortByCount) {
-    return standardsList.sort((a, b) => b.count - a.count);
+    result = standardsList.sort((a, b) => b.count - a.count);
+  } else {
+    result = standardsList.sort((a, b) => a.name.localeCompare(b.name));
   }
 
-  return standardsList.sort((a, b) => a.name.localeCompare(b.name));
+  if (props.textFilter) {
+    const term = props.textFilter.trim().toLowerCase();
+    return result.filter(
+      (s) => s.name.toLowerCase().includes(term) || (s.description ?? '').toLowerCase().includes(term)
+    );
+  }
+  return result;
 });
 </script>
 
