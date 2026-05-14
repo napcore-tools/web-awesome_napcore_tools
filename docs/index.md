@@ -61,22 +61,6 @@ Tools built directly by the NAPCORE team - verified, maintained, and ready to us
 
 <div class="hp-section-header">
 
-## About
-
-</div>
-
-Awesome NAPCORE Tools is a curated catalogue of tools for European mobility data, built and maintained by the NAPCORE team. It covers tools developed in-house by NAPCORE as well as third-party tools the team considers valuable for the ecosystem.
-
-::: info Contributions Welcome
-While the catalogue is curated by NAPCORE, we welcome tool submissions from the wider community. All submissions are reviewed by the NAPCORE team before inclusion.
-:::
-
-</div>
-
-<div class="hp-section hp-panel">
-
-<div class="hp-section-header">
-
 ## Get Involved
 
 </div>
