@@ -8,8 +8,8 @@
       <tr v-if="frontmatter.endorsed">
         <td><strong>Provenance</strong></td>
         <td class="endorsed-cell">
+          <span class="endorsed-pill">By NAPCORE</span>
           <img src="/napcore-logo.png" alt="NAPCORE" class="endorsed-logo" />
-          By NAPCORE
         </td>
       </tr>
       <tr v-if="frontmatter.license">
@@ -119,12 +119,27 @@ const getRepoText = (url: string): string => {
 .endorsed-cell {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.endorsed-pill {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(0, 102, 204, 0.07);
+  color: var(--vp-c-brand-1);
+  border: 1px solid rgba(0, 102, 204, 0.15);
 }
 
 .endorsed-logo {
-  height: 2em;
+  height: 2.5em;
   width: auto;
-  vertical-align: middle;
+  flex-shrink: 0;
 }
 </style>
