@@ -55,8 +55,7 @@ defineProps<Props>();
   margin-top: 0.5rem;
   margin-bottom: 0.25rem;
   color: var(--vp-c-brand-1);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
 }
 
 /* Reset VitePress/browser <p> margins inside the card */
