@@ -49,7 +49,8 @@ function processCategoryDocument(data: FrontmatterData): string {
 
   // Add contribution tip if provided
   if (data.contributeTip) {
-    footer += `::: tip Want to Contribute?\n\n${data.contributeTip}\n[Submit your tool →](/contribute)\n:::\n`;
+    // Do not add footer ...
+    // footer += `::: tip Want to Contribute?\n\n${data.contributeTip}\n[Contribute a tool →](/contribute)\n:::\n`;
   }
 
   return footer;
