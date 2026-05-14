@@ -12,9 +12,7 @@ import { withBase } from 'vitepress'
 
 <div v-if="$params.details">
 
-{{ $params.details.longTitle }}
-
-::: details Click for more
+::: details {{ $params.details.longTitle }}
 
 ### Overview
 
