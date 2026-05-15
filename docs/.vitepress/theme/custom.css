@@ -160,14 +160,6 @@
 }
 
 .tool-endorsed {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  padding: 0.25rem 0.625rem 0.25rem 0.375rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  margin-bottom: 0.75rem;
   background: rgba(0, 102, 204, 0.07);
   color: var(--vp-c-brand-1);
   border: 1px solid rgba(0, 102, 204, 0.15);
