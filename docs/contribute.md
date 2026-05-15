@@ -15,7 +15,7 @@ We welcome tool submissions from developers, organisations, and mobility data pr
 5. **Documentation**: Once approved, we'll help create the tool page
 6. **Publication**: Your tool will be added to the catalogue!
 
-## Tool Criteria
+## Tool Criteria {#open-tool-criteria}
 
 To be included in the catalogue, tools should meet these criteria:
 

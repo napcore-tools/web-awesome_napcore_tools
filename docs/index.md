@@ -26,6 +26,7 @@ features:
       height: "48"
     title: Openly Accessible Tools
     details: Only openly accessible tools are included.
+    link: /contribute#open-tool-criteria
   - icon:
       src: /napcore-logo.png
       alt: NAPCORE logo
@@ -41,6 +42,7 @@ features:
       height: "48"
     title: Community Provided
     details: Community provided tools enlisted too.
+    link: /contribute
 ---
 
 <div class="hp-sections">
