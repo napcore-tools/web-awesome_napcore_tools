@@ -22,6 +22,11 @@ function onKeyDown(e: KeyboardEvent) {
   if (tag === 'INPUT' || tag === 'TEXTAREA' || editable) return;
   if (e.metaKey || e.ctrlKey || e.altKey) return;
 
+  if (e.key === '?') {
+    router.go('/about#keyboard-shortcuts');
+    return;
+  }
+
   if (e.key === 'g') {
     gPressedAt = Date.now();
     return;

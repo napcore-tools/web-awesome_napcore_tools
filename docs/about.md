@@ -156,7 +156,7 @@ We welcome both open source and commercial tools, provided they're accessible an
 
 <StatsBar />
 
-## Keyboard Shortcuts
+## Keyboard Shortcuts {#keyboard-shortcuts}
 
 The catalogue supports keyboard navigation to move quickly between pages. Press **`g`** followed by a second key:
 
@@ -168,10 +168,9 @@ The catalogue supports keyboard navigation to move quickly between pages. Press 
 | `g` `s`           | Go to Standards             |
 | `g` `c`           | Go to Categories            |
 | `g` `a`           | Go to About                 |
+| `?`               | Go to keyboard shortcuts    |
 | `Ctrl` `K` or `/` | Open site-wide search       |
 | `Escape`          | Clear the filter search box |
-
-Navigation shortcuts are ignored when the cursor is inside a text field.
 
 ## Roadmap
 
