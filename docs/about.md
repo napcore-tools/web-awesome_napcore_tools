@@ -156,6 +156,23 @@ We welcome both open source and commercial tools, provided they're accessible an
 
 <StatsBar />
 
+## Keyboard Shortcuts
+
+The catalogue supports keyboard navigation to move quickly between pages. Press **`g`** followed by a second key:
+
+| Shortcut          | Action                      |
+| ----------------- | --------------------------- |
+| `g` `h`           | Go to Home                  |
+| `g` `t`           | Go to All Tools             |
+| `g` `n`           | Go to Tools by NAPCORE      |
+| `g` `s`           | Go to Standards             |
+| `g` `c`           | Go to Categories            |
+| `g` `a`           | Go to About                 |
+| `Ctrl` `K` or `/` | Open site-wide search       |
+| `Escape`          | Clear the filter search box |
+
+Navigation shortcuts are ignored when the cursor is inside a text field.
+
 ## Roadmap
 
 ### Short Term

@@ -24,13 +24,14 @@ import BlogGrid from './components/blog/BlogGrid.vue';
 import BlogPostMeta from './components/blog/BlogPostMeta.vue';
 import BlogTagFilter from './components/blog/BlogTagFilter.vue';
 import BlogPreviewBanner from './components/blog/BlogPreviewBanner.vue';
+import KeyboardNav from './components/KeyboardNav.vue';
 import { initializeDetailsNavigation } from '@/core/utils';
 
 export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
-      // Additional custom layout slots can go here
+      'layout-top': () => h(KeyboardNav),
     });
   },
   /**

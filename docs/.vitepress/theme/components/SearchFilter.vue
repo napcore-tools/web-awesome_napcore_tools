@@ -42,18 +42,32 @@ function onDocumentMouseDown(e: MouseEvent) {
   }
 }
 
+function onDocumentKeyDown(e: KeyboardEvent) {
+  if (e.key === 'Escape' && document.activeElement === searchInput.value) {
+    searchText.value = '';
+    searchInput.value?.blur();
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('search');
+      window.history.replaceState({}, '', url.toString());
+    }
+  }
+}
+
 onMounted(() => {
   if (typeof window !== 'undefined') {
     const params = new URLSearchParams(window.location.search);
     const searchParam = params.get('search');
     if (searchParam) searchText.value = searchParam;
     document.addEventListener('mousedown', onDocumentMouseDown);
+    document.addEventListener('keydown', onDocumentKeyDown);
   }
   nextTick(() => searchInput.value?.focus());
 });
 
 onUnmounted(() => {
   document.removeEventListener('mousedown', onDocumentMouseDown);
+  document.removeEventListener('keydown', onDocumentKeyDown);
 });
 
 function updateSearch() {
