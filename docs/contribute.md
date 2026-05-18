@@ -10,7 +10,7 @@ We welcome tool submissions from developers, organisations, and mobility data pr
 
 1. **Check if tool fits** by reviewing our [criteria](#open-tool-criteria) below
 2. **Gather information** listed in [required information](#required-information)
-3. **Start a discussion** in our [GitHub Discussions](https://github.com/napcore/napcore-web-store/discussions) with the "Tool Submission" category
+3. **Start a discussion** in our [GitHub Discussions](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions) with the "Tool Submission" category
 4. **Wait for review** of your submission by the NAPCORE team and the community
 5. **Finish Documentation** after approval, we'll help create the tool page
 6. **Publication of the tool in the catalogue!**
@@ -160,14 +160,14 @@ Found outdated information or want to add more details to a tool page?
 
 Found a broken link or incorrect information?
 
-- Open an issue in our [GitHub repository](https://github.com/napcore/napcore-web-store/issues)
-- Or mention it in [Discussions](https://github.com/napcore/napcore-web-store/discussions)
+- Open an issue in our [GitHub repository](https://github.com/napcore-tools/web-awesome_napcore_tools/issues)
+- Or mention it in [Discussions](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
 
 ### Suggest Improvements
 
 Have ideas for improving the catalogue?
 
-- Share them in [GitHub Discussions](https://github.com/napcore/napcore-web-store/discussions)
+- Share them in [GitHub Discussions](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
 - Propose new categories
 - Suggest better organization
 - Request new features
@@ -185,7 +185,7 @@ Using a tool from the catalogue? Share your experience!
 
 Need help or have questions about contributing?
 
-- **GitHub Discussions**: [Start a discussion](https://github.com/napcore/napcore-web-store/discussions)
+- **GitHub Discussions**: [Start a discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
 - **Email**: [Contact NAPCORE](https://napcore.eu/contact)
 
 ## Code of Conduct
@@ -200,7 +200,7 @@ We are committed to providing a welcoming and inclusive environment for all cont
 ---
 
 ::: tip Quick Start
-Ready to submit a tool? [Start a GitHub Discussion](https://github.com/napcore/napcore-web-store/discussions/new) with the "Tool Submission" category!
+Ready to submit a tool? [Start a GitHub Discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions/new) with the "Tool Submission" category!
 :::
 
 Thank you for helping build the European mobility tools ecosystem! 🚀

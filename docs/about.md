@@ -155,8 +155,8 @@ There are many ways to contribute:
 
 ## Contact
 
-- **GitHub**: [github.com/napcore/napcore-web-store](https://github.com/napcore/napcore-web-store)
-- **Discussions**: [GitHub Discussions](https://github.com/napcore/napcore-web-store/discussions)
+- **GitHub**: [GitHub repository](https://github.com/napcore-tools/web-awesome_napcore_tools)
+- **Discussions**: [GitHub Discussions](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
 - **NAPCORE Website**: [napcore.eu](https://napcore.eu)
 
 ## Acknowledgments
