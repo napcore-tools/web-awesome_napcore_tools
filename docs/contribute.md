@@ -8,14 +8,14 @@ We welcome tool submissions from developers, organisations, and mobility data pr
 
 ### Submission Process
 
-1. **Check if tool fits**: Review our [criteria](#tool-criteria) below
-2. **Gather information**: Collect the details listed in [required information](#required-information)
-3. **Start a discussion**: Create a new discussion in our [GitHub Discussions](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions) with the "Tool Submission" category
-4. **Community review**: The NAPCORE team and community will review your submission
-5. **Documentation**: Once approved, we'll help create the tool page
-6. **Publication**: Your tool will be added to the catalogue!
+1. **Check if tool fits** by reviewing our [criteria](#open-tool-criteria) below
+2. **Gather information** listed in [required information](#required-information)
+3. **Start a discussion** in our [GitHub Discussions](https://github.com/napcore/napcore-web-store/discussions) with the "Tool Submission" category
+4. **Wait for review** of your submission by the NAPCORE team and the community
+5. **Finish Documentation** after approval, we'll help create the tool page
+6. **Publication of the tool in the catalogue!**
 
-## Tool Criteria {#open-tool-criteria}
+## Tool Inclusion Criteria {#open-tool-criteria}
 
 To be included in the catalogue, tools should meet these criteria:
 
@@ -37,9 +37,8 @@ To be included in the catalogue, tools should meet these criteria:
 ### We Also Welcome
 
 - **Commercial tools** with free tiers or community editions
-- **Research prototypes** that demonstrate innovative approaches
+- **Research prototypes or Work-in-progress tool** that demonstrate innovative approaches and/or show promise
 - **Internal tools** that organizations are willing to share
-- **Work-in-progress tools** that show promise
 
 ## Required Information
 
@@ -117,41 +116,6 @@ When submitting a tool, please provide:
 **Additional Information**: [Anything else we should know?]
 ```
 
-## Other Ways to Contribute
-
-### Improve Existing Tool Pages
-
-Found outdated information or want to add more details to a tool page?
-
-1. Click "Suggest changes to this page" at the bottom of any tool page
-2. Make your edits
-3. Submit a pull request
-
-### Report Issues
-
-Found a broken link or incorrect information?
-
-- Open an issue in our [GitHub repository](https://github.com/napcore-tools/web-awesome_napcore_tools/issues)
-- Or mention it in [Discussions](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
-
-### Suggest Improvements
-
-Have ideas for improving the catalogue?
-
-- Share them in [GitHub Discussions](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
-- Propose new categories
-- Suggest better organization
-- Request new features
-
-### Share Feedback
-
-Using a tool from the catalogue? Share your experience!
-
-- Add comments to tool discussions
-- Share success stories
-- Report issues directly to tool maintainers
-- Help other users in the community
-
 ## Review Process
 
 ### What Happens After Submission?
@@ -182,11 +146,46 @@ We recognize and appreciate all contributors:
 - **Content contributors** are listed in project acknowledgments
 - **Community helpers** are recognized in our discussions
 
+## Other Ways to Contribute
+
+### Improve Existing Tool Pages
+
+Found outdated information or want to add more details to a tool page?
+
+1. Click "Suggest changes to this page" at the bottom of any tool page
+2. Make your edits
+3. Submit a pull request
+
+### Report Issues
+
+Found a broken link or incorrect information?
+
+- Open an issue in our [GitHub repository](https://github.com/napcore/napcore-web-store/issues)
+- Or mention it in [Discussions](https://github.com/napcore/napcore-web-store/discussions)
+
+### Suggest Improvements
+
+Have ideas for improving the catalogue?
+
+- Share them in [GitHub Discussions](https://github.com/napcore/napcore-web-store/discussions)
+- Propose new categories
+- Suggest better organization
+- Request new features
+
+### Share Feedback
+
+Using a tool from the catalogue? Share your experience!
+
+- Add comments to tool discussions
+- Share success stories
+- Report issues directly to tool maintainers
+- Help other users in the community
+
 ## Questions?
 
 Need help or have questions about contributing?
 
-- **GitHub Discussions**: [Start a discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
+- **GitHub Discussions**: [Start a discussion](https://github.com/napcore/napcore-web-store/discussions)
 - **Email**: [Contact NAPCORE](https://napcore.eu/contact)
 
 ## Code of Conduct
@@ -201,7 +200,7 @@ We are committed to providing a welcoming and inclusive environment for all cont
 ---
 
 ::: tip Quick Start
-Ready to submit a tool? [Start a GitHub Discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions/new) with the "Tool Submission" category!
+Ready to submit a tool? [Start a GitHub Discussion](https://github.com/napcore/napcore-web-store/discussions/new) with the "Tool Submission" category!
 :::
 
 Thank you for helping build the European mobility tools ecosystem! 🚀
