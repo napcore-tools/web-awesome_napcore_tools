@@ -1,7 +1,7 @@
 ---
 layout: home
 hero:
-  name: Awesome NAPCORE
+  name: Awesome NAPCORE Tools
   text: European Mobility Data Tools Catalogue
   tagline: Discover tools from NAPCORE and the wider community
   image:
