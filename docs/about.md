@@ -1,25 +1,22 @@
-# About the Awesome NAPCORE Tools project
+# About Awesome NAPCORE Tools
 
-The Awesome NAPCORE Tools is a NAPCORE-led initiative to build, curate, and showcase open-source tools that support European mobility data standards.
-
-## Mission
-
-Our mission is to make it easier for developers, data publishers, NAP operators, and mobility professionals to find and use the right tools for working with European mobility data standards like DATEX II, NeTEx, SIRI, and mobilityDCAT-AP.
+The Awesome NAPCORE Tools is a NAPCORE-led initiative to build, curate, and showcase tools for the European mobility data ecosystem.
+The aim is to support developers, data publishers, NAP operators, and National Bodies to find and use the right tools for working with mobility data standards like DATEX II, NeTEx, SIRI, and mobilityDCAT-AP.
 
 ## Why This Catalogue Exists
 
 ### The Challenge
 
-The European mobility data ecosystem is rich with standards and tools, but they're scattered across different websites, repositories, and organisations. Finding the right tool for a specific task can be difficult and time-consuming.
+The European mobility data ecosystem is rich with standards and tools, but they're scattered across different websites, repositories, and organisations. Finding the right tool, for a specific task can be difficult and time-consuming.
 
 ### The Solution
 
 The Awesome NAPCORE Tools brings these tools together in one place, with:
 
-- **Standardised descriptions** so you can quickly understand what each tool does
-- **Clear categorisation** to help you find tools for specific needs
-- **Quality curation** to ensure tools are functional and maintained
-- **Community input** to discover tools through collective knowledge
+- **Standardised descriptions** so you can quickly understand what each tool does.
+- **Clear categorisation** to help you find tools for specific needs.
+- **Quality curation** to ensure tools are functional and maintained.
+- **Community input** to discover tools through collective knowledge.
 
 ## What We Include
 
@@ -50,107 +47,48 @@ Tools supporting European mobility data standards:
 
 ## Who This Is For
 
-### Developers & Implementers
-
-Find tools to help implement mobility data standards in your applications and services.
-
-### NAP Operators
-
-Discover tools for publishing, validating, and managing mobility data on National Access Points.
-
-### System Architects
-
-Explore tools and components for designing mobility data infrastructure.
-
-### Data Publishers
-
-Find tools for creating metadata, validating data, and ensuring quality.
-
-### Students & Researchers
-
-Learn about available tools and reference implementations for academic projects.
-
-## About NAPCORE
-
-**NAPCORE** (National Access Point Coordination Organisation for Europe) is a coordination mechanism to improve interoperability of National Access Points as the backbone of European mobility data exchange.
-
-### NAPCORE's Mission
-
-- Improve interoperability of mobility data in Europe
-- Harmonise and align mobility data standards
-- Increase access to mobility-related data
-- Support National Access Points and National Bodies
-- Define common procedures and strategy
-- Facilitate creation of European-wide solutions
-
-### Programme Support Action
-
-NAPCORE is co-financed by a Programme Support Action under the European Commission's Connecting Europe Facility. The initiative involves:
-
-- **36 participants**: 33 Beneficiaries covering 26 EU Member States and 3 associated partners
-- **37 Implementing Bodies**
-- **Long-term vision**: Establishing a future-oriented platform organisation
-
-Learn more at [napcore.eu](https://napcore.eu)
+- **Developers and Implementers**: Find tools to help implement mobility data standards in your applications and services.
+- **NAP Operators and National Bodies**: Discover tools for publishing, validating, checking compliance and managing mobility data on National Access Points.
+- **System Architects**: Explore tools and components for designing mobility data infrastructure.
+- **Data Publishers**: Find tools for creating metadata, validating data, and ensuring quality.
+- **Students & Researchers**: Learn about available tools and reference implementations for academic projects.
 
 ## Project Background
 
 ### Origins
 
-The Awesome NAPCORE Tools was created as part of NAPCORE Task 5.2 to support the European mobility data community by providing a centralised resource for discovering tools.
+The Awesome NAPCORE Tools was created as part of NAPCORE Task 5.2 to create a centralised resource for discovering tools. As part of NAPCORE's mission to improve not only the interoperability of mobility data and data standards in Europe, but also support and align processes of National Access Points and National bodies, the creation of a shared tool box is a vital step towards a harmonised data ecosystem.
 
-### Development
+#### About NAPCORE
 
-- **Built with**: VitePress (modern static site generator)
-- **Hosted on**: GitHub Pages
-- **Open Source**: All catalogue content is open source
-- **NAPCORE-Curated**: Tools are built or submitted and reviewed by the NAPCORE team
-- **Community-Driven**: Open to contributions and feedback from the wider community
+**NAPCORE** (National Access Point Coordination Organisation for Europe) is a coordination mechanism for the National Access Points to share insights, experiences and best practises, knowledge and expertise, to act as the backbone of mobility data exchange in Europe.
+NAPCORE is co-financed by a Programme Support Action under the European Commission's Connecting Europe Facility. The initiative involves:
 
-## Governance
+- **33 Beneficiaries**: covering 26 EU Member States and 3 associated partners
+- **over 30 mobility data platforms**: working on harmonising data sharing across the continent
+- **Long-term vision**: establishing a future-oriented platform organisation
 
-### Managing Team
+Learn more at [napcore.eu](https://napcore.eu)
 
-The catalogue is maintained by the NAPCORE Task 5.2 team with support from the broader NAPCORE community.
+### Governance
 
-### Review Process
+#### Managing Team
 
-Tool submissions are reviewed by the managing team with input from the community. See our [Contribution Guide](/contribute) for details.
+The catalogue is built and maintained by the NAPCORE Task 5.2 team, with support and contributions from the broader NAPCORE community.
 
-### Quality Standards
+#### Review Process
 
-We maintain quality standards to ensure tools in the catalogue are:
+As our goal is to ensure quality and relevance in the domain of European mobility data, every tool submission is reviewed according to the quality standards by the managing team with input from the community. The review process happens in public through GitHub Discussions, to ensure transparency.
+See our [Contribution Guide](/contribute) for more details.
 
-- Functional and accessible
-- Properly documented
-- Relevant to European mobility data
-- Maintained (or clearly marked if deprecated)
+#### Tool Inclusion Criteria
 
-## Principles
+To maintain quality standards of the tools in the catalogue, the inclusion criteria are:
 
-### NAPCORE-Led
-
-The catalogue is built and maintained by NAPCORE, with contributions welcome from the wider community. Our goal is to ensure quality and relevance for all users of European mobility data.
-
-### Community-First
-
-While NAPCORE leads the catalogue, the community plays a vital role. We welcome tool submissions, feedback, and improvements from developers, organisations, and mobility data professionals across Europe.
-
-### Open and Transparent
-
-All catalogue content is open source. Tool submissions and reviews happen in public through GitHub Discussions.
-
-### Quality Over Quantity
-
-We prefer a curated selection of quality tools over an exhaustive list of unmaintained projects.
-
-### Standards-Focused
-
-We prioritise tools that support recognised European mobility data standards.
-
-### Vendor-Neutral
-
-We welcome both open source and commercial tools, provided they're accessible and meet our criteria.
+✅ **Relevant to mobility data**: Supports European mobility data standards or workflows  
+✅ **Publicly accessible**: Available for use (either open source or free to use)  
+✅ **Functional**: Currently working and maintained  
+✅ **Documented**: Has basic documentation or usage instructions
 
 ## Statistics
 
@@ -172,28 +110,35 @@ The catalogue supports keyboard navigation to move quickly between pages. Press 
 | `Ctrl` `K` or `/` | Open site-wide search       |
 | `Escape`          | Clear the filter search box |
 
-## Roadmap
+## Development
 
-### Short Term
+- **Built with**: VitePress (modern static site generator)
+- **Hosted on**: GitHub Pages
+- **Open Source**: All catalogue content is open source
+- **NAPCORE-Curated**: Tools are built or submitted and reviewed by the NAPCORE team
+- **Community-Driven**: Open to contributions and feedback from the wider community
 
-- Expand tool coverage across all categories
-- Add more DATEX II, NeTEx, and SIRI tools
-- Improve search and filtering capabilities
-- Add tool comparison features
+### Roadmap
 
-### Medium Term
+#### Short Term
 
-- Implement user ratings and reviews
-- Add tool usage statistics
-- Create tool integration guides
-- Develop API for programmatic access
+- **Expand tool coverage** across all categories and Standards
+- **Improve search and filtering** capabilities
+- Add **tool comparison features**
 
-### Long Term
+#### Medium Term
 
-- Establish tool certification program
-- Create testing infrastructure
-- Build automated tool discovery
-- Expand to cover more standards
+- Implement **user ratings** and reviews
+- Add **tool usage statistics**
+- Create tool integration **guides**
+- **Develop API** for programmatic access
+
+#### Long Term
+
+- Establish **tool certification program**
+- Create **testing infrastructure**
+- Build **automated tool discovery**
+- Expand to **cover more standards**
 
 ## Get Involved
 
