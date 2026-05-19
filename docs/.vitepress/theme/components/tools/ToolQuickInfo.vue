@@ -131,9 +131,8 @@ img {
 .endorsed-pill {
   display: inline-flex;
   align-items: center;
-  min-width: 0;
-  padding: 0.2rem 0.6rem;
-  border-radius: 12px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 500;
   background: rgba(0, 102, 204, 0.07);
