@@ -44,12 +44,15 @@ function onDocumentMouseDown(e: MouseEvent) {
 
 function onDocumentKeyDown(e: KeyboardEvent) {
   if (e.key === 'Escape' && document.activeElement === searchInput.value) {
-    searchText.value = '';
-    searchInput.value?.blur();
-    if (typeof window !== 'undefined') {
-      const url = new URL(window.location.href);
-      url.searchParams.delete('search');
-      window.history.replaceState({}, '', url.toString());
+    if (searchText.value) {
+      searchText.value = '';
+      if (typeof window !== 'undefined') {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('search');
+        window.history.replaceState({}, '', url.toString());
+      }
+    } else {
+      searchInput.value?.blur();
     }
   }
 }
@@ -84,6 +87,7 @@ function updateSearch() {
 
 function clearSearch() {
   searchText.value = '';
+  searchInput.value?.focus();
   if (typeof window !== 'undefined') {
     const url = new URL(window.location.href);
     url.searchParams.delete('search');

@@ -98,17 +98,17 @@ To maintain quality standards of the tools in the catalogue, the inclusion crite
 
 The catalogue supports keyboard navigation to move quickly between pages. Press **`g`** followed by a second key:
 
-| Shortcut          | Action                      |
-| ----------------- | --------------------------- |
-| `g` `h`           | Go to Home                  |
-| `g` `t`           | Go to All Tools             |
-| `g` `n`           | Go to Tools by NAPCORE      |
-| `g` `s`           | Go to Standards             |
-| `g` `c`           | Go to Categories            |
-| `g` `a`           | Go to About                 |
-| `?`               | Go to keyboard shortcuts    |
-| `Ctrl` `K` or `/` | Open site-wide search       |
-| `Escape`          | Clear the filter search box |
+| Shortcut          | Action                                                     |
+| ----------------- | ---------------------------------------------------------- |
+| `g` `h`           | Go to Home                                                 |
+| `g` `t`           | Go to All Tools                                            |
+| `g` `n`           | Go to Tools by NAPCORE                                     |
+| `g` `s`           | Go to Standards                                            |
+| `g` `c`           | Go to Categories                                           |
+| `g` `a`           | Go to About                                                |
+| `?`               | Go to keyboard shortcuts                                   |
+| `Ctrl` `K` or `/` | Open site-wide search                                      |
+| `Escape`          | Clear the filter search box (press again to release focus) |
 
 ## Development
 
