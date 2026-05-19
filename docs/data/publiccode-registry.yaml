@@ -1,0 +1,20 @@
+# Source registry for publiccode.yml files.
+# Each entry maps a slug to its upstream source URL.
+#
+# Run `npm run sync:publiccode` to fetch/update all entries.
+# Run `node scripts/sync-publiccode.mjs <slug>` to fetch one entry.
+#
+# GitHub repository URLs are resolved automatically:
+#   https://github.com/{owner}/{repo}
+#   → https://raw.githubusercontent.com/{owner}/{repo}/main/publiccode.yml
+#   (falls back to master if main is not found)
+#
+# Direct raw URLs are also accepted:
+#   source: https://example.org/path/to/publiccode.yml
+
+shacl-validator:
+  source: https://github.com/ISAITB/shacl-validator
+  categories:
+    - validators
+  standards:
+    - shacl

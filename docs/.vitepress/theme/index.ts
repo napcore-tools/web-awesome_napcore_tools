@@ -18,6 +18,7 @@ import StandardsGrid from './components/standards/StandardsGrid.vue';
 import StandardsFilter from './components/standards/StandardsFilter.vue';
 import QuickInfo from './components/tools/ToolQuickInfo.vue';
 import ToolMetadata from './components/tools/ToolMetadata.vue';
+import ToolPubliccodeView from './components/tools/ToolPubliccodeView.vue';
 import RelatedCategories from './components/categories/RelatedCategories.vue';
 import BlogCard from './components/blog/BlogCard.vue';
 import BlogGrid from './components/blog/BlogGrid.vue';
@@ -57,6 +58,7 @@ export default {
     app.component('StandardsFilter', StandardsFilter);
     app.component('QuickInfo', QuickInfo);
     app.component('ToolMetadata', ToolMetadata);
+    app.component('ToolPubliccodeView', ToolPubliccodeView);
     app.component('RelatedCategories', RelatedCategories);
     app.component('BlogCard', BlogCard);
     app.component('BlogGrid', BlogGrid);

@@ -9,7 +9,7 @@ A community-driven catalog of open-source tools that support European mobility d
 Visit the catalog at:
 
 - Proof of Concept: <https://napcore-tools.github.io/web-awesome_napcore_tools/>
-- Finally (after approving version 1):  [awesome.napcore.eu](https://awesome.napcore.eu/) (expected January/February 2026)
+- Finally (after approving version 1): [awesome.napcore.eu](https://awesome.napcore.eu/) (expected January/February 2026)
 
 ## 🎯 Mission
 
@@ -381,6 +381,12 @@ web-awesome_napcore_tools/
 ├── package.json
 └── README.md
 ```
+
+## 📦 publiccode.yml Integration
+
+The catalogue supports [publiccode.yml](https://yml.publiccode.tools/) (v0.5.0). Register a tool by adding its source URL to `docs/data/publiccode-registry.yaml` and running `npm run sync:publiccode` — no hand-crafted page required. Fields are merged at build time; frontmatter always wins over publiccode data.
+
+See [PUBLICCODE.md](./PUBLICCODE.md) for the full workflow, field mapping, and build-time merge details.
 
 ## 🤝 Contributing
 
