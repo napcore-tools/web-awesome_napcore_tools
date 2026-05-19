@@ -159,13 +159,19 @@ import { useData } from 'vitepress';
 
 const { params: p } = useData();
 
-type PcRecord = Record<string, unknown>;
+type PubliccodeRecord = Record<string, unknown>;
 
-const pc = computed((): PcRecord => (p.value?.publiccode as PcRecord) ?? {});
-const pcEn = computed((): PcRecord => ((pc.value?.description as PcRecord)?.en as PcRecord) ?? {});
-const pcContact = computed((): PcRecord => {
-  const m = (pc.value?.maintenance as PcRecord) ?? {};
-  return ((m.contacts as PcRecord[]) ?? [])[0] ?? ((m.contractors as PcRecord[]) ?? [])[0] ?? {};
+const pc = computed((): PubliccodeRecord => (p.value?.publiccode as PubliccodeRecord) ?? {});
+const pcEn = computed(
+  (): PubliccodeRecord => ((pc.value?.description as PubliccodeRecord)?.en as PubliccodeRecord) ?? {}
+);
+const pcContact = computed((): PubliccodeRecord => {
+  const maintenance = (pc.value?.maintenance as PubliccodeRecord) ?? {};
+  return (
+    ((maintenance.contacts as PubliccodeRecord[]) ?? [])[0] ??
+    ((maintenance.contractors as PubliccodeRecord[]) ?? [])[0] ??
+    {}
+  );
 });
 
 function linkHost(url: string): string {

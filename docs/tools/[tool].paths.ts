@@ -29,6 +29,12 @@ interface RegistryEntry {
   standards?: string[];
   endorsed?: boolean;
   status?: string;
+  technology?: string;
+  language?: string;
+  type?: string | string[];
+  demo?: string;
+  mainContributor?: string;
+  lastUpdated?: string;
 }
 
 /** Maps publiccode.yml developmentStatus to the site's two-value status vocabulary. */
@@ -97,6 +103,12 @@ export default {
           categories: overrides.categories ?? [],
           standards: overrides.standards ?? [],
           endorsed: overrides.endorsed ?? null,
+          technology: overrides.technology ?? null,
+          language: overrides.language ?? null,
+          type: overrides.type ?? null,
+          demo: overrides.demo ?? null,
+          mainContributor: overrides.mainContributor ?? null,
+          lastUpdated: overrides.lastUpdated ?? null,
           softwareVersion: (pc.softwareVersion as string) ?? null,
           license: (pcLegal.license as string) ?? null,
           repository: (pc.url as string) ?? null,

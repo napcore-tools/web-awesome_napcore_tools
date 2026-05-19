@@ -11,6 +11,11 @@
 #
 # Direct raw URLs are also accepted:
 #   source: https://example.org/path/to/publiccode.yml
+#
+# NAPCORE-specific overrides can be added alongside source:
+#   categories, standards, endorsed, status
+# These take precedence over anything in the publiccode.yml file.
+# See PUBLICCODE.md for the full field reference.
 
 shacl-validator:
   source: https://github.com/ISAITB/shacl-validator

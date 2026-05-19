@@ -69,6 +69,12 @@ interface RegistryEntry {
   standards?: string[];
   endorsed?: boolean;
   status?: string;
+  technology?: string;
+  language?: string;
+  type?: string | string[];
+  demo?: string;
+  mainContributor?: string;
+  lastUpdated?: string;
 }
 
 /**
@@ -131,12 +137,8 @@ function applyPubliccode(slug: string, data: Partial<Tool>): Partial<Tool> {
  * Builds a Tool object entirely from a local publiccode.yml, with no .md file.
  * Used for tools that are registered via publiccode only — no hand-crafted page.
  *
- * Fields with no publiccode.yml equivalent (`categories`, `endorsed`, `standards`,
- * `technology`, `language`, `type`, `demo`, `mainContributor`, `lastUpdated`) are
- * left empty or undefined. The tool appears in the full catalog but in no category.
- *
- * Registry overrides (`categories`, `standards`, `endorsed`, `status`) take precedence
- * over publiccode.yml values when present in `docs/data/publiccode-registry.yaml`.
+ * Fields with no publiccode.yml equivalent are left empty or undefined unless set
+ * via registry overrides in `docs/data/publiccode-registry.yaml`.
  *
  * @param slug - Tool slug, must match a directory `docs/data/publiccode/<slug>/publiccode.yml`
  * @param overrides - Optional NAPCORE-specific overrides from the registry
@@ -181,6 +183,12 @@ function toolFromPubliccode(slug: string, overrides?: RegistryEntry): Tool | nul
     maintainedBy: ((pcContacts.name as string) ?? (pcContractors.name as string)) || undefined,
     firstRelease: (publiccode.releaseDate as string) || undefined,
     tags: (publiccode.tags as string[]) || [],
+    technology: overrides?.technology,
+    language: overrides?.language,
+    type: overrides?.type,
+    demo: overrides?.demo,
+    mainContributor: overrides?.mainContributor,
+    lastUpdated: overrides?.lastUpdated,
   };
 }
 

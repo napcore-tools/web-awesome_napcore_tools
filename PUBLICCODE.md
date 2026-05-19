@@ -93,9 +93,7 @@ When `tools.data.ts` processes a `.md` tool that has a matching `<slug>/publicco
 | `releaseDate`                     | `firstRelease`                 |
 | `tags`                            | `tags` (if our tags are empty) |
 
-Fields that can be set via registry overrides or a hand-crafted `.md` page: `categories`, `standards`, `endorsed`, `status`.
-
-Fields that require a hand-crafted `.md` page: `technology`, `language`, `type`, `demo`, `mainContributor`, `lastUpdated`. Publiccode-only tools without a `.md` page will have these absent.
+All remaining fields can be set via registry overrides or a hand-crafted `.md` page. See the Registry overrides section below.
 
 ---
 
@@ -114,12 +112,18 @@ shacl-validator:
   endorsed: false
 ```
 
-| Override field | Type       | Purpose                                                                 |
-| -------------- | ---------- | ----------------------------------------------------------------------- |
-| `categories`   | `string[]` | NAPCORE catalogue categories (slugs)                                    |
-| `standards`    | `string[]` | Mobility data standards supported (slugs)                               |
-| `status`       | `string`   | Override the auto-mapped status (`active`, `maintenance`, `deprecated`) |
-| `endorsed`     | `boolean`  | Mark as a NAPCORE-endorsed tool                                         |
+| Override field    | Type              | Purpose                                                                 |
+| ----------------- | ----------------- | ----------------------------------------------------------------------- |
+| `categories`      | `string[]`        | NAPCORE catalogue categories (slugs)                                    |
+| `standards`       | `string[]`        | Mobility data standards supported (slugs)                               |
+| `status`          | `string`          | Override the auto-mapped status (`active`, `maintenance`, `deprecated`) |
+| `endorsed`        | `boolean`         | Mark as a NAPCORE-endorsed tool                                         |
+| `technology`      | `string`          | Technology stack description                                            |
+| `language`        | `string`          | Primary programming language                                            |
+| `type`            | `string/string[]` | Tool type(s) (e.g. `CLI Tool`, `Web Application`)                       |
+| `demo`            | `string`          | URL to a live demo                                                      |
+| `mainContributor` | `string`          | Name of the main contributor                                            |
+| `lastUpdated`     | `string`          | Date of last known update (`YYYY-MM-DD`)                                |
 
 Registry overrides apply to publiccode-only tools. For hybrid tools (with a `.md` page), frontmatter remains the override mechanism.
 
