@@ -1,60 +1,61 @@
 <template>
-  <table v-if="frontmatter">
+  <table v-if="tool">
     <tbody>
-      <tr v-if="frontmatter.status && frontmatter.status !== 'active'">
+      <tr v-if="tool.status && tool.status !== 'active'">
         <td><strong>Status</strong></td>
         <td>{{ statusEmoji }} {{ statusLabel }}</td>
       </tr>
-      <tr v-if="frontmatter.endorsed">
+      <tr v-if="tool.endorsed">
         <td><strong>Provenance</strong></td>
         <td class="endorsed-cell">
           <span class="endorsed-pill">By NAPCORE</span>
           <img src="/napcore-logo.png" alt="NAPCORE" class="endorsed-logo" />
         </td>
       </tr>
-      <tr v-if="frontmatter.license">
+      <tr v-if="tool.license">
         <td><strong>License</strong></td>
-        <td>{{ frontmatter.license }}</td>
+        <td>{{ tool.license }}</td>
       </tr>
-      <tr v-if="frontmatter.website">
+      <tr v-if="tool.website">
         <td><strong>Website</strong></td>
         <td>
-          <a :href="frontmatter.website" target="_blank">{{ getLinkText(frontmatter.website) }}</a>
+          <a :href="tool.website" target="_blank">{{ getLinkText(tool.website) }}</a>
         </td>
       </tr>
-      <tr v-if="frontmatter.repository">
+      <tr v-if="tool.repository">
         <td><strong>Repository</strong></td>
         <td>
-          <a :href="frontmatter.repository" target="_blank">{{ getRepoText(frontmatter.repository) }}</a>
+          <a :href="tool.repository" target="_blank">{{ getRepoText(tool.repository) }}</a>
         </td>
       </tr>
-      <tr v-if="frontmatter.documentation">
+
+      <tr v-if="tool.documentation">
         <td><strong>Documentation</strong></td>
         <td>
-          <a :href="frontmatter.documentation" target="_blank">{{ getLinkText(frontmatter.documentation) }}</a>
+          <a :href="tool.documentation" target="_blank">{{ getLinkText(tool.documentation) }}</a>
         </td>
       </tr>
-      <tr v-if="frontmatter.demo">
+      <tr v-if="tool.demo">
         <td><strong>Demo</strong></td>
         <td>
-          <a :href="frontmatter.demo" target="_blank">{{ getLinkText(frontmatter.demo) }}</a>
+          <a :href="tool.demo" target="_blank">{{ getLinkText(tool.demo) }}</a>
         </td>
       </tr>
-      <tr v-if="frontmatter.developer">
+      <tr v-if="tool.developer">
         <td><strong>Developer</strong></td>
-        <td>{{ frontmatter.developer }}</td>
+        <td>{{ tool.developer }}</td>
       </tr>
-      <tr v-if="frontmatter.maintainedBy">
+      <tr v-if="tool.maintainedBy">
         <td><strong>Maintained by</strong></td>
-        <td>{{ frontmatter.maintainedBy }}</td>
+        <td>{{ tool.maintainedBy }}</td>
       </tr>
-      <tr v-if="frontmatter.mainContributor">
+      <tr v-if="tool.mainContributor">
         <td><strong>Main Contributor</strong></td>
-        <td>{{ frontmatter.mainContributor }}</td>
+        <td>{{ tool.mainContributor }}</td>
       </tr>
-      <tr v-if="frontmatter.technology">
+      <tr v-if="tool.technology">
         <td><strong>Technology</strong></td>
-        <td>{{ frontmatter.technology }}</td>
+        <td>{{ tool.technology }}</td>
       </tr>
     </tbody>
   </table>
@@ -63,11 +64,17 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useData } from 'vitepress';
+import { data as tools } from '../../../core/data-loaders/tools.data';
 
-const { frontmatter } = useData();
+const { page } = useData();
+
+const tool = computed(() => {
+  const slug = page.value.relativePath.replace(/^tools\//, '').replace(/\.md$/, '');
+  return tools.find((t) => t.slug === slug);
+});
 
 const statusEmoji = computed(() => {
-  switch (frontmatter.value.status) {
+  switch (tool.value?.status) {
     case 'active':
       return '🟢';
     case 'maintenance':
@@ -80,7 +87,7 @@ const statusEmoji = computed(() => {
 });
 
 const statusLabel = computed(() => {
-  switch (frontmatter.value.status) {
+  switch (tool.value?.status) {
     case 'active':
       return 'Active';
     case 'maintenance':
