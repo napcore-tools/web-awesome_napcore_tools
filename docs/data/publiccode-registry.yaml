@@ -25,8 +25,21 @@ shacl-validator:
   override:
     categories:
       - validators
+      - data-quality
+      - testing
     standards:
-      - shacl
+      - mobilitydcat-ap
+      - rdf
+      - dcat-ap
 
 open_trip_planner:
   source: https://github.com/opentripplanner/opentripplanner
+  override:
+    categories:
+      - route-planners
+    standards:
+      - gbfs
+      - netex
+      - gtfs
+      - transmodel
+      - siri
