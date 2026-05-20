@@ -27,3 +27,6 @@ shacl-validator:
       - validators
     standards:
       - shacl
+
+open_trip_planner:
+  source: https://github.com/opentripplanner/opentripplanner
