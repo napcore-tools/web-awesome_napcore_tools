@@ -33,7 +33,7 @@ import { computed, onMounted } from 'vue';
 import { useRoute } from 'vitepress';
 import { data as tools } from '@/core/data-loaders/tools.data';
 import type { Tool } from '@/core/data-loaders/tools.data';
-import { createSlug } from '@/core/utils';
+import { createSlug, getSubtitle } from '@/core/utils';
 import ToolCard from './ToolCard.vue';
 
 // Debug mode (enable by adding ?debug=true to URL)
@@ -265,35 +265,6 @@ const emptyStateMessage = computed(() => {
   }
   return 'No tools available in this category yet. <a href="/contribute">Contribute a tool →</a>';
 });
-
-// Generate a subtitle based on tool characteristics
-function getSubtitle(tool: Tool): string {
-  // Check for specific patterns to determine subtitle
-  if (tool.tags?.includes('Browser') || tool.tags?.includes('Reference')) {
-    return 'Reference Documentation Tool';
-  }
-  if (tool.tags?.includes('Wizard') || tool.tags?.includes('Generator')) {
-    return tool.tags?.includes('Profile') ? 'Profile Generation Wizard' : 'Metadata Generation Tool';
-  }
-  if (tool.tags?.includes('Validator') || tool.categories.includes('validators')) {
-    return 'Location Reference Validator';
-  }
-  if (tool.tags?.includes('Converter')) {
-    return 'Model Browser & Converter Foundation';
-  }
-  if (['Journey Planner', 'Router', 'Intermodal'].some((r) => tool.tags?.includes(r))) {
-    return 'Journey Planner';
-  }
-  if (['Data Model', 'Documentation'].some((r) => tool.tags?.includes(r))) {
-    return 'Documentation';
-  }
-
-  // Default: use first tag or category
-  if (tool.tags && tool.tags.length > 0) {
-    return `${tool.tags[0]} Tool`;
-  }
-  return 'Development Tool';
-}
 </script>
 
 <style scoped>
