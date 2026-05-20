@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { parse as parseYaml } from 'yaml';
-import { validateToolWithCache } from '../validation/tools';
+import { validateToolWithCache, validateRegistryWithCache } from '../validation/tools';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -211,6 +211,7 @@ export default {
     // Load publiccode-only tools — slugs that have a <slug>/publiccode.yml but no .md file
     if (fs.existsSync(publiccodeDir)) {
       const registry = loadRegistry(registryPath);
+      validateRegistryWithCache(registryPath, registry);
       const mdSlugs = new Set(tools.map((t) => t.slug));
       for (const entry of fs.readdirSync(publiccodeDir, { withFileTypes: true }).filter((e) => e.isDirectory())) {
         const slug = entry.name;

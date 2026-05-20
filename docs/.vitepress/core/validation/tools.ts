@@ -181,6 +181,53 @@ export function validateTool(tool: Partial<Tool>, filename: string): ValidationR
 }
 
 /**
+ * Validate a single registry override block.
+ * All fields are optional in an override, so only fields that are present are checked.
+ */
+export function validateRegistryOverride(slug: string, override: Partial<Omit<Tool, 'slug'>>): ValidationResult {
+  const allErrors: ValidationError[] = [];
+
+  if (override.categories !== undefined) {
+    allErrors.push(...validateCategories(override, slug));
+  }
+  if (override.standards !== undefined) {
+    allErrors.push(...validateStandards(override, slug));
+  }
+  if (override.status !== undefined) {
+    allErrors.push(...validateStatus(override, slug));
+  }
+
+  const errors = allErrors.filter((e) => e.severity === 'error');
+  const warnings = allErrors.filter((e) => e.severity === 'warning');
+  return { valid: errors.length === 0, errors, warnings };
+}
+
+/**
+ * Validate all overrides in the registry file, with mtime-based caching to avoid
+ * duplicate log lines when VitePress re-invokes the data loader on watch events.
+ * Uses the same global cache as tool validation — registry path is the cache key.
+ */
+export function validateRegistryWithCache(
+  registryPath: string,
+  registry: Record<string, { override?: Partial<Omit<Tool, 'slug'>> }>
+): void {
+  if (!fs.existsSync(registryPath)) return;
+
+  const mtime = fs.statSync(registryPath).mtimeMs;
+  const cacheKey = `registry:${registryPath}`;
+  if (validationCache.get(cacheKey) === mtime) return;
+
+  for (const [slug, entry] of Object.entries(registry)) {
+    if (entry.override) {
+      const result = validateRegistryOverride(slug, entry.override);
+      handleValidationResult(`publiccode-registry.yaml → ${slug}`, result);
+    }
+  }
+
+  validationCache.set(cacheKey, mtime);
+}
+
+/**
  * Validate tool with mtime-based caching
  *
  * Checks if file has been modified since last validation.
