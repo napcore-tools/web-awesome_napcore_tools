@@ -1,3 +1,5 @@
+<template><slot /></template>
+
 <script setup lang="ts">
 import { onMounted, onUnmounted, nextTick } from 'vue';
 import { useRouter } from 'vitepress';
