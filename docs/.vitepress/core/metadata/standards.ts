@@ -44,9 +44,9 @@ export function getStandardMetadata(standardSlug: string): StandardMetadata {
 
   // Fallback for unknown standards
   return {
-    title: standardSlug, // Use slug as title if metadata not found
-    endorsed: standard.endorsed,
-    icon: '📄', // Default icon for unknown standards
+    title: standardSlug,
+    endorsed: undefined,
+    icon: '📄',
     description: undefined,
   };
 }
