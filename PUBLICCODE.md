@@ -99,17 +99,18 @@ All remaining fields can be set via registry overrides or a hand-crafted `.md` p
 
 ## Registry overrides
 
-Fields that publiccode.yml cannot express can be set directly in `publiccode-registry.yaml` alongside the `source:` URL. These values take precedence over anything derived from the publiccode.yml file.
+Fields that publiccode.yml cannot express can be set under the `override:` key in `publiccode-registry.yaml`. These values take precedence over anything derived from the publiccode.yml file.
 
 ```yaml
 shacl-validator:
   source: https://github.com/ISAITB/shacl-validator
-  categories:
-    - validators
-  standards:
-    - shacl
-  status: active
-  endorsed: false
+  override:
+    categories:
+      - validators
+    standards:
+      - shacl
+    status: active
+    endorsed: false
 ```
 
 | Override field    | Type              | Purpose                                                                 |

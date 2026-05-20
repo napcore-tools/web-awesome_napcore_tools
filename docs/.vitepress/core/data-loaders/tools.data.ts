@@ -30,6 +30,9 @@ export interface Tool {
   tags?: string[];
   firstRelease?: string;
   lastUpdated?: string;
+  longDescription?: string;
+  features?: string[];
+  softwareVersion?: string;
 }
 
 /**
@@ -59,58 +62,61 @@ function parseFrontMatter(content: string): { data: Partial<Tool>; content: stri
   }
 }
 
-type PubliccodeRecord = Record<string, unknown>;
+export type PubliccodeRecord = Record<string, unknown>;
 const publiccodeDir = path.resolve(__dirname, '../../../data/publiccode');
 const registryPath = path.resolve(__dirname, '../../../data/publiccode-registry.yaml');
 
-interface RegistryEntry {
+export interface RegistryEntry {
   source?: string;
-  categories?: string[];
-  standards?: string[];
-  endorsed?: boolean;
-  status?: string;
-  technology?: string;
-  language?: string;
-  type?: string | string[];
-  demo?: string;
-  mainContributor?: string;
-  lastUpdated?: string;
+  override?: Partial<Omit<Tool, 'slug'>>;
+}
+
+/** Maps publiccode.yml `developmentStatus` to the site's two-value vocabulary. */
+export function mapStatus(developmentStatus: string | undefined): string {
+  return developmentStatus === 'obsolete' ? 'deprecated' : 'active';
+}
+
+/** Reads and parses `publiccode-registry.yaml`. Returns an empty object if the file is absent or malformed. */
+export function loadRegistry(registryPath: string): Record<string, RegistryEntry> {
+  try {
+    if (fs.existsSync(registryPath)) {
+      return (parseYaml(fs.readFileSync(registryPath, 'utf-8')) as Record<string, RegistryEntry>) ?? {};
+    }
+  } catch {
+    console.error(`Failed to parse registry at ${registryPath}`);
+  }
+  return {};
 }
 
 /**
- * Merges a local publiccode.yml file into tool frontmatter data.
- * Reads `docs/data/publiccode/<slug>.yml` if present and fills in any fields
- * that are absent or null in the frontmatter. Frontmatter always wins.
+ * Builds a Tool object from a publiccode.yml file, optionally enriched with NAPCORE-specific overrides.
  *
- * Field mapping (publiccode.yml → Tool):
- * - `description.en.shortDescription` → `description`
- * - `url`                             → `repository`
- * - `landingURL`                      → `website`
- * - `description.en.documentation`    → `documentation`
- * - `legal.license`                   → `license`
- * - `legal.mainCopyrightOwner`        → `developer`
- * - `maintenance.contacts[0].name`    → `maintainedBy` (falls back to contractors[0])
- * - `releaseDate`                     → `firstRelease`
- * - `tags`                            → `tags` (only when frontmatter tags are empty)
- *
- * Fields with no publiccode.yml equivalent (always from frontmatter):
- * `categories`, `status`, `endorsed`, `standards`, `technology`, `language`,
- * `type`, `demo`, `mainContributor`, `lastUpdated`
- *
- * @param slug - Tool slug, used to locate `docs/data/publiccode/<slug>/publiccode.yml`
- * @param data - Parsed frontmatter for the tool
- * @returns Decorated copy of `data` with publiccode fallbacks applied
+ * @param slug      - Tool identifier; becomes Tool.slug and locates `docs/data/publiccode/<slug>/publiccode.yml`.
+ * @param overrides - Optional subset of Tool fields (everything except slug) from the registry's `override:` block.
+ *                    These win over publiccode.yml values — useful for fields the standard cannot express
+ *                    (categories, standards, endorsed, …).
+ * @param parsedPc  - Pre-parsed publiccode.yml object. When the caller already holds the parsed YAML
+ *                    (e.g. [tool].paths.ts), pass it here to skip a second file read. Omit to let the
+ *                    function read the file itself.
+ * @returns A complete Tool object, or null if the file is missing or unparseable.
  */
-function applyPubliccode(slug: string, data: Partial<Tool>): Partial<Tool> {
-  const filePath = path.join(publiccodeDir, slug, 'publiccode.yml');
-  if (!fs.existsSync(filePath)) return data;
-
-  let publiccode: PubliccodeRecord = {};
-  try {
-    publiccode = (parseYaml(fs.readFileSync(filePath, 'utf-8')) as PubliccodeRecord) ?? {};
-  } catch {
-    console.error(`Failed to parse publiccode.yml for ${slug}`);
-    return data;
+export function toolFromPubliccode(
+  slug: string,
+  overrides?: Partial<Omit<Tool, 'slug'>>,
+  parsedPc?: PubliccodeRecord
+): Tool | null {
+  let publiccode: PubliccodeRecord;
+  if (parsedPc) {
+    publiccode = parsedPc;
+  } else {
+    const filePath = path.join(publiccodeDir, slug, 'publiccode.yml');
+    if (!fs.existsSync(filePath)) return null;
+    try {
+      publiccode = (parseYaml(fs.readFileSync(filePath, 'utf-8')) as PubliccodeRecord) ?? {};
+    } catch {
+      console.error(`Failed to parse publiccode.yml for ${slug}`);
+      return null;
+    }
   }
 
   const pcDesc = ((publiccode.description as PubliccodeRecord)?.en as PubliccodeRecord) ?? {};
@@ -119,62 +125,13 @@ function applyPubliccode(slug: string, data: Partial<Tool>): Partial<Tool> {
   const pcContacts = ((pcMaintenance.contacts as PubliccodeRecord[]) ?? [])[0] ?? {};
   const pcContractors = ((pcMaintenance.contractors as PubliccodeRecord[]) ?? [])[0] ?? {};
 
-  return {
-    ...data,
-    description: data.description || (pcDesc.shortDescription as string) || undefined,
-    license: data.license ?? (pcLegal.license as string),
-    repository: data.repository ?? (publiccode.url as string),
-    website: data.website ?? (publiccode.landingURL as string),
-    documentation: data.documentation ?? (pcDesc.documentation as string),
-    developer: data.developer ?? (pcLegal.mainCopyrightOwner as string),
-    maintainedBy: data.maintainedBy ?? (pcContacts.name as string) ?? (pcContractors.name as string),
-    firstRelease: data.firstRelease ?? (publiccode.releaseDate as string),
-    tags: data.tags?.length ? data.tags : ((publiccode.tags as string[]) ?? undefined),
-  };
-}
-
-/**
- * Builds a Tool object entirely from a local publiccode.yml, with no .md file.
- * Used for tools that are registered via publiccode only — no hand-crafted page.
- *
- * Fields with no publiccode.yml equivalent are left empty or undefined unless set
- * via registry overrides in `docs/data/publiccode-registry.yaml`.
- *
- * @param slug - Tool slug, must match a directory `docs/data/publiccode/<slug>/publiccode.yml`
- * @param overrides - Optional NAPCORE-specific overrides from the registry
- * @returns A Tool object, or null if the file is missing or unparseable
- */
-function toolFromPubliccode(slug: string, overrides?: RegistryEntry): Tool | null {
-  const filePath = path.join(publiccodeDir, slug, 'publiccode.yml');
-  if (!fs.existsSync(filePath)) return null;
-
-  let publiccode: PubliccodeRecord = {};
-  try {
-    publiccode = (parseYaml(fs.readFileSync(filePath, 'utf-8')) as PubliccodeRecord) ?? {};
-  } catch {
-    console.error(`Failed to parse publiccode.yml for ${slug}`);
-    return null;
-  }
-
-  const pcDesc = ((publiccode.description as PubliccodeRecord)?.en as PubliccodeRecord) ?? {};
-  const pcLegal = (publiccode.legal as PubliccodeRecord) ?? {};
-  const pcMaintenance = (publiccode.maintenance as PubliccodeRecord) ?? {};
-  const pcContacts = ((pcMaintenance.contacts as PubliccodeRecord[]) ?? [])[0] ?? {};
-  const pcContractors = ((pcMaintenance.contractors as PubliccodeRecord[]) ?? [])[0] ?? {};
-
-  const title = (publiccode.name as string) || slug;
-  const description = (pcDesc.shortDescription as string)?.trim() || '';
-
-  const mappedStatus = (publiccode.developmentStatus as string) === 'obsolete' ? 'deprecated' : 'active';
-
-  return {
+  const base: Tool = {
     slug,
-    title,
-    description,
-    categories: overrides?.categories ?? [],
-    status: overrides?.status ?? mappedStatus,
-    endorsed: overrides?.endorsed,
-    standards: overrides?.standards ?? [],
+    title: (publiccode.name as string) || slug,
+    description: (pcDesc.shortDescription as string)?.trim() || '',
+    categories: [],
+    status: mapStatus(publiccode.developmentStatus as string | undefined),
+    standards: [],
     license: (pcLegal.license as string) || undefined,
     repository: (publiccode.url as string) || undefined,
     website: (publiccode.landingURL as string) || undefined,
@@ -183,13 +140,12 @@ function toolFromPubliccode(slug: string, overrides?: RegistryEntry): Tool | nul
     maintainedBy: ((pcContacts.name as string) ?? (pcContractors.name as string)) || undefined,
     firstRelease: (publiccode.releaseDate as string) || undefined,
     tags: (publiccode.tags as string[]) || [],
-    technology: overrides?.technology,
-    language: overrides?.language,
-    type: overrides?.type,
-    demo: overrides?.demo,
-    mainContributor: overrides?.mainContributor,
-    lastUpdated: overrides?.lastUpdated,
+    longDescription: (pcDesc.longDescription as string)?.trim() || undefined,
+    features: (pcDesc.features as string[]) || undefined,
+    softwareVersion: (publiccode.softwareVersion as string) || undefined,
   };
+
+  return { ...base, ...(overrides ?? {}) };
 }
 
 export default {
@@ -222,29 +178,28 @@ export default {
       // Only include files with valid front matter (title and categories required)
       if (validationResult.valid && data.title && data.categories) {
         const slug = file.replace('.md', '');
-        const tool = applyPubliccode(slug, data);
 
         tools.push({
           slug,
           title: data.title,
-          description: tool.description || '',
+          description: data.description || '',
           categories: Array.isArray(data.categories) ? data.categories : [data.categories],
           status: data.status || 'unknown',
           endorsed: data.endorsed,
-          license: tool.license,
-          repository: tool.repository,
-          website: tool.website,
-          documentation: tool.documentation,
+          license: data.license,
+          repository: data.repository,
+          website: data.website,
+          documentation: data.documentation,
           demo: data.demo,
-          developer: tool.developer,
-          maintainedBy: tool.maintainedBy,
+          developer: data.developer,
+          maintainedBy: data.maintainedBy,
           mainContributor: data.mainContributor,
           technology: data.technology,
           language: data.language,
           type: data.type,
           standards: data.standards || [],
-          tags: tool.tags ?? [],
-          firstRelease: tool.firstRelease,
+          tags: data.tags ?? [],
+          firstRelease: data.firstRelease,
           lastUpdated: data.lastUpdated,
         });
       } else if (!validationResult.valid) {
@@ -255,20 +210,12 @@ export default {
 
     // Load publiccode-only tools — slugs that have a <slug>/publiccode.yml but no .md file
     if (fs.existsSync(publiccodeDir)) {
-      let registry: Record<string, RegistryEntry> = {};
-      try {
-        if (fs.existsSync(registryPath)) {
-          registry = (parseYaml(fs.readFileSync(registryPath, 'utf-8')) as Record<string, RegistryEntry>) ?? {};
-        }
-      } catch {
-        console.error('Failed to parse publiccode-registry.yaml');
-      }
-
+      const registry = loadRegistry(registryPath);
       const mdSlugs = new Set(tools.map((t) => t.slug));
       for (const entry of fs.readdirSync(publiccodeDir, { withFileTypes: true }).filter((e) => e.isDirectory())) {
         const slug = entry.name;
         if (mdSlugs.has(slug)) continue;
-        const tool = toolFromPubliccode(slug, registry[slug]);
+        const tool = toolFromPubliccode(slug, registry[slug]?.override);
         if (tool) tools.push(tool);
       }
     }
