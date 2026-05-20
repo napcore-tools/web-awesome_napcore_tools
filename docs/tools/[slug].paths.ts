@@ -43,26 +43,28 @@ export default {
     const results = [];
 
     for (const entry of fs.readdirSync(publiccodeDir, { withFileTypes: true }).filter((e) => e.isDirectory())) {
-      const tool = entry.name;
+      const dirName = entry.name;
       // Hand-crafted pages take priority — skip tools that already have one
-      if (existingSlugs.has(tool)) continue;
+      if (existingSlugs.has(dirName)) continue;
 
       let publiccodeRecord: PubliccodeRecord = {};
       try {
         publiccodeRecord =
-          (parseYaml(fs.readFileSync(path.join(publiccodeDir, tool, 'publiccode.yml'), 'utf-8')) as PubliccodeRecord) ??
-          {};
+          (parseYaml(
+            fs.readFileSync(path.join(publiccodeDir, dirName, 'publiccode.yml'), 'utf-8')
+          ) as PubliccodeRecord) ?? {};
       } catch {
         continue;
       }
 
-      const base = toolFromPubliccode(tool, registry[tool]?.override, publiccodeRecord);
-      if (!base) continue;
+      const tool = toolFromPubliccode(dirName, registry[dirName]?.override, publiccodeRecord);
+      if (!tool) continue;
 
       results.push({
         params: {
-          slug: base.slug, // VitePress route parameter — matches [slug] in filename
-          tool: base, // full typed Tool object
+          slug: tool.slug, // VitePress route parameter — matches [slug] in filename
+          title: tool.title, // picked up by transformPageData in config.ts to set <title>
+          tool, // full typed Tool object
           publiccode: publiccodeRecord, // raw publiccode.yml — for fields beyond Tool
         },
       });
