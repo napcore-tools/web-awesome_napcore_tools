@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img v-if="pc.logo" :src="pc.logo as string" :alt="p.title" class="tool-logo" />
+    <img v-if="pc.logo" :src="githubBlobToRaw(pc.logo as string)" :alt="p.title" class="tool-logo" />
 
     <p class="pc-notice">
       This page is auto-generated from a <code>publiccode.yml</code> file.
@@ -173,6 +173,12 @@ const pcContact = computed((): PubliccodeRecord => {
     {}
   );
 });
+
+// GitHub blob URLs point to an HTML viewer, not the raw file — rewrite to raw.githubusercontent.com
+function githubBlobToRaw(url: string): string {
+  const m = url.match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\/(.+)$/);
+  return m ? `https://raw.githubusercontent.com/${m[1]}/${m[2]}/${m[3]}` : url;
+}
 
 function linkHost(url: string): string {
   try {
