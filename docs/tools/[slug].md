@@ -7,6 +7,6 @@ import { useData } from 'vitepress';
 const { params: p } = useData();
 </script>
 
-# {{ p.title }}
+# {{ p.tool.title }}
 
 <ToolPubliccodeView />

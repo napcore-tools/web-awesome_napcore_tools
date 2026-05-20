@@ -61,10 +61,9 @@ export default {
 
       results.push({
         params: {
-          ...base,
-          tool: base.slug, // VitePress route parameter — matches [tool] in filename
-          // Full parsed publiccode.yml object — available in [tool].md as p.publiccode
-          publiccode: publiccodeRecord,
+          slug: base.slug, // VitePress route parameter — matches [slug] in filename
+          tool: base, // full typed Tool object
+          publiccode: publiccodeRecord, // raw publiccode.yml — for fields beyond Tool
         },
       });
     }

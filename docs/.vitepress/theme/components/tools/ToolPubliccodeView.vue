@@ -1,21 +1,21 @@
 <template>
   <div>
-    <img v-if="pc.logo" :src="githubBlobToRaw(pc.logo as string)" :alt="p.title" class="tool-logo" />
+    <img v-if="pc.logo" :src="githubBlobToRaw(pc.logo as string)" :alt="t.title" class="tool-logo" />
 
     <p class="pc-notice">
-      This page is auto-generated from a <code>publiccode.yml</code> file.
-      <a href="https://github.com/napcore-tools/web-awesome_napcore_tools" target="_blank">Contribute a full page</a>
-      to replace it.
+      Metadata on this page is sourced automatically from the project's
+      <a v-if="t.repository" :href="t.repository" target="_blank"><code>publiccode.yml</code></a
+      ><code v-else>publiccode.yml</code>.
     </p>
 
-    <p>{{ p.description }}</p>
+    <p>{{ t.description }}</p>
 
-    <p v-if="p.longDescription">{{ p.longDescription }}</p>
+    <p v-if="t.longDescription">{{ t.longDescription }}</p>
 
-    <template v-if="p.features?.length">
+    <template v-if="t.features?.length">
       <h2>Features</h2>
       <ul>
-        <li v-for="feature in p.features" :key="feature">{{ feature }}</li>
+        <li v-for="feature in t.features" :key="feature">{{ feature }}</li>
       </ul>
     </template>
 
@@ -23,22 +23,22 @@
 
     <table>
       <tbody>
-        <tr v-if="p.status && p.status !== 'active'">
+        <tr v-if="t.status && t.status !== 'active'">
           <td><strong>Status</strong></td>
           <td>🔴 Deprecated</td>
         </tr>
-        <tr v-if="p.categories?.length">
+        <tr v-if="t.categories?.length">
           <td><strong>Categories</strong></td>
           <td>
-            <span v-for="(cat, i) in p.categories" :key="cat"
+            <span v-for="(cat, i) in t.categories" :key="cat"
               ><template v-if="i > 0">, </template><a :href="`/categories/${cat}`">{{ cat }}</a></span
             >
           </td>
         </tr>
-        <tr v-if="p.standards?.length">
+        <tr v-if="t.standards?.length">
           <td><strong>Standards</strong></td>
           <td>
-            <span v-for="(std, i) in p.standards" :key="std"
+            <span v-for="(std, i) in t.standards" :key="std"
               ><template v-if="i > 0">, </template><a :href="`/standards/${std}`">{{ std }}</a></span
             >
           </td>
@@ -47,26 +47,26 @@
           <td><strong>Type</strong></td>
           <td>{{ pc.softwareType }}</td>
         </tr>
-        <tr v-if="p.license">
+        <tr v-if="t.license">
           <td><strong>License</strong></td>
-          <td>{{ p.license }}</td>
+          <td>{{ t.license }}</td>
         </tr>
-        <tr v-if="p.website">
+        <tr v-if="t.website">
           <td><strong>Website</strong></td>
           <td>
-            <a :href="p.website" target="_blank">{{ linkHost(p.website) }}</a>
+            <a :href="t.website" target="_blank">{{ linkHost(t.website) }}</a>
           </td>
         </tr>
-        <tr v-if="p.repository">
+        <tr v-if="t.repository">
           <td><strong>Repository</strong></td>
           <td>
-            <a :href="p.repository" target="_blank">{{ linkHost(p.repository) }}</a>
+            <a :href="t.repository" target="_blank">{{ linkHost(t.repository) }}</a>
           </td>
         </tr>
-        <tr v-if="p.documentation">
+        <tr v-if="t.documentation">
           <td><strong>Documentation</strong></td>
           <td>
-            <a :href="p.documentation" target="_blank">{{ linkHost(p.documentation) }}</a>
+            <a :href="t.documentation" target="_blank">{{ linkHost(t.documentation) }}</a>
           </td>
         </tr>
         <tr v-if="pcEn.apiDocumentation">
@@ -77,14 +77,14 @@
             }}</a>
           </td>
         </tr>
-        <tr v-if="p.developer">
+        <tr v-if="t.developer">
           <td><strong>Developer</strong></td>
-          <td>{{ p.developer }}</td>
+          <td>{{ t.developer }}</td>
         </tr>
-        <tr v-if="p.maintainedBy">
+        <tr v-if="t.maintainedBy">
           <td><strong>Maintained by</strong></td>
           <td>
-            {{ p.maintainedBy
+            {{ t.maintainedBy
             }}<template v-if="pcContact.affiliation">
               · <em>{{ pcContact.affiliation }}</em></template
             >
@@ -98,13 +98,13 @@
             }}</span>
           </td>
         </tr>
-        <tr v-if="p.softwareVersion">
+        <tr v-if="t.softwareVersion">
           <td><strong>Version</strong></td>
-          <td>{{ p.softwareVersion }}</td>
+          <td>{{ t.softwareVersion }}</td>
         </tr>
-        <tr v-if="p.firstRelease">
+        <tr v-if="t.firstRelease">
           <td><strong>First release</strong></td>
-          <td>{{ p.firstRelease }}</td>
+          <td>{{ t.firstRelease }}</td>
         </tr>
       </tbody>
     </table>
@@ -144,10 +144,10 @@
       </div>
     </template>
 
-    <template v-if="p.tags?.length">
+    <template v-if="t.tags?.length">
       <h2>Tags</h2>
       <div class="tool-tags">
-        <span v-for="tag in p.tags" :key="tag" class="tool-tag">{{ tag }}</span>
+        <span v-for="tag in t.tags" :key="tag" class="tool-tag">{{ tag }}</span>
       </div>
     </template>
   </div>
@@ -156,11 +156,13 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useData } from 'vitepress';
+import type { Tool } from '../../core/data-loaders/tools.data';
 
 const { params: p } = useData();
 
 type PubliccodeRecord = Record<string, unknown>;
 
+const t = computed((): Tool => (p.value?.tool as Tool) ?? ({} as Tool));
 const pc = computed((): PubliccodeRecord => (p.value?.publiccode as PubliccodeRecord) ?? {});
 const pcEn = computed(
   (): PubliccodeRecord => ((pc.value?.description as PubliccodeRecord)?.en as PubliccodeRecord) ?? {}
