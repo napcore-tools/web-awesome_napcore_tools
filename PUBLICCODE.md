@@ -44,8 +44,8 @@ scripts/sync-publiccode.mjs             ← fetches registry URLs, writes local 
 2. Run the sync script:
 
    ```bash
-   npm run sync:publiccode                   # all entries
-   node scripts/sync-publiccode.mjs my-tool  # one entry
+   npm run sync:publiccode             # all entries
+   npm run sync:publiccode -- my-tool  # one entry (note the -- separator)
    ```
 
    This creates `docs/data/publiccode/my-tool/publiccode.yml`.
@@ -68,8 +68,8 @@ To add a full hand-crafted page later, create `docs/tools/my-tool.md`. It takes 
 Re-run the sync script at any time to pull the latest upstream versions:
 
 ```bash
-npm run sync:publiccode                   # update all
-node scripts/sync-publiccode.mjs my-tool  # update one
+npm run sync:publiccode             # update all
+npm run sync:publiccode -- my-tool  # update one (note the -- separator)
 ```
 
 Commit the updated `publiccode.yml` files. Builds always read from the local cache.
