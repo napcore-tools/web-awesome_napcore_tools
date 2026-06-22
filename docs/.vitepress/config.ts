@@ -111,6 +111,26 @@ export default defineConfig({
     search: {
       provider: 'local',
       options: {
+        // Fold selected frontmatter (standards, categories, tags, description) into the
+        // local search index for hand-crafted tool pages, so a tool is findable by its
+        // metadata even when those values don't appear in the page body. Dynamic
+        // publiccode tool pages instead carry their searchable text in an injected
+        // `content` block (see docs/tools/[slug].paths.ts).
+        _render(src, env, md) {
+          if (env.frontmatter?.search === false) return '';
+          const html = md.render(src, env);
+          const fm = env.frontmatter;
+          if (fm && env.relativePath?.startsWith('tools/')) {
+            const meta = [
+              ...(Array.isArray(fm.standards) ? fm.standards : []),
+              ...(Array.isArray(fm.categories) ? fm.categories : []),
+              ...(Array.isArray(fm.tags) ? fm.tags : []),
+              typeof fm.description === 'string' ? fm.description : '',
+            ].filter(Boolean);
+            if (meta.length) return `${html}\n${md.render(meta.join(' '))}`;
+          }
+          return html;
+        },
         translations: {
           button: {
             buttonText: 'Search',

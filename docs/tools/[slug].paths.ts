@@ -17,9 +17,55 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { parse as parseYaml } from 'yaml';
-import { type PubliccodeRecord, loadRegistry, toolFromPubliccode } from '../.vitepress/core/data-loaders/tools.data';
+import {
+  type PubliccodeRecord,
+  type Tool,
+  loadRegistry,
+  toolFromPubliccode,
+} from '../.vitepress/core/data-loaders/tools.data';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+/**
+ * Builds a hidden, search-only text block from a tool's metadata.
+ *
+ * These pages are rendered entirely by <ToolPubliccodeView> from route params, so
+ * their content is invisible to VitePress local search, which indexes the rendered
+ * markdown, not Vue component output. Returning this block as the page `content`
+ * gives the indexer real text to find. It is visually hidden (display:none), so it
+ * doesn't duplicate what the component already shows on screen, but the indexer —
+ * which reads the HTML string and ignores CSS — still picks it up.
+ */
+function buildSearchContent(tool: Tool, pc: PubliccodeRecord): string {
+  const loc = (pc.localisation as PubliccodeRecord) ?? {};
+  const org = (pc.organisation as PubliccodeRecord) ?? {};
+  const funded = (pc.fundedBy as PubliccodeRecord[]) ?? [];
+
+  const terms = [
+    tool.title,
+    tool.description,
+    tool.longDescription,
+    tool.developer,
+    tool.maintainedBy,
+    tool.license,
+    pc.softwareType as string,
+    org.name as string,
+    ...(tool.features ?? []),
+    ...(tool.categories ?? []),
+    ...(tool.standards ?? []),
+    ...(tool.tags ?? []),
+    ...((pc.platforms as string[]) ?? []),
+    ...((loc.availableLanguages as string[]) ?? []),
+    ...((pc.usedBy as string[]) ?? []),
+    ...funded.map((f) => f.name as string),
+  ].filter(Boolean) as string[];
+
+  const text = terms.join(' · ').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  // Kept on a single line so markdown-it treats it as one HTML block and the text
+  // stays inside the hidden div.
+  return `\n<div style="display: none">${text}</div>\n`;
+}
 
 export default {
   paths() {
@@ -67,6 +113,8 @@ export default {
           tool, // full typed Tool object
           publiccode: publiccodeRecord, // raw publiccode.yml — for fields beyond Tool
         },
+        // Hidden text block so VitePress local search can index these component-only pages
+        content: buildSearchContent(tool, publiccodeRecord),
       });
     }
 
