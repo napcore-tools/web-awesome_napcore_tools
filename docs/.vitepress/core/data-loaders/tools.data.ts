@@ -42,7 +42,7 @@ export interface Tool {
  * @param content - Raw markdown file content with frontmatter
  * @returns Object containing parsed frontmatter data and remaining markdown content
  */
-function parseFrontMatter(content: string): { data: Partial<Tool>; content: string } {
+function parseFrontMatter(content: string, filename: string): { data: Partial<Tool>; content: string } {
   const frontMatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/;
   const match = content.match(frontMatterRegex);
 
@@ -57,7 +57,9 @@ function parseFrontMatter(content: string): { data: Partial<Tool>; content: stri
     const data = parseYaml(yamlContent);
     return { data, content: markdownContent };
   } catch (e) {
-    console.error('Error parsing YAML front matter:', e);
+    // Malformed front matter fails the build in production rather than silently
+    // skipping the tool with a misleading "missing required field" message.
+    reportParseError(`Failed to parse front matter in ${filename}: ${e}`);
     return { data: {}, content: markdownContent };
   }
 }
@@ -188,7 +190,7 @@ export default {
     for (const file of files) {
       const filePath = path.join(toolsDir, file);
       const content = fs.readFileSync(filePath, 'utf-8');
-      const { data } = parseFrontMatter(content);
+      const { data } = parseFrontMatter(content, file);
 
       // Validate tool front matter (with mtime-based caching to prevent duplicate messages)
       // This now includes standards validation
