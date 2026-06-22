@@ -53,3 +53,6 @@ playwright/.cache/
 
 # ESLint
 .eslintcache
+
+# publiccode sync artifact (PR body, regenerated each run)
+publiccode-sync-summary.md

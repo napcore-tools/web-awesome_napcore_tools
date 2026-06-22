@@ -27,13 +27,14 @@ export default [
 
   // Config 4: General project settings
   {
-    files: ['docs/**/*.{js,ts,vue}', '*.{js,ts}'],
+    files: ['docs/**/*.{js,ts,vue}', 'scripts/**/*.{js,mjs}', '*.{js,ts,mjs}'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
         ...globals.browser,
         ...globals.node,
+        fetch: 'readonly',
       },
     },
     rules: {
