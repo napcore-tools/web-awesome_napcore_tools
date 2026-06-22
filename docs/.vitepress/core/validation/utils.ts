@@ -67,3 +67,17 @@ export function handleValidationResult(context: string, result: ValidationResult
     }
   }
 }
+
+/**
+ * Reports a malformed-data (parse) error from a data loader. In a production build
+ * (`NODE_ENV=production`, i.e. `docs:build`) it throws so the build fails loudly
+ * rather than silently shipping degraded data; in dev it logs and lets the caller
+ * continue so the dev server stays up. Same prod-throw convention as
+ * handleValidationResult, for parse sites that have no ValidationResult to hand.
+ */
+export function reportParseError(message: string): void {
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error(message);
+  }
+  console.error(message);
+}

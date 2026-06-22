@@ -21,9 +21,9 @@ import {
   type PubliccodeRecord,
   type Tool,
   loadRegistry,
-  reportParseError,
   toolFromPubliccode,
 } from '../.vitepress/core/data-loaders/tools.data';
+import { reportParseError } from '../.vitepress/core/validation/utils';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

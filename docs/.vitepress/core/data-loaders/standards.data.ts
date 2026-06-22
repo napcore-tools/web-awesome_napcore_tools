@@ -10,6 +10,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { parse as parseYaml } from 'yaml';
+import { reportParseError } from '../validation/utils';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -45,9 +46,11 @@ export default {
 
     try {
       const content = fs.readFileSync(yamlPath, 'utf-8');
-      return parseYaml(content) as Record<string, Standard>;
+      return (parseYaml(content) as Record<string, Standard>) ?? {};
     } catch (e) {
-      console.error('Error loading standards.yaml:', e);
+      // Malformed standards.yaml fails the build in production rather than silently
+      // dropping every standard page; logged in dev so the server stays up.
+      reportParseError(`Failed to parse standards.yaml at ${yamlPath}: ${e}`);
       return {};
     }
   },

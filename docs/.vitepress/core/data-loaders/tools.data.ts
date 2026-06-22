@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { parse as parseYaml } from 'yaml';
 import { validateToolWithCache, validateRegistryWithCache } from '../validation/tools';
+import { reportParseError } from '../validation/utils';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -77,19 +78,6 @@ export interface RegistryEntry {
 /** Maps publiccode.yml `developmentStatus` to the site's two-value vocabulary. */
 export function mapStatus(developmentStatus: string | undefined): string {
   return developmentStatus === 'obsolete' ? 'deprecated' : 'active';
-}
-
-/**
- * Reports a malformed-data error. In a production build (`NODE_ENV=production`,
- * i.e. `docs:build`) it throws so the build fails loudly rather than silently
- * shipping degraded data; in dev it logs and lets the caller continue so the
- * dev server stays up. Mirrors the convention in validation/utils.ts.
- */
-export function reportParseError(message: string): void {
-  if (process.env.NODE_ENV === 'production') {
-    throw new Error(message);
-  }
-  console.error(message);
 }
 
 /**
