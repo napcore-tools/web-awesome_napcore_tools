@@ -218,6 +218,7 @@ vi.mock('@/core/utils', () => ({
     }));
   }),
   createSlug: vi.fn((text) => text.toLowerCase().replace(/\s+/g, '-')),
+  getSubtitle: vi.fn(() => ''),
   initializeDetailsNavigation: vi.fn(),
 }));
 

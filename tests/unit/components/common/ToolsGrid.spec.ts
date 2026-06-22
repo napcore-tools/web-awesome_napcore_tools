@@ -35,7 +35,7 @@ describe('ToolsGrid Component', () => {
         },
       });
 
-      expect(wrapper.find('.feature-grid').exists()).toBe(true);
+      expect(wrapper.find('.tools-grid').exists()).toBe(true);
     });
 
     it('should render without errors', () => {
@@ -214,7 +214,7 @@ describe('ToolsGrid Component', () => {
   });
 
   describe('Component Structure', () => {
-    it('should have feature-grid class for tools', async () => {
+    it('should have tools-grid class for tools', async () => {
       const wrapper = mount(ToolsGrid, {
         props: { showAll: true },
         global: {
@@ -224,7 +224,7 @@ describe('ToolsGrid Component', () => {
 
       await wrapper.vm.$nextTick();
 
-      expect(wrapper.find('.feature-grid').exists()).toBe(true);
+      expect(wrapper.find('.tools-grid').exists()).toBe(true);
     });
 
     it('should have no-tools-message element when empty', async () => {

@@ -1,64 +1,77 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { mount, flushPromises } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import { ref } from 'vue';
 
-// Mock VitePress useData composable BEFORE importing the component
+// The component derives its tool from the current page's relativePath and looks
+// it up in the tools data loader. A mutable holder lets each test point the page
+// at a different fixture slug.
+const pageState = vi.hoisted(() => ({ relativePath: 'tools/full-tool.md' }));
+
 vi.mock('vitepress', () => ({
   useData: vi.fn(() => ({
-    frontmatter: ref({
-      status: 'active',
-      license: 'MIT',
-      website: 'https://example.com',
-      repository: 'https://github.com/example/repo',
-      documentation: 'https://docs.example.com',
-      demo: 'https://demo.example.com',
-      developer: 'Example Corp',
-      maintainedBy: 'Example Team',
-      mainContributor: 'John Doe',
-      technology: 'JavaScript',
-    }),
+    page: ref({ relativePath: pageState.relativePath }),
   })),
+}));
+
+// Override the global tools.data mock with fixtures that exercise QuickInfo's
+// fields. Each fixture maps to a slug the tests select via pageState.
+const mockTools = vi.hoisted(() => [
+  {
+    slug: 'full-tool',
+    title: 'Full Tool',
+    status: 'maintenance',
+    license: 'MIT',
+    website: 'https://www.example.com/app',
+    repository: 'https://github.com/example/repo',
+    documentation: 'https://docs.example.com',
+    demo: 'https://demo.example.com',
+    developer: 'Example Corp',
+    maintainedBy: 'Example Team',
+    mainContributor: 'John Doe',
+    technology: 'JavaScript',
+  },
+  {
+    slug: 'github-tool',
+    title: 'GitHub Tool',
+    status: 'active',
+    repository: 'https://github.com/example/repo',
+  },
+  {
+    slug: 'gitlab-tool',
+    title: 'GitLab Tool',
+    status: 'active',
+    repository: 'https://gitlab.com/example/repo',
+  },
+  {
+    slug: 'minimal-tool',
+    title: 'Minimal Tool',
+    status: 'active',
+    license: 'MIT',
+    website: 'https://example.com',
+  },
+  {
+    slug: 'bare-tool',
+    title: 'Bare Tool',
+    status: 'active',
+  },
+]);
+
+vi.mock('@/core/data-loaders/tools.data', () => ({
+  data: mockTools,
+  default: { load: () => mockTools },
 }));
 
 // Import after mocking
 import QuickInfo from '@/theme/components/tools/ToolQuickInfo.vue';
 
-const mockUseData = vi.hoisted(() => ({
-  useData: vi.fn(),
-}));
-
 describe('QuickInfo Component', () => {
   beforeEach(() => {
-    // Reset mock before each test
-    mockUseData.useData.mockReturnValue({
-      frontmatter: ref({
-        status: 'active',
-        license: 'MIT',
-        website: 'https://example.com',
-        repository: 'https://github.com/example/repo',
-        documentation: 'https://docs.example.com',
-        demo: 'https://demo.example.com',
-        developer: 'Example Corp',
-        maintainedBy: 'Example Team',
-        mainContributor: 'John Doe',
-        technology: 'JavaScript',
-      }),
-    });
+    pageState.relativePath = 'tools/full-tool.md';
   });
 
   describe('Rendering', () => {
-    it('should render table when frontmatter exists', () => {
-      const wrapper = mount(QuickInfo, {
-        global: {
-          mocks: {
-            $frontmatter: {
-              status: 'active',
-              license: 'MIT',
-            },
-          },
-        },
-      });
-
+    it('should render table when tool exists', () => {
+      const wrapper = mount(QuickInfo);
       expect(wrapper.find('table').exists()).toBe(true);
     });
 
@@ -66,126 +79,71 @@ describe('QuickInfo Component', () => {
       const wrapper = mount(QuickInfo);
       expect(wrapper.find('tbody').exists()).toBe(true);
     });
+
+    it('should not render table when tool is not found', () => {
+      pageState.relativePath = 'tools/does-not-exist.md';
+      const wrapper = mount(QuickInfo);
+      expect(wrapper.find('table').exists()).toBe(false);
+    });
   });
 
   describe('Status Field', () => {
-    it('should not display status when it is active', () => {
+    it('should not display status row when status is active', () => {
+      pageState.relativePath = 'tools/minimal-tool.md';
       const wrapper = mount(QuickInfo);
-      // Active status should not display status row
-      // When status is active, it shouldn't show
-      // But we can't easily check without proper frontmatter injection
-      expect(wrapper.find('table').exists()).toBe(true);
+      expect(wrapper.text()).not.toContain('Status');
     });
 
-    it('should render when status is maintenance', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({ status: 'maintenance' }),
-      });
-
+    it('should display status row when status is maintenance', () => {
+      pageState.relativePath = 'tools/full-tool.md';
       const wrapper = mount(QuickInfo);
-      await flushPromises();
-
-      expect(wrapper.text()).toBeDefined();
+      expect(wrapper.text()).toContain('Maintenance');
     });
   });
 
   describe('URL Extraction', () => {
-    it('should extract domain from URL correctly', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({
-          website: 'https://www.example.com',
-        }),
-      });
-
+    it('should extract domain from URL and strip www', () => {
+      pageState.relativePath = 'tools/full-tool.md';
       const wrapper = mount(QuickInfo);
-      await flushPromises();
-
-      // The component should handle URL parsing
-      expect(wrapper.find('table').exists()).toBe(true);
-    });
-
-    it('should remove www from domain', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({
-          website: 'https://www.example.com',
-        }),
-      });
-
-      const wrapper = mount(QuickInfo);
-      await flushPromises();
-
-      expect(wrapper.find('table').exists()).toBe(true);
+      // website is https://www.example.com/app → example.com/app
+      expect(wrapper.text()).toContain('example.com/app');
+      expect(wrapper.text()).not.toContain('www.example.com');
     });
   });
 
   describe('Repository Detection', () => {
-    it('should detect GitHub repositories', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({
-          repository: 'https://github.com/example/repo',
-        }),
-      });
-
+    it('should detect GitHub repositories', () => {
+      pageState.relativePath = 'tools/github-tool.md';
       const wrapper = mount(QuickInfo);
-      await flushPromises();
-
-      expect(wrapper.find('table').exists()).toBe(true);
+      expect(wrapper.text()).toContain('GitHub Repository');
     });
 
-    it('should detect GitLab repositories', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({
-          repository: 'https://gitlab.com/example/repo',
-        }),
-      });
-
+    it('should detect GitLab repositories', () => {
+      pageState.relativePath = 'tools/gitlab-tool.md';
       const wrapper = mount(QuickInfo);
-      await flushPromises();
-
-      expect(wrapper.find('table').exists()).toBe(true);
+      expect(wrapper.text()).toContain('GitLab Repository');
     });
   });
 
   describe('Conditional Rendering', () => {
-    it('should show only present fields', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({
-          license: 'MIT',
-          website: 'https://example.com',
-        }),
-      });
-
+    it('should show only present fields', () => {
+      pageState.relativePath = 'tools/minimal-tool.md';
       const wrapper = mount(QuickInfo);
-      await flushPromises();
-
-      const rows = wrapper.findAll('tr');
-      // Should have rows for fields that are present
-      expect(rows.length).toBeGreaterThanOrEqual(0);
+      expect(wrapper.text()).toContain('License');
+      expect(wrapper.text()).toContain('Website');
+      expect(wrapper.text()).not.toContain('Technology');
     });
 
-    it('should handle empty frontmatter gracefully', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({}),
-      });
-
+    it('should handle a tool with no optional fields gracefully', () => {
+      pageState.relativePath = 'tools/bare-tool.md';
       const wrapper = mount(QuickInfo);
-      await flushPromises();
-
       expect(wrapper.find('table').exists()).toBe(true);
     });
   });
 
   describe('Link Handling', () => {
-    it('should have target="_blank" on external links', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({
-          website: 'https://example.com',
-        }),
-      });
-
+    it('should have target="_blank" on external links', () => {
       const wrapper = mount(QuickInfo);
-      await flushPromises();
-
       const links = wrapper.findAll('a');
       links.forEach((link) => {
         if (link.attributes('href')) {
@@ -194,17 +152,8 @@ describe('QuickInfo Component', () => {
       });
     });
 
-    it('should have proper href attributes on links', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({
-          website: 'https://example.com',
-          repository: 'https://github.com/example/repo',
-        }),
-      });
-
+    it('should have proper href attributes on links', () => {
       const wrapper = mount(QuickInfo);
-      await flushPromises();
-
       const links = wrapper.findAll('a');
       links.forEach((link) => {
         const href = link.attributes('href');
@@ -223,60 +172,40 @@ describe('QuickInfo Component', () => {
 
     it('should have tr elements for data rows', () => {
       const wrapper = mount(QuickInfo);
-      const tbody = wrapper.find('tbody');
-      expect(tbody.exists()).toBe(true);
+      expect(wrapper.findAll('tr').length).toBeGreaterThan(0);
     });
 
     it('should have td elements in rows', () => {
       const wrapper = mount(QuickInfo);
       const rows = wrapper.findAll('tr');
-      if (rows.length > 0) {
-        rows.forEach((row) => {
-          const cells = row.findAll('td');
-          // Each row should have cells
-          expect(cells.length).toBeGreaterThanOrEqual(0);
-        });
-      }
+      rows.forEach((row) => {
+        expect(row.findAll('td').length).toBeGreaterThanOrEqual(0);
+      });
     });
   });
 
   describe('Field Display', () => {
-    it('should display license field when present', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({ license: 'MIT' }),
-      });
-
+    it('should display license field when present', () => {
       const wrapper = mount(QuickInfo);
-      await flushPromises();
-
-      expect(wrapper.find('table').exists()).toBe(true);
+      expect(wrapper.text()).toContain('License');
+      expect(wrapper.text()).toContain('MIT');
     });
 
-    it('should display developer field when present', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({ developer: 'Example Corp' }),
-      });
-
+    it('should display developer field when present', () => {
       const wrapper = mount(QuickInfo);
-      await flushPromises();
-
-      expect(wrapper.find('table').exists()).toBe(true);
+      expect(wrapper.text()).toContain('Developer');
+      expect(wrapper.text()).toContain('Example Corp');
     });
 
-    it('should display technology field when present', async () => {
-      mockUseData.useData.mockReturnValue({
-        frontmatter: ref({ technology: 'JavaScript' }),
-      });
-
+    it('should display technology field when present', () => {
       const wrapper = mount(QuickInfo);
-      await flushPromises();
-
-      expect(wrapper.find('table').exists()).toBe(true);
+      expect(wrapper.text()).toContain('Technology');
+      expect(wrapper.text()).toContain('JavaScript');
     });
   });
 
   describe('Component Props', () => {
-    it('should accept empty props', () => {
+    it('should mount without errors', () => {
       const wrapper = mount(QuickInfo);
       expect(wrapper.vm).toBeDefined();
     });

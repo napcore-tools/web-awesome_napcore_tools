@@ -1,5 +1,11 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { mount } from '@vue/test-utils';
+
+// Mock vitepress so the real package (and its esbuild dependency, which trips a
+// jsdom TextEncoder invariant) is never loaded. BlogCard only needs withBase.
+vi.mock('vitepress', () => ({
+  withBase: (path: string) => path,
+}));
 
 // Global mocks in setup.ts provide blog.data and tagResolver mocks
 

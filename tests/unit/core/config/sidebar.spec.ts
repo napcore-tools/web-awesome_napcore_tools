@@ -47,8 +47,8 @@ describe('sidebar.ts', () => {
 
       const links = toolsSection.items.map((item: any) => item.link);
 
-      expect(links).toContain('categories/');
-      expect(links).toContain('standards/');
+      expect(links).toContain('/categories/');
+      expect(links).toContain('/standards/');
     });
 
     it('should have category items with proper structure', () => {
