@@ -4,6 +4,11 @@
 # Run `npm run sync:publiccode` to fetch/update all entries.
 # Run `node scripts/sync-publiccode.mjs <slug>` to fetch one entry.
 #
+# Editing this file on `main` automatically triggers the "Sync publiccode.yml
+# files" GitHub workflow, which opens a review PR with the refreshed cache.
+# To disable that automatic run, comment out the `push:` trigger in
+# .github/workflows/sync-publiccode.yml (manual runs are unaffected).
+#
 # GitHub repository URLs are resolved automatically:
 #   https://github.com/{owner}/{repo}
 #   → https://raw.githubusercontent.com/{owner}/{repo}/main/publiccode.yml

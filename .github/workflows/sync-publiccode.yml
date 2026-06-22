@@ -1,0 +1,80 @@
+name: Sync publiccode.yml files
+
+# Refreshes the cached publiccode.yml files under docs/data/publiccode and opens
+# a review pull request with any changes. The cache is never updated directly on
+# the live branch — every change goes through a PR a human merges.
+
+on:
+  # Manual run from the Actions tab. Sync everything, or a single registry slug.
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Registry slug to sync (use "all" for every entry)'
+        required: false
+        default: all
+
+  # Automatic run whenever the registry itself changes, so adding or editing an
+  # entry fetches the corresponding publiccode.yml without a manual trigger.
+  #
+  # To STOP the automatic registry-change runs, comment out (or delete) the
+  # entire `push:` block below. The manual `workflow_dispatch` trigger above
+  # keeps working regardless.
+  push:
+    branches: [main]
+    paths:
+      - docs/data/publiccode-registry.yaml
+
+permissions:
+  contents: write # commit the refreshed cache to the PR branch
+  pull-requests: write # open / update the review PR
+
+# Serialise runs so two triggers can't race on the shared PR branch.
+concurrency:
+  group: sync-publiccode
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync publiccode files
+        id: sync
+        # Don't abort the job on a sync failure — we still want to PR the files
+        # that did update, then mark the run red in the final step.
+        continue-on-error: true
+        run: |
+          SLUG="${{ inputs.slug }}"
+          if [ -z "$SLUG" ] || [ "$SLUG" = "all" ]; then
+            node scripts/sync-publiccode.mjs
+          else
+            node scripts/sync-publiccode.mjs "$SLUG"
+          fi
+
+      - name: Create pull request
+        if: always()
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/sync-publiccode
+          add-paths: docs/data/publiccode/**
+          commit-message: "publiccode: Sync cached publiccode.yml files"
+          title: "publiccode: Update cached publiccode.yml files"
+          body-path: publiccode-sync-summary.md
+          delete-branch: true
+
+      - name: Fail run if any file errored
+        if: steps.sync.outcome == 'failure'
+        run: |
+          echo "One or more publiccode.yml files failed to sync — see the PR body / logs above."
+          exit 1
