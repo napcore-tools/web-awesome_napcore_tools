@@ -1,6 +1,6 @@
 // Data loader for stats - all calculations are now fully dynamic from tools data
 import toolsDataLoader from './tools.data';
-import { getCategorySlugs } from '../metadata/categories';
+import categoriesDataLoader from './categories.data';
 
 export default {
   // Watch tool files for dynamic calculations
@@ -23,8 +23,10 @@ export default {
       deprecated: tools.filter((t) => t.status === 'deprecated').length,
     };
 
-    // Get category slugs from centralized source
-    const categorySlugs = getCategorySlugs();
+    // Get category slugs from the data loader. A .data.ts loader is bundled by
+    // esbuild without VitePress's virtual `data` resolution, so it reads the
+    // categories loader directly rather than metadata/categories' CATEGORIES.
+    const categorySlugs = Object.keys(categoriesDataLoader.load());
 
     // Calculate category statistics dynamically
     const categoryStats: Record<string, number> = {

@@ -1,7 +1,15 @@
 import { test, expect } from '@playwright/test';
 import toolsDataLoader from '@/core/data-loaders/tools.data';
-import { CATEGORIES } from '@/core/metadata/categories';
+import categoriesDataLoader from '@/core/data-loaders/categories.data';
 import standardsDataLoader from '@/core/data-loaders/standards.data';
+
+// Derive categories from the data loader (same approach as standards). The
+// VitePress `data` export that backs the CATEGORIES constant resolves to empty
+// in the plain-node/playwright context, so we load the YAML directly here.
+const categories = Object.entries(categoriesDataLoader.load()).map(([slug, category]) => ({
+  slug,
+  ...category,
+}));
 
 /**
  * Dynamic Route Tests
@@ -38,9 +46,9 @@ test.describe('All Tool Pages', () => {
 });
 
 test.describe('All Category Pages', () => {
-  console.log(`Testing ${CATEGORIES.length} category pages...`);
+  console.log(`Testing ${categories.length} category pages...`);
 
-  for (const category of CATEGORIES) {
+  for (const category of categories) {
     test(`category page: /categories/${category.slug} renders`, async ({ page }) => {
       await page.goto(`/categories/${category.slug}`);
 
@@ -91,11 +99,11 @@ test.describe('Build Validation', () => {
 
     // Basic sanity checks
     expect(tools.length).toBeGreaterThan(0);
-    expect(CATEGORIES.length).toBeGreaterThan(0);
+    expect(categories.length).toBeGreaterThan(0);
     expect(Object.keys(standards).length).toBeGreaterThan(0);
 
     console.log(`✓ Validated ${tools.length} tools`);
-    console.log(`✓ Validated ${CATEGORIES.length} categories`);
+    console.log(`✓ Validated ${categories.length} categories`);
     console.log(`✓ Validated ${Object.keys(standards).length} standards`);
   });
 });

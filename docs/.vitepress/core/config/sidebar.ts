@@ -1,7 +1,11 @@
 // Dynamic sidebar configuration with tool counts
 import toolsDataLoader from '../data-loaders/tools.data';
 import standardsDataLoader from '../data-loaders/standards.data';
-import { CATEGORIES } from '../metadata/categories';
+import categoriesDataLoader from '../data-loaders/categories.data';
+
+// The sidebar is built at config-load time (Node/esbuild), where the VitePress
+// virtual `data` export behind metadata/categories' CATEGORIES is not available.
+// Load categories straight from the loader here, exactly as standards already do.
 
 /**
  * Calculates the number of tools in each category.
@@ -11,11 +15,12 @@ import { CATEGORIES } from '../metadata/categories';
  */
 function getCategoryCounts(): Record<string, number> {
   const tools = toolsDataLoader.load();
+  const categories = categoriesDataLoader.load();
   const counts: Record<string, number> = {};
 
   // Initialize all counts to 0
-  CATEGORIES.forEach((cat) => {
-    counts[cat.slug] = 0;
+  Object.keys(categories).forEach((slug) => {
+    counts[slug] = 0;
   });
 
   // Count tools in each category
@@ -38,10 +43,12 @@ function getCategoryCounts(): Record<string, number> {
  */
 function getCategoryItemsWithCounts() {
   const counts = getCategoryCounts();
+  const categories = categoriesDataLoader.load();
 
-  return CATEGORIES.map((cat) => ({
-    text: `${cat.title} <span class="sidebar-badge">${counts[cat.slug]}</span>`,
-    link: `/categories/${cat.slug}`,
+  // Object.entries preserves YAML key order (the intended display order)
+  return Object.entries(categories).map(([slug, cat]) => ({
+    text: `${cat.title} <span class="sidebar-badge">${counts[slug]}</span>`,
+    link: `/categories/${slug}`,
   }));
 }
 

@@ -3,11 +3,32 @@
  *
  * Validates category metadata to catch typos and invalid data early.
  * Ensures all categories in CATEGORIES have complete information and valid related references.
+ *
+ * Source of truth is docs/data/categories.yaml (loaded via categories.data.ts and exposed
+ * as CATEGORIES by metadata/categories.ts); this validates whatever that YAML produces.
  */
 
-import { CATEGORIES } from '../metadata/categories';
-import type { Category } from '../metadata/categories';
+import categoriesDataLoader, { type CategoryData } from '../data-loaders/categories.data';
 import { type ValidationError, type ValidationResult } from './utils';
+
+// A category with its slug attached (mirrors metadata/categories' Category, but
+// defined here from the loader's type so this config-time module never imports
+// the virtual-`data`-backed wrapper, which esbuild can't bundle for the config).
+type Category = CategoryData & { slug: string };
+
+/**
+ * Build the category list (slug + metadata) from the data loader.
+ *
+ * Validation runs at config-load time (Node/esbuild), where the VitePress virtual
+ * `data` export behind metadata/categories' CATEGORIES is unavailable. Loading
+ * straight from the loader here mirrors validateAllStandards().
+ */
+function loadCategories(): Category[] {
+  return Object.entries(categoriesDataLoader.load()).map(([slug, category]) => ({
+    slug,
+    ...category,
+  }));
+}
 
 /**
  * Validate category slug format (kebab-case, lowercase, alphanumeric + hyphens only)
@@ -76,7 +97,7 @@ function validateCategoryMetadata(category: Category, allCategories: Category[])
     if (!value || typeof value !== 'string' || value.trim() === '') {
       errors.push({
         field,
-        message: `Category '${slug}' missing required '${field}' field in categories.ts`,
+        message: `Category '${slug}' missing required '${field}' field in categories.yaml`,
         severity: 'error',
       });
     }
@@ -151,14 +172,15 @@ function validateCategoryMetadata(category: Category, allCategories: Category[])
  */
 export function validateAllCategories(): ValidationResult {
   const allErrors: ValidationError[] = [];
+  const categories = loadCategories();
 
   // Validate each category entry
-  for (const category of CATEGORIES) {
+  for (const category of categories) {
     // Validate slug format
     allErrors.push(...validateCategorySlug(category.slug));
 
     // Validate category completeness and related categories
-    allErrors.push(...validateCategoryMetadata(category, CATEGORIES));
+    allErrors.push(...validateCategoryMetadata(category, categories));
   }
 
   // Separate errors and warnings

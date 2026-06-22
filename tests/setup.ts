@@ -103,6 +103,20 @@ vi.mock('@/core/data-loaders/standards.data', () => ({
   },
 }));
 
+// Mock categories.data (keyed by slug, mirrors categories.yaml). Consumers that
+// run in Node/build context (sidebar, validation) read from this loader.
+const mockCategories = {
+  validators: { title: 'Validators', icon: '✓', description: 'Tools for validation' },
+  converters: { title: 'Converters', icon: '⇄', description: 'Tools for conversion' },
+};
+
+vi.mock('@/core/data-loaders/categories.data', () => ({
+  data: mockCategories,
+  default: {
+    load: () => mockCategories,
+  },
+}));
+
 // Mock blogTags.data (located in data-loaders, not metadata)
 const mockBlogTags = {
   javascript: { title: 'JavaScript' },

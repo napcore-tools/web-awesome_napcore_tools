@@ -6,7 +6,7 @@
  */
 
 import fs from 'fs';
-import { CATEGORIES } from '../metadata/categories';
+import categoriesDataLoader from '../data-loaders/categories.data';
 import type { Tool } from '../data-loaders/tools.data';
 import { validateStandards } from './standards';
 import { type ValidationError, type ValidationResult, handleValidationResult } from './utils';
@@ -35,7 +35,10 @@ const VALID_STATUSES: string[] = ['active', 'maintenance', 'deprecated'] as cons
  */
 function validateCategories(tool: Partial<Tool>, _filename: string): ValidationError[] {
   const errors: ValidationError[] = [];
-  const validCategorySlugs = new Set(CATEGORIES.map((c) => c.slug));
+  // Load category slugs from the data loader (not metadata/categories' CATEGORIES,
+  // whose virtual `data` export cannot be bundled into the VitePress config), the
+  // same way validateStandards reads standards. See validation/standards.ts.
+  const validCategorySlugs = new Set(Object.keys(categoriesDataLoader.load()));
 
   // Check if categories field exists
   if (!tool.categories) {
