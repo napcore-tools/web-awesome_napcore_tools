@@ -4,8 +4,10 @@
 
     <p class="pc-notice">
       Metadata on this page is sourced automatically from the project's
-      <a v-if="t.repository" :href="t.repository" target="_blank"><code>publiccode.yml</code></a
-      ><code v-else>publiccode.yml</code>.
+      <a v-if="t.repository" :href="t.repository" target="_blank">repository</a><span v-else>repository</span
+      ><template v-if="fileUrl">
+        - view the <a :href="fileUrl" target="_blank"><code>publiccode.yml</code></a></template
+      >.
     </p>
 
     <p>{{ t.description }}</p>
@@ -271,6 +273,15 @@ function githubBlobToRaw(url: string): string {
   const m = url.match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\/(.+)$/);
   return m ? `https://raw.githubusercontent.com/${m[1]}/${m[2]}/${m[3]}` : url;
 }
+
+// Direct link to the source publiccode.yml. Built from the repository URL via the
+// blob→raw rewrite above; `HEAD` resolves to the repo's default branch, so we don't
+// need to know whether it's main or master. Null for non-GitHub repositories.
+const fileUrl = computed((): string | null => {
+  const repo = t.value.repository;
+  const m = repo?.match(/^https?:\/\/github\.com\/([^/]+)\/([^/]+?)\/?$/);
+  return m ? githubBlobToRaw(`https://github.com/${m[1]}/${m[2]}/blob/HEAD/publiccode.yml`) : null;
+});
 
 function linkHost(url: string): string {
   try {
