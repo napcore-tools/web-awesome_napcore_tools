@@ -209,7 +209,7 @@ export function validateRegistryOverride(slug: string, override: Partial<Omit<To
  */
 export function validateRegistryWithCache(
   registryPath: string,
-  registry: Record<string, { override?: Partial<Omit<Tool, 'slug'>> }>
+  registry: Record<string, { 'napcore-tools'?: Partial<Omit<Tool, 'slug'>> }>
 ): void {
   if (!fs.existsSync(registryPath)) return;
 
@@ -218,8 +218,8 @@ export function validateRegistryWithCache(
   if (validationCache.get(cacheKey) === mtime) return;
 
   for (const [slug, entry] of Object.entries(registry)) {
-    if (entry.override) {
-      const result = validateRegistryOverride(slug, entry.override);
+    if (entry['napcore-tools']) {
+      const result = validateRegistryOverride(slug, entry['napcore-tools']);
       handleValidationResult(`publiccode-registry.yaml → ${slug}`, result);
     }
   }

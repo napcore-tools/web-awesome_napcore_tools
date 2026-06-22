@@ -68,7 +68,8 @@ const registryPath = path.resolve(__dirname, '../../../data/publiccode-registry.
 
 export interface RegistryEntry {
   source?: string;
-  override?: Partial<Omit<Tool, 'slug'>>;
+  /** NAPCORE catalogue fields layered on top of the publiccode.yml (these win on merge). */
+  'napcore-tools'?: Partial<Omit<Tool, 'slug'>>;
 }
 
 /** Maps publiccode.yml `developmentStatus` to the site's two-value vocabulary. */
@@ -92,7 +93,7 @@ export function loadRegistry(registryPath: string): Record<string, RegistryEntry
  * Builds a Tool object from a publiccode.yml file, optionally enriched with NAPCORE-specific overrides.
  *
  * @param slug      - Tool identifier; becomes Tool.slug and locates `docs/data/publiccode/<slug>/publiccode.yml`.
- * @param overrides - Optional subset of Tool fields (everything except slug) from the registry's `override:` block.
+ * @param overrides - Optional subset of Tool fields (everything except slug) from the registry's `napcore-tools:` block.
  *                    These win over publiccode.yml values — useful for fields the standard cannot express
  *                    (categories, standards, endorsed, …).
  * @param parsedPc  - Pre-parsed publiccode.yml object. When the caller already holds the parsed YAML
@@ -216,7 +217,7 @@ export default {
       for (const entry of fs.readdirSync(publiccodeDir, { withFileTypes: true }).filter((e) => e.isDirectory())) {
         const slug = entry.name;
         if (mdSlugs.has(slug)) continue;
-        const tool = toolFromPubliccode(slug, registry[slug]?.override);
+        const tool = toolFromPubliccode(slug, registry[slug]?.['napcore-tools']);
         if (tool) tools.push(tool);
       }
     }

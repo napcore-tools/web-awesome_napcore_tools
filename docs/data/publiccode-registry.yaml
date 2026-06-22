@@ -17,8 +17,8 @@
 # Direct raw URLs are also accepted:
 #   source: https://example.org/path/to/publiccode.yml
 #
-# NAPCORE-specific overrides go under the 'override' key:
-#   override:
+# NAPCORE-specific catalogue fields go under the 'napcore-tools' key:
+#   napcore-tools:
 #     categories: [...]
 #     standards: [...]
 #     endorsed: true
@@ -27,7 +27,7 @@
 
 shacl-validator:
   source: https://github.com/ISAITB/shacl-validator
-  override:
+  napcore-tools:
     categories:
       - validators
       - data-quality
@@ -39,7 +39,7 @@ shacl-validator:
 
 open_trip_planner:
   source: https://github.com/opentripplanner/opentripplanner
-  override:
+  napcore-tools:
     categories:
       - route-planners
     standards:

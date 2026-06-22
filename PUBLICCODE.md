@@ -99,12 +99,12 @@ All remaining fields can be set via registry overrides or a hand-crafted `.md` p
 
 ## Registry overrides
 
-Fields that publiccode.yml cannot express can be set under the `override:` key in `publiccode-registry.yaml`. These values take precedence over anything derived from the publiccode.yml file.
+Fields that publiccode.yml cannot express can be set under the `napcore-tools:` key in `publiccode-registry.yaml`. These values take precedence over anything derived from the publiccode.yml file.
 
 ```yaml
 shacl-validator:
   source: https://github.com/ISAITB/shacl-validator
-  override:
+  napcore-tools:
     categories:
       - validators
     standards:

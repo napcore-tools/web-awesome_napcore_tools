@@ -57,7 +57,7 @@ export default {
         continue;
       }
 
-      const tool = toolFromPubliccode(dirName, registry[dirName]?.override, publiccodeRecord);
+      const tool = toolFromPubliccode(dirName, registry[dirName]?.['napcore-tools'], publiccodeRecord);
       if (!tool) continue;
 
       results.push({
