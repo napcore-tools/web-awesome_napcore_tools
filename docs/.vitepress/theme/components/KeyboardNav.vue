@@ -11,7 +11,7 @@ const NAV_KEYS: Record<string, string> = {
   t: '/all/',
   s: '/standards/',
   c: '/categories/',
-  n: '/categories/napcore-provided',
+  n: '/by-napcore/',
   a: '/about',
 };
 

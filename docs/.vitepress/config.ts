@@ -91,6 +91,9 @@ export default defineConfig({
       '/tools/': { base: '/', items: getCategoriesSidebar() },
       '/standards/': { base: '/', items: getCategoriesSidebar() },
       '/all/': { base: '/', items: getCategoriesSidebar() },
+      // by-napcore lives at the site root (not in the categories taxonomy)
+      // but still shows the catalogue sidebar.
+      '/by-napcore/': { base: '/', items: getCategoriesSidebar() },
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/napcore-tools/web-awesome_napcore_tools' },

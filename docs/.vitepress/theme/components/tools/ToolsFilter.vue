@@ -34,10 +34,6 @@ interface Props {
 const props = defineProps<Props>();
 const route = useRoute();
 
-const CATEGORY_DISPLAY_OVERRIDES: Record<string, string> = {
-  'napcore-provided': 'Tools by NAPCORE',
-};
-
 const autoDetectedCategory = computed(() => {
   const match = route.path.match(/\/categories\/([^/.]+)/);
   return match ? match[1] : null;
@@ -70,8 +66,7 @@ const dynamicPlaceholder = computed(() => {
     if (category) {
       return `Search ${category.title}...`;
     }
-    const override = CATEGORY_DISPLAY_OVERRIDES[effectiveCategory.value];
-    return `Search ${override ?? effectiveCategory.value}...`;
+    return `Search ${effectiveCategory.value}...`;
   }
 
   if (props.selectedTools && props.selectedTools.length > 0) {

@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: See Tools by NAPCORE
-      link: /categories/napcore-provided/
+      link: /by-napcore/
     - theme: alt
       text: Browse All Tools
       link: /all/
@@ -34,7 +34,7 @@ features:
       height: "64"
     title: By NAPCORE
     details: Lists tools built by the NAPCORE project.
-    link: /categories/napcore-provided/
+    link: /by-napcore/
   - icon:
       src: /icons/community.svg
       alt: Honeycomb representing community collaboration
