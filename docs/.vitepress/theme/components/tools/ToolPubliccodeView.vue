@@ -90,6 +90,49 @@
             >
           </td>
         </tr>
+        <tr v-if="pcMaintenance.type">
+          <td><strong>Maintenance</strong></td>
+          <td>{{ pcMaintenance.type }}</td>
+        </tr>
+        <tr v-if="pcOrg.name">
+          <td><strong>Organisation</strong></td>
+          <td>
+            <a v-if="pcOrg.uri" :href="pcOrg.uri as string" target="_blank">{{ pcOrg.name }}</a>
+            <template v-else>{{ pcOrg.name }}</template>
+          </td>
+        </tr>
+        <tr v-if="pcAudience.countries?.length">
+          <td><strong>Countries</strong></td>
+          <td>
+            <span v-for="c in pcAudience.countries as string[]" :key="c" class="badge">{{ c.toUpperCase() }}</span>
+          </td>
+        </tr>
+        <tr v-if="pcLocalisation.availableLanguages?.length">
+          <td><strong>Languages</strong></td>
+          <td>
+            <span v-for="lang in pcLocalisation.availableLanguages as string[]" :key="lang" class="badge">{{
+              lang.toUpperCase()
+            }}</span>
+          </td>
+        </tr>
+        <tr v-if="pc.inputTypes?.length">
+          <td><strong>Input types</strong></td>
+          <td>
+            <span v-for="mime in pc.inputTypes as string[]" :key="mime" class="badge">{{ mime }}</span>
+          </td>
+        </tr>
+        <tr v-if="pc.outputTypes?.length">
+          <td><strong>Output types</strong></td>
+          <td>
+            <span v-for="mime in pc.outputTypes as string[]" :key="mime" class="badge">{{ mime }}</span>
+          </td>
+        </tr>
+        <tr v-if="pc.roadmap">
+          <td><strong>Roadmap</strong></td>
+          <td>
+            <a :href="pc.roadmap as string" target="_blank">{{ linkHost(pc.roadmap as string) }}</a>
+          </td>
+        </tr>
         <tr v-if="pc.platforms?.length">
           <td><strong>Platforms</strong></td>
           <td>
@@ -102,9 +145,9 @@
           <td><strong>Version</strong></td>
           <td>{{ t.softwareVersion }}</td>
         </tr>
-        <tr v-if="t.firstRelease">
-          <td><strong>First release</strong></td>
-          <td>{{ t.firstRelease }}</td>
+        <tr v-if="t.lastUpdated">
+          <td><strong>Latest release</strong></td>
+          <td>{{ t.lastUpdated }}</td>
         </tr>
       </tbody>
     </table>
@@ -113,6 +156,41 @@
       <h2>Used by</h2>
       <ul>
         <li v-for="org in pc.usedBy as string[]" :key="org">{{ org }}</li>
+      </ul>
+    </template>
+
+    <template v-if="pcFunded.length">
+      <h2>Funded by</h2>
+      <ul>
+        <li v-for="(funder, i) in pcFunded" :key="i">
+          <a v-if="funder.uri" :href="funder.uri as string" target="_blank">{{ funder.name }}</a>
+          <template v-else>{{ funder.name }}</template>
+        </li>
+      </ul>
+    </template>
+
+    <template v-if="pcDepends.open?.length || pcDepends.proprietary?.length || pcDepends.hardware?.length">
+      <h2>Dependencies</h2>
+      <ul>
+        <li v-if="pcDepends.open?.length"><strong>Open:</strong> {{ depNames(pcDepends.open) }}</li>
+        <li v-if="pcDepends.proprietary?.length">
+          <strong>Proprietary:</strong> {{ depNames(pcDepends.proprietary) }}
+        </li>
+        <li v-if="pcDepends.hardware?.length"><strong>Hardware:</strong> {{ depNames(pcDepends.hardware) }}</li>
+      </ul>
+    </template>
+
+    <template v-if="pcContacts.length">
+      <h2>Contacts</h2>
+      <ul>
+        <li v-for="(contact, i) in pcContacts" :key="i">
+          {{ contact.name
+          }}<template v-if="contact.affiliation">
+            · <em>{{ contact.affiliation }}</em></template
+          ><template v-if="contact.email">
+            · <a :href="`mailto:${contact.email}`">{{ contact.email }}</a></template
+          >
+        </li>
       </ul>
     </template>
 
@@ -167,14 +245,26 @@ const pc = computed((): PubliccodeRecord => (p.value?.publiccode as PubliccodeRe
 const pcEn = computed(
   (): PubliccodeRecord => ((pc.value?.description as PubliccodeRecord)?.en as PubliccodeRecord) ?? {}
 );
+const pcMaintenance = computed((): PubliccodeRecord => (pc.value?.maintenance as PubliccodeRecord) ?? {});
 const pcContact = computed((): PubliccodeRecord => {
-  const maintenance = (pc.value?.maintenance as PubliccodeRecord) ?? {};
   return (
-    ((maintenance.contacts as PubliccodeRecord[]) ?? [])[0] ??
-    ((maintenance.contractors as PubliccodeRecord[]) ?? [])[0] ??
+    ((pcMaintenance.value.contacts as PubliccodeRecord[]) ?? [])[0] ??
+    ((pcMaintenance.value.contractors as PubliccodeRecord[]) ?? [])[0] ??
     {}
   );
 });
+const pcContacts = computed((): PubliccodeRecord[] => (pcMaintenance.value.contacts as PubliccodeRecord[]) ?? []);
+const pcLocalisation = computed((): PubliccodeRecord => (pc.value?.localisation as PubliccodeRecord) ?? {});
+const pcAudience = computed((): PubliccodeRecord => (pc.value?.intendedAudience as PubliccodeRecord) ?? {});
+const pcOrg = computed((): PubliccodeRecord => (pc.value?.organisation as PubliccodeRecord) ?? {});
+const pcFunded = computed((): PubliccodeRecord[] => (pc.value?.fundedBy as PubliccodeRecord[]) ?? []);
+const pcDepends = computed((): PubliccodeRecord => (pc.value?.dependsOn as PubliccodeRecord) ?? {});
+
+// Each dependency group (open / proprietary / hardware) is a list of objects with
+// at least a `name`; render the names joined for a compact summary.
+function depNames(list: unknown): string {
+  return ((list as PubliccodeRecord[]) ?? []).map((d) => d.name as string).join(', ');
+}
 
 // GitHub blob URLs point to an HTML viewer, not the raw file — rewrite to raw.githubusercontent.com
 function githubBlobToRaw(url: string): string {
@@ -214,7 +304,8 @@ function youtubeId(url: string): string | null {
   margin: 0 0 1.5rem;
 }
 
-.platform-badge {
+.platform-badge,
+.badge {
   display: inline-block;
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);

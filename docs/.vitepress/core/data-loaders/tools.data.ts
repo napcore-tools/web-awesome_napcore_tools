@@ -139,7 +139,8 @@ export function toolFromPubliccode(
     documentation: (pcDesc.documentation as string) || undefined,
     developer: (pcLegal.mainCopyrightOwner as string) || undefined,
     maintainedBy: ((pcContacts.name as string) ?? (pcContractors.name as string)) || undefined,
-    firstRelease: (publiccode.releaseDate as string) || undefined,
+    // publiccode `releaseDate` is the date of the *latest* release, not the first.
+    lastUpdated: (publiccode.releaseDate as string) || undefined,
     tags: (publiccode.tags as string[]) || [],
     longDescription: (pcDesc.longDescription as string)?.trim() || undefined,
     features: (pcDesc.features as string[]) || undefined,
