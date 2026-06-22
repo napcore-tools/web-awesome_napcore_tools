@@ -151,7 +151,7 @@ The blog uses a smart tag resolution system that maps tag slugs to proper displa
 3. **Blog-specific tags** (`type: 'blog-tag'`) - Link to `/blog?tag={slug}` (e.g., "technical" → "Technical")
 
 **Resolution Order** (`docs/.vitepress/theme/utils/tagResolver.ts`):
-1. Check if slug matches a category in `categories.ts` → return category title and `/categories/{slug}` URL
+1. Check if slug matches a category in `categories.yaml` (via `metadata/categories.ts`) → return category title and `/categories/{slug}` URL
 2. Check if slug matches a standard in `standards.data.ts` → return standard title and `/standards/{slug}` URL
 3. Check if slug exists in `data/blogTags.yaml` → return custom title and `/blog?tag={slug}` URL
 4. Fallback: use slug as-is for title and `/blog?tag={slug}` URL
@@ -239,6 +239,27 @@ docs/
 2. Add `<QuickInfo />` in Quick Info section
 3. Tool automatically appears in catalog and category pages
 4. Validation runs automatically during build
+
+### Adding a New Category
+
+Categories follow the same data-driven model as standards: YAML metadata → dynamic
+generated page → optional hand-crafted `.md` prose overlay.
+
+1. Add an entry to `docs/data/categories.yaml`, keyed by slug, with
+   `title`/`icon`/`description` and optional `related` slugs. YAML key order is the
+   display order in `CategoryGrid` and the sidebar.
+2. That's it: the category appears in all components/configs, and a page is generated
+   at `/categories/<slug>` automatically (via `docs/categories/[category].paths.ts`).
+3. Optional: add a hand-crafted `docs/categories/<slug>.md` for prose. A static `.md`
+   takes precedence over the generated route (the dynamic route excludes any slug that
+   has one), so write prose only when you want more than the default template.
+4. Validation runs automatically during build; a malformed `categories.yaml` fails a
+   production build (`reportParseError`).
+
+Note: `docs/.vitepress/core/metadata/categories.ts` is a client-safe wrapper exposing
+`CATEGORIES` etc. from the loader's virtual `data`. Build/config-context consumers
+(sidebar, validation, other `.data.ts` loaders) must read `categoriesDataLoader.load()`
+directly instead — esbuild bundles those without VitePress's `data` resolution.
 
 ### Creating a Blog Post
 
