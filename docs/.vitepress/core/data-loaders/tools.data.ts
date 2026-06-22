@@ -77,14 +77,31 @@ export function mapStatus(developmentStatus: string | undefined): string {
   return developmentStatus === 'obsolete' ? 'deprecated' : 'active';
 }
 
-/** Reads and parses `publiccode-registry.yaml`. Returns an empty object if the file is absent or malformed. */
+/**
+ * Reports a malformed-data error. In a production build (`NODE_ENV=production`,
+ * i.e. `docs:build`) it throws so the build fails loudly rather than silently
+ * shipping degraded data; in dev it logs and lets the caller continue so the
+ * dev server stays up. Mirrors the convention in validation/utils.ts.
+ */
+export function reportParseError(message: string): void {
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error(message);
+  }
+  console.error(message);
+}
+
+/**
+ * Reads and parses `publiccode-registry.yaml`. Returns an empty object if the file is absent.
+ * A malformed registry throws in production (so overrides are never silently dropped) and is
+ * logged in dev.
+ */
 export function loadRegistry(registryPath: string): Record<string, RegistryEntry> {
   try {
     if (fs.existsSync(registryPath)) {
       return (parseYaml(fs.readFileSync(registryPath, 'utf-8')) as Record<string, RegistryEntry>) ?? {};
     }
-  } catch {
-    console.error(`Failed to parse registry at ${registryPath}`);
+  } catch (e) {
+    reportParseError(`Failed to parse registry at ${registryPath}: ${e}`);
   }
   return {};
 }
@@ -114,8 +131,8 @@ export function toolFromPubliccode(
     if (!fs.existsSync(filePath)) return null;
     try {
       publiccode = (parseYaml(fs.readFileSync(filePath, 'utf-8')) as PubliccodeRecord) ?? {};
-    } catch {
-      console.error(`Failed to parse publiccode.yml for ${slug}`);
+    } catch (e) {
+      reportParseError(`Failed to parse publiccode.yml for ${slug}: ${e}`);
       return null;
     }
   }

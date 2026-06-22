@@ -21,6 +21,7 @@ import {
   type PubliccodeRecord,
   type Tool,
   loadRegistry,
+  reportParseError,
   toolFromPubliccode,
 } from '../.vitepress/core/data-loaders/tools.data';
 
@@ -99,7 +100,8 @@ export default {
           (parseYaml(
             fs.readFileSync(path.join(publiccodeDir, dirName, 'publiccode.yml'), 'utf-8')
           ) as PubliccodeRecord) ?? {};
-      } catch {
+      } catch (e) {
+        reportParseError(`Failed to parse publiccode.yml for ${dirName}: ${e}`);
         continue;
       }
 
