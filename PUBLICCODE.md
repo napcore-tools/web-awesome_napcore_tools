@@ -11,7 +11,7 @@ Reference standard: [publiccode.yml Standard v0.5.0](https://yml.publiccode.tool
 > here (best when the upstream project already ships a `publiccode.yml`), or as a
 > hand-crafted `docs/tools/<slug>.md` page. A `.md` page always takes precedence: if
 > `docs/tools/<slug>.md` exists, the registry entry for that slug is ignored entirely and
-> the two are never merged. The hand-crafted route is documented separately.
+> the two are never merged. The hand-crafted route is documented in [TOOLS.md](TOOLS.md).
 
 ---
 
