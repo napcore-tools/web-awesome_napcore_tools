@@ -273,7 +273,7 @@ lastUpdated: 2025-10-22
 - **Automatic linking**: Categories and standards become clickable links to their pages
 - **Single source of truth**: All data comes from frontmatter
 
-**Location**: Component implementation in `docs/.vitepress/theme/components/ToolMetadata.vue`
+**Location**: Component implementation in `docs/.vitepress/theme/components/tools/ToolMetadata.vue`
 
 ## 📝 Custom Markdown Directives
 
@@ -382,11 +382,20 @@ web-awesome_napcore_tools/
 └── README.md
 ```
 
-## 📦 publiccode.yml Integration
+## 📦 Adding Tools
 
-The catalogue supports [publiccode.yml](https://yml.publiccode.tools/) (v0.5.0). Register a tool by adding its source URL to `docs/data/publiccode-registry.yaml` and running `npm run sync:publiccode` — no hand-crafted page required. Fields are merged at build time; frontmatter always wins over publiccode data.
+A tool can be added to the catalogue in one of two ways:
 
-See [PUBLICCODE.md](./PUBLICCODE.md) for the full workflow, field mapping, and build-time merge details.
+- **publiccode.yml registry** (best when the upstream project ships a `publiccode.yml`):
+  add its source URL to `docs/data/publiccode-registry.yaml`, run `npm run sync:publiccode`,
+  and commit the cached file. No hand-crafted page required. See
+  [PUBLICCODE.md](./PUBLICCODE.md) for the full workflow, NAPCORE catalogue fields, and the
+  field mapping.
+- **Hand-crafted page** (best when you want full prose): create `docs/tools/<slug>.md` with
+  frontmatter and body content. See [TOOLS.md](./TOOLS.md).
+
+A hand-crafted page always takes precedence: if `docs/tools/<slug>.md` exists, any registry
+entry for the same slug is ignored, and the two are never merged.
 
 ## 🤝 Contributing
 
