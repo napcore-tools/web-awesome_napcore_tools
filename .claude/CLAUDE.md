@@ -55,11 +55,19 @@ Tool pages live in `docs/tools/*.md` with YAML frontmatter containing metadata:
 
 ### Components
 
-**QuickInfo Component** (`docs/.vitepress/theme/components/QuickInfo.vue`):
-- Auto-generates metadata tables from frontmatter (single source of truth)
-- Uses VitePress `useData()` composable to access frontmatter
+**QuickInfo Component** (registered as `QuickInfo`; file
+`docs/.vitepress/theme/components/tools/ToolQuickInfo.vue`):
+- Auto-generates the Quick Info metadata table (links, license, maintainer, status, …)
+- Resolves the page's `Tool` object from `tools.data` (single source of truth)
 - Conditional rendering with `v-if` for optional fields
-- Include in tool pages with: `<QuickInfo />`
+- **Auto-injected**: a page with `document: tool` in its frontmatter gets the `# title`,
+  a description blockquote, and a `## Quick Info` + `<QuickInfo />` block prepended by
+  `napCoreMarkdownPlugin` — you do **not** write `<QuickInfo />` by hand
+
+**ToolMetadata Component** (`docs/.vitepress/theme/components/tools/ToolMetadata.vue`):
+- Renders the metadata box at the **end** of a tool page (categories, standards, license,
+  maintenance, type, language, technology, tags) directly from frontmatter
+- Add it manually as the last line of the page: `<ToolMetadata />`
 
 **Global Component Registration**:
 All custom components are registered in `docs/.vitepress/theme/index.ts`:
@@ -235,10 +243,14 @@ docs/
 
 ### Adding a New Tool
 
-1. Create `docs/tools/tool-name.md` with frontmatter
-2. Add `<QuickInfo />` in Quick Info section
-3. Tool automatically appears in catalog and category pages
-4. Validation runs automatically during build
+1. Create `docs/tools/tool-name.md` with frontmatter, including `document: tool`
+2. Write the body (the title, description blockquote, and `<QuickInfo />` are auto-injected)
+3. End the page with `<ToolMetadata />`
+4. Tool automatically appears in catalogue and category pages
+5. Validation runs automatically during build
+
+See `TOOLS.md` (hand-crafted pages) and `PUBLICCODE.md` (registry tools) for the full
+contributor guides.
 
 ### Adding a New Category
 
@@ -272,7 +284,7 @@ directly instead — esbuild bundles those without VitePress's `data` resolution
 
 ### Modifying QuickInfo Display
 
-Edit `docs/.vitepress/theme/components/QuickInfo.vue` to:
+Edit `docs/.vitepress/theme/components/tools/ToolQuickInfo.vue` to:
 - Add new frontmatter fields to display
 - Modify formatting or conditional logic
 - Change computed properties for status emojis/labels
