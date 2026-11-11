@@ -165,7 +165,22 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [llmstxtPlugin()],
+    plugins: [
+      llmstxtPlugin({
+        // The plugin builds URLs with path.join, which yields backslashes on Windows
+        // ("/\tools\motis.md"). Normalise them to forward slashes.
+        transform: ({ page }) => {
+          const toUrl = (s: string) => s.replace(/\\+/g, '/').replace(/\/{2,}/g, '/');
+          page.llmUrl = toUrl(page.llmUrl);
+          page.content = page.content
+            // Link targets in llms.txt
+            .replace(/\]\(([^)]*)\)/g, (_m, url: string) => `](${toUrl(url)})`)
+            // LLMS_URL frontmatter in the per-page .md files and llms-full.txt
+            .replace(/^LLMS_URL: "(.*)"$/gm, (_m, url: string) => `LLMS_URL: "${toUrl(url)}"`);
+          return page;
+        },
+      }),
+    ],
     resolve: {
       preserveSymlinks: true,
       alias: {

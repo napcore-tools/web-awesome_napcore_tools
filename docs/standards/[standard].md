@@ -1,8 +1,7 @@
----
-# Import standards module to create dependency - VitePress will watch standards.yaml
----
-
 <script setup>
+// Keep "# " comments out of the frontmatter: vitepress-plugin-llmstxt does not strip
+// CRLF frontmatter and takes the first "# " line as the page title in llms.txt.
+//
 // This import ensures VitePress watches standards.yaml for changes
 import { data as _standardsData } from '../.vitepress/core/data-loaders/standards.data'
 import { withBase } from 'vitepress'
