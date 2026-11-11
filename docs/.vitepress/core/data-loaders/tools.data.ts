@@ -43,7 +43,7 @@ export interface Tool {
  * @param content - Raw markdown file content with frontmatter
  * @returns Object containing parsed frontmatter data and remaining markdown content
  */
-function parseFrontMatter(content: string, filename: string): { data: Partial<Tool>; content: string } {
+export function parseFrontMatter(content: string, filename: string): { data: Partial<Tool>; content: string } {
   const frontMatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/;
   const match = content.match(frontMatterRegex);
 

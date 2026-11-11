@@ -12,10 +12,10 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { parse as parseYaml, stringify } from 'yaml';
+import { stringify } from 'yaml';
 import categoriesDataLoader, { type CategoryData } from '../data-loaders/categories.data';
 import standardsDataLoader, { type Standard } from '../data-loaders/standards.data';
-import toolsDataLoader, { type Tool } from '../data-loaders/tools.data';
+import toolsDataLoader, { type Tool, parseFrontMatter } from '../data-loaders/tools.data';
 import { replaceComponents } from '../llms/llmsMarkdown';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -80,8 +80,6 @@ export interface OkfInput {
   toolPage: (slug: string) => ToolPage | undefined;
 }
 
-const FRONTMATTER = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/;
-
 /** Loads the catalogue from the same data loaders the site renders from. */
 export function loadOkfInput(): OkfInput {
   return {
@@ -92,13 +90,10 @@ export function loadOkfInput(): OkfInput {
       const file = path.join(toolsDir, `${slug}.md`);
       if (!fs.existsSync(file)) return undefined;
 
-      const source = fs.readFileSync(file, 'utf-8');
-      const match = FRONTMATTER.exec(source);
-      const data = match ? (parseYaml(match[1]) as { fullDescription?: unknown } | null) : null;
-      return {
-        body: source.slice(match?.[0].length ?? 0),
-        fullDescription: typeof data?.fullDescription === 'string' ? data.fullDescription : undefined,
-      };
+      const { data, content } = parseFrontMatter(fs.readFileSync(file, 'utf-8'), `${slug}.md`);
+      // `fullDescription` is page frontmatter that the Tool interface does not carry
+      const fullDescription = (data as { fullDescription?: unknown } | null)?.fullDescription;
+      return { body: content, fullDescription: typeof fullDescription === 'string' ? fullDescription : undefined };
     },
   };
 }
