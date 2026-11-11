@@ -353,6 +353,27 @@ Content that blends seamlessly with text flow.
 
 **Location**: Plugin implementations in `docs/.vitepress/plugins/`
 
+## OKF Bundle
+
+The build also exports the whole catalogue in Google's [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/README.md) (OKF) v0.2, so that people and AI agents can read it without an API:
+
+- `/okf/index.md` is the entry point of a browsable tree of Markdown files
+- `/napcore-tools-okf.zip` is the same tree as one download
+
+Every tool, standard and category is one Markdown file with its fields in YAML frontmatter, its description as the body, and links to the entries it relates to:
+
+```
+okf/
+├── index.md         # Bundle listing, declares okf_version
+├── tools/           # One file per tool (hand-written and publiccode)
+├── standards/       # One file per standard in standards.yaml
+└── categories/      # One file per category in categories.yaml
+```
+
+The bundle is generated from the same data as the site, so there is nothing to maintain by hand. Under `npm run dev` the same paths are served on request.
+
+**Location**: `docs/.vitepress/core/okf/` (exporter and zip writer), `docs/.vitepress/plugins/okfDevPlugin.ts` (dev server)
+
 ## 📂 Project Structure
 
 ```
@@ -361,7 +382,7 @@ web-awesome_napcore_tools/
 │   ├── .vitepress/
 │   │   ├── config.ts          # VitePress configuration
 │   │   ├── blog.data.ts       # Blog post data loader
-│   │   ├── buildEnd.ts        # RSS feed generation
+│   │   ├── buildEnd.ts        # RSS feed and OKF bundle generation
 │   │   ├── plugins/           # Custom markdown plugins
 │   │   │   └── napCoreMarkdownPlugin.ts  # Document type handler
 │   │   └── theme/             # Custom theme & components

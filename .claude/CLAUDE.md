@@ -207,6 +207,39 @@ interface ResolvedTag {
 - BlogTagFilter reads `?tag=` parameter on mount and selects matching tag
 - "Clear All" button removes query parameter using `window.history.replaceState()`
 
+### OKF Bundle
+
+The catalogue is also exported in Google's Open Knowledge Format (OKF) v0.2
+([spec](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)):
+one Markdown "concept" file per tool, standard and category, with YAML frontmatter, an
+`index.md` per directory, and links between related concepts. It is published at `/okf/`
+and as `/napcore-tools-okf.zip`.
+
+**Key Files:**
+- `docs/.vitepress/core/okf/okfBundle.ts` - builds the bundle as a `Map` of bundle-relative
+  path to file contents; `okfBundle(siteUrl, input?)` takes injectable input for tests
+- `docs/.vitepress/core/okf/zipArchive.ts` - dependency-free zip writer with fixed
+  timestamps, so unchanged content gives a byte-identical archive
+- `docs/.vitepress/buildEnd.ts` - writes the tree and the zip into the build output
+- `docs/.vitepress/plugins/okfDevPlugin.ts` - serves the same paths under `npm run dev`
+- `docs/.vitepress/core/config/site.ts` - `siteUrl` (from `SITE_URL`), shared with the RSS feed
+
+**Rules:**
+- The bundle reads the data loaders' `load()` functions, so it has no data of its own
+- Catalogue fields stay in frontmatter under their own names, and a new `Tool` field is
+  exported without any change here; null and empty values are dropped
+- A field named like an OKF key is exported as `catalogue_<key>` (`status` →
+  `catalogue_status`, `type` → `catalogue_type`), because OKF gives those keys its own meaning
+- Hand-written tool bodies go through `portableMarkdown()`: components replaced, `:::`
+  containers turned into blockquotes, headings raised one level, site links rewritten
+- Links between concepts are bundle-absolute (`/tools/motis.md`); other site links become
+  full URLs
+- There is no `log.md` and no `generated.at` timestamp; a timestamp would make the zip
+  differ on every build
+- A page that links to a `.md` file of the bundle must use
+  `<a :href="withBase('/okf/index.md')">`: VitePress rewrites a Markdown link to a `.md`
+  file into `.html`
+
 ## File Organization
 
 ```
@@ -228,7 +261,7 @@ docs/
 │   ├── tools.data.ts       # Tool interface & parser
 │   ├── stats.data.ts       # Statistics loader
 │   ├── blog.data.ts        # Blog post loader
-│   ├── buildEnd.ts         # RSS feed generation
+│   ├── buildEnd.ts         # RSS feed and OKF bundle generation
 │   └── toolValidation.ts   # Frontmatter validator
 ├── tools/                  # Tool documentation pages
 ├── categories/             # Category pages
