@@ -1,3 +1,7 @@
+<script setup>
+import { withBase } from 'vitepress';
+</script>
+
 # About Awesome NAPCORE Tools
 
 The Awesome NAPCORE Tools is a NAPCORE-led initiative to build, curate, and showcase tools for the European mobility data ecosystem.
@@ -93,6 +97,15 @@ To maintain quality standards of the tools in the catalogue, the inclusion crite
 ## Statistics
 
 <StatsBar />
+
+## Machine-Readable Export
+
+The whole catalogue is also published as an [OKF](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/README.md) bundle (Open Knowledge Format v0.2), regenerated every time the site is built:
+
+- [Download the bundle](/napcore-tools-okf.zip) as a single zip
+- Or fetch the files directly, starting from <a :href="withBase('/okf/index.md')">the bundle index</a>
+
+Every tool, standard and category is one Markdown file: the structured fields in YAML frontmatter, the description as the body, and links to the entries it relates to. The same file is readable by a person, a text editor and an AI agent, with no API in between.
 
 ## Keyboard Shortcuts {#keyboard-shortcuts}
 

@@ -85,6 +85,15 @@ describe('llmsMarkdown', () => {
     expect(out.content).not.toMatch(/document: category|<[A-Z]|\r/);
   });
 
+  it('turns a withBase() link into a Markdown link and drops the script that imports it', () => {
+    const src =
+      "<script setup>\nimport { withBase } from 'vitepress';\n</script>\n\n# About\n\n" +
+      'Start from <a :href="withBase(\'/okf/index.md\')">the bundle index</a>.\n';
+    const out = cleanLlmsPage(page('/about.md', src), ctx(['/about.md']));
+    expect(out.content).toContain('Start from [the bundle index](/okf/index.md).');
+    expect(out.content).not.toMatch(/withBase|<script/);
+  });
+
   it('adds Quick Info to a hand-crafted tool page and drops ToolMetadata', () => {
     const out = cleanLlmsPage(
       page('/tools/motis.md', 'Body text.\n\n<ToolMetadata />', { document: 'tool' }),

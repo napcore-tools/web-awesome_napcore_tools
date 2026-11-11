@@ -35,6 +35,17 @@ test.describe('OKF bundle', () => {
     }
   });
 
+  test('the About page links to the index and the zip', async ({ page }) => {
+    await page.goto('/about');
+
+    // A Markdown link to a .md file would have been rewritten to .html
+    await expect(page.getByRole('link', { name: 'the bundle index' })).toHaveAttribute('href', '/okf/index.md');
+    await expect(page.getByRole('link', { name: 'Download the bundle' })).toHaveAttribute(
+      'href',
+      '/napcore-tools-okf.zip'
+    );
+  });
+
   test('serves the bundle as a zip', async ({ request }) => {
     const response = await request.get('/napcore-tools-okf.zip');
 
