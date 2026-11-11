@@ -3,10 +3,12 @@ import { getCategoriesSidebar } from './core/config/sidebar';
 import { napCoreMarkdownPlugin } from './plugins/napCoreMarkdownPlugin';
 import { collapsePlugin } from './plugins/collapsePlugin';
 import { chapterPlugin } from './plugins/chapterPlugin';
+import { okfDevPlugin } from './plugins/okfDevPlugin';
 import { validateAllStandards } from './core/validation/standards';
 import { validateAllCategories } from './core/validation/categories';
 import { handleValidationResult } from './core/validation/utils';
 import { buildEnd } from './buildEnd';
+import { siteUrl } from './core/config/site';
 import { splitDynamicPageIntoSections } from './core/search/dynamicPageSearch';
 import llmstxtPlugin from 'vitepress-plugin-llmstxt';
 import { type LlmsContext, cleanLlmsPage, loadLlmsContext, toUrlPath } from './core/llms/llmsMarkdown';
@@ -170,6 +172,8 @@ export default defineConfig({
 
   vite: {
     plugins: [
+      // Dev only: the build writes the OKF bundle in buildEnd
+      okfDevPlugin(siteUrl),
       llmstxtPlugin({
         // Turn the plugin's raw page sources into plain Markdown (see core/llms/llmsMarkdown.ts)
         // and fix the backslashes path.join produces on Windows ("/\tools\motis.md").
