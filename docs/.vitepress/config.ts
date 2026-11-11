@@ -9,6 +9,7 @@ import { handleValidationResult } from './core/validation/utils';
 import { buildEnd } from './buildEnd';
 import { splitDynamicPageIntoSections } from './core/search/dynamicPageSearch';
 import llmstxtPlugin from 'vitepress-plugin-llmstxt';
+import { type LlmsContext, cleanLlmsPage, loadLlmsContext, toUrlPath } from './core/llms/llmsMarkdown';
 import { fileURLToPath, URL } from 'node:url';
 
 // Validate STANDARD_METADATA at config load time
@@ -22,6 +23,9 @@ handleValidationResult('CATEGORIES', categoriesValidationResult);
 // Use process.env to read the variable.
 // If the variable is not set, default to '/' (root path).
 const BASE_PATH = process.env.VITEPRESS_BASE || '/';
+
+// Site data for the llms.txt transform, loaded on first use
+let llmsContext: LlmsContext | undefined;
 
 export default defineConfig({
   title: 'Awesome NAPCORE',
@@ -167,16 +171,23 @@ export default defineConfig({
   vite: {
     plugins: [
       llmstxtPlugin({
-        // The plugin builds URLs with path.join, which yields backslashes on Windows
-        // ("/\tools\motis.md"). Normalise them to forward slashes.
-        transform: ({ page }) => {
-          const toUrl = (s: string) => s.replace(/\\+/g, '/').replace(/\/{2,}/g, '/');
-          page.llmUrl = toUrl(page.llmUrl);
-          page.content = page.content
-            // Link targets in llms.txt
-            .replace(/\]\(([^)]*)\)/g, (_m, url: string) => `](${toUrl(url)})`)
-            // LLMS_URL frontmatter in the per-page .md files and llms-full.txt
-            .replace(/^LLMS_URL: "(.*)"$/gm, (_m, url: string) => `LLMS_URL: "${toUrl(url)}"`);
+        // Turn the plugin's raw page sources into plain Markdown (see core/llms/llmsMarkdown.ts)
+        // and fix the backslashes path.join produces on Windows ("/\tools\motis.md").
+        transform: ({ page, pages, vpConfig }) => {
+          llmsContext ??= loadLlmsContext(vpConfig?.srcDir ?? fileURLToPath(new URL('..', import.meta.url)));
+          const ctx = llmsContext;
+          const isPage = (p: { path: string }) => p.path.endsWith('.md');
+
+          if (isPage(page)) return cleanLlmsPage(page, ctx);
+          if (page.path === '/llms-full.txt') {
+            // Built by the plugin before transform runs, so rebuild it from the cleaned pages
+            page.content = pages
+              .filter(isPage)
+              .map((p) => cleanLlmsPage(p, ctx).content)
+              .join('\n\n');
+          }
+          // Link targets in llms.txt
+          page.content = page.content.replace(/\]\(([^)]*)\)/g, (_m, url: string) => `](${toUrlPath(url)})`);
           return page;
         },
       }),
