@@ -2,3 +2,4 @@ export { resolveTag, resolveTags, type ResolvedTag, type TagType } from './tagRe
 export { initializeDetailsNavigation } from './detailsNavigation';
 export { createSlug } from './slugify';
 export { getSubtitle } from './toolSubtitle';
+export { toolMatchesSearch, toolSearchText, type TitleLookup } from './toolSearch';

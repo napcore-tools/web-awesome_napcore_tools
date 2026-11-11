@@ -33,7 +33,12 @@ import { computed, onMounted } from 'vue';
 import { useRoute } from 'vitepress';
 import { data as tools } from '@/core/data-loaders/tools.data';
 import type { Tool } from '@/core/data-loaders/tools.data';
-import { createSlug, getSubtitle } from '@/core/utils';
+import { createSlug, getSubtitle, toolMatchesSearch } from '@/core/utils';
+import { getCategoryBySlug } from '@/core/metadata/categories';
+import { data as standardsData } from '@/core/data-loaders/standards.data';
+
+const categoryTitle = (slug: string) => getCategoryBySlug(slug)?.title;
+const standardTitle = (slug: string) => standardsData[slug]?.title;
 import ToolCard from './ToolCard.vue';
 
 // Debug mode (enable by adding ?debug=true to URL)
@@ -146,7 +151,7 @@ const activeStandards = computed(() => {
  * 1. showAll prop - Shows all tools, ignores all filters except text filter
  * 2. selectedTools prop - Shows only specified tools by slug, preserves order, ignores category/standard filters
  * 3. Category + Standards - Combines category and standards filters (both must match if both are active)
- * 4. Text filter - Applied last to results from above steps (searches title, description, tags, categories)
+ * 4. Text filter - Applied last to results from above steps (see toolSearchText for the fields)
  *
  * @returns Array of Tool objects matching the active filters
  */
@@ -209,29 +214,7 @@ const filteredTools = computed(() => {
   if (props.textFilter && props.textFilter.trim().length > 0) {
     const searchTerm = props.textFilter.trim().toLowerCase();
 
-    result = result.filter((tool: Tool) => {
-      // Search in title
-      if (tool.title.toLowerCase().includes(searchTerm)) {
-        return true;
-      }
-
-      // Search in description
-      if (tool.description.toLowerCase().includes(searchTerm)) {
-        return true;
-      }
-
-      // Search in tags (joined as string)
-      if ((tool.tags?.join(' ') || '').toLowerCase().includes(searchTerm)) {
-        return true;
-      }
-
-      // Search in categories (joined as string)
-      if (tool.categories.join(' ').toLowerCase().includes(searchTerm)) {
-        return true;
-      }
-
-      return false;
-    });
+    result = result.filter((tool: Tool) => toolMatchesSearch(tool, searchTerm, categoryTitle, standardTitle));
   }
 
   return result;
