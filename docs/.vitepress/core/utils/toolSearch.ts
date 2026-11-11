@@ -20,6 +20,8 @@ export function toolSearchText(tool: Tool, categoryTitle: TitleLookup, standardT
     ...(tool.standards ?? []).map(standardTitle),
     tool.developer,
     tool.maintainedBy,
+    tool.language,
+    tool.technology,
   ];
   return terms.filter(Boolean).join(' \n ').toLowerCase();
 }

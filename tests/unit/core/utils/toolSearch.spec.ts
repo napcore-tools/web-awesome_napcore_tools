@@ -12,6 +12,8 @@ const tool: Tool = {
   tags: ['Stops'],
   developer: 'Entur AS',
   maintainedBy: 'Entur ROR',
+  language: 'TypeScript',
+  technology: 'React',
 };
 
 const categoryTitle = (s: string) => ({ 'data-editors': 'Data Editors & Registries' })[s];
@@ -36,6 +38,11 @@ describe('toolMatchesSearch', () => {
   it('matches developer and maintainer', () => {
     expect(matches('entur')).toBe(true);
     expect(matches('ROR')).toBe(true);
+  });
+
+  it('matches language and technology', () => {
+    expect(matches('typescript')).toBe(true);
+    expect(matches('react')).toBe(true);
   });
 
   it('ignores surrounding whitespace and rejects non-matches', () => {
