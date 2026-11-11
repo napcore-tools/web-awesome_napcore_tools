@@ -1,15 +1,16 @@
 import path from 'node:path';
-import { writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { Feed } from 'feed';
 import type { SiteConfig } from 'vitepress';
 import { createContentLoader } from 'vitepress';
+import { siteUrl } from './core/config/site';
+import { OKF_ARCHIVE, okfBundle } from './core/okf/okfBundle';
+import { zipArchive } from './core/okf/zipArchive';
 
-// TODO: Update this with your actual site URL when deploying
-const siteUrl = process.env.SITE_URL || 'https://awesome.napcore.eu';
 const blogUrl = `${siteUrl}/blog`;
 
 /**
- * VitePress buildEnd hook that generates an RSS feed for blog posts.
+ * VitePress buildEnd hook that generates an RSS feed for blog posts and the OKF bundle.
  * Loads all blog posts, filters by publish status and date, and creates feed.rss in the output directory.
  * Respects VITE_PREVIEW_MODE environment variable for scheduled posts.
  *
@@ -69,4 +70,23 @@ export const buildEnd = async (config: SiteConfig): Promise<void> => {
   writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2());
 
   console.log(`✅ Generated RSS feed with ${publishedCount} posts`);
+
+  writeOkfBundle(config.outDir);
 };
+
+/**
+ * Writes the catalogue as an OKF bundle: a browsable tree of Markdown concepts at
+ * `/okf/` and the same tree as one zip beside it (see core/okf/okfBundle.ts).
+ */
+function writeOkfBundle(outDir: string): void {
+  const files = okfBundle(siteUrl);
+
+  for (const [relative, contents] of files) {
+    const target = path.join(outDir, 'okf', relative);
+    mkdirSync(path.dirname(target), { recursive: true });
+    writeFileSync(target, contents);
+  }
+  writeFileSync(path.join(outDir, `${OKF_ARCHIVE}.zip`), zipArchive(files));
+
+  console.log(`✅ Generated OKF bundle with ${files.size} files`);
+}
