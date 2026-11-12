@@ -420,28 +420,12 @@ entry for the same slug is ignored, and the two are never merged.
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how:
+- Suggest a tool: check the [inclusion criteria](./docs/contribute.md#open-tool-criteria), then [start a discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions/new?category=tool-suggestions) in the Tool Suggestions category.
+- Add a tool with a pull request: see [TOOLS.md](TOOLS.md) or [PUBLICCODE.md](PUBLICCODE.md).
+- Fix a page: use "Suggest changes to this page" at the bottom of any page.
+- Report a problem: [open an issue](https://github.com/napcore-tools/web-awesome_napcore_tools/issues).
 
-### Submit a Tool
-
-1. Check our [criteria](./docs/contribute.md#tool-criteria)
-2. Gather [required information](./docs/contribute.md#required-information)
-3. [Start a discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions) with "Tool Submission" category
-4. Community review and approval
-5. Tool added to catalog!
-
-### Improve Documentation
-
-1. Click "Suggest changes to this page" on any page
-2. Make your edits
-3. Submit a pull request
-
-### Report Issues
-
-- [Open an issue](https://github.com/napcore-tools/web-awesome_napcore_tools/issues)
-- [Start a discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions)
-
-See [contribute.md](./docs/contribute.md) for detailed guidelines.
+See [contribute.md](./docs/contribute.md) for the full guide.
 
 ## 🛠 Technology Stack
 

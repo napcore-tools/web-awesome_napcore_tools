@@ -83,16 +83,7 @@ The catalogue is built and maintained by the NAPCORE Task 5.2 team, with support
 #### Review Process
 
 As our goal is to ensure quality and relevance in the domain of European mobility data, every tool submission is reviewed according to the quality standards by the managing team with input from the community. The review process happens in public through GitHub Discussions, to ensure transparency.
-See our [Contribution Guide](/contribute) for more details.
-
-#### Tool Inclusion Criteria
-
-To maintain quality standards of the tools in the catalogue, the inclusion criteria are:
-
-✅ **Relevant to mobility data**: Supports European mobility data standards or workflows  
-✅ **Publicly accessible**: Available for use (either open source or free to use)  
-✅ **Functional**: Currently working and maintained  
-✅ **Documented**: Has basic documentation or usage instructions
+See the [Contribution Guide](/contribute) for the process and the [inclusion criteria](/contribute#open-tool-criteria).
 
 ## Statistics
 
