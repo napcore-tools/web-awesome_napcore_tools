@@ -12,6 +12,11 @@ import type { Plugin } from 'vite';
  *
  * Like the plugin, it does not watch for changes: restart the dev server to see edits.
  *
+ * The bug is fixed upstream in PR #9
+ * (https://github.com/angelespejo/vitepress-plugin-llmstxt/pull/9). Once a release
+ * includes it, remove this plugin and run the e2e tests: they show whether the llms
+ * files are still served and whether pages still load in dev.
+ *
  * @param files - Finished files by URL path ("/llms.txt", "/tools/motis.md")
  */
 export function llmsDevPlugin(files: ReadonlyMap<string, string>): Plugin {

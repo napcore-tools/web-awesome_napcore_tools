@@ -54,7 +54,10 @@ export function loadLlmsContext(srcDir: string, base: string): LlmsContext {
   };
 }
 
-/** Converts Windows separators from the plugin's path.join to URL slashes. */
+/**
+ * Converts Windows separators from the plugin's path.join to URL slashes.
+ * Not needed once a plugin release includes upstream PR #9.
+ */
 export function toUrlPath(s: string): string {
   return s.replace(/\\+/g, '/').replace(/\/{2,}/g, '/');
 }
