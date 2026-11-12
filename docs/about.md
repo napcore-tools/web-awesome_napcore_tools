@@ -64,7 +64,7 @@ Suggest a tool, fix a page or share an idea: see [Contribute](/contribute). News
 - [GitHub Discussions](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions) for questions, ideas and tool suggestions
 - [GitHub repository](https://github.com/napcore-tools/web-awesome_napcore_tools) for the source of this site, built with VitePress and hosted on GitHub Pages
 
-All catalogue content is open source.
+The catalogue content is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and the code of the site under the MIT licence. The listed tools keep their own licences.
 
 ## Acknowledgements
 
