@@ -29,7 +29,10 @@ export const OKF_ARCHIVE = 'napcore-tools-okf';
 const CATALOGUE = 'Awesome NAPCORE Tools';
 const INTRO =
   'The Awesome NAPCORE Tools catalogue as an OKF bundle: tools for European mobility data, ' +
-  'the standards they support and the categories they are filed under.';
+  'the standards they support and the categories they are filed under. Every entry is one ' +
+  'Markdown file, with its fields in YAML frontmatter and links to the entries it relates to.';
+
+const SPEC_URL = 'https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md';
 
 // Actor convention from the spec: an automated process is `process:<id>`
 const GENERATED_BY = 'process:napcore-tools-build';
@@ -59,10 +62,10 @@ const OKF_KEYS = new Set([
 type Kind = 'tools' | 'standards' | 'categories';
 
 /** The kinds that become concept directories, with the `type` each concept declares. */
-const KINDS: Record<Kind, { type: string; title: string }> = {
-  tools: { type: 'Software Tool', title: 'Tools' },
-  standards: { type: 'Data Standard', title: 'Standards' },
-  categories: { type: 'Tool Category', title: 'Categories' },
+const KINDS: Record<Kind, { type: string; title: string; summary: string }> = {
+  tools: { type: 'Software Tool', title: 'Tools', summary: 'Software tools for working with European mobility data' },
+  standards: { type: 'Data Standard', title: 'Standards', summary: 'Data standards the tools support' },
+  categories: { type: 'Tool Category', title: 'Categories', summary: 'Categories the tools are filed under' },
 };
 
 /** The hand-written page of a tool: its Markdown without frontmatter. */
@@ -331,15 +334,22 @@ function directoryIndex(kind: Kind, entries: Entry[]): string {
 }
 
 /** The bundle root listing, the only index.md the spec lets carry frontmatter. */
-function bundleIndex(counts: Record<Kind, number>): string {
+function bundleIndex(siteUrl: string, counts: Record<Kind, number>): string {
   const lines = (Object.keys(KINDS) as Kind[]).map(
-    (kind) => `* [${KINDS[kind].title}](${kind}/index.md) - ${counts[kind]} concepts`
+    (kind) => `* [${KINDS[kind].title}](${kind}/index.md) - ${KINDS[kind].summary} (${counts[kind]})`
   );
+  // Where the bundle comes from, for a reader who lands on this file alone
+  const about = [
+    `* [Catalogue website](${siteUrl}/) - The same catalogue as web pages`,
+    `* [Bundle as a zip](${siteUrl}/${OKF_ARCHIVE}.zip) - All files of this bundle in one download`,
+    `* [Open Knowledge Format](${SPEC_URL}) - The specification this bundle follows, v${OKF_VERSION}`,
+  ];
   return [
     `---\nokf_version: "${OKF_VERSION}"\n---`,
     `# ${CATALOGUE}`,
     INTRO,
     `# Contents\n\n${lines.join('\n')}`,
+    `# About This Bundle\n\n${about.join('\n')}`,
     '',
   ].join('\n\n');
 }
@@ -394,7 +404,11 @@ export function okfBundle(siteUrl: string, input: OkfInput = loadOkfInput()): Ma
   }
   files.set(
     'index.md',
-    bundleIndex({ tools: tools.length, standards: entries.standards.length, categories: entries.categories.length })
+    bundleIndex(siteUrl, {
+      tools: tools.length,
+      standards: entries.standards.length,
+      categories: entries.categories.length,
+    })
   );
 
   return files;

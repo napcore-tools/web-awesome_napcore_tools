@@ -82,9 +82,17 @@ describe('okfBundle', () => {
       const index = okfBundle(SITE, input()).get('index.md');
 
       expect(index).toMatch(/^---\nokf_version: "0\.2"\n---\n/);
-      expect(index).toContain('* [Tools](tools/index.md) - 2 concepts');
-      expect(index).toContain('* [Standards](standards/index.md) - 2 concepts');
-      expect(index).toContain('* [Categories](categories/index.md) - 2 concepts');
+      expect(index).toContain('* [Tools](tools/index.md) - Software tools for working with European mobility data (2)');
+      expect(index).toContain('* [Standards](standards/index.md) - Data standards the tools support (2)');
+      expect(index).toContain('* [Categories](categories/index.md) - Categories the tools are filed under (2)');
+    });
+
+    it('says in the root index where the bundle comes from', () => {
+      const index = okfBundle(SITE, input()).get('index.md');
+
+      expect(index).toContain(`* [Catalogue website](${SITE}/) - `);
+      expect(index).toContain(`* [Bundle as a zip](${SITE}/napcore-tools-okf.zip) - `);
+      expect(index).toMatch(/\* \[Open Knowledge Format\]\(https:\/\/github\.com\/\S+\/SPEC\.md\) - .*v0\.2\n/);
     });
 
     it('lists concepts in a directory index without frontmatter, tools sorted by slug', () => {
