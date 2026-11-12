@@ -180,7 +180,7 @@ export function replaceComponents(body: string, section: string, slug: string, c
       .replace(/<CategoriesFilter[^>]*\/>/g, () => categoryList(Object.keys(ctx.categories), ctx))
       .replace(/<StandardsFilter\s*\/>/g, () => standardList(Object.keys(ctx.standards), ctx))
       // Links bound through withBase(), used where a Markdown link would be rewritten to .html
-      .replace(/<a :href="withBase\('([^']+)'\)">([^<]*)<\/a>/g, '[$2]($1)')
+      .replace(/<a :href="withBase\('([^']+)'\)"[^>]*>([^<]*)<\/a>/g, '[$2]($1)')
       // Anything else (stats bars, blog widgets, ToolMetadata) has no text equivalent
       .replace(/^[ \t]*<[A-Z][A-Za-z]*\b[^>]*\/>[ \t]*$/gm, '')
   );

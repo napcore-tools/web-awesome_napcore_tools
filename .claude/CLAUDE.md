@@ -237,8 +237,10 @@ and as `/napcore-tools-okf.zip`.
 - There is no `log.md` and no `generated.at` timestamp; a timestamp would make the zip
   differ on every build
 - A page that links to a `.md` file of the bundle must use
-  `<a :href="withBase('/okf/index.md')">`: VitePress rewrites a Markdown link to a `.md`
-  file into `.html`
+  `<a :href="withBase('/okf/index.md')" target="_self">`: VitePress rewrites a Markdown
+  link to a `.md` file into `.html`, and without a `target` attribute the client router
+  takes the click and goes to `index.md.html`. The same holds for `/feed.rss`, which
+  opens in a new tab (`target="_blank"`)
 
 ## File Organization
 

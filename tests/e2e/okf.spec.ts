@@ -46,6 +46,25 @@ test.describe('OKF bundle', () => {
     );
   });
 
+  test('following the index link from the About page opens the file', async ({ page }) => {
+    await page.goto('/about');
+
+    // Without a target attribute the client router takes the click and goes to index.md.html
+    await page.getByRole('link', { name: 'the bundle index' }).click();
+
+    await expect(page).toHaveURL(/\/okf\/index\.md$/);
+    await expect(page.locator('body')).toContainText('okf_version');
+  });
+
+  test('the RSS link on the About page opens in a new tab', async ({ page }) => {
+    await page.goto('/about');
+
+    // The feed only exists in a build, so the link cannot be followed on the dev server
+    const link = page.getByRole('link', { name: 'RSS feed' });
+    await expect(link).toHaveAttribute('href', '/feed.rss');
+    await expect(link).toHaveAttribute('target', '_blank');
+  });
+
   test('serves the bundle as a zip', async ({ request }) => {
     const response = await request.get('/napcore-tools-okf.zip');
 
