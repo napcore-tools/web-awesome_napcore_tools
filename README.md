@@ -465,9 +465,9 @@ Learn more at [napcore.eu](https://napcore.eu)
 
 ## 📄 License
 
-- **Catalog Content**: CC BY 4.0
-- **Code**: MIT License
-- **Individual Tools**: See respective tool licenses
+- Code: MIT, see [LICENSE](LICENSE)
+- Catalogue content (pages, tool and standard descriptions, the OKF bundle): CC BY 4.0, see [LICENSE-CONTENT](LICENSE-CONTENT)
+- Third-party material keeps its own terms: the listed tools, the cached `publiccode.yml` files under `docs/data/publiccode/`, and the logos of NAPCORE, tools and standards
 
 ## 🙏 Acknowledgments
 
