@@ -266,6 +266,15 @@
   object-position: left center;
 }
 
+/* The icons in public/icons/ are drawn in a single blue, #0066cc, which is too dim
+   on the navy cards. Brightening it lifts it to about the NAPCORE sky blue (#008cff)
+   without a second set of files. The NAPCORE logo has its own dark version and the
+   standards' logos keep their own colours, so neither is matched. */
+.dark .VPFeature .VPImage[src*='/icons/'],
+.dark .category-card .category-logo {
+  filter: brightness(1.5);
+}
+
 /* ============================================================================
    Content
    ============================================================================ */
