@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Label tag with a solid eyelet and two lines of text -->
+  <path d="M24 5h15a4 4 0 0 1 4 4v15L24 43 5 24z" fill="rgba(0,102,204,0.12)" stroke="#0066cc" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="34" cy="14" r="3.5" fill="#0066cc"/>
+  <path d="M15 24l8-8M20 29l8-8" stroke="#0066cc" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

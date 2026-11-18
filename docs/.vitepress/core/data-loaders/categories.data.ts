@@ -24,7 +24,8 @@ const __dirname = path.dirname(__filename);
  */
 export interface CategoryData {
   title: string; // Display name: 'Data Quality Tools'
-  icon: string; // Emoji icon: '📊'
+  icon: string; // Emoji icon, used as a fallback when no logo is set
+  logo?: string; // Optional path to an icon image (e.g. /icons/categories/validators.svg); takes precedence over icon
   description: string; // Short description for category cards
   related?: string[]; // Optional array of related category slugs
 }

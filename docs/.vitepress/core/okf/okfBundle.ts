@@ -295,7 +295,7 @@ function standardConcept(slug: string, standard: Standard, ctx: Context): string
 }
 
 function categoryConcept(slug: string, category: CategoryData, ctx: Context): string {
-  const { title, description, icon: _icon, ...fields } = category;
+  const { title, description, icon: _icon, logo: _logo, ...fields } = category;
 
   const frontmatter = {
     type: KINDS.categories.type,

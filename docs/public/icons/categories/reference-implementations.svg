@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Target: rings around a solid centre -->
+  <circle cx="24" cy="24" r="19" fill="rgba(0,102,204,0.12)" stroke="#0066cc" stroke-width="2.5"/>
+  <circle cx="24" cy="24" r="11" stroke="#0066cc" stroke-width="2.5"/>
+  <circle cx="24" cy="24" r="4.5" fill="#0066cc"/>
+</svg>

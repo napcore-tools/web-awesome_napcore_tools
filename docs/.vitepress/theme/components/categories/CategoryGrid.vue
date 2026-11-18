@@ -7,7 +7,8 @@
       class="category-card"
     >
       <span class="category-badge">{{ category.count }}</span>
-      <span class="category-icon">{{ category.icon }}</span>
+      <img v-if="category.logo" :src="withBase(category.logo)" alt="" class="category-logo" />
+      <span v-else class="category-icon">{{ category.icon }}</span>
       <h3 class="category-title">{{ category.title }}</h3>
       <p class="category-description">{{ category.description }}</p>
     </a>
@@ -50,3 +51,14 @@ const categories = computed(() => {
   return result;
 });
 </script>
+
+<style scoped>
+/* The icon image stands in for the emoji icon; sized to match .category-icon (3rem).
+   alt is empty because the card title right below names the category. */
+.category-logo {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+}
+</style>

@@ -6,7 +6,7 @@
  * (categories.data.ts). This module just exposes the stable public API consumers expect.
  *
  * Consumers (unchanged):
- * - CategoryGrid.vue (needs: slug, title, icon, description)
+ * - CategoryGrid.vue (needs: slug, title, logo or icon, description)
  * - sidebar.ts (needs: slug, title)
  * - stats.data.ts (needs: slug for counting)
  *

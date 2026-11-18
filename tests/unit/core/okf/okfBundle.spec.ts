@@ -35,7 +35,13 @@ const input = (extra: Partial<OkfInput> = {}): OkfInput => ({
     siri: { title: 'SIRI' } as Standard,
   },
   categories: {
-    validators: { title: 'Validators', icon: '✓', description: 'Check data', related: ['converters', 'missing'] },
+    validators: {
+      title: 'Validators',
+      icon: '✓',
+      logo: '/icons/categories/validators.svg',
+      description: 'Check data',
+      related: ['converters', 'missing'],
+    },
     converters: { title: 'Converters', icon: '⇄', description: 'Convert data' },
   },
   toolPage: () => undefined,
@@ -299,6 +305,7 @@ describe('okfBundle', () => {
         catalogue_id: 'validators',
       });
       expect(frontmatter).not.toHaveProperty('icon');
+      expect(frontmatter).not.toHaveProperty('logo');
       expect(body).toBe(
         'Check data\n\n# Related\n\n' +
           '* Related category: [Converters](/categories/converters.md)\n' +

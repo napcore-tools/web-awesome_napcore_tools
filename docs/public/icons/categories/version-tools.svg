@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Older version behind, outline only -->
+  <path d="M14 14V8a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4h-2" stroke="#0066cc" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Newer version in front, with an up arrow -->
+  <rect x="6" y="14" width="30" height="30" rx="4" fill="rgba(0,102,204,0.12)" stroke="#0066cc" stroke-width="2.5"/>
+  <path d="M21 37V22M15 28l6-6 6 6" stroke="#0066cc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,6 +1,7 @@
 validators:
   title: Validators
   icon: ✓
+  logo: /icons/categories/validators.svg
   description: Schema validation and business rule checking tools
   related:
     - data-quality
@@ -12,6 +13,7 @@ validators:
 converters:
   title: Converters & Transformers
   icon: ⇄
+  logo: /icons/categories/converters.svg
   description: Format conversion and data transformation utilities
   related:
     - validators
@@ -23,6 +25,7 @@ converters:
 version-tools:
   title: Version Upgrade Tools
   icon: ⬆
+  logo: /icons/categories/version-tools.svg
   description: Tools that migrate data or systems from one version of a standard to another
   related:
     - converters
@@ -34,6 +37,7 @@ version-tools:
 sdks:
   title: SDKs & Libraries
   icon: 📦
+  logo: /icons/categories/sdks.svg
   description: Programming language bindings and libraries
   related:
     - development
@@ -45,6 +49,7 @@ sdks:
 reference-implementations:
   title: Reference Implementations
   icon: 🎯
+  logo: /icons/categories/reference-implementations.svg
   description: Working examples and demo applications
   related:
     - sdks
@@ -56,6 +61,7 @@ reference-implementations:
 development:
   title: Development Tools
   icon: 🛠
+  logo: /icons/categories/development.svg
   description: Schema and model browsers, editors and generators for working with the standards
   related:
     - sdks
@@ -67,6 +73,7 @@ development:
 data-quality:
   title: Data Quality Tools
   icon: 📊
+  logo: /icons/categories/data-quality.svg
   description: Tools that measure, monitor and improve data quality beyond schema validation
   related:
     - validators
@@ -78,6 +85,7 @@ data-quality:
 testing:
   title: Testing Utilities
   icon: 🧪
+  logo: /icons/categories/testing.svg
   description: Test data generators, simulators and tools for testing feeds and services
   related:
     - validators
@@ -89,6 +97,7 @@ testing:
 metadata:
   title: Metadata Tools
   icon: 🏷
+  logo: /icons/categories/metadata.svg
   description: Tools for creating, validating and publishing dataset metadata such as mobilityDCAT-AP
   related:
     - data-quality
@@ -100,6 +109,7 @@ metadata:
 route-planners:
   title: Route Planners
   icon: 🗺️
+  logo: /icons/categories/route-planners.svg
   description: Intermodal journey planners and supporting services such as geocoding
   related:
     - sdks
@@ -111,6 +121,7 @@ route-planners:
 data-editors:
   title: Data Editors & Registries
   icon: ✎
+  logo: /icons/categories/data-editors.svg
   description: Editors and registries for creating and maintaining mobility data, such as stop places, timetables and real-time deviation messages
   related:
     - data-quality
@@ -122,6 +133,7 @@ data-editors:
 data-aggregators:
   title: Data Aggregators
   icon: 📡
+  logo: /icons/categories/data-aggregators.svg
   description: Services that collect feeds from many producers in a standard format and redistribute them, combined or filtered for subscribers
   related:
     - converters
@@ -133,6 +145,7 @@ data-aggregators:
 references:
   title: Reference Documentation
   icon: 📚
+  logo: /icons/categories/references.svg
   description: Technical documentation, specifications, and implementation guides for mobility data standards and systems
   related:
     - reference-implementations

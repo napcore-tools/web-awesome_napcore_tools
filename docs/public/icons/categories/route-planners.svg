@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Dotted route from a start point to a map pin -->
+  <path d="M14 40h15a5 5 0 0 0 5-5v-1" stroke="#0066cc" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 5.5"/>
+  <circle cx="8" cy="40" r="4" fill="#0066cc"/>
+  <path d="M34 4a10 10 0 0 0-10 10c0 7.5 10 17 10 17s10-9.5 10-17A10 10 0 0 0 34 4z" fill="rgba(0,102,204,0.12)" stroke="#0066cc" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="34" cy="14" r="3.5" fill="#0066cc"/>
+</svg>
