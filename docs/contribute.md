@@ -2,12 +2,6 @@
 
 Suggest a tool, fix a page, or tell us what is missing.
 
-## Suggest a Tool
-
-1. Check the [inclusion criteria](#open-tool-criteria).
-2. [Start a discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions/new?category=tool-suggestions) in the Tool Suggestions category. The [example suggestion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions/2) shows what to include.
-3. The NAPCORE team reviews the suggestion and replies in the discussion. Once it is accepted, we add the tool to the catalogue.
-
 ## Inclusion Criteria {#open-tool-criteria}
 
 A tool is included when:
@@ -17,6 +11,12 @@ A tool is included when:
 - It works and has basic documentation.
 
 Open source tools are preferred. The criteria are discussed in [Scope & Criteria](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions/categories/scope-criteria).
+
+## Suggest a Tool
+
+1. Check the [inclusion criteria](#open-tool-criteria).
+2. [Start a discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions/new?category=tool-suggestions) in the Tool Suggestions category. The [example suggestion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions/2) shows what to include.
+3. The NAPCORE team reviews the suggestion and replies in the discussion. Once it is accepted, we add the tool to the catalogue.
 
 ## Other Ways to Contribute
 
