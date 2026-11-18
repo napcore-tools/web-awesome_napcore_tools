@@ -24,57 +24,6 @@ The NAPCORE Task 5.2 team builds and maintains the catalogue, with contributions
 
 <StatsBar />
 
-## Machine-Readable Export
-
-The whole catalogue is also published as an [OKF](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/README.md) bundle (Open Knowledge Format v0.2), regenerated every time the site is built:
-
-- [Download the bundle](/napcore-tools-okf.zip) as a single zip
-- Or read the files one by one, as plain Markdown, starting from <a :href="withBase('/okf/index.md')" target="_self">the bundle index</a>
-
-Every tool, standard and category is one Markdown file, with its fields in YAML frontmatter and links to the entries it relates to. People and AI agents read the same file.
-
-## Using the Catalogue with AI {#ai}
-
-The catalogue is published in three machine-readable forms. Pick the one that suits your tool:
-
-| You use                                  | Give it                                                                            |
-| ---------------------------------------- | ---------------------------------------------------------------------------------- |
-| A chat assistant that can open web links | the link to [llms.txt](/llms.txt), the catalogue index with links to every page    |
-| A chat assistant without web access      | [llms-full.txt](/llms-full.txt), downloaded and uploaded as a file                 |
-| An AI agent that browses                 | [llms.txt](/llms.txt), an index that links to a Markdown copy of every page        |
-| A knowledge base or an agent of your own | the [OKF bundle](/napcore-tools-okf.zip), one file per tool, standard and category |
-
-Example prompts:
-
-- Read https://awesome.napcore.eu/llms.txt. Which open-source tools validate NeTEx files, and under which licences?
-- Using https://awesome.napcore.eu/llms.txt, which tools work with DATEX II, and what does each one do?
-- We run a National Access Point publishing GTFS and NeTEx. Based on https://awesome.napcore.eu/llms.txt, which tools could check our data before we publish it?
-- Using https://awesome.napcore.eu/llms.txt, list the tools made by NAPCORE, one sentence each.
-- Here is my project: _repository URL_. Following https://awesome.napcore.eu/contribute.md, draft a catalogue entry for it.
-
-For agents that can run code or follow links, the OKF bundle gives exact fields to filter on and links between tools, standards and categories:
-
-- Download https://awesome.napcore.eu/napcore-tools-okf.zip and unpack it. From the frontmatter of the files in `tools/`, make a table of every actively maintained tool that supports NeTEx, with its licence and repository.
-- Start at https://awesome.napcore.eu/okf/index.md and follow its links. Which standards are related to NeTEx, and which tools support each of them?
-
-The files are rebuilt with every site update. Check the tool's own page before you rely on an answer.
-
-## Keyboard Shortcuts {#keyboard-shortcuts}
-
-Press **`g`** followed by a second key to move between pages:
-
-| Shortcut          | Action                                                     |
-| ----------------- | ---------------------------------------------------------- |
-| `g` `h`           | Go to Home                                                 |
-| `g` `t`           | Go to All Tools                                            |
-| `g` `n`           | Go to Tools by NAPCORE                                     |
-| `g` `s`           | Go to Standards                                            |
-| `g` `c`           | Go to Categories                                           |
-| `g` `a`           | Go to About                                                |
-| `?`               | Go to keyboard shortcuts                                   |
-| `Ctrl` `K` or `/` | Open site-wide search                                      |
-| `Escape`          | Clear the filter search box (press again to release focus) |
-
 ## Roadmap
 
 - Short term: wider tool coverage, better search and filtering, tool comparison.

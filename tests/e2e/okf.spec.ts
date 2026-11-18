@@ -5,7 +5,7 @@ import toolsDataLoader from '@/core/data-loaders/tools.data';
  * OKF Bundle Tests
  *
  * The bundle is a build product; under the dev server it is served by okfDevPlugin.
- * These check that the paths the About page links to resolve there too.
+ * These check that the paths the Data & AI page links to resolve there too.
  */
 
 test.describe('OKF bundle', () => {
@@ -35,8 +35,8 @@ test.describe('OKF bundle', () => {
     }
   });
 
-  test('the About page links to the index and the zip', async ({ page }) => {
-    await page.goto('/about');
+  test('the Data & AI page links to the index and the zip', async ({ page }) => {
+    await page.goto('/help/ai');
 
     // A Markdown link to a .md file would have been rewritten to .html
     await expect(page.getByRole('link', { name: 'the bundle index' })).toHaveAttribute('href', '/okf/index.md');
@@ -46,8 +46,8 @@ test.describe('OKF bundle', () => {
     );
   });
 
-  test('following the index link from the About page opens the file', async ({ page }) => {
-    await page.goto('/about');
+  test('following the index link from the Data & AI page opens the file', async ({ page }) => {
+    await page.goto('/help/ai');
 
     // Without a target attribute the client router takes the click and goes to index.md.html
     await page.getByRole('link', { name: 'the bundle index' }).click();

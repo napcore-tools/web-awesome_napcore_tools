@@ -25,7 +25,7 @@ function onKeyDown(e: KeyboardEvent) {
   if (e.metaKey || e.ctrlKey || e.altKey) return;
 
   if (e.key === '?') {
-    router.go('/about#keyboard-shortcuts');
+    router.go('/help/keyboard-shortcuts');
     return;
   }
 

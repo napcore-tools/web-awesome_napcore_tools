@@ -122,7 +122,14 @@ export default defineConfig({
       { text: 'Tools', link: '/all/' },
       { text: 'Contribute', link: '/contribute' },
       { text: 'Blog', link: '/blog' },
-      { text: 'About', link: '/about' },
+      {
+        text: 'Help',
+        items: [
+          { text: 'About', link: '/about' },
+          { text: 'Data & AI', link: '/help/ai' },
+          { text: 'Keyboard Shortcuts', link: '/help/keyboard-shortcuts' },
+        ],
+      },
     ],
 
     sidebar: {
