@@ -52,6 +52,11 @@ Example prompts:
 - Using https://awesome.napcore.eu/llms.txt, list the tools made by NAPCORE, one sentence each.
 - Here is my project: _repository URL_. Following https://awesome.napcore.eu/contribute.md, draft a catalogue entry for it.
 
+For agents that can run code or follow links, the OKF bundle gives exact fields to filter on and links between tools, standards and categories:
+
+- Download https://awesome.napcore.eu/napcore-tools-okf.zip and unpack it. From the frontmatter of the files in `tools/`, make a table of every actively maintained tool that supports NeTEx, with its licence and repository.
+- Start at https://awesome.napcore.eu/okf/index.md and follow its links. Which standards are related to NeTEx, and which tools support each of them?
+
 The files are rebuilt with every site update. Check the tool's own page before you rely on an answer.
 
 ## Keyboard Shortcuts {#keyboard-shortcuts}
