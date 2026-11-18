@@ -92,6 +92,4 @@ The catalogue is made possible by the NAPCORE partners and participating Member 
 ---
 
 <div style="text-align: center; padding: 2rem 0; color: var(--vp-c-text-2);">
-  <p><strong>NAPCORE</strong> - National Access Point Coordination Organisation for Europe</p>
-  <p style="font-size: 0.9rem; margin-top: 0.5rem;">Co-financed by the Connecting Europe Facility of the European Union</p>
-</div>
+  <p><strong>NAPCORE</strong> - National Access Point Coordination Organisation for Europe</p></div>

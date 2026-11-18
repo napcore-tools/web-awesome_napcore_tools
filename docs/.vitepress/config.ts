@@ -147,7 +147,14 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Co-financed by the Connecting Europe Facility of the European Union',
+      // The official 2021-2027 emblem from the Commission's download centre: the positive
+      // version on the yellow light footer, the negative one on the navy dark footer.
+      // napcore-theme.css switches between them. VitePress shows the footer only on pages
+      // without a sidebar (home, About, Contribute, blog).
+      message:
+        `<img class="eu-emblem eu-emblem-light" src="${withBase('/eu-co-funded.png')}" width="251" height="56" alt="Co-funded by the European Union">` +
+        `<img class="eu-emblem eu-emblem-dark" src="${withBase('/eu-co-funded-dark.png')}" width="251" height="56" alt="Co-funded by the European Union">` +
+        '<span class="eu-programme">Connecting Europe Facility</span>',
       copyright:
         'Copyright © 2026 <a href="https://napcore.eu" target="_blank" rel="noopener">NAPCORE</a> - National Access Point Coordination Organisation for Europe',
     },
