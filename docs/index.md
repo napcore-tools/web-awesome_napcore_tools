@@ -119,9 +119,3 @@ Tools developed directly by the NAPCORE team
 </div>
 
 </div>
-
-<div class="hp-footer">
-
-**NAPCORE** - National Access Point Coordination Organisation for Europe
-
-</div>

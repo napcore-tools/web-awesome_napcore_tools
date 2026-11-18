@@ -408,17 +408,6 @@ a.title > span {
   padding-bottom: 2rem !important;
 }
 
-.hp-footer {
-  text-align: center;
-  padding: 1rem;
-  color: var(--vp-c-text-2);
-}
-
-.hp-footer strong {
-  color: var(--vp-c-text-1);
-  font-size: 1rem;
-}
-
 @media (max-width: 768px) {
   .hp-panel {
     padding: 1.5rem;

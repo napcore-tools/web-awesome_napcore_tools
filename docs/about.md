@@ -88,8 +88,3 @@ The catalogue content is licensed under [CC BY 4.0](https://creativecommons.org/
 ## Acknowledgements
 
 The catalogue is made possible by the NAPCORE partners and participating Member States, the developers who build and maintain the tools, the contributors who suggest tools and improvements, and the European Commission through the Connecting Europe Facility.
-
----
-
-<div style="text-align: center; padding: 2rem 0; color: var(--vp-c-text-2);">
-  <p><strong>NAPCORE</strong> - National Access Point Coordination Organisation for Europe</p></div>
