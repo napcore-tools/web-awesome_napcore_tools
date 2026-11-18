@@ -170,8 +170,20 @@ a.tool-link:hover {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  text-decoration: none;
   display: block;
+}
+
+/* The card is a link in the page content, and VitePress underlines those with
+   .vp-doc a, which beats a single class; the underline would run under the title
+   and the description. Only the title keeps it, in the link colour like other links. */
+.vp-doc a.category-card {
+  text-decoration: none;
+}
+
+.vp-doc a.category-card .category-title {
+  text-decoration: underline;
+  text-decoration-color: var(--vp-c-brand-1);
+  text-underline-offset: 2px;
 }
 
 .category-card::before {
