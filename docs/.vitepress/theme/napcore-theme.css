@@ -309,6 +309,27 @@
 }
 
 /* ============================================================================
+   Doc page bottom spacing
+   ============================================================================ */
+
+/* VitePress leaves 96–128px under the doc content (on .VPDoc below 960px, on
+   .content from 960px). Above the footer, or at the end of a sidebar page, 48px is
+   enough. The selectors outrank VitePress's scoped .VPDoc / .content rules. */
+.Layout .VPContent .VPDoc {
+  padding-bottom: 48px;
+}
+
+@media (min-width: 960px) {
+  .Layout .VPContent .VPDoc {
+    padding-bottom: 0;
+  }
+
+  .Layout .VPDoc .content {
+    padding-bottom: 48px;
+  }
+}
+
+/* ============================================================================
    Footer
    ============================================================================ */
 

@@ -301,7 +301,8 @@ a.title > span {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 1.5rem 0;
+  /* 3rem at the bottom matches the space above the footer on doc pages */
+  padding: 1.5rem 0 3rem;
 }
 
 .hp-section {
