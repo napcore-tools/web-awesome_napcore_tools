@@ -16,7 +16,7 @@ Open source tools are preferred. The criteria are discussed in [Scope & Criteria
 
 Check the [inclusion criteria](#open-tool-criteria) first, then pick one of these:
 
-- [Start a discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions/new?category=tool-suggestions) in the Tool Suggestions category. The [example suggestion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions/2) shows what to include. The NAPCORE team reviews the suggestion and replies in the discussion. Once it is accepted, we add the tool to the catalogue.
+- [Start a discussion](https://github.com/napcore-tools/web-awesome_napcore_tools/discussions/new?category=tool-suggestions) in the Tool Suggestions category. The NAPCORE team reviews the suggestion and replies in the discussion. Once it is accepted, we add the tool to the catalogue.
 - If the tool's repository has a [publiccode.yml](https://yml.publiccode.tools/) file, say so in the discussion and give the repository URL. We add the tool from that file.
 - Add the tool yourself with a pull request, either as a [hand-written page](https://github.com/napcore-tools/web-awesome_napcore_tools/blob/main/TOOLS.md) or from a [publiccode.yml](https://github.com/napcore-tools/web-awesome_napcore_tools/blob/main/PUBLICCODE.md). Suggest the tool in a discussion first; a maintainer reviews the pull request against the inclusion criteria.
 
