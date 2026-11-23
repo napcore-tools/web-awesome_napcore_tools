@@ -48,12 +48,10 @@ test.describe('Basic Page Tests', () => {
     await expect(page.locator('h1')).toContainText(/Converters/i);
   });
 
-  test('sample tool page loads', async ({ page }) => {
-    // This will be updated once we know actual tool slugs
-    await page.goto('/tools/');
+  test('the old /all/ page redirects to the tools listing', async ({ page }) => {
+    await page.goto('/all/');
 
-    // Just check it doesn't 404
-    await expect(page).not.toHaveTitle(/404|Not Found/);
+    await expect(page).toHaveURL(/\/tools\/?$/);
   });
 });
 
@@ -65,7 +63,7 @@ test.describe('Navigation Tests', () => {
     const navLink = page.locator('.VPNavBarMenu').getByRole('link', { name: 'Tools', exact: true });
 
     await navLink.click();
-    await expect(page).toHaveURL(/\/all\/?$/);
+    await expect(page).toHaveURL(/\/tools\/?$/);
   });
 
   test('sidebar navigation exists', async ({ page }) => {

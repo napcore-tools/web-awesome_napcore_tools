@@ -118,8 +118,7 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
-      //      { text: 'Browse Tools', link: '/tools/' },
-      { text: 'Tools', link: '/all/' },
+      { text: 'Tools', link: '/tools/' },
       { text: 'Contribute', link: '/contribute' },
       { text: 'Blog', link: '/blog' },
       {
@@ -137,7 +136,6 @@ export default defineConfig({
       '/categories/': { base: '/', items: getCategoriesSidebar() },
       '/tools/': { base: '/', items: getCategoriesSidebar() },
       '/standards/': { base: '/', items: getCategoriesSidebar() },
-      '/all/': { base: '/', items: getCategoriesSidebar() },
       // by-napcore lives at the site root (not in the categories taxonomy)
       // but still shows the catalogue sidebar.
       '/by-napcore/': { base: '/', items: getCategoriesSidebar() },
@@ -223,7 +221,8 @@ export default defineConfig({
       okfDevPlugin(siteUrl),
       llmstxtPlugin({
         // Drafts and scheduled posts, which the blog hides
-        ignore: hiddenBlogPosts(SRC_DIR),
+        // and the /all/ page, which only redirects to /tools/
+        ignore: [...hiddenBlogPosts(SRC_DIR), '**/all/index.md'],
         // Turn the plugin's raw page sources into plain Markdown (see core/llms/llmsMarkdown.ts),
         // fix the backslashes path.join produces on Windows ("/\tools\motis.md") and add the base.
         transform: ({ page, pages, vpConfig }) => {

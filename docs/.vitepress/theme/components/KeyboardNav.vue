@@ -8,7 +8,7 @@ const router = useRouter();
 
 const NAV_KEYS: Record<string, string> = {
   h: '/',
-  t: '/all/',
+  t: '/tools/',
   s: '/standards/',
   c: '/categories/',
   n: '/by-napcore/',

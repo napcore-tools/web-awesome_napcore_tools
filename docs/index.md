@@ -13,7 +13,7 @@ hero:
       link: /by-napcore/
     - theme: alt
       text: Browse All Tools
-      link: /all/
+      link: /tools/
     - theme: alt
       text: Submit a Tool
       link: /contribute
@@ -96,7 +96,7 @@ Tools developed directly by the NAPCORE team
 
 <div class="hp-section-cta">
 
-[Browse All Tools](/all/)
+[Browse All Tools](/tools/)
 
 </div>
 

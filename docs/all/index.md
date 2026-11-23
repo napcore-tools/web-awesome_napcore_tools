@@ -1,13 +1,20 @@
 ---
+title: All Tools
+search: false
 editLink: false
+head:
+  - - meta
+    - http-equiv: refresh
+      content: 0; url=../tools/
 ---
 
-# All Tools
+<script setup>
+import { onMounted } from 'vue';
+import { useRouter, withBase } from 'vitepress';
 
-The complete catalogue of mobility data tools, both those built by the NAPCORE project
-and those contributed by the wider community.
+// The tools list lives at /tools/; this page only forwards old links there
+const router = useRouter();
+onMounted(() => router.go(withBase('/tools/'), { replace: true }));
+</script>
 
-Want only the tools NAPCORE builds and maintains?
-[See tools by NAPCORE](/by-napcore/).
-
-<ToolsFilter :show-all=true />
+The tools list has moved to [All Tools](/tools/).
