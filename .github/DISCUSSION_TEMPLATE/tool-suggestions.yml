@@ -1,0 +1,71 @@
+title: "[Tool Suggestion] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a tool. Put its name in the title.
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: Inclusion criteria
+      options:
+        - label: The tool meets the [inclusion criteria](https://awesome.napcore.eu/contribute#open-tool-criteria).
+          required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Repository
+      description: Give at least one link, here or below.
+      placeholder: https://github.com/org/tool
+  - type: input
+    id: website
+    attributes:
+      label: Website
+  - type: input
+    id: documentation
+    attributes:
+      label: Documentation
+  - type: input
+    id: demo
+    attributes:
+      label: Demo
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What does the tool do?
+    validations:
+      required: true
+  - type: input
+    id: developer
+    attributes:
+      label: Developer or organisation
+  - type: dropdown
+    id: relation
+    attributes:
+      label: Your relation to the tool
+      options:
+        - I develop or maintain it
+        - I use it
+        - Other
+  - type: input
+    id: standards
+    attributes:
+      label: Standards supported
+      placeholder: e.g. DATEX II, NeTEx, SIRI, GTFS
+  - type: input
+    id: license
+    attributes:
+      label: Licence
+      placeholder: e.g. MIT, Apache-2.0, EUPL-1.2, free to use
+  - type: checkboxes
+    id: publiccode
+    attributes:
+      label: publiccode.yml
+      options:
+        - label: The repository has a publiccode.yml file
+  - type: textarea
+    id: why
+    attributes:
+      label: Why include this tool?
+      description: Use cases, notable users, anything else we should know.
