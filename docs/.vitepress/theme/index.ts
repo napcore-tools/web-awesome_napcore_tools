@@ -11,7 +11,6 @@ import './custom.css';
 import './blog.css';
 import './markdown-sections.css';
 import StatsBar from './components/index/StatsBar.vue';
-import ToolStats from './components/tools/ToolStats.vue';
 import ToolCard from './components/tools/ToolCard.vue';
 import ToolsGrid from './components/tools/ToolsGrid.vue';
 import HomePageToolCard from './components/tools/HomePageToolCard.vue';
@@ -53,7 +52,6 @@ export default {
   enhanceApp({ app }) {
     // Register global components
     app.component('StatsBar', StatsBar);
-    app.component('ToolStats', ToolStats);
     app.component('ToolCard', ToolCard);
     app.component('ToolsGrid', ToolsGrid);
     app.component('HomePageToolCard', HomePageToolCard);
