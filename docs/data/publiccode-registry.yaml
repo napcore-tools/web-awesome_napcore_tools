@@ -34,7 +34,6 @@ shacl-validator:
       - testing
     standards:
       - shacl
-      - mobilitydcat-ap
       - rdf
       - dcat-ap
 

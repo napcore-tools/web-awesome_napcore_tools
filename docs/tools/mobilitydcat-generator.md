@@ -102,6 +102,7 @@ The specification addresses the fragmented European mobility data ecosystem by e
 - **Main GitHub Organization**: [github.com/mobilityDCAT-AP](https://github.com/mobilityDCAT-AP)
 - **Specification Repository**: [github.com/mobilityDCAT-AP/mobilityDCAT-AP](https://github.com/mobilityDCAT-AP/mobilityDCAT-AP)
 - **Controlled Vocabularies**: [github.com/mobilityDCAT-AP/controlled-vocabularies](https://github.com/mobilityDCAT-AP/controlled-vocabularies)
+- **Validator**: [mobilityDCAT-AP SHACL Validator](/tools/mobilitydcat-ap-validator)
 
 ## Technical Architecture
 
