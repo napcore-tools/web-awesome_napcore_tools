@@ -1,0 +1,73 @@
+publiccodeYmlVersion: "0"
+
+name: NAP Roadworks Viewer
+url: "https://github.com/Graphmasters/nap-roadworks-viewer.git"
+landingURL: "https://graphmasters.github.io/nap-roadworks-viewer/"
+softwareVersion: "1.1.0"
+
+platforms:
+  - web
+
+categories:
+  - geographic-information-systems
+  - data-analytics
+
+developmentStatus: stable
+
+softwareType: "standalone/web"
+
+organisation:
+  uri: "https://github.com/Graphmasters"
+  name: Graphmasters GmbH
+
+intendedAudience:
+  scope:
+    - transportation
+
+supports:
+  - id: "https://datex2.eu/"
+  - id: "https://www.openlr.org/"
+  - id: "https://tisa.org/rtti-5-star-rating-specification/"
+
+description:
+  en:
+    shortDescription: "Browser tool that checks DATEX II roadworks and road-closure feeds from National Access Points, on a map and against OpenStreetMap."
+    longDescription: |
+      The NAP Roadworks Viewer inspects one DATEX II roadworks or road-closure file, the kind that National Access Points publish, and shows what it contains and how reliable it is.
+
+      - **Check:** well-formedness, the DATEX II version (v2 or v3) and publication type, XSD validation against schema files you select, heuristic profile checks, and contradictions between linked records.
+      - **Map:** records that carry a line are drawn on a map and matched to the OpenStreetMap roads along them.
+      - **Lanes:** lane status codes are shown as lane diagrams next to the OpenStreetMap lane layout of the matched road.
+      - **Routing:** each record is classified as passable, restricted, closed, conditional, conflicting or unknown, with a routing action.
+      - **RTTI 5-Star:** the highest star level per criterion that a single file allows.
+
+      The file is analysed in the browser and is never uploaded. The viewer needs no installation and no account. It is free software under the Apache License 2.0.
+    documentation: "https://graphmasters.github.io/nap-roadworks-viewer/docs/"
+    features:
+      - "Well-formedness check, with the DATEX II version (v2 or v3) and publication type"
+      - "XSD validation against schema files selected by the user"
+      - "Heuristic profile checks and contradiction checks between linked records"
+      - "Map of records that carry a line, with a record list and an inspector"
+      - "Matching of records to OpenStreetMap roads along their line"
+      - "Lane status diagrams next to the OpenStreetMap lane layout"
+      - "Routing classification per record, with a routing action"
+      - "RTTI 5-Star upper bounds per criterion for a single file"
+      - "Opens plain XML and gzip files from disk or from a URL"
+      - "Processes files in the browser, without uploading them"
+    screenshots:
+      - docs/screenshot.webp
+
+legal:
+  license: Apache-2.0
+  mainCopyrightOwner: Graphmasters GmbH
+
+maintenance:
+  type: internal
+  contacts:
+    - name: Jonas Matthias
+      affiliation: Graphmasters GmbH
+
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - en
