@@ -164,3 +164,14 @@ mobility-map-demo:
       - reference-implementations
     standards:
       - gbfs
+
+# Graphmasters (Germany)
+
+nap-roadworks-viewer:
+  source: https://github.com/Graphmasters/nap-roadworks-viewer
+  napcore-tools:
+    categories:
+      - validators
+      - data-quality
+    standards:
+      - datex-ii
